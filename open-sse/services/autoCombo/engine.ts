@@ -21,6 +21,7 @@ import { getTaskFitness } from "./taskFitness";
 import { getModePack } from "./modePacks";
 import { getSelfHealingManager } from "./selfHealing";
 import { classifyPromptIntent } from "../intentClassifier";
+import { mapIntentToTaskFitnessKey } from "./intentTaskFitnessMap";
 
 export interface AutoComboConfig {
   id: string;
@@ -240,9 +241,19 @@ export function selectProvider(
                 .map((b) => b.text || "")
                 .join(" ")
             : "";
-      if (text.length > 10) {
+      // Short prompts (≤10 chars, e.g. "olá", "hi") are inherently simple —
+      // classify them as "simple" directly so short greetings don't fall into
+      // "default" which scores all model tiers equally.  Longer prompts go
+      // through the full keyword classifier. (#13386)
+      if (text.length <= 10) {
+        effectiveTaskType = "simple";
+      } else {
         const intent = classifyPromptIntent(text);
-        effectiveTaskType = intent; // 'code' | 'reasoning' | 'simple' | 'medium'
+        // Bridge intentClassifier's vocabulary ('code'|'math'|'reasoning'|'creative'|
+        // 'simple'|'medium') to taskFitness.ts's vocabulary ('coding'|'review'|'planning'|
+        // 'analysis'|'debugging'|'documentation'|'default') — see intentTaskFitnessMap.ts.
+        // Passing the raw intent here previously never matched a fitness-table key.
+        effectiveTaskType = mapIntentToTaskFitnessKey(intent);
       }
     }
   }

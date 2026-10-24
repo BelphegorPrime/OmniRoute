@@ -1,6 +1,6 @@
 # OmniRoute Codebase Documentation (Українська)
 
-🌐 **Languages:** 🇺🇸 [English](../../../../architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇹 [am](../../../am/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇦 [ar](../../../ar/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇿 [az](../../../az/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇬 [bg](../../../bg/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇩 [bn](../../../bn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇿 [cs](../../../cs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇰 [da](../../../da/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇪 [de](../../../de/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇷 [el](../../../el/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇸 [es](../../../es/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇪 [et](../../../et/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇷 [fa](../../../fa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇮 [fi](../../../fi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇷 [fr](../../../fr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇪 [ga](../../../ga/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [gu](../../../gu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ha](../../../ha/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇱 [he](../../../he/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [hi](../../../hi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇷 [hr](../../../hr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇺 [hu](../../../hu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇲 [hy](../../../hy/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇩 [id](../../../id/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ig](../../../ig/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇹 [it](../../../it/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇯🇵 [ja](../../../ja/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇪 [ka](../../../ka/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇭 [km](../../../km/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [kn](../../../kn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇷 [ko](../../../ko/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇹 [lt](../../../lt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇻 [lv](../../../lv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ml](../../../ml/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [mr](../../../mr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇾 [ms](../../../ms/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇹 [mt](../../../mt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇲 [my](../../../my/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇵 [ne](../../../ne/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇱 [nl](../../../nl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇴 [no](../../../no/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [or](../../../or/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [pa](../../../pa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇭 [phi](../../../phi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇱 [pl](../../../pl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇹 [pt](../../../pt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇴 [ro](../../../ro/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇺 [ru](../../../ru/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇰 [si](../../../si/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇰 [sk](../../../sk/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇮 [sl](../../../sl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇸 [sr](../../../sr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇪 [sv](../../../sv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇪 [sw](../../../sw/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ta](../../../ta/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [te](../../../te/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇭 [th](../../../th/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇷 [tr](../../../tr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇰 [ur](../../../ur/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇿 [uz](../../../uz/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇻🇳 [vi](../../../vi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [yo](../../../yo/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/CODEBASE_DOCUMENTATION.md)
+🌐 **Languages:** 🇺🇸 [English](../../../../architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇹 [am](../../../am/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇦 [ar](../../../ar/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇿 [az](../../../az/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇬 [bg](../../../bg/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇩 [bn](../../../bn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇦 [bs](../../../bs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇿 [cs](../../../cs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇰 [da](../../../da/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇪 [de](../../../de/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇷 [el](../../../el/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇸 [es](../../../es/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇪 [et](../../../et/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇷 [fa](../../../fa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇮 [fi](../../../fi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇷 [fr](../../../fr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇪 [ga](../../../ga/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [gu](../../../gu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ha](../../../ha/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇱 [he](../../../he/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [hi](../../../hi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇷 [hr](../../../hr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇺 [hu](../../../hu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇲 [hy](../../../hy/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇩 [id](../../../id/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ig](../../../ig/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇹 [it](../../../it/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇯🇵 [ja](../../../ja/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇪 [ka](../../../ka/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇭 [km](../../../km/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [kn](../../../kn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇷 [ko](../../../ko/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇹 [lt](../../../lt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇻 [lv](../../../lv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ml](../../../ml/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [mr](../../../mr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇾 [ms](../../../ms/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇹 [mt](../../../mt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇲 [my](../../../my/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇵 [ne](../../../ne/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇱 [nl](../../../nl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇴 [no](../../../no/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [or](../../../or/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [pa](../../../pa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇭 [phi](../../../phi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇱 [pl](../../../pl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇹 [pt](../../../pt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇴 [ro](../../../ro/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇺 [ru](../../../ru/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇰 [si](../../../si/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇰 [sk](../../../sk/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇮 [sl](../../../sl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇸 [sr](../../../sr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇪 [sv](../../../sv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇪 [sw](../../../sw/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ta](../../../ta/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [te](../../../te/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇭 [th](../../../th/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇷 [tr](../../../tr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇰 [ur](../../../ur/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇿 [uz](../../../uz/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇻🇳 [vi](../../../vi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [yo](../../../yo/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/CODEBASE_DOCUMENTATION.md)
 
 ---
 
@@ -436,7 +436,8 @@ server/
 
 ## 4. `open-sse/` — Робочий простір потокового рушія
 
-Окремий робочий простір npm, опублікований як `@omniroute/open-sse`. Відповідає за обробку запитів, виконавці, транслятори, сервіси, трансформер і сервер MCP.
+Окремий робочий простір npm, опублікований як `@omniroute/open-sse`. Відповідає за обробку
+запитів, виконавці, транслятори, сервіси, трансформер і сервер MCP.
 
 ```
 open-sse/
@@ -446,51 +447,54 @@ open-sse/
 ├── types.d.ts
 ├── config/                 Реєстри провайдерів, профілі заголовків, ідентифікація, …
 ├── handlers/               Обробники запитів (чат, вбудовування, аудіо, зображення, …)
-├── executors/              108 HTTP-виконавців для конкретних провайдерів
+├── executors/              156 модулів виконавців провайдерів (класи виконавців + допоміжні модулі для окремих провайдерів)
 ├── translator/             Перетворення форматів (OpenAI ↔ Claude ↔ Gemini ↔ Cursor ↔ Kiro)
-├── transformer/            Потоковий трансформер Responses API ↔ Chat Completions
+├── transformer/            Трансформер потоку Responses API ↔ Chat Completions
 ├── services/               Понад 80 сервісних модулів (комбінації, резервування, квоти, ідентифікація, …)
-├── utils/                  Допоміжні засоби для потокового передавання, TLS-клієнт, AWS SigV4, проксі-запити, …
-└── mcp-server/             Сервер MCP (3 транспорти, 33 області доступу, 110 інструментів)
+├── utils/                  Допоміжні засоби потокового передавання, клієнт TLS, AWS SigV4, проксі-запити, …
+└── mcp-server/             Сервер MCP (3 транспорти, 33 області, 110 інструментів)
 ```
 
 ### 4.1 `open-sse/handlers/`
 
-| Обробник                | Призначення                                                                                |
-| ----------------------- | ------------------------------------------------------------------------------------------ |
-| `chatCore.ts`           | Основний конвеєр чату (кеш, обмеження частоти, маршрутизація комбінацій, виклик виконавця) |
-| `responsesHandler.ts`   | Точка входу OpenAI Responses API                                                           |
-| `embeddings.ts`         | Вбудовування                                                                               |
-| `imageGeneration.ts`    | Генерування зображень                                                                      |
-| `audioSpeech.ts`        | Перетворення тексту на мовлення                                                            |
-| `audioTranscription.ts` | Перетворення мовлення на текст                                                             |
-| `videoGeneration.ts`    | Генерування відео                                                                          |
-| `musicGeneration.ts`    | Генерування музики                                                                         |
-| `rerank.ts`             | Повторне ранжування                                                                        |
-| `moderations.ts`        | Модерація                                                                                  |
-| `search.ts`             | Вебпошук                                                                                   |
-| `sseParser.ts`          | Парсер подій SSE                                                                           |
-| `usageExtractor.ts`     | Видобування кількості токенів із потоків висхідних провайдерів                             |
-| `responseSanitizer.ts`  | Видалення специфічного для провайдера шуму                                                 |
-| `responseTranslator.ts` | Сполучний шар між відповіддю провайдера та шаром трансляції                                |
+| Обробник                | Призначення                                                                                     |
+| ----------------------- | ----------------------------------------------------------------------------------------------- |
+| `chatCore.ts`           | Основний конвеєр чату (кеш, обмеження частоти, маршрутизація комбінацій, передавання виконавцю) |
+| `responsesHandler.ts`   | Точка входу OpenAI Responses API                                                                |
+| `embeddings.ts`         | Вбудовування                                                                                    |
+| `imageGeneration.ts`    | Генерування зображень                                                                           |
+| `audioSpeech.ts`        | Перетворення тексту на мовлення                                                                 |
+| `audioTranscription.ts` | Перетворення мовлення на текст                                                                  |
+| `videoGeneration.ts`    | Генерування відео                                                                               |
+| `musicGeneration.ts`    | Генерування музики                                                                              |
+| `rerank.ts`             | Повторне ранжування                                                                             |
+| `moderations.ts`        | Модерація                                                                                       |
+| `search.ts`             | Пошук у вебі                                                                                    |
+| `sseParser.ts`          | Парсер подій SSE                                                                                |
+| `usageExtractor.ts`     | Вилучення кількості токенів із висхідних потоків                                                |
+| `responseSanitizer.ts`  | Видалення специфічного для провайдера шуму                                                      |
+| `responseTranslator.ts` | Сполучний шар між відповіддю провайдера та рівнем трансляції                                    |
 
 ### 4.2 `open-sse/executors/`
 
-108 виконавців провайдерів, кожен із яких розширює `BaseExecutor` (`base.ts`):
+156 модулів виконавців верхнього рівня (`*.ts` за винятком `base.ts`, `index.ts` і тестів — цю кількість
+вимірює `npm run check:docs-counts`). Кожен клас виконавця розширює `BaseExecutor` (`base.ts`)
+безпосередньо або через `DefaultExecutor` чи інший виконавець; решта модулів є допоміжними
+засобами для окремих провайдерів (схеми інструментів, адаптери fetch/TTS, обробники особливостей). Виконавці включають:
 
 `antigravity`, `azure-openai`, `blackbox-web`, `cliproxyapi`,
 `chatgpt-web-codex`, `cloudflare-ai`, `codex`, `commandCode`, `cursor`, `default`, `devin-cli`,
 `muse-spark-web`, `nlpcloud`, `opencode`, `perplexity-web`, `petals`,
 `pollinations`, `qoder`, `vertex`, `devin-desktop`, а також `claudeIdentity.ts`
-(спільний допоміжний засіб ідентифікації) та `index.ts` (реєстр).
+(спільний допоміжний модуль ідентифікації) та `index.ts` (реєстр).
 
-> Примітка: провайдери, не зазначені тут, обслуговуються через `default.ts` за допомогою універсального
-> виконавця, сумісного з OpenAI. Повний каталог провайдерів (355 провайдерів) міститься в
+> Примітка: провайдери, не перелічені тут, обслуговуються через `default.ts` за допомогою універсального
+> OpenAI-сумісного виконавця. Повний каталог провайдерів (375 провайдерів) міститься в
 > `src/shared/constants/providers.ts`.
 
 ### 4.3 `open-sse/translator/`
 
-Трансляція за моделлю «вузол і спиці» (OpenAI є центральним вузлом).
+Трансляція за топологією «центр і промені» (OpenAI є центром).
 
 - **9 трансляторів запитів** (`translator/request/`):
   `antigravity-to-openai`, `claude-to-gemini`, `claude-to-openai`,
@@ -500,46 +504,46 @@ open-sse/
   `claude-to-openai`, `cursor-to-openai`, `gemini-to-claude`, `gemini-to-openai`,
   `kiro-to-openai`, `openai-responses`, `openai-to-antigravity`,
   `openai-to-claude`.
-- **9 допоміжних засобів** (`translator/helpers/`):
+- **9 допоміжних модулів** (`translator/helpers/`):
   `claudeHelper`, `geminiHelper`, `geminiToolsSanitizer`, `maxTokensHelper`,
   `openaiHelper`, `responsesApiHelper`, `schemaCoercion`, `toolCallHelper`, а також
-  тести допоміжних засобів.
-- **Допоміжні засоби для зображень** (`translator/image/sizeMapper.ts`).
-- На верхньому рівні: `bootstrap.ts`, `formats.ts`, `registry.ts`, `index.ts`.
+  тести допоміжних модулів.
+- **Допоміжні модулі для зображень** (`translator/image/sizeMapper.ts`).
+- Верхній рівень: `bootstrap.ts`, `formats.ts`, `registry.ts`, `index.ts`.
 
 ### 4.4 `open-sse/transformer/`
 
-- `responsesTransformer.ts` — конвертер Responses API ↔ Chat Completions на основі `TransformStream`
-  (використовується універсальним маршрутом `responses/`).
+- `responsesTransformer.ts` — заснований на `TransformStream` перетворювач Responses API ↔ Chat
+  Completions (використовується універсальним маршрутом `responses/`).
 
 ### 4.5 `open-sse/services/`
 
-Основні компоненти (повний список міститься в `open-sse/services/`):
+Основні компоненти (повний список у `open-sse/services/`):
 
-| Аспект                       | Файли                                                                                                                                                                                                                                             |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Маршрутизація Combo          | `combo.ts` (19 стратегій), `comboConfig.ts`, `comboMetrics.ts`, `comboManifestMetrics.ts`, `comboAgentMiddleware.ts`                                                                                                                              |
-| Рушій Auto Combo             | `autoCombo/` — `engine.ts`, `scoring.ts`, `taskFitness.ts`, `virtualFactory.ts`, `modePacks.ts`, `autoPrefix.ts`, `persistence.ts`, `providerDiversity.ts`, `providerRegistryAccessor.ts`, `routerStrategy.ts`, `selfHealing.ts`, `index.ts`      |
-| Відмовостійкість             | `accountFallback.ts` (період очікування + блокування), `errorClassifier.ts`, `requestRejectedStreak.ts`, `emergencyFallback.ts`, `rateLimitManager.ts`, `rateLimitSemaphore.ts`, `accountSemaphore.ts`, `accountSelector.ts`                      |
-| Квоти                        | `quotaMonitor.ts`, `quotaPreflight.ts`, `bailianQuotaFetcher.ts`, `codexQuotaFetcher.ts`, `deepseekQuotaFetcher.ts`, `openrouterQuotaFetcher.ts`, `openrouterFreeWindow.ts`, `crofUsageFetcher.ts`, `antigravityCredits.ts`                       |
-| Кешування                    | `reasoningCache.ts`, `searchCache.ts`, `signatureCache.ts`, `requestDedup.ts`                                                                                                                                                                     |
-| Інтелектуальна маршрутизація | `intentClassifier.ts`, `taskAwareRouter.ts`, `backgroundTaskDetector.ts`, `volumeDetector.ts`, `wildcardRouter.ts`, `workflowFSM.ts`, `specificityDetector.ts`, `specificityRules.ts`, `specificityTypes.ts`                                      |
-| Обробка моделей              | `modelCapabilities.ts`, `modelDeprecation.ts`, `modelFamilyFallback.ts`, `modelStrip.ts`, `model.ts`, `provider.ts`, `providerRequestDefaults.ts`, `providerCostData.ts`, `payloadRules.ts`                                                       |
-| Стиснення                    | `compression/` — повне підключення рушія стиснення                                                                                                                                                                                                |
-| Токени та сеанси             | `tokenRefresh.ts`, `sessionManager.ts`, `apiKeyRotator.ts`, `contextManager.ts`, `contextHandoff.ts`, `systemPrompt.ts`, `roleNormalizer.ts`, `responsesInputSanitizer.ts`, `toolSchemaSanitizer.ts`, `toolLimitDetector.ts`, `thinkingBudget.ts` |
-| Рівні / маніфест             | `tierResolver.ts`, `tierConfig.ts`, `tierDefaults.json`, `tierTypes.ts`, `manifestAdapter.ts`                                                                                                                                                     |
-| IP / мережа                  | `ipFilter.ts`, `webSearchFallback.ts`                                                                                                                                                                                                             |
-| Пакетна обробка              | `batchProcessor.ts`                                                                                                                                                                                                                               |
-| Використання                 | `usage.ts`                                                                                                                                                                                                                                        |
+| Аспект                       | Файли                                                                                                                                                                                                                                                    |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Маршрутизація Combo          | `combo.ts` (20 стратегій), `comboConfig.ts`, `comboMetrics.ts`, `comboManifestMetrics.ts`, `comboAgentMiddleware.ts`                                                                                                                                     |
+| Рушій Auto Combo             | `autoCombo/` — `engine.ts`, `scoring.ts`, `taskFitness.ts`, `virtualFactory.ts`, `modePacks.ts`, `autoPrefix.ts`, `persistence.ts`, `providerDiversity.ts`, `providerRegistryAccessor.ts`, `routerStrategy.ts`, `selfHealing.ts`, `index.ts`             |
+| Відмовостійкість             | `accountFallback.ts` (період очікування + блокування), `errorClassifier.ts`, `requestRejectedStreak.ts`, `emergencyFallback.ts`, `rateLimitManager.ts`, `rateLimitSemaphore.ts`, `accountSemaphore.ts`, `accountSelector.ts`                             |
+| Квоти                        | `quotaMonitor.ts`, `quotaPreflight.ts`, `bailianQuotaFetcher.ts`, `codexQuotaFetcher.ts`, `deepseekQuotaFetcher.ts`, `openrouterQuotaFetcher.ts`, `openrouterFreeWindow.ts`, `llmgatewayQuotaFetcher.ts`, `crofUsageFetcher.ts`, `antigravityCredits.ts` |
+| Кешування                    | `reasoningCache.ts`, `searchCache.ts`, `signatureCache.ts`, `requestDedup.ts`                                                                                                                                                                            |
+| Інтелектуальна маршрутизація | `intentClassifier.ts`, `taskAwareRouter.ts`, `backgroundTaskDetector.ts`, `volumeDetector.ts`, `wildcardRouter.ts`, `workflowFSM.ts`, `specificityDetector.ts`, `specificityRules.ts`, `specificityTypes.ts`                                             |
+| Обробка моделей              | `modelCapabilities.ts`, `modelDeprecation.ts`, `modelFamilyFallback.ts`, `modelStrip.ts`, `model.ts`, `provider.ts`, `providerRequestDefaults.ts`, `providerCostData.ts`, `payloadRules.ts`                                                              |
+| Стиснення                    | `compression/` — повна інтеграція рушія стиснення                                                                                                                                                                                                        |
+| Токени та сеанси             | `tokenRefresh.ts`, `sessionManager.ts`, `apiKeyRotator.ts`, `contextManager.ts`, `contextHandoff.ts`, `systemPrompt.ts`, `roleNormalizer.ts`, `responsesInputSanitizer.ts`, `toolSchemaSanitizer.ts`, `toolLimitDetector.ts`, `thinkingBudget.ts`        |
+| Рівень / маніфест            | `tierResolver.ts`, `tierConfig.ts`, `tierDefaults.json`, `tierTypes.ts`, `manifestAdapter.ts`                                                                                                                                                            |
+| IP / мережа                  | `ipFilter.ts`, `webSearchFallback.ts`                                                                                                                                                                                                                    |
+| Пакети                       | `batchProcessor.ts`                                                                                                                                                                                                                                      |
+| Використання                 | `usage.ts`                                                                                                                                                                                                                                               |
 
 ### 4.6 `open-sse/mcp-server/`
 
 - **110 унікальних інструментів**, підключених у `server.ts` (45 канонічних у `schemas/tools.ts` +
   модулі пам’яті, навичок, GitHub-навичок, пулу, гейміфікації, плагінів, Notion, Obsidian,
-  локального корпусу та стиснення — об’єднання підраховується функцією `countUniqueMcpTools`).
-- **3 способи транспортування**: stdio, HTTP Streamable, SSE.
-- **33 області доступу**, що застосовуються під час виконання — базовий список міститься в `src/shared/constants/mcpScopes.ts`, а повний набір є об’єднанням областей доступу, оголошених кожним модулем інструментів.
-- Таблиця аудиту: `mcp_tool_audit` (заповнюється модулем `audit.ts`).
+  локального корпусу та стиснення — об’єднання підраховується за допомогою `countUniqueMcpTools`).
+- **3 транспорти**: stdio, HTTP Streamable, SSE.
+- **33 області доступу**, що застосовуються під час виконання — базовий список у `src/shared/constants/mcpScopes.ts`, повний набір є об’єднанням областей доступу, оголошених кожним модулем інструментів.
+- Таблиця аудиту: `mcp_tool_audit` (заповнюється через `audit.ts`).
 - Файли: `server.ts`, `index.ts`, `httpTransport.ts`, `audit.ts`, `scopeEnforcement.ts`,
   `runtimeHeartbeat.ts`, `descriptionCompressor.ts`, `schemas/{tools, a2a, audit, index}.ts`,
   `tools/{advancedTools, compressionTools, memoryTools, skillTools}.ts`,
@@ -549,13 +553,13 @@ open-sse/
 ### 4.7 `open-sse/config/`
 
 Реєстри постачальників (`providerRegistry.ts`, `providerModels.ts`,
-`providerHeaderProfiles.ts`), реєстри моделей для кожного формату (`audioRegistry.ts`,
+`providerHeaderProfiles.ts`), реєстри моделей для окремих форматів (`audioRegistry.ts`,
 `embeddingRegistry.ts`, `imageRegistry.ts`, `moderationRegistry.ts`,
 `musicRegistry.ts`, `rerankRegistry.ts`, `searchRegistry.ts`, `videoRegistry.ts`),
 допоміжні засоби ідентифікації (`codexIdentity.ts`, `codexInstructions.ts`,
 `anthropicHeaders.ts`, `antigravityUpstream.ts`, `antigravityModelAliases.ts`,
 `cliFingerprints.ts`, `toolCloaking.ts`, `defaultThinkingSignature.ts`),
-допоміжні засоби для облікових даних (`credentialLoader.ts`, `codexClient.ts`) і хмарні
+допоміжні засоби для облікових даних (`credentialLoader.ts`, `codexClient.ts`) та хмарні
 адаптери (`azureAi.ts`, `bedrock.ts`, `datarobot.ts`, `glmProvider.ts`,
 `maritalk.ts`, `oci.ts`, `petals.ts`, `runway.ts`, `sap.ts`, `watsonx.ts`,
 `ollamaModels.ts`, `errorConfig.ts`, `constants.ts`, `registryUtils.ts`).
@@ -667,7 +671,11 @@ bin/
   `v1-ws-bridge.mjs`, `smoke-electron-packaged.mjs`,
   `run-playwright-tests.mjs`, `run-ecosystem-tests.mjs`,
   `run-protocol-clients-tests.mjs`, `sync-env.mjs`, `healthcheck.mjs`,
-  `system-info.mjs`.
+  `system-info.mjs`, а також допоміжні засоби лише для читання для нагляду за PR:
+  `ci-discriminate.sh` (сортує сигнатури невдалих перевірок PR на власні / успадковані /
+  невідомі шляхом порівняння з еталонним PR або задачею щодо помилок у базовій гілці) і `audit-worktree.sh`
+  (змінені файли, захищені компоненти, видалені твердження, кількість придушень, залишкові
+  тимчасові tsconfig-файли, голова PR порівняно з локальним HEAD — перед прийняттям PR виконавця).
 - **`scripts/check/`** — `check-cycles.mjs`, `check-docs-sync.mjs`,
   `check-docs-counts-sync.mjs`, `check-env-doc-sync.mjs`,
   `check-deprecated-versions.mjs`, `check-route-validation.mjs`,

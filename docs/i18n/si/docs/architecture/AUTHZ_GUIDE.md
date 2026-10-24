@@ -1,83 +1,71 @@
 # Authorization Guide (සිංහල)
 
-🌐 **Languages:** 🇺🇸 [English](../../../../architecture/AUTHZ_GUIDE.md) · 🇪🇹 [am](../../../am/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇿 [az](../../../az/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇰 [da](../../../da/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇪 [de](../../../de/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇷 [el](../../../el/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇸 [es](../../../es/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇪 [et](../../../et/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇱 [he](../../../he/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇩 [id](../../../id/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇹 [it](../../../it/docs/architecture/AUTHZ_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇭 [km](../../../km/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇲 [my](../../../my/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇴 [no](../../../no/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [or](../../../or/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [te](../../../te/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇭 [th](../../../th/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/architecture/AUTHZ_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/AUTHZ_GUIDE.md)
+🌐 **Languages:** 🇺🇸 [English](../../../../architecture/AUTHZ_GUIDE.md) · 🇪🇹 [am](../../../am/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇿 [az](../../../az/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇰 [da](../../../da/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇪 [de](../../../de/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇷 [el](../../../el/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇸 [es](../../../es/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇪 [et](../../../et/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇱 [he](../../../he/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇩 [id](../../../id/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇹 [it](../../../it/docs/architecture/AUTHZ_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇭 [km](../../../km/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇲 [my](../../../my/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇴 [no](../../../no/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [or](../../../or/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [te](../../../te/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇭 [th](../../../th/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/architecture/AUTHZ_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/AUTHZ_GUIDE.md)
 
 ---
 
 > **සත්යයේ මූලාශ්රය:** `src/server/authz/`, `src/shared/constants/publicApiRoutes.ts`, `src/lib/api/requireManagementAuth.ts`, `src/shared/utils/apiAuth.ts`
-> **අවසන් වරට යාවත්කාලීන කළේ:** 2026-06-28 — v3.8.40
+> **අවසන් වරට යාවත්කාලීන කරන ලදී:** 2026-09-22 — විෂය පථ නාම අවකාශ MCP-SERVER.md වෙත යොමු කරයි
 
-OmniRoute සතුව සෑම API ඉල්ලීමක්ම පාලනය කරන, මාර්ග පිළිබඳ දැනුවත් බලය පැවරීමේ නල මාර්ගයක් ඇත. වර්ගීකරණය **නිර්ණායක** සහ **අසාර්ථක වූ විට වසා දමන** ආකාරයේ වේ — වර්ගීකරණය කළ නොහැකි ඕනෑම දෙයක් අවසානයේ `MANAGEMENT` ලෙස සැලකෙන අතර සැසියක් හෝ කළමනාකරණ මට්ටමේ ටෝකනයක් අවශ්ය වේ. මාර්ග නඩත්තු කරන හෝ නව අන්ත ලක්ෂ්ය සැලසුම් කරන ඉංජිනේරුවන් සඳහා මෙම පිටුවෙන් ආකෘතිය පැහැදිලි කෙරේ.
+OmniRoute සතුව සෑම API ඉල්ලීමක්ම පාලනය කරන මාර්ග-දැනුවත් අවසර නල මාර්ගයක් ඇත. වර්ගීකරණය **නිශ්චිත** සහ **අසාර්ථක-වසා දැමූ** වේ — වර්ගීකරණය කළ නොහැකි ඕනෑම දෙයක් `MANAGEMENT` ලෙස අවසන් වන අතර සැසියක් හෝ කළමනාකරණ-ශ්රේණියේ ටෝකනයක් ඉල්ලා සිටී. මෙම පිටුව මාර්ග නඩත්තු කරන හෝ නව අවසන් ලක්ෂ්ය සැලසුම් කරන ඉංජිනේරුවන් සඳහා ආකෘතිය පැහැදිලි කරයි.
 
-![AuthZ නල මාර්ගය (මාර්ග පන්ති 3ක් + ප්රතිපත්ති ඇගයීම)](../diagrams/exported/authz-pipeline.svg)
+![AuthZ pipeline (3 route classes + policy evaluation)](../diagrams/exported/authz-pipeline.svg)
 
 > මූලාශ්රය: [diagrams/authz-pipeline.mmd](../diagrams/authz-pipeline.mmd)
 
-## සත්යාපන ආකාර දෙක
+## සත්‍යාපන ආකාර දෙකක්
 
 ### 1. API යතුර (Bearer)
 
-OpenAI/Anthropic/Gemini-අනුකූල සේවාලාභී API සඳහාත්, යතුරට `manage` විෂය පථය ඇති විට කළමනාකරණ මාර්ග කිහිපයක් සඳහාත් භාවිත කෙරේ.
+OpenAI/Anthropic/Gemini-අනුකූල සේවාලාභී APIs සහ යතුරට `manage` විෂය පථය ඇති විට කළමනාකරණ මාර්ග කිහිපයක් සඳහා මෙය භාවිතා වේ.
 
 ```
 Authorization: Bearer <api-key>
 ```
 
-`src/sse/services/auth.ts` තුළ ඇති `isValidApiKey()` / `extractApiKey()` මඟින් වලංගු කරනු ලබන අතර `src/shared/utils/apiAuth.ts` හරහා නැවත නිර්යාත කෙරේ. වලංගුකාරකය ස්ථිර සෘජු-යොමු යතුරු ලෙස `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` පරිසර විචල්ය ද පිළිගනී (ගැටලුව #1350).
+`src/sse/services/auth.ts` හි `isValidApiKey()` / `extractApiKey()` මගින් වලංගු කරන අතර `src/shared/utils/apiAuth.ts` හරහා නැවත අපනයනය කෙරේ. වලංගුකරණය `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` පරිසර විචල්‍ය ස්ථිර පාරගමන යතුරු ලෙසද පිළිගනී (issue #1350).
 
-### 2. උපකරණ පුවරු සැසිය (auth_token කුකිය)
+### 2. ඩෑෂ්බෝඩ් සැසිය (auth_token කුකිය)
 
-උපකරණ පුවරු පිටු සහ පරිපාලක මෙහෙයුම් සඳහාය.
+ඩෑෂ්බෝඩ් පිටු සහ පරිපාලන මෙහෙයුම් සඳහා.
 
 ```
 Cookie: auth_token=<JWT signed with JWT_SECRET>
 ```
 
-JWT සත්යාපනය වී **සහ** එහි `authenticated: true` අඩංගු වන විට පමණක් කුකියක් සැසියක් වේ
-(`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). කුකිය භාවිත කරන සෑම
-පාරිභෝගිකයෙක්ම (මාර්ග ආරක්ෂකය, authz නල මාර්ග නැවුම් කිරීම, WebSocket ආරම්භක සම්බන්ධතාව, සජීවී
-සේවාදායකය, `/api/settings/require-login`, `/api/auth/status`) එම සහායකය හරහා ගමන් කරයි.
-`JWT_SECRET` භාවිතයෙන් අත්සන් කළ වෙනත් JWT ද පවතී — Cursor CLI සෘජු-යොමුව මඟින්
-යතුරු හිමියන් සඳහා `iss "omniroute" / aud "cursor-cli"` ටෝකන නිකුත් කරයි — ඒවා කිසිවිටෙක සැසි ලෙස
-සලකනු නොලැබේ (#13298).
+JWT වලංගු වී **සහ** `authenticated: true` දරන විට පමණක් කුකියක් සැසියක් වේ (`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). කුකියේ සෑම පාරිභෝගිකයෙක්ම (ඩෑෂ්බෝඩ් මාර්ග ආරක්ෂකය (`isDashboardSessionAuthenticated()`), authz නල මාර්ගයේ නවීකරණය, WebSocket හස්තදානය, live server, `/api/settings/require-login`, `/api/auth/status`) එම උපයෝගිතාව හරහා යයි.
+`JWT_SECRET` සමඟ අත්සන් කළ වෙනත් JWT ද පවතී — Cursor CLI පාරගමනය යතුරු හිමියන් සඳහා `iss "omniroute" / aud "cursor-cli"` ටෝකන නිකුත් කරයි — ඒවා කිසිවිට සැසි නොවේ (#13298).
 
-`src/shared/utils/apiAuth.ts` තුළ ඇති `isDashboardSessionAuthenticated()` මඟින් සත්යාපනය කෙරේ. දින 30ක ආයු කාලයෙන් දින 7කට අඩු කාලයක් ඉතිරිව ඇති විට නල මාර්ගය JWT ස්වයංක්රීයව නැවුම් කරයි.
+`src/shared/utils/apiAuth.ts` හි `isDashboardSessionAuthenticated()` මගින් සත්‍යාපනය කෙරේ. දින 30 ක ආයු කාලයෙන් දින 7 ට වඩා අඩුවක් ඉතිරි වූ විට නල මාර්ගය JWT ස්වයංක්‍රීයව නවීකරණය කරයි.
 
-සමහර කළමනාකරණ මාර්ග **මෙම ආකාර දෙකෙන් ඕනෑම එකක්** පිළිගනී: කුකිය හෝ API යතුරට `manage` (හෝ `admin`) විෂය පථය ඇති විට `Bearer <key>`. v3.8 හි එක් කළ "API ඇමතුම් හරහා වින්යාස කළ හැකි" කාර්ය ප්රවාහය සක්රීය වන්නේ මෙලෙසය.
+දින 30 ඉකුත් වීමට පෙරද සැසියක් අවසන් විය හැක, මන්ද සෑම නිකුත්කරුවෙක්ම `mintDashboardSessionToken` හරහා යයි (නිකුත් කළ වේලාව `iat` සහ හඳුනාගැනීම `jti`), සත්‍යාපකය සැකසුම් දෙකක් පරීක්ෂා කරයි: `sessionsValidAfter`, එය මුරපද වෙනසකින් සකසන අතර එයට පෙර නිකුත් වූ සියලු සැසි වලංගු නොවේ (මුරපදය වෙනස් කළ බ්‍රවුසරයට නව කුකියක් ලැබේ), සහ `revokedDashboardSessions`, එයට `POST /api/auth/logout` මගින් පිටව ගිය සැසියේ `jti` එක එකතු කරයි. පැරණි නිකුතුවකින් නිකුත් කළ සැසි මෙම ගුණ දෙකෙන් එකකවත් නොදරති, එබැවින් පළමු මුරපද වෙනස දක්වා ඒවා වලංගුව පවතී. සැකසුම් කියවිය නොහැකි නම්, සැසිය විශ්වාස නොකෙරේ.
+
+සමහර කළමනාකරණ මාර්ග **ඕනෑම** ආකාරයක් පිළිගනී: API යතුරට `manage` (හෝ `admin`) විෂය පථය ඇති විට කුකිය හෝ `Bearer <key>`. v3.8 හි එකතු කළ "API ඇමතුම් මගින් වින්‍යාස කළ හැකි" කාර්ය ප්‍රවාහය සක්‍රීය කරන්නේ මෙයයි.
 
 #### විකල්ප OIDC පිවිසුම් ද්වාරය (#6973)
 
-උපකරණ පුවරුවේ පරිපාලක පිවිසුම පෙරනිමි මුරපද පිවිසුමට අමතරව **කැමැත්තෙන් සක්රීය කළ හැකි** OIDC (OpenID Connect) ප්රවාහයකට ද සහාය දක්වයි — මුරපද පිවිසුම කිසිවිටෙක ඉවත් නොකරන අතර, එය අතිරේකව සපයනු ලැබේ:
+ඩෑෂ්බෝඩ් පරිපාලක පිවිසුම පෙරනිමි මුරපද පිවිසුම අසලින්ම **විකල්ප** OIDC (OpenID Connect) ප්‍රවාහයකටද සහාය දක්වයි — මුරපද පිවිසුම කිසිවිට ඉවත් නොකෙරේ, එය පමණක් අනුපූරක වේ:
 
-- `settings.oidcEnabled === true` වීම **සහ** `oidcIssuer` /
-  `oidcClientId` / `oidcClientSecret` සියල්ල වින්යාස කර තිබීම හැර අන් අවස්ථාවලදී අක්රීය වේ (Settings → Auth).
-  එසේ නොමැති නම් `GET /api/auth/oidc/login` විසින් `400` ආපසු ලබා දෙයි.
-- `GET /api/auth/oidc/login` නිකුත් කරන්නාගේ
-  `/.well-known/openid-configuration` වෙතින් `authorization_endpoint` සොයා ගනී (`<issuer>/authorize`
-  වෙත පසුබැසීමක් ඇත), ලැබෙන ඉල්ලීමෙන් යළි-යොමු URI එක ගොඩනඟයි
-  (`x-forwarded-proto` පිළිබඳ දැනුවත්ය), සහ අහඹු `state` අගයක්
-  `httpOnly` `oidc_state` කුකියක ගබඩා කර IdP වෙත යළි යොමු කරයි.
-- `GET /api/auth/oidc/callback` විසින් `state` වලංගු කර, බලය පැවරීමේ
-  කේතය හුවමාරු කර, නිකුත් කරන්නාගේ JWKS හරහා ID ටෝකනයේ අත්සන
-  (`jose` හි `createRemoteJWKSet`, එක් එක් JWKS URI සඳහා හැඹිලිගත කෙරේ) `issuer`/`audience`
-  පරීක්ෂාවන් සමඟ සත්යාපනය කරයි. විකල්ප `oidcAllowedSubjects` අවසර ලැයිස්තුවක් ටෝකනයේ
-  `sub` හිමිකම හෝ එහි `email` හිමිකම සමඟ ගැළපේ — email හිමිකම පිළිගනු ලබන්නේ
-  `email_verified === true` වන විට පමණක් බැවින්, IdP හි සත්යාපනය නොකළ email ලිපිනයකට කිසිවිටෙක
-  ද්වාරය පසු කළ නොහැක.
-- සාර්ථක වූ විට, මුරපද පිවිසුම නිකුත් කරන **හරියටම එම** දින 30ක `auth_token` JWT එකම
-  එය නිකුත් කරයි (`src/app/api/auth/login/route.ts`), එබැවින් අනෙකුත්
-  උපකරණ පුවරු සැසි නල මාර්ගය (ස්වයංක්රීය නැවුම් කිරීම, කුකි ධජ) නොවෙනස්ව පවතී —
-  OIDC ප්රතිස්ථාපනය කරන්නේ කුකිය නිකුත් කරන ආකාරය පමණක් වන අතර, එයින් ලබා දෙන අවසර නොවේ.
+- `settings.oidcEnabled === true` **සහ** `oidcIssuer` / `oidcClientId` / `oidcClientSecret` යන සියල්ල වින්‍යාස කර ඇත්නම් මිස මෙය අක්‍රියයි (Settings → Auth). එසේ නොවේ නම් `GET /api/auth/oidc/login` `400` ලබා දෙයි.
+- `GET /api/auth/oidc/login` නිකුත්කරුගේ `/.well-known/openid-configuration` වෙතින් `authorization_endpoint` සොයාගනී (`<issuer>/authorize` වෙත ආපසු හැරේ), ඇතුළත් ඉල්ලීමෙන් යළි-යොමු URI ගොඩනඟයි (`x-forwarded-proto` දන්නා), සහ `httpOnly` `oidc_state` කුකියේ ගබඩා කළ අහඹු `state` සමඟ IdP වෙත යළි-යොමු කරයි.
+- `GET /api/auth/oidc/callback` `state` වලංගු කරයි, අධිකාරි කේතය හුවමාරු කරයි, සහ නිකුත්කරුගේ JWKS හරහා ID ටෝකනයේ අත්සන සත්‍යාපනය කරයි (`jose` හි `createRemoteJWKSet`, JWKS URI එකකට එක බැගින් හැඹිලි ගතව), `issuer`/`audience` පරීක්ෂා සමඟ. `oidcAllowedSubjects` අවසර ලැයිස්තුව අනිවාර්ය වේ: එය ටෝකනයේ `sub` හිමිකම හෝ `email` හිමිකම ගැලපේ — email හිමිකම `email_verified === true` වන විට පමණක් පිළිගැනේ, එබැවින් IdP හි තහවුරු නොකළ email එකකට ද්වාරය කිසිවිට පසු කළ නොහැක — සහ ඇතුළත් කිරීම් නොමැති විට ඇමතුම සියලු පිවිසුම් ප්‍රතික්ෂේප කරයි (`not_configured`).
+- සාර්ථක වූ විට එය මුරපද පිවිසුම නිකුත් කරන **හරියටම එකම** දින 30 `auth_token` JWT නිකුත් කරයි (`src/app/api/auth/login/route.ts`), එබැවින් ඩෑෂ්බෝඩ් සැසි නල මාර්ගයේ ඉතිරි කොටස (ස්වයංක්‍රීය නවීකරණය, කුකී ධජ) වෙනස් නොවේ — OIDC වෙනස් කරන්නේ කුකිය නිකුත් වන ආකාරය පමණි, එය ලබා දෙන දේ නොවේ.
+- සියලු `oidc*` සැකසුම් (`oidcEnabled`, `oidcDisablePasswordLogin`, `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`, `oidcRedirectPath`, `oidcScopes`) `SECURITY_IMPACTING_SETTINGS_KEYS` (`src/shared/constants/securityImpactingSettings.ts`) හි ඇත: ඉල්ලීම `currentPassword` ලෙස කළමනාකරණ මුරපදය රැගෙන නොයන තාක් `PATCH /api/settings` `400 PASSWORD_REQUIRED` ලෙස පිළිතුරු දෙයි (වැරදි නම් `401 PASSWORD_MISMATCH`). `oidcDisablePasswordLogin` මුරපද _පිවිසීම_ (`POST /api/auth/login`) ප්‍රතික්ෂේප කරයි, නමුත් ගබඩා කළ මුරපද හෑෂය තබා ගනී, සහ නැවත සත්‍යාපනය එයට එරෙහිව තවමත් `currentPassword` පරීක්ෂා කරයි.
+- `corsOrigins` සහ `bruteForceProtection` ද `SECURITY_IMPACTING_SETTINGS_KEYS` හි ඇත: ඒවායින් එකක් ලිහිල් කිරීම පිවිසුම් ආරක්ෂාව දුර්වල කරයි, එබැවින් ඒවාට එම `currentPassword` නැවත-සත්‍යාපනය අවශ්‍යයි (ආරක්ෂක ටැබය එය ඉල්ලයි) සහ JSON ආනයනය ඒවා ඉවත දමයි.
+- සියලු ආරක්ෂා-ප්‍රතිපත්ති යතුරු — `SECURITY_IMPACTING_SETTINGS_KEYS` ඇතුළත් කිරීම්, සියලු `oidc*` යතුරු සහ ඩෑෂ්බෝඩ් සැසි තත්ත්වය — `PATCH /api/settings` මත **ක්‍රියාකරු-පමණක්** වේ: manage විෂය පථය ඇති API යතුරක් හෝ `oma_` ප්‍රවේශ ටෝකනයක් නිවැරදි `currentPassword` යවත් `403` සමඟ ප්‍රතික්ෂේප කෙරේ, සහ එම ප්‍රතික්ෂේපය `reason: OPERATOR_REQUIRED` සමඟ `settings.update_failed` ලෙස විගණනය කෙරේ (`src/lib/api/operatorCredential.ts` හි `requireOperatorCredential()`). සාමාන්‍ය සැකසුම් (තේමාව, සංදර්ශන මනාප) `manage` යතුරකට හෝ `admin` ප්‍රවේශ ටෝකනයකට තවමත් ලිවිය හැක. `/api/settings` තමාම (සහ `/api/settings/require-login`) වෙනස් කිරීම සෑම එකක්ම `admin` ප්‍රවේශ-ටෝකන විෂය පථයද අවශ්‍ය කරයි (`src/server/authz/accessScopes.ts` හි `ADMIN_MUTATION_EXACT_PATHS`, හරියටම-මාර්ග ගැලපීම); `GET` `read` ලෙස පවතී, සහ අනෙකුත් `/api/settings/*` උප-මාර්ග (proxies, combo defaults, model aliases, compression, purges…) ක්‍රමය-මත-අනුමාන `write` විෂය පථය තබා ගනී.
+- `POST /api/settings/import-json` එම නැවත-සත්‍යාපනය මඟ හරියි, එබැවින් ලිවීමට පෙර `IMPORT_STRIPPED_SETTINGS_KEYS` හි (එම ගොනුව) ඇති සෑම යතුරක්ම ඉවත දමයි: මුරපදය සහ `currentPassword`, සෑම `SECURITY_IMPACTING_SETTINGS_KEYS` ඇතුළත් කිරීමක්, සහ ඩෑෂ්බෝඩ් සැසි තත්ත්වය (`sessionsValidAfter`, `revokedDashboardSessions`). එබැවින් පැරණි උපස්ථයක් ආනයනය කිරීමෙන් මුරපද වෙනසක් හෝ පිටවීමක් මගින් අවසන් කළ සැසියක් යළි ජීවත් කළ නොහැක.
 
 ## මාර්ග පන්ති
 
-`src/server/authz/types.ts` මඟින් පන්ති තුනක් නිර්වචනය කරයි; නිශ්චිත ලෙස වර්ගීකරණය කළ නොහැකි ඕනෑම මාර්ගයක් `MANAGEMENT` වෙත පෙරනිමි වේ.
+`src/server/authz/types.ts` පන්ති තුනක් අර්ථ දක්වයි; තීරණාත්මකව වර්ගීකරණය කළ නොහැකි ඕනෑම මාර්ගයක් `MANAGEMENT` වෙත ආපසු වැටේ.
 
-| පන්තිය       | විස්තරය                                                                                                                                                        | අවශ්ය සත්යාපනය                                                            |
-| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `PUBLIC`     | පැහැදිලිවම ආරක්ෂිත මාර්ග — පිවිසීම, පිටවීම, තත්ත්වය, ආරම්භ කිරීම, සෞඛ්ය පරීක්ෂාව, ආරම්භක සැකසුම් බූට්ස්ට්රැප් කිරීම.                                           | කිසිවක් නැත                                                               |
-| `CLIENT_API` | මාදිලි සේවා සපයන අන්ත ලක්ෂ්ය — `/api/v1/*`, `/api/v1beta/*`, සහ `/v1/*`, `/v1beta/*`, `/chat/completions`, `/responses`, `/models`, `/codex/*` යන අන්වර්ථ නාම. | ක්රියාත්මක `REQUIRE_API_KEY` විශේෂාංග ධජය සක්රීය කර ඇති විට Bearer යතුරක් |
-| `MANAGEMENT` | උපකරණ පුවරු පිටු, සැකසුම්, සපයන්නන්, යතුරු, පරිපාලන සහ රෝගනිශ්චය අන්ත ලක්ෂ්ය.                                                                                  | උපකරණ පුවරු සැසියක් හෝ `manage` විෂය පථය සහිත Bearer එකක්                 |
+| පන්තිය       | විස්තරය                                                                                                                                             | සත්‍යාපනය අවශ්‍ය වේ                                           |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `PUBLIC`     | පැහැදිලිවම ආරක්ෂිත මාර්ග — පිවිසීම, පිටවීම, තත්ත්වය, ආරම්භය, සෞඛ්‍යය, ඔන්බෝඩින් බූට්ස්ට්‍රැප්.                                                      | නැත                                                           |
+| `CLIENT_API` | ආකෘති-සේවා endpoints — `/api/v1/*`, `/api/v1beta/*`, සහ අන්වර්ථ නාම `/v1/*`, `/v1beta/*`, `/chat/completions`, `/responses`, `/models`, `/codex/*`. | ඵලදායී `REQUIRE_API_KEY` විශේෂාංග ධජය සක්‍රිය විට Bearer යතුර |
+| `MANAGEMENT` | ඩෑෂ්බෝඩ් පිටු, සැකසුම්, සපයන්නන්, යතුරු, පරිපාලක සහ රෝග විනිශ්චය endpoints.                                                                         | ඩෑෂ්බෝඩ් සැසිය හෝ `manage` විෂය පථය සහිත Bearer               |
+
+`MANAGEMENT` ක්‍රියා කිහිපයක් **ක්‍රියාකරු-පමණක්** වේ: `manage` යතුරක් ප්‍රමාණවත් නොවේ. ගබඩා කළ අක්තපත්‍ර නිර්යාත කිරීම (`GET /api/settings/export-json`, `GET /api/db-backups/export`, `GET /api/db-backups/exportAll`), දැනට පවතින දත්ත මත උපස්ථයක් ප්‍රත්‍යාස්ථාපනය කිරීම (`dryRun=true` ඇතුළුව `POST /api/db-backups/import`, id අනුව `POST /api/db-backups` ප්‍රත්‍යාස්ථාපනය, `POST /api/settings/import-json`), ප්‍රත්‍යාස්ථාපන ලක්ෂ්‍ය විනාශ කිරීම (`DELETE /api/db-backups` පිරිසිදු කිරීම, සහ `PATCH /api/db-backups` — එය ස්ථාවර කරන රඳවා ගැනීම සෑම උපස්ථයකින් පසු ස්වයංක්‍රීය කප්පාදුව පාලනය කරන නිසා) ඩෑෂ්බෝඩ් සැසියක්, දේශීය CLI විෂයක්, හෝ පිවිසුම අක්‍රිය කිරීමක් අවශ්‍ය කරයි. සමමුහුර්තකරණ ටෝකනයක් නිකුත් කිරීම (`POST /api/sync/tokens`) සහ `admin` CLI ප්‍රවේශ ටෝකනයක් ටංකනය කිරීම (`POST /api/cli/tokens`) සෑම පිවිසුම් ප්‍රකාරයකම ඩෑෂ්බෝඩ් සැසියක් හෝ දේශීය CLI විෂයක් අවශ්‍ය කරයි. ඕනෑම විෂය පථයක API යතුරු සහ `oma_` ප්‍රවේශ ටෝකන මෙහෙයුම්කරු අක්තපත්‍ර නොවේ: එකක් අවශ්‍ය වන විට ඒවාට `403` ලැබේ. පරීක්ෂාව `src/lib/api/operatorCredential.ts` හි ඇත (`resolveOperatorCredential()` / `requireOperatorCredential()`). පිවිසුම් සැකසුම් වෙනස් කිරීමද ක්‍රියාකරු-පමණකි: `POST /api/settings/require-login` (කළමනාකරණ මුරපදය සකසන / `requireLogin` මාරු කරන) මුරපදයක් පවතින විට පමණක් එම අක්තපත්‍ර පිළිගනී — පළමු-ධාවන ආරම්භක කවුළුව (තවම මුරපදයක් නැත) වෙනස් නොවේ — සහ ඩෑෂ්බෝඩ් සැසියක් මුරපදය ප්‍රතිස්ථාපනය කිරීමට `currentPassword` යැවිය යුතුය (එය නැති හෝ වැරදි නම් `403`, `settings.update_failed` ලෙස විගණනය කෙරේ). දේශීය CLI සහ පිවිසුම අක්‍රිය කළ අවස්ථාව ප්‍රතිසාධන මාර්ගය තබා ගන්නා අතර, දෙකම දත්ත නාමාවලිය හිමි සත්කාරකයට බැඳී ඇති නිසා, එය නොමැතිව මුරපදයක් සැකසිය හැක.
 
 ## නළ මාර්ගය
 
@@ -200,36 +188,47 @@ export async function POST(request: Request) {
 
 ## විෂය පථ
 
-API යතුරු සතුව `scopes` අරාවක් ඇත (එය `api_keys.scopes` තුළ JSON ලෙස ගබඩා කර ඇත, `src/lib/db/apiKeys.ts` බලන්න).
+අවකාශ තුනක්. එක් එක් පරීක්ෂකයා කියවන්නේ තමන්ගේම තන්තු පමණි.
+`manage` `read:compression` සඳහා `scopeMatches` අසමත් වන්නේ ඇයිද යන්න සහ
+`read` ප්රවේශ ටෝකනයකට `PATCH /api/keys/{id}` කළ නොහැක්කේ මන්ද යන්න ඇතුළුව,
+පැත්තෙන් පැත්තට විස්තරය [අවකාශ නාමාවලිය තුනක්](../frameworks/MCP-SERVER.md#three-scope-namespaces) හි ඇත.
+
+API යතුරු `scopes` අරාවක් දරයි (`api_keys.scopes` හි JSON ලෙස ගබඩා කර ඇත, `src/lib/db/apiKeys.ts` බලන්න).
 
 ### කළමනාකරණ විෂය පථය
 
-- `manage` / `admin` — Bearer ලෙස යවන විට කළමනාකරණ API අන්ත ලක්ෂ්ය වෙත ප්රවේශය යතුරට ලබා දෙයි.
+- `manage` / `admin` — `hasManageScope`. කළමනාකරණ API මාර්ග වෙත Bearer ප්රවේශය.
+- `mcp:connect`, `self:usage`, `self:account-quota`, සහ
+  `policy:bypass-provider-quota` යනු එකතු කළ හැකි නිශ්චිත-ගැලපෙන විෂය පථ වේ. ඒවා
+  `MANAGEMENT_API_KEY_SCOPES` වලින් පිටත පිහිටා ඇත. `mcp:connect` විවෘත කරන්නේ
+  `/api/mcp/` non-loopback carve-out පමණි.
 
-### MCP විෂය පථ (`src/shared/constants/mcpScopes.ts`)
+### MCP මෙවලම් විෂය පථ
 
-සෑම MCP මෙවලමකටම `MCP_TOOL_SCOPES` හරහා නිශ්චිත විෂය පථ අවශ්ය වේ. සම්පූර්ණ ලැයිස්තුව (`MCP_SCOPE_LIST`):
+නාමාවලිය සහ ගැලපෙන නීති (එකම තන්තුව, හෝ `*` වලින් අවසන් වන ලබා දුන් විෂය පථයක්):
+[MCP මෙවලම් විෂය පථ](../frameworks/MCP-SERVER.md#mcp-tool-scopes).
+`src/shared/constants/mcpScopes.ts` හි ඇති `MCP_SCOPE_LIST` යනු මුල් ටයිප් කරන ලද
+උප කුලකය මිස සම්පූර්ණ නාමාවලිය නොවේ. බලාත්මක කිරීම
+`open-sse/mcp-server/scopeEnforcement.ts` හි `resolveCallerScopeContext()`
+MCP සත්යාපන තොරතුරු, ඉල්ලීම් පාර-දත්ත, හෝ `OMNIROUTE_MCP_SCOPES` වෙතින් විෂය පථ
+විසඳීමෙන් පසුව ක්රියාත්මක වේ. `OMNIROUTE_MCP_ENFORCE_SCOPES=true` නොවන තාක් කල් එය
+ක්රියා විරහිතව පවතී.
 
-```
-read:health, read:combos, write:combos, read:quota, read:usage,
-read:models, execute:completions, execute:search, write:budget,
-write:resilience, pricing:write, read:cache, write:cache,
-read:compression, write:compression, read:proxies
-```
+### ප්රවේශ-ටෝකන විෂය පථ
 
-`open-sse/mcp-server/server.ts` තුළ විෂය පථ බලාත්මක කිරීමේදී, `resolveCallerScopeContext()` විසින් MCP සත්යාපන තොරතුරු,
-ඉල්ලීම් පාරදත්ත හෝ `OMNIROUTE_MCP_SCOPES` වෙතින් විෂය පථ නිරාකරණය කළ පසු එක් එක් මෙවලමෙහි විෂය පථ ලැයිස්තුව
-`evaluateToolScopes()` වෙත යවයි.
+`oma_live_…` ටෝකන මත `read` / `write` / `admin`, `scopeSatisfies`
+(`src/lib/accessTokens/scopes.ts`) මගින් ශ්රේණිගත කර ඇත. මෙම ශ්රේණිය අදාළ වන්නේ
+ප්රවේශ-ටෝකන අක්තපත්රයට පමණි. [කළමනාකරණ සත්යාපනය](../guides/MANAGEMENT-AUTH.md) බලන්න.
 
-## සත්යාපනය අවශ්ය කිරීමේ ටොගලය
+## Auth අවශ්‍ය ටොගලය
 
-`src/shared/utils/apiAuth.ts` තුළ ඇති `isAuthRequired()` මඟින් ඉල්ලීමක් සඳහා **කිසියම් හෝ** සත්යාපනයක් බලාත්මක කරන්නේද යන්න තීරණය කරයි:
+`src/shared/utils/apiAuth.ts` හි `isAuthRequired()` මගින් ඕනෑම ඉල්ලීමක් සඳහා **ඕනෑම** සත්‍යාපනයක් බලාත්මක කළ යුතුද යන්න තීරණය කරයි:
 
-- `settings.requireLogin === false` → සත්යාපනය ගෝලීයව අක්රිය කර ඇත.
-- මුරපදයක් වින්යාස කර නොමැති **සහ** `INITIAL_PASSWORD` පරිසර විචල්යයක් නොමැති විට → ආරම්භක ප්රකාරය මඟින් ආරම්භක සැකසුම් විශාරදයට සහ loopback ඉල්ලීම්වලට ඉඩ දෙන නමුත්, ජාලයට නිරාවරණය වූ ඉල්ලීම් සඳහා තවමත් අක්තපත්ර අවශ්ය වේ.
-- කිසියම් DB දෝෂයක් → ප්රවේශය වසා දමා අසාර්ථක වේ (පෙරනිමියෙන්-ආරක්ෂිතයි).
+- `settings.requireLogin === false` → සත්‍යාපනය ගෝලීයව අක්‍රියයි, මුල්-ආරක්ෂිත ස්ථරය ([Route Guard Tiers](../security/ROUTE_GUARD_TIERS.md)) සහ එය පිළිගන්නා අක්තපත්‍රය ලබා දෙන ඇමතුම් හැර — ඒවාට පිවිසුම ක්‍රියාත්මක විට ලෙසම එම අක්තපත්‍රයක් අවශ්‍යයි: සමමුහුර්ත ටෝකන නිකුත් කිරීම, ඕනෑම විෂය පථයකින් CLI ප්‍රවේශ ටෝකන ටංකනය කිරීම, සහ `manage`/`admin` විෂය පථය සහිත API යතුරක් සෑදීම, එම විෂය පථය යතුරකට ලබාදීම, හෝ එවැනි යතුරක් යළි උත්පාදනය කිරීම හෝ හෙළි කිරීම (`src/lib/api/requireManagementAuth.ts` හි `requireCredentialForManagementScopedKey()`). ඇතුළත් කිරීම-පමණක් යතුරු විවෘතව පවතී.
+- මුරපදයක් සකසා නොමැති **සහ** `INITIAL_PASSWORD` පරිසර විචල්‍යක් නොමැති → ආරම්භක මාදිලිය ඔන්බෝඩින් වීසාර්ඩය සහ loopback ඉල්ලීම් ඉඩ දෙයි, නමුත් නිරාවරණය වූ ජාල ඉල්ලීම්වලට තවමත් අක්තපත්‍ර අවශ්‍යයි.
+- ඕනෑම DB දෝෂයක් → අසාර්ථක-වැසීම (ආරක්ෂිත-පෙරනිමිය).
 
-සේවාලාභී API යතුරු බලාත්මක කිරීම, සෘජු `process.env.REQUIRE_API_KEY` කියවීමක් වෙනුවට `src/shared/utils/featureFlags.ts` තුළ ඇති `isRequireApiKeyEnabled()` භාවිත කරයි. යෙදවූ අවස්ථා සඳහා මෙය වැදගත් වේ: Dashboard → Feature Flags තුළ `REQUIRE_API_KEY` ටොගල කිරීමෙන් DB අතික්රමණයක් ගබඩා වන අතර, මෙම උපකාරකය හවුලේ භාවිත කරන `/v1/*`, `/v1beta/*`, `/models`, `/responses`, `/chat/completions`, `/codex/*` සහ අනෙකුත් සේවාලාභී-API සත්යාපන පරීක්ෂාවලට එය වහාම බලපායි. විශේෂාංග ධජ ගබඩාව කියවිය නොහැකි නම්, සේවාලාභී API සත්යාපනය ප්රවේශය වසා දමා අසාර්ථක වන අතර යතුරක් අවශ්ය කරයි.
+Client API යතුරු බලාත්මක කිරීම `src/shared/utils/featureFlags.ts` හි `isRequireApiKeyEnabled()` භාවිතා කරයි, සෘජු `process.env.REQUIRE_API_KEY` කියවීමක් නොවේ. මෙය යෙදවූ උදාහරණ සඳහා වැදගත්ය: ඩෑෂ්බෝඩ් → Feature Flags හි `REQUIRE_API_KEY` ටොගල් කිරීම DB අභිබවා යාමක් ගබඩා කර `/v1/*`, `/v1beta/*`, `/models`, `/responses`, `/chat/completions`, `/codex/*` සහ මෙම උපයෝගිතාව බෙදාගන්නා අනෙකුත් client-API සත්‍යාපන පරීක්ෂා වලට වහාම බලපායි. විශේෂාංග ධජ ගබඩාව කියවිය නොහැකි නම්, client API සත්‍යාපනය අසාර්ථක-වැසෙන අතර යතුරක් අවශ්‍ය කරයි.
 
 ## පසුගාමී අනුකූලතාව බිඳ දමන වෙනස — v3.8.0
 
@@ -265,9 +264,9 @@ x-omniroute-auth-scopes:    කොමාවෙන් වෙන් කළ ලැ�
 
 හැසිරවුම්කරුවන් තුළ `assertAuth(req, expectedClass)` භාවිත කරන්න — middleware මඟහැර තිබේ නම්, එය `AUTHZ_NOT_INITIALIZED` කේතය සමඟ `AuthzAssertionError` නිකුත් කරයි (පරීක්ෂණවලදී වින්යාස ප්රතිගමන හඳුනාගැනීමට උපකාරී වේ).
 
-## මෙයද බලන්න
+## තවදුරටත් බලන්න
 
-- [API_REFERENCE.md](../reference/API_REFERENCE.md) — එක් එක් endpoint සඳහා සත්යාපන සලකුණ
+- [API_REFERENCE.md](../reference/API_REFERENCE.md) — එක් එක් අන්ත ලක්ෂ්යය සඳහා සත්යාපන සලකුණ
 - [COMPLIANCE.md](../security/COMPLIANCE.md) — සත්යාපන සිදුවීම් සඳහා විගණන ලොගය
-- [MCP-SERVER.md](../frameworks/MCP-SERVER.md) — MCP විෂයපථ බලාත්මක කිරීමේ විස්තර
+- [MCP-SERVER.md](../frameworks/MCP-SERVER.md#three-scope-namespaces) — විෂය පථ නාම අවකාශ තුනක් සහ MCP මෙවලම්-විෂය පථ නාමාවලිය
 - මූලාශ්රය: `src/server/authz/`, `src/lib/api/requireManagementAuth.ts`

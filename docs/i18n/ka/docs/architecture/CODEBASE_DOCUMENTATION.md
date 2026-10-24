@@ -1,6 +1,6 @@
 # OmniRoute Codebase Documentation (ქართული)
 
-🌐 **Languages:** 🇺🇸 [English](../../../../architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇹 [am](../../../am/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇦 [ar](../../../ar/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇿 [az](../../../az/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇬 [bg](../../../bg/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇩 [bn](../../../bn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇿 [cs](../../../cs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇰 [da](../../../da/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇪 [de](../../../de/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇷 [el](../../../el/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇸 [es](../../../es/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇪 [et](../../../et/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇷 [fa](../../../fa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇮 [fi](../../../fi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇷 [fr](../../../fr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇪 [ga](../../../ga/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [gu](../../../gu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ha](../../../ha/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇱 [he](../../../he/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [hi](../../../hi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇷 [hr](../../../hr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇺 [hu](../../../hu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇲 [hy](../../../hy/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇩 [id](../../../id/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ig](../../../ig/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇹 [it](../../../it/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇯🇵 [ja](../../../ja/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇭 [km](../../../km/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [kn](../../../kn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇷 [ko](../../../ko/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇹 [lt](../../../lt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇻 [lv](../../../lv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ml](../../../ml/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [mr](../../../mr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇾 [ms](../../../ms/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇹 [mt](../../../mt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇲 [my](../../../my/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇵 [ne](../../../ne/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇱 [nl](../../../nl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇴 [no](../../../no/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [or](../../../or/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [pa](../../../pa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇭 [phi](../../../phi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇱 [pl](../../../pl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇹 [pt](../../../pt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇴 [ro](../../../ro/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇺 [ru](../../../ru/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇰 [si](../../../si/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇰 [sk](../../../sk/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇮 [sl](../../../sl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇸 [sr](../../../sr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇪 [sv](../../../sv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇪 [sw](../../../sw/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ta](../../../ta/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [te](../../../te/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇭 [th](../../../th/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇷 [tr](../../../tr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇰 [ur](../../../ur/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇿 [uz](../../../uz/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇻🇳 [vi](../../../vi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [yo](../../../yo/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/CODEBASE_DOCUMENTATION.md)
+🌐 **Languages:** 🇺🇸 [English](../../../../architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇹 [am](../../../am/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇦 [ar](../../../ar/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇿 [az](../../../az/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇬 [bg](../../../bg/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇩 [bn](../../../bn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇦 [bs](../../../bs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇿 [cs](../../../cs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇰 [da](../../../da/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇪 [de](../../../de/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇷 [el](../../../el/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇸 [es](../../../es/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇪 [et](../../../et/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇷 [fa](../../../fa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇮 [fi](../../../fi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇷 [fr](../../../fr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇪 [ga](../../../ga/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [gu](../../../gu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ha](../../../ha/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇱 [he](../../../he/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [hi](../../../hi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇷 [hr](../../../hr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇺 [hu](../../../hu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇲 [hy](../../../hy/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇩 [id](../../../id/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ig](../../../ig/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇹 [it](../../../it/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇯🇵 [ja](../../../ja/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇭 [km](../../../km/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [kn](../../../kn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇷 [ko](../../../ko/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇹 [lt](../../../lt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇻 [lv](../../../lv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ml](../../../ml/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [mr](../../../mr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇾 [ms](../../../ms/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇹 [mt](../../../mt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇲 [my](../../../my/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇵 [ne](../../../ne/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇱 [nl](../../../nl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇴 [no](../../../no/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [or](../../../or/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [pa](../../../pa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇭 [phi](../../../phi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇱 [pl](../../../pl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇹 [pt](../../../pt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇴 [ro](../../../ro/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇺 [ru](../../../ru/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇰 [si](../../../si/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇰 [sk](../../../sk/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇮 [sl](../../../sl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇸 [sr](../../../sr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇪 [sv](../../../sv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇪 [sw](../../../sw/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ta](../../../ta/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [te](../../../te/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇭 [th](../../../th/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇷 [tr](../../../tr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇰 [ur](../../../ur/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇿 [uz](../../../uz/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇻🇳 [vi](../../../vi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [yo](../../../yo/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/CODEBASE_DOCUMENTATION.md)
 
 ---
 
@@ -437,7 +437,7 @@ server/
 ## 4. `open-sse/` — სტრიმინგის ძრავის სამუშაო სივრცე
 
 ცალკე npm სამუშაო სივრცე, რომელიც გამოქვეყნებულია როგორც `@omniroute/open-sse`. პასუხისმგებელია მოთხოვნების
-დამუშავებაზე, შემსრულებლებზე, ტრანსლატორებზე, სერვისებზე, ტრანსფორმერსა და MCP სერვერზე.
+დამუშავებაზე, შემსრულებლებზე, ტრანსლატორებზე, სერვისებზე, ტრანსფორმერზე და MCP სერვერზე.
 
 ```
 open-sse/
@@ -445,65 +445,68 @@ open-sse/
 ├── package.json            სამუშაო სივრცის მანიფესტი
 ├── tsconfig.json
 ├── types.d.ts
-├── config/                 პროვაიდერების რეესტრები, სათაურების პროფილები, იდენტობა, …
+├── config/                 პროვაიდერთა რეესტრები, სათაურების პროფილები, იდენტობა, …
 ├── handlers/               მოთხოვნების დამმუშავებლები (ჩატი, ემბედინგები, აუდიო, სურათი, …)
-├── executors/              პროვაიდერზე მორგებული 108 HTTP შემსრულებელი
+├── executors/              პროვაიდერის 156 შემსრულებელი მოდული (შემსრულებელი კლასები + თითოეული პროვაიდერის დამხმარეები)
 ├── translator/             ფორმატის გარდაქმნა (OpenAI ↔ Claude ↔ Gemini ↔ Cursor ↔ Kiro)
 ├── transformer/            Responses API ↔ Chat Completions ნაკადის ტრანსფორმერი
-├── services/               80-ზე მეტი სერვისის მოდული (კომბინაციები, სარეზერვო მარშრუტიზაცია, კვოტები, იდენტობა, …)
+├── services/               80-ზე მეტი სერვისის მოდული (კომბინაციები, სარეზერვო გადართვა, კვოტები, იდენტობა, …)
 ├── utils/                  სტრიმინგის დამხმარეები, TLS კლიენტი, AWS SigV4, პროქსირებული fetch, …
-└── mcp-server/             MCP სერვერი (3 ტრანსპორტი, 33 მოქმედების სფერო, 110 ინსტრუმენტი)
+└── mcp-server/             MCP სერვერი (3 ტრანსპორტი, 33 მოქმედების სფერო, 110 ხელსაწყო)
 ```
 
 ### 4.1 `open-sse/handlers/`
 
-| დამმუშავებელი           | დანიშნულება                                                                                             |
-| ----------------------- | ------------------------------------------------------------------------------------------------------- |
-| `chatCore.ts`           | ჩატის მთავარი კონვეიერი (კეში, სიხშირის შეზღუდვა, კომბინირებული მარშრუტიზაცია, შემსრულებლის გამოძახება) |
-| `responsesHandler.ts`   | OpenAI Responses API-ის შესასვლელი წერტილი                                                              |
-| `embeddings.ts`         | ემბედინგები                                                                                             |
-| `imageGeneration.ts`    | სურათების გენერაცია                                                                                     |
-| `audioSpeech.ts`        | ტექსტის მეტყველებად გარდაქმნა                                                                           |
-| `audioTranscription.ts` | მეტყველების ტექსტად გარდაქმნა                                                                           |
-| `videoGeneration.ts`    | ვიდეოს გენერაცია                                                                                        |
-| `musicGeneration.ts`    | მუსიკის გენერაცია                                                                                       |
-| `rerank.ts`             | ხელახალი რანჟირება                                                                                      |
-| `moderations.ts`        | მოდერაცია                                                                                               |
-| `search.ts`             | ვებძიება                                                                                                |
-| `sseParser.ts`          | SSE მოვლენების პარსერი                                                                                  |
-| `usageExtractor.ts`     | ზედა დონის ნაკადებიდან ტოკენების რაოდენობის ამოღება                                                     |
-| `responseSanitizer.ts`  | პროვაიდერისთვის სპეციფიკური ხმაურის მოცილება                                                            |
-| `responseTranslator.ts` | პროვაიდერის პასუხსა და ტრანსლატორის შრეს შორის დამაკავშირებელი ფენა                                     |
+| დამმუშავებელი           | დანიშნულება                                                                                           |
+| ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| `chatCore.ts`           | ჩატის ძირითადი კონვეიერი (კეში, სიხშირის შეზღუდვა, კომბინირებული მარშრუტიზაცია, შემსრულებლის გაშვება) |
+| `responsesHandler.ts`   | OpenAI Responses API-ის შესვლის წერტილი                                                               |
+| `embeddings.ts`         | ემбедინგები                                                                                           |
+| `imageGeneration.ts`    | სურათების გენერაცია                                                                                   |
+| `audioSpeech.ts`        | ტექსტიდან მეტყველების გენერაცია                                                                       |
+| `audioTranscription.ts` | მეტყველებიდან ტექსტის გენერაცია                                                                       |
+| `videoGeneration.ts`    | ვიდეოს გენერაცია                                                                                      |
+| `musicGeneration.ts`    | მუსიკის გენერაცია                                                                                     |
+| `rerank.ts`             | ხელახალი რანჟირება                                                                                    |
+| `moderations.ts`        | მოდერაცია                                                                                             |
+| `search.ts`             | ვებში ძიება                                                                                           |
+| `sseParser.ts`          | SSE მოვლენების პარსერი                                                                                |
+| `usageExtractor.ts`     | ზემდგომი ნაკადებიდან ტოკენების რაოდენობების ამოღება                                                   |
+| `responseSanitizer.ts`  | პროვაიდერისთვის სპეციფიკური ზედმეტი მონაცემების მოცილება                                              |
+| `responseTranslator.ts` | პროვაიდერის პასუხსა და ტრანსლატორის ფენას შორის დამაკავშირებელი                                       |
 
 ### 4.2 `open-sse/executors/`
 
-პროვაიდერების 108 შემსრულებელი, რომელთაგან თითოეული აფართოებს `BaseExecutor`-ს (`base.ts`):
+ზედა დონის 156 შემსრულებელი მოდული (`*.ts`, გარდა `base.ts`, `index.ts` და ტესტებისა — რაოდენობას
+`npm run check:docs-counts` ზომავს). ყოველი შემსრულებელი კლასი აფართოებს `BaseExecutor`-ს (`base.ts`),
+პირდაპირ ან `DefaultExecutor`-ის ან სხვა შემსრულებლის გავლით; დარჩენილი მოდულები თითოეული პროვაიდერისთვის
+განკუთვნილი დამხმარეებია (ხელსაწყოების სქემები, fetch/TTS ადაპტერები, თავისებურებების დამმუშავებლები). შემსრულებლები მოიცავს:
 
 `antigravity`, `azure-openai`, `blackbox-web`, `cliproxyapi`,
 `chatgpt-web-codex`, `cloudflare-ai`, `codex`, `commandCode`, `cursor`, `default`, `devin-cli`,
 `muse-spark-web`, `nlpcloud`, `opencode`, `perplexity-web`, `petals`,
-`pollinations`, `qoder`, `vertex`, `devin-desktop`, აგრეთვე `claudeIdentity.ts`
-(იდენტობის საერთო დამხმარე) და `index.ts` (რეესტრი).
+`pollinations`, `qoder`, `vertex`, `devin-desktop`, ასევე `claudeIdentity.ts`
+(იდენტობის საზიარო დამხმარე) და `index.ts` (რეესტრი).
 
 > შენიშვნა: აქ ჩამოუთვლელ პროვაიდერებს ემსახურება `default.ts` ზოგადი
-> OpenAI-თან თავსებადი შემსრულებლის გამოყენებით. პროვაიდერების სრული კატალოგი (355 პროვაიდერი) განთავსებულია
+> OpenAI-თან თავსებადი შემსრულებლის გამოყენებით. პროვაიდერების სრული კატალოგი (375 პროვაიდერი) მდებარეობს
 > `src/shared/constants/providers.ts`-ში.
 
 ### 4.3 `open-sse/translator/`
 
-ცენტრალურ-რადიალური ტრანსლაცია (OpenAI არის ცენტრი).
+კვანძისა და სხივების პრინციპზე აგებული ტრანსლაცია (OpenAI არის კვანძი).
 
-- **მოთხოვნების 9 ტრანსლატორი** (`translator/request/`):
+- **მოთხოვნის 9 ტრანსლატორი** (`translator/request/`):
   `antigravity-to-openai`, `claude-to-gemini`, `claude-to-openai`,
   `gemini-to-openai`, `openai-responses`, `openai-to-claude`,
   `openai-to-cursor`, `openai-to-gemini`, `openai-to-kiro`.
-- **პასუხების 9 ტრანსლატორი** (`translator/response/`):
+- **პასუხის 9 ტრანსლატორი** (`translator/response/`):
   `claude-to-openai`, `cursor-to-openai`, `gemini-to-claude`, `gemini-to-openai`,
   `kiro-to-openai`, `openai-responses`, `openai-to-antigravity`,
   `openai-to-claude`.
 - **9 დამხმარე** (`translator/helpers/`):
   `claudeHelper`, `geminiHelper`, `geminiToolsSanitizer`, `maxTokensHelper`,
-  `openaiHelper`, `responsesApiHelper`, `schemaCoercion`, `toolCallHelper`, აგრეთვე
+  `openaiHelper`, `responsesApiHelper`, `schemaCoercion`, `toolCallHelper`, ასევე
   დამხმარეების ტესტები.
 - **სურათების დამხმარეები** (`translator/image/sizeMapper.ts`).
 - ზედა დონე: `bootstrap.ts`, `formats.ts`, `registry.ts`, `index.ts`.
@@ -511,41 +514,41 @@ open-sse/
 ### 4.4 `open-sse/transformer/`
 
 - `responsesTransformer.ts` — `TransformStream`-ზე დაფუძნებული Responses API ↔ Chat
-  Completions კონვერტერი (გამოიყენება `responses/` მარშრუტის უნივერსალური დამმუშავებლის მიერ).
+  Completions გარდამქმნელი (გამოიყენება `responses/` მარშრუტის უნივერსალური დამმუშავებლის მიერ).
 
 ### 4.5 `open-sse/services/`
 
-ძირითადი კომპონენტები (სრული სია მოცემულია `open-sse/services/`-ში):
+ძირითადი კომპონენტები (სრული სია იხილეთ `open-sse/services/`-ში):
 
-| საკითხი                     | ფაილები                                                                                                                                                                                                                                           |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| კომბინირებული მარშრუტიზაცია | `combo.ts` (19 სტრატეგია), `comboConfig.ts`, `comboMetrics.ts`, `comboManifestMetrics.ts`, `comboAgentMiddleware.ts`                                                                                                                              |
-| ავტომატური Combo ძრავა      | `autoCombo/` — `engine.ts`, `scoring.ts`, `taskFitness.ts`, `virtualFactory.ts`, `modePacks.ts`, `autoPrefix.ts`, `persistence.ts`, `providerDiversity.ts`, `providerRegistryAccessor.ts`, `routerStrategy.ts`, `selfHealing.ts`, `index.ts`      |
-| მდგრადობა                   | `accountFallback.ts` (გაგრილების პერიოდი + დაბლოკვა), `errorClassifier.ts`, `requestRejectedStreak.ts`, `emergencyFallback.ts`, `rateLimitManager.ts`, `rateLimitSemaphore.ts`, `accountSemaphore.ts`, `accountSelector.ts`                       |
-| კვოტები                     | `quotaMonitor.ts`, `quotaPreflight.ts`, `bailianQuotaFetcher.ts`, `codexQuotaFetcher.ts`, `deepseekQuotaFetcher.ts`, `openrouterQuotaFetcher.ts`, `openrouterFreeWindow.ts`, `crofUsageFetcher.ts`, `antigravityCredits.ts`                       |
-| კეშირება                    | `reasoningCache.ts`, `searchCache.ts`, `signatureCache.ts`, `requestDedup.ts`                                                                                                                                                                     |
-| მარშრუტიზაციის ინტელექტი    | `intentClassifier.ts`, `taskAwareRouter.ts`, `backgroundTaskDetector.ts`, `volumeDetector.ts`, `wildcardRouter.ts`, `workflowFSM.ts`, `specificityDetector.ts`, `specificityRules.ts`, `specificityTypes.ts`                                      |
-| მოდელების დამუშავება        | `modelCapabilities.ts`, `modelDeprecation.ts`, `modelFamilyFallback.ts`, `modelStrip.ts`, `model.ts`, `provider.ts`, `providerRequestDefaults.ts`, `providerCostData.ts`, `payloadRules.ts`                                                       |
-| შეკუმშვა                    | `compression/` — შეკუმშვის ძრავის სრული დაკავშირება                                                                                                                                                                                               |
-| ტოკენი + სესია              | `tokenRefresh.ts`, `sessionManager.ts`, `apiKeyRotator.ts`, `contextManager.ts`, `contextHandoff.ts`, `systemPrompt.ts`, `roleNormalizer.ts`, `responsesInputSanitizer.ts`, `toolSchemaSanitizer.ts`, `toolLimitDetector.ts`, `thinkingBudget.ts` |
-| დონე / მანიფესტი            | `tierResolver.ts`, `tierConfig.ts`, `tierDefaults.json`, `tierTypes.ts`, `manifestAdapter.ts`                                                                                                                                                     |
-| IP / ქსელი                  | `ipFilter.ts`, `webSearchFallback.ts`                                                                                                                                                                                                             |
-| პაკეტები                    | `batchProcessor.ts`                                                                                                                                                                                                                               |
-| გამოყენება                  | `usage.ts`                                                                                                                                                                                                                                        |
+| საკითხი                  | ფაილები                                                                                                                                                                                                                                                  |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Combo მარშრუტიზაცია      | `combo.ts` (20 სტრატეგია), `comboConfig.ts`, `comboMetrics.ts`, `comboManifestMetrics.ts`, `comboAgentMiddleware.ts`                                                                                                                                     |
+| Auto Combo ძრავა         | `autoCombo/` — `engine.ts`, `scoring.ts`, `taskFitness.ts`, `virtualFactory.ts`, `modePacks.ts`, `autoPrefix.ts`, `persistence.ts`, `providerDiversity.ts`, `providerRegistryAccessor.ts`, `routerStrategy.ts`, `selfHealing.ts`, `index.ts`             |
+| მდგრადობა                | `accountFallback.ts` (მოლოდინის პერიოდი + დაბლოკვა), `errorClassifier.ts`, `requestRejectedStreak.ts`, `emergencyFallback.ts`, `rateLimitManager.ts`, `rateLimitSemaphore.ts`, `accountSemaphore.ts`, `accountSelector.ts`                               |
+| კვოტები                  | `quotaMonitor.ts`, `quotaPreflight.ts`, `bailianQuotaFetcher.ts`, `codexQuotaFetcher.ts`, `deepseekQuotaFetcher.ts`, `openrouterQuotaFetcher.ts`, `openrouterFreeWindow.ts`, `llmgatewayQuotaFetcher.ts`, `crofUsageFetcher.ts`, `antigravityCredits.ts` |
+| კეშირება                 | `reasoningCache.ts`, `searchCache.ts`, `signatureCache.ts`, `requestDedup.ts`                                                                                                                                                                            |
+| მარშრუტიზაციის ინტელექტი | `intentClassifier.ts`, `taskAwareRouter.ts`, `backgroundTaskDetector.ts`, `volumeDetector.ts`, `wildcardRouter.ts`, `workflowFSM.ts`, `specificityDetector.ts`, `specificityRules.ts`, `specificityTypes.ts`                                             |
+| მოდელების დამუშავება     | `modelCapabilities.ts`, `modelDeprecation.ts`, `modelFamilyFallback.ts`, `modelStrip.ts`, `model.ts`, `provider.ts`, `providerRequestDefaults.ts`, `providerCostData.ts`, `payloadRules.ts`                                                              |
+| შეკუმშვა                 | `compression/` — შეკუმშვის ძრავის სრული დაკავშირება                                                                                                                                                                                                      |
+| ტოკენი + სესია           | `tokenRefresh.ts`, `sessionManager.ts`, `apiKeyRotator.ts`, `contextManager.ts`, `contextHandoff.ts`, `systemPrompt.ts`, `roleNormalizer.ts`, `responsesInputSanitizer.ts`, `toolSchemaSanitizer.ts`, `toolLimitDetector.ts`, `thinkingBudget.ts`        |
+| დონე / მანიფესტი         | `tierResolver.ts`, `tierConfig.ts`, `tierDefaults.json`, `tierTypes.ts`, `manifestAdapter.ts`                                                                                                                                                            |
+| IP / ქსელი               | `ipFilter.ts`, `webSearchFallback.ts`                                                                                                                                                                                                                    |
+| პაკეტები                 | `batchProcessor.ts`                                                                                                                                                                                                                                      |
+| გამოყენება               | `usage.ts`                                                                                                                                                                                                                                               |
 
 ### 4.6 `open-sse/mcp-server/`
 
-- **110 უნიკალური ინსტრუმენტი** დაკავშირებულია `server.ts`-ში (45 კანონიკური ინსტრუმენტი `schemas/tools.ts`-ში +
-  მეხსიერების, უნარების, GitHub-უნარების, პულის, გეიმიფიკაციის, პლაგინების, Notion-ის, Obsidian-ის,
+- **110 უნიკალური ხელსაწყო**, დაკავშირებული `server.ts`-ში (45 კანონიკური ხელსაწყო `schemas/tools.ts`-ში +
+  მეხსიერების, უნარების, GitHub-უნარების, პულის, გეიმიფიკაციის, პლაგინის, Notion-ის, Obsidian-ის,
   ლოკალური კორპუსისა და შეკუმშვის მოდულები — გაერთიანება დათვლილია `countUniqueMcpTools`-ის მიერ).
 - **3 ტრანსპორტი**: stdio, HTTP Streamable, SSE.
-- **33 მოქმედების სფერო** აღსრულდება შესრულების დროს — საბაზისო სია მოცემულია `src/shared/constants/mcpScopes.ts`-ში, ხოლო სრული ნაკრები არის თითოეული ინსტრუმენტის მოდულის მიერ გამოცხადებული მოქმედების სფეროების გაერთიანება.
+- გაშვების დროს კონტროლდება **33 წვდომის სფერო** — საბაზისო სია მოცემულია `src/shared/constants/mcpScopes.ts`-ში, სრული ნაკრები კი თითოეული ხელსაწყოს მოდულის მიერ დეკლარირებული წვდომის სფეროების გაერთიანებაა.
 - აუდიტის ცხრილი: `mcp_tool_audit` (ივსება `audit.ts`-ის მიერ).
 - ფაილები: `server.ts`, `index.ts`, `httpTransport.ts`, `audit.ts`, `scopeEnforcement.ts`,
   `runtimeHeartbeat.ts`, `descriptionCompressor.ts`, `schemas/{tools, a2a, audit, index}.ts`,
   `tools/{advancedTools, compressionTools, memoryTools, skillTools}.ts`,
   ასევე ტესტები `__tests__/`-ში.
-- ინსტრუმენტების სრული კატალოგისთვის იხილეთ [MCP-SERVER.md](../frameworks/MCP-SERVER.md).
+- ხელსაწყოების სრული კატალოგისთვის იხილეთ [MCP-SERVER.md](../frameworks/MCP-SERVER.md).
 
 ### 4.7 `open-sse/config/`
 
@@ -553,7 +556,7 @@ open-sse/
 `providerHeaderProfiles.ts`), მოდელების რეესტრები თითოეული ფორმატისთვის (`audioRegistry.ts`,
 `embeddingRegistry.ts`, `imageRegistry.ts`, `moderationRegistry.ts`,
 `musicRegistry.ts`, `rerankRegistry.ts`, `searchRegistry.ts`, `videoRegistry.ts`),
-იდენტიფიკაციის დამხმარე საშუალებები (`codexIdentity.ts`, `codexInstructions.ts`,
+იდენტობის დამხმარე საშუალებები (`codexIdentity.ts`, `codexInstructions.ts`,
 `anthropicHeaders.ts`, `antigravityUpstream.ts`, `antigravityModelAliases.ts`,
 `cliFingerprints.ts`, `toolCloaking.ts`, `defaultThinkingSignature.ts`),
 ავტორიზაციის მონაცემების დამხმარე საშუალებები (`credentialLoader.ts`, `codexClient.ts`) და ღრუბლოვანი
@@ -656,7 +659,7 @@ bin/
 
 ## 8. `scripts/`
 
-დანიშნულების მიხედვით ორგანიზებულია 6 ქვესაქაღალდედ.
+დანიშნულების მიხედვით ორგანიზებულია 6 ქვე-საქაღალდედ.
 
 - **`scripts/build/`** — `build-next-isolated.mjs`, `prepublish.ts`,
   `prepare-electron-standalone.mjs`, `pack-artifact-policy.ts`,
@@ -668,7 +671,11 @@ bin/
   `v1-ws-bridge.mjs`, `smoke-electron-packaged.mjs`,
   `run-playwright-tests.mjs`, `run-ecosystem-tests.mjs`,
   `run-protocol-clients-tests.mjs`, `sync-env.mjs`, `healthcheck.mjs`,
-  `system-info.mjs`.
+  `system-info.mjs`, ასევე PR-ების მონიტორინგისთვის განკუთვნილი მხოლოდ წაკითხვადი დამხმარე სკრიპტები:
+  `ci-discriminate.sh` (PR-ის წარუმატებელი შემოწმებების ხელწერებს ახარისხებს საკუთარ /
+  მემკვიდრეობით / უცნობ კატეგორიებად, ეტალონურ PR-თან ან საბაზისო წარუმატებლობის საკითხთან შედარებით) და `audit-worktree.sh`
+  (შეცვლილი ფაილები, დაცული ზედაპირები, წაშლილი მტკიცებები, ჩახშობების რაოდენობა, დარჩენილი
+  დროებითი tsconfig-ები, PR-ის head ადგილობრივ HEAD-თან შედარებით — მუშაკის PR-ის მიღებამდე).
 - **`scripts/check/`** — `check-cycles.mjs`, `check-docs-sync.mjs`,
   `check-docs-counts-sync.mjs`, `check-env-doc-sync.mjs`,
   `check-deprecated-versions.mjs`, `check-route-validation.mjs`,

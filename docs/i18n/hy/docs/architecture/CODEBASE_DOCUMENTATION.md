@@ -1,6 +1,6 @@
 # OmniRoute Codebase Documentation (Հայերեն)
 
-🌐 **Languages:** 🇺🇸 [English](../../../../architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇹 [am](../../../am/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇦 [ar](../../../ar/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇿 [az](../../../az/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇬 [bg](../../../bg/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇩 [bn](../../../bn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇿 [cs](../../../cs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇰 [da](../../../da/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇪 [de](../../../de/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇷 [el](../../../el/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇸 [es](../../../es/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇪 [et](../../../et/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇷 [fa](../../../fa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇮 [fi](../../../fi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇷 [fr](../../../fr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇪 [ga](../../../ga/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [gu](../../../gu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ha](../../../ha/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇱 [he](../../../he/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [hi](../../../hi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇷 [hr](../../../hr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇺 [hu](../../../hu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇩 [id](../../../id/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ig](../../../ig/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇹 [it](../../../it/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇯🇵 [ja](../../../ja/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇪 [ka](../../../ka/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇭 [km](../../../km/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [kn](../../../kn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇷 [ko](../../../ko/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇹 [lt](../../../lt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇻 [lv](../../../lv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ml](../../../ml/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [mr](../../../mr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇾 [ms](../../../ms/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇹 [mt](../../../mt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇲 [my](../../../my/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇵 [ne](../../../ne/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇱 [nl](../../../nl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇴 [no](../../../no/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [or](../../../or/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [pa](../../../pa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇭 [phi](../../../phi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇱 [pl](../../../pl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇹 [pt](../../../pt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇴 [ro](../../../ro/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇺 [ru](../../../ru/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇰 [si](../../../si/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇰 [sk](../../../sk/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇮 [sl](../../../sl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇸 [sr](../../../sr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇪 [sv](../../../sv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇪 [sw](../../../sw/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ta](../../../ta/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [te](../../../te/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇭 [th](../../../th/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇷 [tr](../../../tr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇰 [ur](../../../ur/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇿 [uz](../../../uz/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇻🇳 [vi](../../../vi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [yo](../../../yo/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/CODEBASE_DOCUMENTATION.md)
+🌐 **Languages:** 🇺🇸 [English](../../../../architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇹 [am](../../../am/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇦 [ar](../../../ar/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇿 [az](../../../az/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇬 [bg](../../../bg/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇩 [bn](../../../bn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇦 [bs](../../../bs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇿 [cs](../../../cs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇰 [da](../../../da/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇪 [de](../../../de/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇷 [el](../../../el/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇸 [es](../../../es/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇪 [et](../../../et/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇷 [fa](../../../fa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇮 [fi](../../../fi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇷 [fr](../../../fr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇪 [ga](../../../ga/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [gu](../../../gu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ha](../../../ha/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇱 [he](../../../he/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [hi](../../../hi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇷 [hr](../../../hr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇺 [hu](../../../hu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇩 [id](../../../id/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ig](../../../ig/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇹 [it](../../../it/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇯🇵 [ja](../../../ja/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇪 [ka](../../../ka/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇭 [km](../../../km/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [kn](../../../kn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇷 [ko](../../../ko/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇹 [lt](../../../lt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇻 [lv](../../../lv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ml](../../../ml/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [mr](../../../mr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇾 [ms](../../../ms/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇹 [mt](../../../mt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇲 [my](../../../my/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇵 [ne](../../../ne/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇱 [nl](../../../nl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇴 [no](../../../no/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [or](../../../or/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [pa](../../../pa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇭 [phi](../../../phi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇱 [pl](../../../pl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇹 [pt](../../../pt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇴 [ro](../../../ro/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇺 [ru](../../../ru/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇰 [si](../../../si/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇰 [sk](../../../sk/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇮 [sl](../../../sl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇸 [sr](../../../sr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇪 [sv](../../../sv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇪 [sw](../../../sw/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ta](../../../ta/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [te](../../../te/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇭 [th](../../../th/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇷 [tr](../../../tr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇰 [ur](../../../ur/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇿 [uz](../../../uz/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇻🇳 [vi](../../../vi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [yo](../../../yo/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/CODEBASE_DOCUMENTATION.md)
 
 ---
 
@@ -436,7 +436,7 @@ server/
 
 ## 4. `open-sse/` — Հոսքային շարժիչի աշխատանքային տարածք
 
-Առանձին npm աշխատանքային տարածք, որը հրապարակվում է որպես `@omniroute/open-sse`։ Պարունակում է հարցումների մշակումը, կատարիչները, թարգմանիչները, ծառայությունները, փոխակերպիչը և MCP սերվերը։
+Առանձին npm աշխատանքային տարածք, որը հրապարակվում է որպես `@omniroute/open-sse`։ Պատասխանատու է հարցումների մշակման, կատարիչների, թարգմանիչների, ծառայությունների, փոխակերպիչի և MCP սերվերի համար։
 
 ```
 open-sse/
@@ -446,79 +446,79 @@ open-sse/
 ├── types.d.ts
 ├── config/                 Մատակարարների ռեեստրներ, վերնագրերի պրոֆիլներ, ինքնություն, …
 ├── handlers/               Հարցումների մշակիչներ (զրույց, ներդրումներ, աուդիո, պատկեր, …)
-├── executors/              Մատակարարներին հատուկ 108 HTTP կատարիչ
-├── translator/             Ձևաչափերի փոխակերպում (OpenAI ↔ Claude ↔ Gemini ↔ Cursor ↔ Kiro)
+├── executors/              Մատակարարների 156 կատարիչ մոդուլ (կատարիչ դասեր + յուրաքանչյուր մատակարարի օժանդակ միջոցներ)
+├── translator/             Ձևաչափի փոխակերպում (OpenAI ↔ Claude ↔ Gemini ↔ Cursor ↔ Kiro)
 ├── transformer/            Responses API ↔ Chat Completions հոսքի փոխակերպիչ
 ├── services/               80+ ծառայության մոդուլ (համակցումներ, պահուստային անցում, քվոտաներ, ինքնություն, …)
-├── utils/                  Հոսքային մշակման օժանդակ գործիքներ, TLS հաճախորդ, AWS SigV4, պրոքսի հարցումներ, …
-└── mcp-server/             MCP սերվեր (3 փոխադրամիջոց, 33 հասանելիության տիրույթ, 110 գործիք)
+├── utils/                  Հոսքային օժանդակ միջոցներ, TLS հաճախորդ, AWS SigV4, միջնորդավորված հարցում, …
+└── mcp-server/             MCP սերվեր (3 փոխադրման եղանակ, 33 տիրույթ, 110 գործիք)
 ```
 
 ### 4.1 `open-sse/handlers/`
 
-| Մշակիչ                  | Նպատակ                                                                                        |
-| ----------------------- | --------------------------------------------------------------------------------------------- |
-| `chatCore.ts`           | Զրույցի հիմնական շղթա (քեշ, արագության սահմանափակում, համակցված երթուղավորում, կատարիչի կանչ) |
-| `responsesHandler.ts`   | OpenAI Responses API-ի մուտքային կետ                                                          |
-| `embeddings.ts`         | Ներդրումներ                                                                                   |
-| `imageGeneration.ts`    | Պատկերների գեներացում                                                                         |
-| `audioSpeech.ts`        | Տեքստից խոսք                                                                                  |
-| `audioTranscription.ts` | Խոսքից տեքստ                                                                                  |
-| `videoGeneration.ts`    | Տեսանյութերի գեներացում                                                                       |
-| `musicGeneration.ts`    | Երաժշտության գեներացում                                                                       |
-| `rerank.ts`             | Վերադասակարգում                                                                               |
-| `moderations.ts`        | Բովանդակության վերահսկում                                                                     |
-| `search.ts`             | Վեբ որոնում                                                                                   |
-| `sseParser.ts`          | SSE իրադարձությունների վերլուծիչ                                                              |
-| `usageExtractor.ts`     | Վերին հոսքերից թոքենների քանակների դուրսբերում                                                |
-| `responseSanitizer.ts`  | Մատակարարին հատուկ աղմուկի հեռացում                                                           |
-| `responseTranslator.ts` | Մատակարարի պատասխանի և թարգմանության շերտի միջև կապակցում                                     |
+| Մշակիչ                  | Նպատակ                                                                                                        |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `chatCore.ts`           | Զրույցի հիմնական մշակաշղթա (քեշ, հաճախականության սահմանափակում, համակցված երթուղավորում, կատարիչի գործարկում) |
+| `responsesHandler.ts`   | OpenAI Responses API-ի մուտքային կետ                                                                          |
+| `embeddings.ts`         | Ներդրումներ                                                                                                   |
+| `imageGeneration.ts`    | Պատկերի գեներացում                                                                                            |
+| `audioSpeech.ts`        | Տեքստից խոսք                                                                                                  |
+| `audioTranscription.ts` | Խոսքից տեքստ                                                                                                  |
+| `videoGeneration.ts`    | Տեսանյութի գեներացում                                                                                         |
+| `musicGeneration.ts`    | Երաժշտության գեներացում                                                                                       |
+| `rerank.ts`             | Վերադասակարգում                                                                                               |
+| `moderations.ts`        | Բովանդակության վերահսկում                                                                                     |
+| `search.ts`             | Վեբ որոնում                                                                                                   |
+| `sseParser.ts`          | SSE իրադարձությունների վերլուծիչ                                                                              |
+| `usageExtractor.ts`     | Վերին հոսքերի միջից թոքենների քանակների դուրսբերում                                                           |
+| `responseSanitizer.ts`  | Մատակարարին հատուկ աղմուկի հեռացում                                                                           |
+| `responseTranslator.ts` | Կապող շերտ մատակարարի պատասխանի և թարգմանիչի շերտի միջև                                                       |
 
 ### 4.2 `open-sse/executors/`
 
-Մատակարարների 108 կատարիչ, որոնցից յուրաքանչյուրը ընդլայնում է `BaseExecutor`-ը (`base.ts`)․
+Վերին մակարդակի 156 կատարիչ մոդուլ (`*.ts`՝ առանց `base.ts`-ի, `index.ts`-ի և թեստերի. քանակը չափվում է `npm run check:docs-counts` հրամանով)։ Յուրաքանչյուր կատարիչ դաս ընդլայնում է `BaseExecutor`-ը (`base.ts`)՝ ուղղակիորեն կամ `DefaultExecutor`-ի կամ մեկ այլ կատարիչի միջոցով։ Մնացած մոդուլները յուրաքանչյուր մատակարարի համար նախատեսված օժանդակ միջոցներ են (գործիքների սխեմաներ, հարցումների/TTS ադապտերներ, առանձնահատկությունների մշակիչներ)։ Կատարիչների թվում են՝
 
 `antigravity`, `azure-openai`, `blackbox-web`, `cliproxyapi`,
 `chatgpt-web-codex`, `cloudflare-ai`, `codex`, `commandCode`, `cursor`, `default`, `devin-cli`,
 `muse-spark-web`, `nlpcloud`, `opencode`, `perplexity-web`, `petals`,
 `pollinations`, `qoder`, `vertex`, `devin-desktop`, ինչպես նաև `claudeIdentity.ts`
-(ինքնության ընդհանուր օժանդակ գործիք) և `index.ts` (ռեեստր)։
+(ընդհանուր ինքնության օժանդակ միջոց) և `index.ts` (ռեեստր)։
 
 > Նշում․ այստեղ չթվարկված մատակարարները սպասարկվում են `default.ts`-ի միջոցով՝ օգտագործելով ընդհանուր
-> OpenAI-համատեղելի կատարիչը։ Մատակարարների ամբողջական կատալոգը (355 մատակարար) գտնվում է
+> OpenAI-ի հետ համատեղելի կատարիչը։ Մատակարարների ամբողջական կատալոգը (375 մատակարար) գտնվում է
 > `src/shared/constants/providers.ts`-ում։
 
 ### 4.3 `open-sse/translator/`
 
-Կենտրոն-և-ճառագայթ թարգմանություն (OpenAI-ը կենտրոնն է)։
+Հանգույցային թարգմանություն (OpenAI-ը կենտրոնական հանգույցն է)։
 
-- **Հարցումների 9 թարգմանիչ** (`translator/request/`)․
+- **Հարցումների 9 թարգմանիչ** (`translator/request/`)՝
   `antigravity-to-openai`, `claude-to-gemini`, `claude-to-openai`,
   `gemini-to-openai`, `openai-responses`, `openai-to-claude`,
   `openai-to-cursor`, `openai-to-gemini`, `openai-to-kiro`։
-- **Պատասխանների 9 թարգմանիչ** (`translator/response/`)․
+- **Պատասխանների 9 թարգմանիչ** (`translator/response/`)՝
   `claude-to-openai`, `cursor-to-openai`, `gemini-to-claude`, `gemini-to-openai`,
   `kiro-to-openai`, `openai-responses`, `openai-to-antigravity`,
   `openai-to-claude`։
-- **9 օժանդակ գործիք** (`translator/helpers/`)․
+- **9 օժանդակ միջոց** (`translator/helpers/`)՝
   `claudeHelper`, `geminiHelper`, `geminiToolsSanitizer`, `maxTokensHelper`,
   `openaiHelper`, `responsesApiHelper`, `schemaCoercion`, `toolCallHelper`, ինչպես նաև
-  օժանդակ գործիքների թեստեր։
-- **Պատկերների օժանդակ գործիքներ** (`translator/image/sizeMapper.ts`)։
-- Վերին մակարդակում՝ `bootstrap.ts`, `formats.ts`, `registry.ts`, `index.ts`։
+  օժանդակ միջոցների թեստերը։
+- **Պատկերների օժանդակ միջոցներ** (`translator/image/sizeMapper.ts`)։
+- Վերին մակարդակ՝ `bootstrap.ts`, `formats.ts`, `registry.ts`, `index.ts`։
 
 ### 4.4 `open-sse/transformer/`
 
 - `responsesTransformer.ts` — `TransformStream`-ի վրա հիմնված Responses API ↔ Chat
-  Completions փոխարկիչ (օգտագործվում է `responses/` երթուղու համընդհանուր մշակիչի կողմից)։
+  Completions փոխարկիչ (օգտագործվում է `responses/` երթուղու բոլոր չհամընկնող հարցումների համար)։
 
 ### 4.5 `open-sse/services/`
 
-Կարևոր բաղադրիչներ (ամբողջական ցանկը՝ `open-sse/services/`-ում)․
+Հիմնական բաղադրիչները (ամբողջական ցանկը՝ `open-sse/services/`-ում)․
 
 | Խնդիր                        | Ֆայլեր                                                                                                                                                                                                                                                   |
 | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Combo երթուղավորում          | `combo.ts` (19 ռազմավարություն), `comboConfig.ts`, `comboMetrics.ts`, `comboManifestMetrics.ts`, `comboAgentMiddleware.ts`                                                                                                                               |
+| Combo երթուղավորում          | `combo.ts` (20 ռազմավարություն), `comboConfig.ts`, `comboMetrics.ts`, `comboManifestMetrics.ts`, `comboAgentMiddleware.ts`                                                                                                                               |
 | Auto Combo շարժիչ            | `autoCombo/` — `engine.ts`, `scoring.ts`, `taskFitness.ts`, `virtualFactory.ts`, `modePacks.ts`, `autoPrefix.ts`, `persistence.ts`, `providerDiversity.ts`, `providerRegistryAccessor.ts`, `routerStrategy.ts`, `selfHealing.ts`, `index.ts`             |
 | Կայունություն                | `accountFallback.ts` (սպասման ժամանակահատված + արգելափակում), `errorClassifier.ts`, `requestRejectedStreak.ts`, `emergencyFallback.ts`, `rateLimitManager.ts`, `rateLimitSemaphore.ts`, `accountSemaphore.ts`, `accountSelector.ts`                      |
 | Քվոտաներ                     | `quotaMonitor.ts`, `quotaPreflight.ts`, `bailianQuotaFetcher.ts`, `codexQuotaFetcher.ts`, `deepseekQuotaFetcher.ts`, `openrouterQuotaFetcher.ts`, `openrouterFreeWindow.ts`, `llmgatewayQuotaFetcher.ts`, `crofUsageFetcher.ts`, `antigravityCredits.ts` |
@@ -534,16 +534,16 @@ open-sse/
 
 ### 4.6 `open-sse/mcp-server/`
 
-- **110 եզակի գործիք**՝ կապակցված `server.ts`-ում (45 կանոնական՝ `schemas/tools.ts`-ում +
-  հիշողության, հմտությունների, GitHub հմտությունների, պուլի, գեյմիֆիկացիայի, փլագինի, Notion-ի, Obsidian-ի,
-  տեղական կորպուսի և սեղմման մոդուլներ — միավորումը հաշվարկվում է `countUniqueMcpTools`-ով)։
-- **3 փոխադրման եղանակ**՝ stdio, HTTP Streamable, SSE։
-- **33 հասանելիության շրջանակ**՝ պարտադրված կատարման ժամանակ. հիմնական ցանկը գտնվում է `src/shared/constants/mcpScopes.ts`-ում, իսկ ամբողջական բազմությունը յուրաքանչյուր գործիքային մոդուլի հայտարարած շրջանակների միավորումն է։
+- **110 եզակի գործիք**՝ կապակցված `server.ts`-ում (45 կանոնական գործիք՝ `schemas/tools.ts`-ում +
+  հիշողության, հմտությունների, GitHub հմտությունների, պուլի, խաղայնացման, փլագինների, Notion-ի, Obsidian-ի,
+  տեղային կորպուսի և սեղմման մոդուլներ. միավորումը հաշվարկվում է `countUniqueMcpTools`-ի միջոցով)։
+- **3 փոխադրամիջոց**՝ stdio, HTTP Streamable, SSE։
+- **33 հասանելիության տիրույթ**՝ կիրառված կատարման ժամանակ. հիմնական ցանկը գտնվում է `src/shared/constants/mcpScopes.ts`-ում, իսկ ամբողջական բազմությունը յուրաքանչյուր գործիքային մոդուլի հայտարարած տիրույթների միավորումն է։
 - Աուդիտի աղյուսակ՝ `mcp_tool_audit` (լրացվում է `audit.ts`-ի միջոցով)։
 - Ֆայլեր՝ `server.ts`, `index.ts`, `httpTransport.ts`, `audit.ts`, `scopeEnforcement.ts`,
   `runtimeHeartbeat.ts`, `descriptionCompressor.ts`, `schemas/{tools, a2a, audit, index}.ts`,
   `tools/{advancedTools, compressionTools, memoryTools, skillTools}.ts`,
-  ինչպես նաև թեստեր՝ `__tests__/`-ում։
+  ինչպես նաև թեստերը՝ `__tests__/`-ում։
 - Գործիքների ամբողջական կատալոգի համար տե՛ս [MCP-SERVER.md](../frameworks/MCP-SERVER.md)։
 
 ### 4.7 `open-sse/config/`
@@ -562,7 +562,7 @@ open-sse/
 
 ### 4.8 `open-sse/utils/`
 
-Հոսքային պարզունակներ և մատակարարի օժանդակ գործիքներ՝ `stream.ts`, `streamHandler.ts`,
+Հոսքային պարզունակներ և մատակարարների օժանդակ գործիքներ՝ `stream.ts`, `streamHandler.ts`,
 `streamHelpers.ts`, `streamPayloadCollector.ts`, `streamReadiness.ts`,
 `sseHeartbeat.ts`, `proxyFetch.ts`, `proxyDispatcher.ts`, `tlsClient.ts`,
 `networkProxy.ts`, `awsSigV4.ts`, `cacheControlPolicy.ts`,
@@ -667,7 +667,11 @@ bin/
   `v1-ws-bridge.mjs`, `smoke-electron-packaged.mjs`,
   `run-playwright-tests.mjs`, `run-ecosystem-tests.mjs`,
   `run-protocol-clients-tests.mjs`, `sync-env.mjs`, `healthcheck.mjs`,
-  `system-info.mjs`։
+  `system-info.mjs`, ինչպես նաև PR-ների վերահսկման՝ միայն կարդալու համար նախատեսված օժանդակ գործիքները՝
+  `ci-discriminate.sh` (PR-ի ձախողված ստուգումների ստորագրությունները դասակարգում է որպես սեփական / ժառանգված /
+  անհայտ՝ համեմատելով հղումային PR-ի կամ բազային ճյուղի չանցնող ստուգումների խնդրի հետ) և `audit-worktree.sh`
+  (փոփոխված ֆայլեր, պաշտպանված հատվածներ, հեռացված assert-ներ, ճնշումների քանակներ, մնացորդային
+  ժամանակավոր tsconfig-ներ, PR-ի head-ն ընդդեմ տեղային HEAD-ի՝ նախքան աշխատողի PR-ն ընդունելը)։
 - **`scripts/check/`** — `check-cycles.mjs`, `check-docs-sync.mjs`,
   `check-docs-counts-sync.mjs`, `check-env-doc-sync.mjs`,
   `check-deprecated-versions.mjs`, `check-route-validation.mjs`,

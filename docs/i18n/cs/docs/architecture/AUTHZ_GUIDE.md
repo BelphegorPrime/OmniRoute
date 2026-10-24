@@ -1,84 +1,70 @@
 # Authorization Guide (Čeština)
 
-🌐 **Languages:** 🇺🇸 [English](../../../../architecture/AUTHZ_GUIDE.md) · 🇪🇹 [am](../../../am/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇿 [az](../../../az/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇰 [da](../../../da/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇪 [de](../../../de/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇷 [el](../../../el/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇸 [es](../../../es/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇪 [et](../../../et/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇱 [he](../../../he/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇩 [id](../../../id/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇹 [it](../../../it/docs/architecture/AUTHZ_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇭 [km](../../../km/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇲 [my](../../../my/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇴 [no](../../../no/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [or](../../../or/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇰 [si](../../../si/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [te](../../../te/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇭 [th](../../../th/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/architecture/AUTHZ_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/AUTHZ_GUIDE.md)
+🌐 **Languages:** 🇺🇸 [English](../../../../architecture/AUTHZ_GUIDE.md) · 🇪🇹 [am](../../../am/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇿 [az](../../../az/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇰 [da](../../../da/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇪 [de](../../../de/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇷 [el](../../../el/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇸 [es](../../../es/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇪 [et](../../../et/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇱 [he](../../../he/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇩 [id](../../../id/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇹 [it](../../../it/docs/architecture/AUTHZ_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇭 [km](../../../km/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇲 [my](../../../my/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇴 [no](../../../no/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [or](../../../or/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇰 [si](../../../si/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [te](../../../te/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇭 [th](../../../th/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/architecture/AUTHZ_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/AUTHZ_GUIDE.md)
 
 ---
 
 > **Zdroj pravdy:** `src/server/authz/`, `src/shared/constants/publicApiRoutes.ts`, `src/lib/api/requireManagementAuth.ts`, `src/shared/utils/apiAuth.ts`
-> **Poslední aktualizace:** 2026-06-28 — v3.8.40
+> **Poslední aktualizace:** 2026-09-22 — jmenné prostory rozsahů odkazují na MCP-SERVER.md
 
-OmniRoute používá autorizační řetězec zohledňující konkrétní trasu, který kontroluje každý požadavek API. Klasifikace je **deterministická** a **ve výchozím stavu zamítavá** — vše, co nelze klasifikovat, skončí jako `MANAGEMENT` a vyžaduje relaci nebo token s oprávněními pro správu. Tato stránka vysvětluje model pro vývojáře, kteří udržují trasy nebo navrhují nové koncové body.
+OmniRoute používá autorizační řetězec zohledňující routy, který kontroluje každý požadavek API. Klasifikace je **deterministická** a **fail-closed** — cokoli, co nelze klasifikovat, spadá do kategorie `MANAGEMENT` a vyžaduje relaci nebo token s oprávněními pro správu. Tato stránka vysvětluje model určený technikům, kteří udržují routy nebo navrhují nové koncové body.
 
-![Autorizační řetězec (3 třídy tras + vyhodnocení zásad)](../diagrams/exported/authz-pipeline.svg)
+![Autorizační řetězec (3 třídy rout + vyhodnocení zásad)](../diagrams/exported/authz-pipeline.svg)
 
 > Zdroj: [diagrams/authz-pipeline.mmd](../diagrams/authz-pipeline.mmd)
 
-## Dva režimy ověřování
+## Dva režimy autentizace
 
-### 1. Klíč API (Bearer)
+### 1. API klíč (Bearer)
 
-Používá se pro klientská API kompatibilní s OpenAI/Anthropic/Gemini a pro několik tras správy, pokud má klíč rozsah oprávnění `manage`.
+Používá se pro klientská API kompatibilní s OpenAI/Anthropic/Gemini a pro několik správcovských tras, pokud má klíč rozsah `manage`.
 
 ```
 Authorization: Bearer <api-key>
 ```
 
-Ověřuje se pomocí `isValidApiKey()` / `extractApiKey()` v `src/sse/services/auth.ts` a je znovu exportován prostřednictvím `src/shared/utils/apiAuth.ts`. Validátor také přijímá proměnné prostředí `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` jako trvalé průchozí klíče (issue #1350).
+Ověřuje se pomocí `isValidApiKey()` / `extractApiKey()` v `src/sse/services/auth.ts` a znovu se exportuje přes `src/shared/utils/apiAuth.ts`. Validátor také přijímá proměnné prostředí `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` jako trvalé klíče pro předávání (issue #1350).
 
-### 2. Relace řídicího panelu (cookie auth_token)
+### 2. Relace panelu (cookie auth_token)
 
-Pro stránky řídicího panelu a operace správce.
+Pro stránky panelu a administrátorské operace.
 
 ```
 Cookie: auth_token=<JWT signed with JWT_SECRET>
 ```
 
-Cookie představuje relaci pouze tehdy, když je JWT úspěšně ověřen **a** obsahuje `authenticated: true`
-(`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). Každý
-spotřebitel této cookie (ochrana tras, obnovení autorizačního řetězce, navázání spojení WebSocket, živý
-server, `/api/settings/require-login`, `/api/auth/status`) používá tohoto pomocníka.
-Existují i jiné JWT podepsané pomocí `JWT_SECRET` — průchozí mechanismus Cursor CLI vydává
-držitelům klíčů tokeny s `iss "omniroute" / aud "cursor-cli"` — ty však nikdy nepředstavují relace
-(#13298).
+Cookie je relace pouze tehdy, když JWT projde ověřením **a** obsahuje `authenticated: true` (`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). Každý příjemce cookie (strážce tras panelu (`isDashboardSessionAuthenticated()`), obnovení v authz pipeline, WebSocket handshake, živý server, `/api/settings/require-login`, `/api/auth/status`) prochází tímto pomocníkem. Existují i jiné JWT podepsané `JWT_SECRET` — passthrough CLI Cursor vydává tokeny `iss "omniroute" / aud "cursor-cli"` držitelům klíče — a nikdy nejsou relacemi (#13298).
 
-Ověřuje se pomocí `isDashboardSessionAuthenticated()` v `src/shared/utils/apiAuth.ts`. Řetězec automaticky obnoví JWT, pokud do konce jeho 30denní platnosti zbývá méně než 7 dní.
+Ověřuje se pomocí `isDashboardSessionAuthenticated()` v `src/shared/utils/apiAuth.ts`. Pipeline automaticky obnoví JWT, pokud mu zbývá méně než 7 dní z jeho 30denní životnosti.
 
-Některé trasy správy přijímají **kterýkoli** režim: cookie NEBO `Bearer <key>`, pokud má klíč API rozsah oprávnění `manage` (nebo `admin`). To umožňuje pracovní postup „konfigurovatelné prostřednictvím volání API“, který byl přidán ve verzi v3.8.
+Relace může skončit dříve než po 30 dnech, protože každý vydavatel prochází přes `mintDashboardSessionToken` (čas vydání `iat` a identifikátor `jti`) a ověřovatel kontroluje dvě nastavení: `sessionsValidAfter`, které nastaví změna hesla, takže každá relace vydaná před ní přestane platit (prohlížeč, který heslo změnil, dostane nové cookie), a `revokedDashboardSessions`, do něhož `POST /api/auth/logout` přidá `jti` odhlášené relace. Relace vydané starší verzí tyto nároky nemají a zůstávají platné až do první změny hesla. Pokud nastavení nelze přečíst, relace se nepovažuje za důvěryhodnou.
 
-#### Volitelná přihlašovací brána OIDC (#6973)
+Některé správcovské trasy přijímají **buď** režim: cookie NEBO `Bearer <key>`, pokud API klíč má rozsah `manage` (nebo `admin`). Tím funguje pracovní postup „konfigurovatelné přes API volání“ přidaný ve verzi v3.8.
 
-Přihlášení správce řídicího panelu podporuje vedle výchozího přihlášení heslem také **volitelný** tok OIDC (OpenID Connect) — přihlášení heslem není nikdy odstraněno, pouze
-doplněno:
+#### Volitelná brána přihlášení OIDC (#6973)
 
-- Je zakázáno, pokud `settings.oidcEnabled !== true` **nebo** nejsou všechny hodnoty `oidcIssuer` /
-  `oidcClientId` / `oidcClientSecret` nakonfigurovány (Nastavení → Ověřování).
-  V opačném případě vrací `GET /api/auth/oidc/login` stav `400`.
-- `GET /api/auth/oidc/login` zjistí `authorization_endpoint` z konfigurace
-  `/.well-known/openid-configuration` vydavatele (jako záložní možnost použije
-  `<issuer>/authorize`), sestaví URI přesměrování z příchozího požadavku
-  (s podporou `x-forwarded-proto`) a přesměruje na poskytovatele identity (IdP) s náhodnou hodnotou `state`
-  uloženou v cookie `oidc_state` s příznakem `httpOnly`.
-- `GET /api/auth/oidc/callback` ověří `state`, vymění autorizační
-  kód a ověří podpis tokenu ID prostřednictvím JWKS vydavatele
-  (`createRemoteJWKSet` z balíčku `jose`, ukládáno do mezipaměti pro každé URI JWKS) s kontrolami `issuer`/`audience`.
-  Volitelný seznam povolených hodnot `oidcAllowedSubjects` porovnává deklaraci `sub`
-  tokenu nebo jeho deklaraci `email` — deklarace e-mailu je akceptována pouze tehdy, když
-  `email_verified === true`, takže neověřený e-mail u IdP nemůže nikdy projít
-  bránou.
-- Při úspěchu vytvoří **naprosto stejný** 30denní JWT `auth_token`, jaký vydává přihlášení
-  heslem (`src/app/api/auth/login/route.ts`), takže zbytek řetězce relace
-  řídicího panelu (automatické obnovení, příznaky cookie) zůstává beze změny —
-  OIDC pouze nahrazuje způsob vytvoření cookie, nikoli oprávnění, která cookie uděluje.
+Administrátorské přihlášení do panelu podporuje také volitelný tok OIDC (OpenID Connect) vedle výchozího přihlášení heslem — přihlášení heslem se nikdy neodstraňuje, pouze se doplňuje:
+
+- Vypnuto, pokud `settings.oidcEnabled === true` **a** `oidcIssuer` / `oidcClientId` / `oidcClientSecret` nejsou všechny nastaveny (Settings → Auth). `GET /api/auth/oidc/login` jinak vrací `400`.
+- `GET /api/auth/oidc/login` zjistí `authorization_endpoint` z `/.well-known/openid-configuration` vydavatele (jinak použije `<issuer>/authorize`), sestaví redirect URI z příchozího požadavku (respektuje `x-forwarded-proto`) a přesměruje na IdP s náhodným `state` uloženým v cookie `oidc_state` s příznakem `httpOnly`.
+- `GET /api/auth/oidc/callback` ověří `state`, vymění autorizační kód a ověří podpis ID tokenu přes JWKS vydavatele (`createRemoteJWKSet` z `jose`, cache na URI JWKS) s kontrolou `issuer`/`audience`. Seznam `oidcAllowedSubjects` je povinný: porovnává se s claimem `sub` tokenu nebo s claimem `email` — claim e-mailu se uplatní pouze tehdy, když `email_verified === true`, takže neověřený e-mail u IdP nikdy nepropustí bránu — a bez položek callback odmítne každé přihlášení (`not_configured`).
+- Po úspěchu vydá **přesně stejné** 30denní JWT `auth_token`, jaké vydává přihlášení heslem (`src/app/api/auth/login/route.ts`), takže zbytek pipeline relace panelu (automatické obnovení, příznaky cookie) zůstává nezměněn — OIDC mění pouze způsob vydání cookie, nikoli to, co uděluje.
+- Každé nastavení `oidc*` (`oidcEnabled`, `oidcDisablePasswordLogin`, `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`, `oidcRedirectPath`, `oidcScopes`) je v `SECURITY_IMPACTING_SETTINGS_KEYS` (`src/shared/constants/securityImpactingSettings.ts`): `PATCH /api/settings` vrací `400 PASSWORD_REQUIRED`, pokud tělo požadavku neobsahuje heslo správy jako `currentPassword` (`401 PASSWORD_MISMATCH`, pokud je špatné). `oidcDisablePasswordLogin` zakáže _přihlášení_ heslem (`POST /api/auth/login`), ale ponechá uložený hash hesla, a opětovné ověření stále kontroluje `currentPassword` proti němu.
+- `corsOrigins` a `bruteForceProtection` jsou také v `SECURITY_IMPACTING_SETTINGS_KEYS`: jejich uvolnění oslabuje obranu přihlášení, proto vyžadují stejné opětovné ověření `currentPassword` (záložka Security se na něj ptá) a import JSON je vynechává.
+- Každý klíč bezpečnostní politiky — položky `SECURITY_IMPACTING_SETTINGS_KEYS`, každý klíč `oidc*` a stav relace panelu — je **pouze pro operátora** v `PATCH /api/settings`: klíč API s rozsahem manage nebo přístupový token `oma_` dostane `403`, i když pošle správné `currentPassword`, a odmítnutí se audituje jako `settings.update_failed` s `reason: OPERATOR_REQUIRED` (`requireOperatorCredential()` v `src/lib/api/operatorCredential.ts`). Běžná nastavení (motiv, předvolby zobrazení) zůstávají zapisovatelná pro klíč `manage` nebo přístupový token `admin`. Každá změna samotného `/api/settings` (a také `/api/settings/require-login`) vyžaduje také rozsah přístupového tokenu `admin` (`ADMIN_MUTATION_EXACT_PATHS` v `src/server/authz/accessScopes.ts`, přesná shoda cesty); `GET` zůstává `read` a ostatní podcesty `/api/settings/*` (proxy, výchozí nastavení combo, aliasy modelů, komprese, mazání…) si zachovávají metodou odvozený rozsah `write`.
+- `POST /api/settings/import-json` toto opětovné ověření přeskakuje, proto před zápisem odstraní každý klíč z `IMPORT_STRIPPED_SETTINGS_KEYS` (stejný soubor): heslo a `currentPassword`, každou položku `SECURITY_IMPACTING_SETTINGS_KEYS` a stav relace panelu (`sessionsValidAfter`, `revokedDashboardSessions`). Import starší zálohy tak nemůže oživit relaci, kterou ukončila změna hesla nebo odhlášení.
 
 ## Třídy tras
 
-`src/server/authz/types.ts` definuje tři třídy; každá trasa, kterou nelze deterministicky klasifikovat, se zařadí do `MANAGEMENT`.
+`src/server/authz/types.ts` definuje tři třídy; každá trasa, kterou nelze jednoznačně zařadit, spadá do `MANAGEMENT`.
 
-| Třída        | Popis                                                                                                                                                            | Vyžadované ověření                                                      |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `PUBLIC`     | Explicitně bezpečné trasy — přihlášení, odhlášení, stav, inicializace, kontrola stavu, počáteční nastavení onboardingu.                                          | Žádné                                                                   |
-| `CLIENT_API` | Koncové body pro poskytování modelů — `/api/v1/*`, `/api/v1beta/*` a také aliasy `/v1/*`, `/v1beta/*`, `/chat/completions`, `/responses`, `/models`, `/codex/*`. | Klíč Bearer, pokud je aktivní výsledný příznak funkce `REQUIRE_API_KEY` |
-| `MANAGEMENT` | Stránky řídicího panelu, nastavení, poskytovatelé, klíče a koncové body pro správu a diagnostiku.                                                                | Relace řídicího panelu NEBO Bearer s rozsahem oprávnění `manage`        |
+| Třída        | Popis                                                                                                                                                   | Vyžadovaná autentizace                                                 |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `PUBLIC`     | Explicitně bezpečné trasy — přihlášení, odhlášení, stav, inicializace, health, bootstrap onboardingu.                                                   | Žádná                                                                  |
+| `CLIENT_API` | Koncové body pro obsluhu modelů — `/api/v1/*`, `/api/v1beta/*` a aliasy `/v1/*`, `/v1beta/*`, `/chat/completions`, `/responses`, `/models`, `/codex/*`. | Bearer klíč, pokud je zapnuta efektivní feature flag `REQUIRE_API_KEY` |
+| `MANAGEMENT` | Stránky panelu, nastavení, poskytovatelé, klíče, administrátorské a diagnostické koncové body.                                                          | Relace panelu NEBO Bearer s rozsahem `manage`                          |
+
+Několik akcí `MANAGEMENT` je **pouze pro operátora**: klíč `manage` nestačí. Export uložených pověření (`GET /api/settings/export-json`, `GET /api/db-backups/export`, `GET /api/db-backups/exportAll`), obnovení zálohy přes živá data (`POST /api/db-backups/import` včetně `dryRun=true`, `POST /api/db-backups` obnovení podle id, `POST /api/settings/import-json`) a ničení bodů obnovy (úklid přes `DELETE /api/db-backups` a také `PATCH /api/db-backups`, protože uložená retence řídí automatické promazávání po každé záloze) vyžadují relaci panelu, lokální subjekt CLI nebo vypnuté přihlášení. Vydání tokenu synchronizace (`POST /api/sync/tokens`) a vytvoření přístupového tokenu CLI s rozsahem `admin` (`POST /api/cli/tokens`) vyžadují relaci panelu nebo lokální subjekt CLI ve všech režimech přihlášení. Klíče API libovolného rozsahu a přístupové tokeny `oma_` nejsou operátorská pověření: pokud je vyžadováno operátorské pověření, dostanou `403`. Kontrola je v `src/lib/api/operatorCredential.ts` (`resolveOperatorCredential()` / `requireOperatorCredential()`). Změna nastavení přihlášení je rovněž vyhrazena operátorovi: `POST /api/settings/require-login` (nastavení správcovského hesla / přepnutí `requireLogin`) přijme pouze tato pověření, jakmile heslo existuje — okno prvního spuštění (zatím bez hesla) zůstává beze změny — a relace panelu musí pro nahrazení hesla poslat `currentPassword` (`403`, pokud chybí nebo je špatné, audituje se jako `settings.update_failed`). Lokální CLI a instance s vypnutým přihlášením si zachovávají obnovovací cestu a mohou nastavit heslo bez něj, protože obě jsou vázány na hostitele, který vlastní datový adresář.
 
 ## Zpracovatelský řetězec
 
@@ -196,38 +182,48 @@ Při úspěchu vrací `requireManagementAuth()` hodnotu `null`, jinak chybovou o
 
 Sadu zvolte podle tvaru, nikoli podle pohodlnosti. Jedna trasa patří do `PUBLIC_API_ROUTES_EXACT` (nebo do `PUBLIC_READONLY_CORS_API_ROUTES`, pokud podporuje pouze GET); pouze skutečný podstrom patří do `PUBLIC_API_ROUTE_PREFIXES` a **musí končit znakem `/`**. Vložením jedné trasy do seznamu prefixů zveřejníte také každou sousední cestu se stejnými počátečními znaky — včetně sourozeneckých tras s dynamickými segmenty přidaných později (GHSA-74g9-q8f6-793h). Aktualizujte jednotkové testy v `tests/unit/public-api-routes.test.ts`, `tests/unit/authz/public-route-exact-match.test.ts` a `tests/unit/authz/classify.test.ts`.
 
-## Rozsahy oprávnění
+## Rozsahy
+
+Tři jmenné prostory. Každý kontrolní mechanismus čte pouze své vlastní řetězce. Porovnání vedle sebe,
+včetně toho, proč `manage` nevyhoví funkci `scopeMatches` pro `read:compression` a proč
+přístupový token s rozsahem `read` nemůže provést `PATCH /api/keys/{id}`, najdete v dokumentu
+[Tři jmenné prostory rozsahů](../frameworks/MCP-SERVER.md#three-scope-namespaces).
 
 Klíče API obsahují pole `scopes` (uložené jako JSON v `api_keys.scopes`, viz `src/lib/db/apiKeys.ts`).
 
-### Rozsah oprávnění pro správu
+### Rozsah správy
 
-- `manage` / `admin` — uděluje klíči přístup ke koncovým bodům API pro správu, pokud je odeslán jako Bearer.
+- `manage` / `admin` — `hasManageScope`. Přístup s tokenem Bearer k trasám rozhraní API pro správu.
+- `mcp:connect`, `self:usage`, `self:account-quota` a
+  `policy:bypass-provider-quota` jsou doplňkové rozsahy s přesnou shodou. Nacházejí se
+  mimo `MANAGEMENT_API_KEY_SCOPES`. `mcp:connect` povoluje pouze
+  výjimku pro přístup k `/api/mcp/` mimo rozhraní loopback.
 
-### Rozsahy oprávnění MCP (`src/shared/constants/mcpScopes.ts`)
+### Rozsahy nástrojů MCP
 
-Každý nástroj MCP vyžaduje specifické rozsahy oprávnění prostřednictvím `MCP_TOOL_SCOPES`. Úplný seznam (`MCP_SCOPE_LIST`):
+Katalog a pravidla porovnávání (identický řetězec nebo udělený rozsah končící znakem `*`):
+[Rozsahy nástrojů MCP](../frameworks/MCP-SERVER.md#mcp-tool-scopes).
+`MCP_SCOPE_LIST` v `src/shared/constants/mcpScopes.ts` je původní typovaná
+podmnožina, nikoli celý tento katalog. Vynucování probíhá v souboru
+`open-sse/mcp-server/scopeEnforcement.ts` poté, co `resolveCallerScopeContext()`
+zjistí rozsahy z ověřovacích údajů MCP, metadat požadavku nebo `OMNIROUTE_MCP_SCOPES`.
+Zůstává vypnuté, pokud není nastaveno `OMNIROUTE_MCP_ENFORCE_SCOPES=true`.
 
-```
-read:health, read:combos, write:combos, read:quota, read:usage,
-read:models, execute:completions, execute:search, write:budget,
-write:resilience, pricing:write, read:cache, write:cache,
-read:compression, write:compression, read:proxies
-```
+### Rozsahy přístupových tokenů
 
-Vynucování rozsahů oprávnění v `open-sse/mcp-server/server.ts` předává seznam rozsahů každého nástroje do
-`evaluateToolScopes()` poté, co `resolveCallerScopeContext()` zjistí rozsahy z ověřovacích údajů MCP,
-metadat požadavku nebo `OMNIROUTE_MCP_SCOPES`.
+`read` / `write` / `admin` u tokenů `oma_live_…`, seřazené funkcí `scopeSatisfies`
+(`src/lib/accessTokens/scopes.ts`). Toto pořadí se vztahuje pouze na přihlašovací údaj
+přístupového tokenu. Viz [Ověřování pro správu](../guides/MANAGEMENT-AUTH.md).
 
-## Přepínač vyžadování ověření
+## Přepínač vyžadování autentizace
 
-`isAuthRequired()` v `src/shared/utils/apiAuth.ts` určuje, zda je pro požadavek vynucováno **jakékoli** ověření:
+`isAuthRequired()` v `src/shared/utils/apiAuth.ts` rozhoduje, zda se pro požadavek vynucuje **jakákoli** autentizace:
 
-- `settings.requireLogin === false` → ověřování je globálně vypnuto.
-- Není nakonfigurováno žádné heslo **a zároveň** není nastavena proměnná prostředí `INITIAL_PASSWORD` → režim prvotního nastavení umožňuje průvodce úvodním nastavením a požadavky ze zpětné smyčky, ale požadavky z externí sítě stále vyžadují přihlašovací údaje.
-- Jakákoli chyba DB → přístup je zamítnut (ve výchozím nastavení bezpečné chování).
+- `settings.requireLogin === false` → autentizace je globálně vypnuta, kromě trvale chráněné úrovně (viz [Route Guard Tiers](../security/ROUTE_GUARD_TIERS.md)) a volání, která vydávají pověření, jež tato konfigurace přijímá; ta vyžadují stejné pověření jako při zapnutém přihlášení: vydávání tokenů synchronizace, vytváření přístupových tokenů CLI v libovolném rozsahu a vytváření klíče API s rozsahem `manage`/`admin`, udělování tohoto rozsahu klíči, regenerace nebo zobrazení takového klíče (`requireCredentialForManagementScopedKey()` v `src/lib/api/requireManagementAuth.ts`). Klíče určené pouze pro inferenci zůstávají otevřené.
+- Není nastaveno žádné heslo **a** není nastavena proměnná prostředí `INITIAL_PASSWORD` → bootstrap režim povolí průvodce nastavením a požadavky z loopbacku, ale požadavky ze sítě stále vyžadují pověření.
+- Jakákoli chyba databáze → selhání uzavřené (secure-by-default).
 
-Vynucování klíče API klienta používá `isRequireApiKeyEnabled()` v `src/shared/utils/featureFlags.ts`, nikoli přímé čtení `process.env.REQUIRE_API_KEY`. To je důležité pro nasazené instance: přepnutí `REQUIRE_API_KEY` v Dashboard → Feature Flags uloží přepsání do DB a okamžitě ovlivní `/v1/*`, `/v1beta/*`, `/models`, `/responses`, `/chat/completions`, `/codex/*` a další kontroly ověřování klientského API, které používají tuto pomocnou funkci. Pokud nelze úložiště příznaků funkcí načíst, ověřování klientského API přístup zamítne a vyžaduje klíč.
+Vynucení klientského API klíče používá `isRequireApiKeyEnabled()` v `src/shared/utils/featureFlags.ts`, nikoli přímé čtení `process.env.REQUIRE_API_KEY`. To je důležité pro nasazené instance: přepnutí `REQUIRE_API_KEY` v Dashboard → Feature Flags uloží přepsání do databáze a okamžitě ovlivní `/v1/*`, `/v1beta/*`, `/models`, `/responses`, `/chat/completions`, `/codex/*` a další kontroly autentizace klientského API, které sdílejí tento pomocník. Pokud nelze přečíst úložiště feature flagů, autentizace klientského API selže uzavřeně a vyžaduje klíč.
 
 ## Zásadní změna — v3.8.0
 
@@ -265,7 +261,7 @@ Uvnitř obslužných rutin používejte `assertAuth(req, expectedClass)` — pok
 
 ## Viz také
 
-- [API_REFERENCE.md](../reference/API_REFERENCE.md) — označení autentizace pro jednotlivé koncové body
+- [API_REFERENCE.md](../reference/API_REFERENCE.md) — označení autentizace pro každý koncový bod
 - [COMPLIANCE.md](../security/COMPLIANCE.md) — protokol auditu událostí autentizace
-- [MCP-SERVER.md](../frameworks/MCP-SERVER.md) — podrobnosti o vynucování rozsahů MCP
+- [MCP-SERVER.md](../frameworks/MCP-SERVER.md#three-scope-namespaces) — tři jmenné prostory rozsahů a katalog rozsahů nástrojů MCP
 - Zdroj: `src/server/authz/`, `src/lib/api/requireManagementAuth.ts`

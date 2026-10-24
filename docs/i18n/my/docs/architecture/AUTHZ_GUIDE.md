@@ -1,86 +1,70 @@
 # Authorization Guide (မြန်မာ)
 
-🌐 **Languages:** 🇺🇸 [English](../../../../architecture/AUTHZ_GUIDE.md) · 🇪🇹 [am](../../../am/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇿 [az](../../../az/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇰 [da](../../../da/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇪 [de](../../../de/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇷 [el](../../../el/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇸 [es](../../../es/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇪 [et](../../../et/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇱 [he](../../../he/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇩 [id](../../../id/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇹 [it](../../../it/docs/architecture/AUTHZ_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇭 [km](../../../km/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇴 [no](../../../no/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [or](../../../or/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇰 [si](../../../si/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [te](../../../te/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇭 [th](../../../th/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/architecture/AUTHZ_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/AUTHZ_GUIDE.md)
+🌐 **Languages:** 🇺🇸 [English](../../../../architecture/AUTHZ_GUIDE.md) · 🇪🇹 [am](../../../am/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇿 [az](../../../az/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇰 [da](../../../da/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇪 [de](../../../de/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇷 [el](../../../el/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇸 [es](../../../es/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇪 [et](../../../et/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇱 [he](../../../he/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇩 [id](../../../id/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇹 [it](../../../it/docs/architecture/AUTHZ_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇭 [km](../../../km/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇴 [no](../../../no/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [or](../../../or/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇰 [si](../../../si/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [te](../../../te/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇭 [th](../../../th/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/architecture/AUTHZ_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/AUTHZ_GUIDE.md)
 
 ---
 
-> **အမှန်တကယ် ကိုးကားရမည့် ရင်းမြစ်:** `src/server/authz/`, `src/shared/constants/publicApiRoutes.ts`, `src/lib/api/requireManagementAuth.ts`, `src/shared/utils/apiAuth.ts`
-> **နောက်ဆုံး အပ်ဒိတ်လုပ်ထားသည့်ရက်:** 2026-06-28 — v3.8.40
+> **အမှန်တရား၏ရင်းမြစ်:** `src/server/authz/`, `src/shared/constants/publicApiRoutes.ts`, `src/lib/api/requireManagementAuth.ts`, `src/shared/utils/apiAuth.ts`
+> **နောက်ဆုံးပြင်ဆင်သည့်ရက်စွဲ:** 2026-09-22 — scope namespaces များသည် MCP-SERVER.md ကိုညွှန်ပြသည်။
 
-OmniRoute တွင် API တောင်းဆိုမှုတိုင်းကို ထိန်းချုပ်ကန့်သတ်ပေးသည့် route-aware authorization pipeline တစ်ခု ရှိသည်။ အမျိုးအစားခွဲခြားမှုသည် **တိကျသတ်မှတ်ထားသော (deterministic)** ပုံစံဖြစ်ပြီး **မသေချာလျှင် ပိတ်ပင်သော (fail-closed)** ပုံစံလည်း ဖြစ်သည် — အမျိုးအစား မခွဲခြားနိုင်သည့် မည်သည့်အရာမဆို နောက်ဆုံးတွင် `MANAGEMENT` အဖြစ် သတ်မှတ်ခံရပြီး session သို့မဟုတ် management အဆင့် token တစ်ခု လိုအပ်သည်။ ဤစာမျက်နှာတွင် route များကို ထိန်းသိမ်းနေသော သို့မဟုတ် endpoint အသစ်များကို ဒီဇိုင်းရေးဆွဲနေသော အင်ဂျင်နီယာများအတွက် model ကို ရှင်းပြထားသည်။
+OmniRoute တွင် API တောင်းဆိုမှုတိုင်းကို ကာကွယ်ပေးသည့် route-aware authorization pipeline တစ်ခုရှိသည်။ အမျိုးအစားခွဲခြားခြင်းသည် **သတ်မှတ်နိုင်သော** နှင့် **ပျက်ကွက်ပါကပိတ်သော** ဖြစ်သည် — အမျိုးအစားခွဲခြား၍မရသော မည်သည့်အရာမဆို `MANAGEMENT` အဖြစ်ဆုံးဖြတ်ပြီး session သို့မဟုတ် management-grade token လိုအပ်သည်။ ဤစာမျက်နှာသည် routes များကို ထိန်းသိမ်းထားသော သို့မဟုတ် endpoing အသစ်များ ဒီဇိုင်းဆွဲသော အင်ဂျင်နီယာများအတွက် မော်ဒယ်ကို ရှင်းပြထားသည်။
 
-![AuthZ pipeline (route အမျိုးအစား 3 ခု + policy အကဲဖြတ်ခြင်း)](../diagrams/exported/authz-pipeline.svg)
+![AuthZ pipeline (3 route classes + policy evaluation)](../diagrams/exported/authz-pipeline.svg)
 
 > ရင်းမြစ်: [diagrams/authz-pipeline.mmd](../diagrams/authz-pipeline.mmd)
 
-## Auth Mode နှစ်မျိုး
+## အတည်ပြုခြင်း ပုံစံ နှစ်မျိုး
 
-### 1. API Key (Bearer)
+### ၁. API Key (Bearer)
 
-OpenAI/Anthropic/Gemini နှင့် ကိုက်ညီသော client API များအတွက် အသုံးပြုပြီး key တွင် `manage` scope ရှိသည့်အခါ management route အချို့အတွက်လည်း အသုံးပြုသည်။
+OpenAI/Anthropic/Gemini နှင့် တွဲဖက်သော client API များအတွက်၊ နှင့် key တွင် `manage` scope ပါဝင်သောအခါ management route အချို့အတွက် အသုံးပြုသည်။
 
 ```
 Authorization: Bearer <api-key>
 ```
 
-`src/sse/services/auth.ts` ရှိ `isValidApiKey()` / `extractApiKey()` တို့ဖြင့် စစ်ဆေးအတည်ပြုပြီး `src/shared/utils/apiAuth.ts` မှတစ်ဆင့် ပြန်လည် export လုပ်ထားသည်။ Validator သည် `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` env vars များကို အမြဲတမ်းအသုံးပြုနိုင်သော passthrough key များအဖြစ်လည်း လက်ခံသည် (issue #1350)။
+`src/sse/services/auth.ts` ထဲရှိ `isValidApiKey()` / `extractApiKey()` ဖြင့် စစ်ဆေးပြီး `src/shared/utils/apiAuth.ts` မှတစ်ဆင့် ပြန်လည် export လုပ်သည်။ validator သည် `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` ပတ်ဝန်းကျင်ကိန်းရှင် (env var) များကိုလည်း persistent passthrough key များအဖြစ် လက်ခံသည် (issue #1350)။
 
-### 2. Dashboard Session (auth_token cookie)
+### ၂. Dashboard Session (auth_token cookie)
 
-Dashboard စာမျက်နှာများနှင့် admin လုပ်ဆောင်ချက်များအတွက် ဖြစ်သည်။
+Dashboard စာမျက်နှာများနှင့် admin လုပ်ဆောင်ချက်များအတွက် အသုံးပြုသည်။
 
 ```
 Cookie: auth_token=<JWT signed with JWT_SECRET>
 ```
 
-JWT ကို အတည်ပြုနိုင်ပြီး **ထို့အပြင်** `authenticated: true` ပါရှိသည့်အခါမှသာ cookie တစ်ခုကို session အဖြစ် သတ်မှတ်သည်
-(`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`)။ Cookie ကို
-အသုံးပြုသူတိုင်း (route guard၊ authz pipeline refresh၊ WebSocket handshake၊ live
-server၊ `/api/settings/require-login`၊ `/api/auth/status`) သည် ထို helper မှတစ်ဆင့်
-လုပ်ဆောင်သည်။ `JWT_SECRET` ဖြင့် လက်မှတ်ထိုးထားသည့် အခြား JWT များလည်း ရှိသည် — Cursor CLI passthrough သည်
-key ကိုင်ဆောင်သူများအတွက် `iss "omniroute" / aud "cursor-cli"` token များကို ထုတ်ပေးသည် — သို့သော် ၎င်းတို့ကို session များအဖြစ်
-မည်သည့်အခါမျှ မသတ်မှတ်ပါ
-(#13298)။
+Cookie သည် JWT ကို အတည်ပြုနိုင်ပြီး **နှင့်** `authenticated: true` ပါဝင်မှသာ session ဖြစ်သည် (`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`)။ Cookie ကို သုံးသည့် အစိတ်အပိုင်းတိုင်း (dashboard route guard (`isDashboardSessionAuthenticated()`), authz pipeline refresh, WebSocket handshake, live server, `/api/settings/require-login`, `/api/auth/status`) သည် ထို helper ကို ဖြတ်သန်းသည်။ `JWT_SECRET` ဖြင့် လက်မှတ်ထိုးထားသော အခြား JWT များလည်း ရှိသည် — Cursor CLI passthrough သည် key ကိုင်ထားသူများအတွက် `iss "omniroute" / aud "cursor-cli"` token များကို ထုတ်ပေးပြီး ၎င်းတို့သည် ဘယ်တော့မှ session မဖြစ်ပါ (#13298)။
 
-`src/shared/utils/apiAuth.ts` ရှိ `isDashboardSessionAuthenticated()` ဖြင့် စစ်ဆေးအတည်ပြုသည်။ ရက် 30 သက်တမ်းအတွင်း ကျန်ရှိသည့်အချိန် 7 ရက်အောက် ရောက်သွားသောအခါ pipeline က JWT ကို အလိုအလျောက် refresh လုပ်သည်။
+`src/shared/utils/apiAuth.ts` ထဲရှိ `isDashboardSessionAuthenticated()` က စစ်ဆေးသည်။ Pipeline သည် JWT ၏ ၃၀ ရက် သက်တမ်းအတွင်း ၇ ရက်အောက်သာ ကျန်သောအခါ JWT ကို အလိုအလျောက် refresh လုပ်သည်။
 
-Management route အချို့သည် mode **တစ်မျိုးမျိုးကို** လက်ခံသည်- API key တွင် `manage` (သို့မဟုတ် `admin`) scope ရှိပါက cookie သို့မဟုတ် `Bearer <key>` ဖြစ်သည်။ ဤအချက်က v3.8 တွင် ထည့်သွင်းခဲ့သည့် "API call များမှတစ်ဆင့် ပြင်ဆင်သတ်မှတ်နိုင်သော" workflow ကို အသုံးပြုနိုင်စေသည်။
+Session သည် ၃၀ ရက် မပြည့်မီ ကုန်ဆုံးနိုင်သည်။ အကြောင်းမှာ token ထုတ်သူအားလုံးသည် `mintDashboardSessionToken` (issue time `iat` နှင့် id `jti` ပါဝင်သည်) ကို ဖြတ်သန်းရပြီး verifier က settings နှစ်ခုကို စစ်ဆေးသောကြောင့် ဖြစ်သည် — ပထမတစ်ခုမှာ `sessionsValidAfter` ဖြစ်ပြီး password ပြောင်းလဲမှုက ၎င်းကို သတ်မှတ်သည်။ ထိုအချိန်မတိုင်မီ ထုတ်ထားသော session အားလုံး အသက်ဝင်ခြင်း ရပ်သွားသည် (password ပြောင်းသော browser သည် cookie အသစ် ရရှိသည်)။ ဒုတိယမှာ `revokedDashboardSessions` ဖြစ်ပြီး `POST /api/auth/logout` က ထွက်ခွာသွားသော session ၏ `jti` ကို ထည့်သည်။ ဗားရှင်းဟောင်းမှ ထုတ်ထားသော session များတွင် ဤ claim နှစ်ခုလုံး မပါဝင်ဘဲ ပထမဆုံး password ပြောင်းသည်အထိ valid ဖြစ်နေဆဲ ဖြစ်သည်။ Settings ကို ဖတ်၍ မရပါက session ကို ယုံကြည်ခြင်း မပြုပါ။
 
-#### ရွေးချယ်အသုံးပြုနိုင်သော OIDC login gate (#6973)
+Management route အချို့သည် **မုဒ်နှစ်ခုလုံး** ကို လက်ခံသည်: cookie သို့မဟုတ် API key တွင် `manage` (သို့မဟုတ် `admin`) scope ရှိသောအခါ `Bearer <key>`။ ဤအချက်ကြောင့် v3.8 တွင် ထည့်သွင်းခဲ့သည့် "API ခေါ်ဆိုမှုဖြင့် ပြင်ဆင်နိုင်သော" workflow ဖြစ်လာသည်။
 
-Dashboard admin login သည် မူလ password login နှင့်အတူ **ရွေးချယ်ဖွင့်နိုင်သော** OIDC (OpenID Connect) flow ကိုလည်း
-ပံ့ပိုးသည် — password login ကို မည်သည့်အခါမျှ ဖယ်ရှားခြင်းမရှိဘဲ
-ထပ်မံဖြည့်စွက်ပေးခြင်းသာ ဖြစ်သည်-
+#### စနစ်ရွေးချယ်နိုင်သော OIDC login gate (#6973)
 
-- `settings.oidcEnabled === true` ဖြစ်ပြီး **ထို့အပြင်** `oidcIssuer` /
-  `oidcClientId` / `oidcClientSecret` အားလုံးကို ပြင်ဆင်သတ်မှတ်ထားသည့်အခါမှသာ ဖွင့်ထားသည် (Settings → Auth)။
-  မဟုတ်ပါက `GET /api/auth/oidc/login` သည် `400` ကို ပြန်ပေးသည်။
-- `GET /api/auth/oidc/login` သည် issuer ၏
-  `/.well-known/openid-configuration` မှ `authorization_endpoint` ကို ရှာဖွေသည်
-  (`<issuer>/authorize` ကို fallback အဖြစ် အသုံးပြုသည်)၊ ဝင်လာသော request မှ redirect URI ကို တည်ဆောက်သည်
-  (`x-forwarded-proto` ကို ထည့်သွင်းစဉ်းစားသည်)၊ ထို့နောက် `httpOnly` `oidc_state` cookie ထဲတွင်
-  သိမ်းဆည်းထားသော ကျပန်း `state` တစ်ခုနှင့်အတူ IdP သို့ redirect လုပ်သည်။
-- `GET /api/auth/oidc/callback` သည် `state` ကို စစ်ဆေးအတည်ပြုကာ authorization
-  code ကို လဲလှယ်ပြီး issuer ၏ JWKS မှတစ်ဆင့် ID token ၏ လက်မှတ်ကို
-  (`jose` ၏ `createRemoteJWKSet`၊ JWKS URI တစ်ခုချင်းစီအလိုက် cache လုပ်ထားသည်) `issuer`/`audience`
-  စစ်ဆေးမှုများနှင့်အတူ အတည်ပြုသည်။ ရွေးချယ်အသုံးပြုနိုင်သော `oidcAllowedSubjects` allowlist သည် token ၏
-  `sub` claim သို့မဟုတ် ၎င်း၏ `email` claim နှင့် ကိုက်ညီမှုကို စစ်ဆေးသည် — `email_verified === true` ဖြစ်သည့်အခါမှသာ
-  email claim ကို လက်ခံသောကြောင့် IdP ရှိ အတည်မပြုရသေးသော email တစ်ခုသည်
-  gate ကို မည်သည့်အခါမျှ ဖြတ်ကျော်နိုင်မည် မဟုတ်ပါ။
-- အောင်မြင်ပါက password login မှ ထုတ်ပေးသည့် **အတိအကျ တူညီသော** ရက် 30 သက်တမ်းရှိ `auth_token` JWT ကို
-  ထုတ်ပေးသည် (`src/app/api/auth/login/route.ts`)။ ထို့ကြောင့် ကျန်ရှိသော
-  dashboard session pipeline (အလိုအလျောက် refresh လုပ်ခြင်း၊ cookie flag များ) သည် မပြောင်းလဲပါ —
-  OIDC သည် cookie က ပေးအပ်သည့် ခွင့်ပြုချက်ကို မပြောင်းလဲဘဲ cookie ထုတ်ပေးသည့်နည်းလမ်းကိုသာ အစားထိုးသည်။
+Dashboard admin login သည် မူလ password login နှင့်အတူ **ရွေးချယ်ခွင့်ရှိသော** OIDC (OpenID Connect) flow ကိုလည်း ထောက်ပံ့သည် — password login ကို ဘယ်တော့မှ ဖယ်ရှားခြင်း မရှိပါ၊ ထပ်ဖြည့်ခြင်းသာ ဖြစ်သည်:
 
-## Route အတန်းအစားများ
+- `settings.oidcEnabled === true` **နှင့်** `oidcIssuer` / `oidcClientId` / `oidcClientSecret` အားလုံး configure လုပ်ထားမှသာ ဖွင့်ပေးသည် (Settings → Auth)။ မဟုတ်ပါက `GET /api/auth/oidc/login` က `400` ပြန်ပေးသည်။
+- `GET /api/auth/oidc/login` သည် issuer ၏ `/.well-known/openid-configuration` မှ `authorization_endpoint` ကို ရှာဖွေသည် (`<issuer>/authorize` သို့ fallback လုပ်သည်)၊ ဝင်လာသော request မှ redirect URI ကို တည်ဆောက်သည် (`x-forwarded-proto` ကို အသုံးပြု၍)၊ ထို့နောက် `httpOnly` `oidc_state` cookie တွင် သိမ်းထားသော random `state` ဖြင့် IdP သို့ redirect လုပ်သည်။
+- `GET /api/auth/oidc/callback` သည် `state` ကို စစ်ဆေးပြီး authorization code ကို လဲလှယ်သည်၊ ထို့နောက် ID token ၏ signature ကို issuer ၏ JWKS ဖြင့် အတည်ပြုသည် (`jose` ၏ `createRemoteJWKSet`၊ JWKS URI တစ်ခုစီအလိုက် cache လုပ်ထားသည်)၊ `issuer`/`audience` စစ်ဆေးမှုများ ပါဝင်သည်။ `oidcAllowedSubjects` allowlist သည် မဖြစ်မနေ လိုအပ်သည်: ၎င်းသည် token ၏ `sub` claim သို့မဟုတ် `email` claim နှင့် ကိုက်ညီသည် — `email` claim ကို `email_verified === true` ဖြစ်မှသာ လက်ခံသည်၊ ထို့ကြောင့် IdP တွင် အတည်မပြုရသေးသော email သည် gate ကို ဘယ်တော့မှ ဖြတ်မသွားနိုင်ပါ — entry မရှိပါက callback သည် login တိုင်းကို ပယ်ချသည် (`not_configured`)။
+- အောင်မြင်ပါက password login ထုတ်ပေးသည့် **အတူတူ** 30-day `auth_token` JWT ကို mint လုပ်သည် (`src/app/api/auth/login/route.ts`)။ ထို့ကြောင့် dashboard session pipeline ၏ အခြားအပိုင်းများ (auto-refresh၊ cookie flags) သည် မပြောင်းလဲပါ — OIDC သည် cookie ကို ဘယ်လို ထုတ်ပေးသလဲကိုသာ အစားထိုးသည်၊ ၎င်းပေးသော အခွင့်အရေးကို မပြောင်းပါ။
+- `oidc*` setting အားလုံး (`oidcEnabled`၊ `oidcDisablePasswordLogin`၊ `oidcIssuer`၊ `oidcClientId`၊ `oidcClientSecret`၊ `oidcAllowedSubjects`၊ `oidcRedirectPath`၊ `oidcScopes`) သည် `SECURITY_IMPACTING_SETTINGS_KEYS` (`src/shared/constants/securityImpactingSettings.ts`) တွင် ရှိသည်: `PATCH /api/settings` သည် request body တွင် management password ကို `currentPassword` အဖြစ် မပါဝင်ပါက `400 PASSWORD_REQUIRED` ပြန်ပေးသည် (မှားနေပါက `401 PASSWORD_MISMATCH`)။ `oidcDisablePasswordLogin` သည် password _login_ (`POST /api/auth/login`) ကို ပိတ်သော်လည်း သိမ်းထားသော password hash ကို ဖျက်ခြင်းမရှိပါ၊ ပြန်လည် authentication ကလည်း ၎င်းနှင့် `currentPassword` ကို ဆက်စစ်သည်။
+- `corsOrigins` နှင့် `bruteForceProtection` သည်လည်း `SECURITY_IMPACTING_SETTINGS_KEYS` တွင် ပါဝင်သည်: ၎င်းတို့ကို လျှော့ချလိုက်ခြင်းသည် login ကာကွယ်မှုများကို အားနည်းစေသောကြောင့် တူညီသော `currentPassword` ပြန်လည် authentication (Security tab က တောင်းသည်) လိုအပ်ပြီး JSON import တွင် ၎င်းတို့ကို ချန်လှပ်သည်။
+- Security-policy key အားလုံး — `SECURITY_IMPACTING_SETTINGS_KEYS` entry များ၊ `oidc*` key အားလုံးနှင့် dashboard session state — သည် `PATCH /api/settings` တွင် **operator-only** ဖြစ်သည်: manage-scoped API key သို့မဟုတ် `oma_` access token ကို `currentPassword` မှန်ပါစေ `403` ဖြင့် ပယ်ချပြီး ပယ်ချမှုကို `settings.update_failed` နှင့် `reason: OPERATOR_REQUIRED` ဖြင့် audit လုပ်သည် (`src/lib/api/operatorCredential.ts` ရှိ `requireOperatorCredential()`)။ ပုံမှန် setting များ (theme၊ display preference) သည် `manage` key သို့မဟုတ် `admin` access token အတွက် ဆက်ရေးနိုင်သည်။ `/api/settings` ၏ mutation တိုင်း (နှင့် `/api/settings/require-login`) သည် `admin` access-token scope လိုအပ်သည် (`src/server/authz/accessScopes.ts` ရှိ `ADMIN_MUTATION_EXACT_PATHS`၊ exact-path match); `GET` သည် `read` ဖြစ်ဆဲ ဖြစ်ပြီး `/api/settings/*` ၏ အခြား sub-route များ (proxies၊ combo defaults၊ model aliases၊ compression၊ purges…) သည် method-inferred `write` scope ကို ဆက်သုံးသည်။
+- `POST /api/settings/import-json` သည် ထို re-auth ကို ကျော်သည်၊ ထို့ကြောင့် ရေးသားခြင်းမပြုမီ `IMPORT_STRIPPED_SETTINGS_KEYS` (တူညီသော ဖိုင်) ရှိ key အားလုံးကို ဖယ်ရှားသည်: password နှင့် `currentPassword`၊ `SECURITY_IMPACTING_SETTINGS_KEYS` entry အားလုံး၊ နှင့် dashboard session state (`sessionsValidAfter`၊ `revokedDashboardSessions`)။ ထို့ကြောင့် ဟောင်းသော backup ကို import လုပ်ခြင်းက password ပြောင်းခြင်း သို့မဟုတ် sign-out ဖြင့် အဆုံးသတ်ခဲ့သော session ကို ပြန်လည်အသက်ဝင်စေနိုင်ခြင်း မရှိပါ။
 
-`src/server/authz/types.ts` တွင် အတန်းအစားသုံးခုကို သတ်မှတ်ထားသည်။ မည်သည့် route ကိုမဆို တိကျသေချာစွာ အမျိုးအစားခွဲခြား၍ မရပါက `MANAGEMENT` သို့ ပြန်လည်သတ်မှတ်သည်။
+## Route အမျိုးအစားများ
 
-| အတန်းအစား    | ဖော်ပြချက်                                                                                                                                                                     | လိုအပ်သော အထောက်အထားစိစစ်မှု                                                          |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
-| `PUBLIC`     | လုံခြုံကြောင်း အတိအလင်းသတ်မှတ်ထားသည့် route များ — login၊ logout၊ status၊ init၊ health၊ onboarding bootstrap။                                                                  | မလိုအပ်ပါ                                                                             |
-| `CLIENT_API` | မော်ဒယ်ဝန်ဆောင်မှုပေးသည့် endpoint များ — `/api/v1/*`၊ `/api/v1beta/*` နှင့် alias များဖြစ်သော `/v1/*`၊ `/v1beta/*`၊ `/chat/completions`၊ `/responses`၊ `/models`၊ `/codex/*`။ | သက်ရောက်နေသော `REQUIRE_API_KEY` feature flag ကို ဖွင့်ထားသည့်အခါ Bearer key လိုအပ်သည် |
-| `MANAGEMENT` | Dashboard စာမျက်နှာများ၊ ဆက်တင်များ၊ provider များ၊ key များ၊ admin နှင့် စစ်ဆေးရှာဖွေရေး endpoint များ။                                                                       | Dashboard session သို့မဟုတ် `manage` scope ပါရှိသော Bearer                            |
+`src/server/authz/types.ts` သည် အမျိုးအစား သုံးမျိုးကို သတ်မှတ်သည်; အမျိုးအစား အတိအကျ သတ်မှတ်၍ မရသော route မှန်သမျှသည် `MANAGEMENT` သို့ ပြန်ကျသည်။
+
+| အမျိုးအစား   | ဖော်ပြချက်                                                                                                                                                       | လိုအပ်သော auth                                                      |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `PUBLIC`     | ရှင်းရှင်းလင်းလင်း ဘေးကင်းသော route များ — login၊ logout၊ status၊ init၊ health၊ onboarding bootstrap။                                                            | မလို                                                                |
+| `CLIENT_API` | Model ဝန်ဆောင်မှု endpoint များ — `/api/v1/*`၊ `/api/v1beta/*`၊ နှင့် alias များ `/v1/*`၊ `/v1beta/*`၊ `/chat/completions`၊ `/responses`၊ `/models`၊ `/codex/*`။ | ထင်ရှားသော `REQUIRE_API_KEY` feature flag ဖွင့်ထားသောအခါ Bearer key |
+| `MANAGEMENT` | Dashboard စာမျက်နှာများ၊ settings၊ provider များ၊ key များ၊ admin နှင့် diagnostics endpoint များ။                                                               | Dashboard session သို့မဟုတ် `manage` scope ပါသော Bearer             |
+
+`MANAGEMENT` လုပ်ဆောင်ချက် အချို့သည် **operator-only** ဖြစ်သည်: `manage` key သာလျှင် မလုံလောက်ပါ။ သိမ်းထားသော credential များကို ထုတ်ယူခြင်း (`GET /api/settings/export-json`၊ `GET /api/db-backups/export`၊ `GET /api/db-backups/exportAll`)၊ လက်ရှိ data အပေါ် backup ကို ပြန်ထည့်ခြင်း (`dryRun=true` အပါအဝင် `POST /api/db-backups/import`၊ id ဖြင့် `POST /api/db-backups` restore၊ `POST /api/settings/import-json`)၊ restore point များကို ဖျက်ခြင်း (`DELETE /api/db-backups` cleanup နှင့် `PATCH /api/db-backups` ကြောင့်ဆိုသော ၎င်းက ထိန်းသိမ်းထားသော retention သည် backup တိုင်းပြီးနောက် အလိုအလျောက် pruning ကို မောင်းနှင်သည်) တို့အတွက် dashboard session၊ local CLI subject သို့မဟုတ် login ပိတ်ထားခြင်း လိုအပ်သည်။ Sync token ထုတ်ခြင်း (`POST /api/sync/tokens`) နှင့် `admin` CLI access token ထုတ်ခြင်း (`POST /api/cli/tokens`) တို့သည် login မုဒ်အားလုံးတွင် dashboard session သို့မဟုတ် local CLI subject လိုအပ်သည်။ မည်သည့် scope ရှိ API key မဆို နှင့် `oma_` access token များသည် operator credential မဟုတ်ပါ: လိုအပ်သည့်အခါတိုင်း `403` ရရှိသည်။ စစ်ဆေးမှုသည် `src/lib/api/operatorCredential.ts` (`resolveOperatorCredential()` / `requireOperatorCredential()`) တွင် ရှိသည်။ Login setting များ ပြောင်းခြင်းလည်း operator-only ဖြစ်သည်: `POST /api/settings/require-login` (management password သတ်မှတ်ခြင်း / `requireLogin` ပြောင်းခြင်း) သည် password ရှိပြီးနောက် ထို credential များကိုသာ လက်ခံသည် — ပထမဆုံး run ချိန် bootstrap window (password မရှိသေးချိန်) မပြောင်းလဲပါ — နှင့် dashboard session က password အစားထိုးရန် `currentPassword` ပို့ရမည် (မပါခြင်း သို့မဟုတ် မှားခြင်းဖြစ်ပါက `403`၊ `settings.update_failed` အဖြစ် audit လုပ်သည်)။ Local CLI နှင့် login ပိတ်ထားသော instance တို့သည် recovery လမ်းကြောင်းကို ထိန်းသိမ်းထားပြီး ထို့ကြောင့် `currentPassword` မပါဘဲ password သတ်မှတ်နိုင်သည်၊ အကြောင်းမှာ နှစ်ခုလုံးသည် data directory ပိုင်ဆိုင်သော host ဖြင့် ချိတ်ဆက်ထားသောကြောင့် ဖြစ်သည်။
 
 ## လုပ်ငန်းစဉ်
 
@@ -200,36 +184,43 @@ export async function POST(request: Request) {
 
 အဆင်ပြေမှုအလိုက် မဟုတ်ဘဲ ပုံသဏ္ဌာန်အလိုက် set ကို ရွေးချယ်ပါ။ Route တစ်ခုတည်းကို `PUBLIC_API_ROUTES_EXACT` ထဲတွင် ထည့်ပါ (သို့မဟုတ် GET-only ဖြစ်ပါက `PUBLIC_READONLY_CORS_API_ROUTES` ထဲတွင် ထည့်ပါ)။ စစ်မှန်သော subtree ကိုသာ `PUBLIC_API_ROUTE_PREFIXES` ထဲတွင် ထည့်ရမည်ဖြစ်ပြီး ၎င်းသည် **`/` ဖြင့် အဆုံးသတ်ရမည်**။ Route တစ်ခုတည်းကို prefix စာရင်းထဲတွင် ထည့်သွင်းခြင်းသည် ၎င်း၏ ရှေ့စာလုံးများ တူညီသော အနီးကပ် path အားလုံးကိုပါ public အဖြစ် ဖွင့်ပေးသွားမည် — နောင်တွင် ထည့်သွင်းမည့် dynamic-segment sibling များလည်း ပါဝင်သည် (GHSA-74g9-q8f6-793h)။ `tests/unit/public-api-routes.test.ts`၊ `tests/unit/authz/public-route-exact-match.test.ts` နှင့် `tests/unit/authz/classify.test.ts` ရှိ unit test များကို အပ်ဒိတ်လုပ်ပါ။
 
-## Scope များ
+## Scopes များ
 
-API key များတွင် `scopes` array တစ်ခု ပါဝင်သည် (`api_keys.scopes` တွင် JSON အဖြစ် သိမ်းဆည်းထားပြီး `src/lib/db/apiKeys.ts` ကို ကြည့်ပါ)။
+namespace သုံးခု။ စစ်ဆေးသူတစ်ဦးစီသည် ၎င်း၏ကိုယ်ပိုင် string များကိုသာ ဖတ်သည်။ `manage` သည် `read:compression` အတွက် `scopeMatches` ကို အဘယ်ကြောင့် မအောင်မြင်သနည်း၊ `read` access token သည် `PATCH /api/keys/{id}` ကို အဘယ်ကြောင့် မလုပ်ဆောင်နိုင်သနည်း အပါအဝင် ဘေးချင်းကပ်လျက် ရှင်းပြချက်ကို [Three scope namespaces](../frameworks/MCP-SERVER.md#three-scope-namespaces) တွင် ကြည့်ပါ။
 
-### စီမံခန့်ခွဲမှု scope
+API key များတွင် `scopes` array တစ်ခု ပါရှိသည် (`api_keys.scopes` တွင် JSON အဖြစ် သိမ်းဆည်းထားသည်၊ `src/lib/db/apiKeys.ts` ကို ကြည့်ပါ)။
 
-- `manage` / `admin` — Bearer အဖြစ် ပေးပို့သည့်အခါ key ကို စီမံခန့်ခွဲမှု API endpoint များသို့ ဝင်ရောက်ခွင့် ပေးသည်။
+### Management scope
 
-### MCP scope များ (`src/shared/constants/mcpScopes.ts`)
+- `manage` / `admin` — `hasManageScope`။ management API route များသို့ Bearer access။
+- `mcp:connect`, `self:usage`, `self:account-quota`, နှင့်
+  `policy:bypass-provider-quota` တို့သည် ထပ်ပေါင်းနိုင်သော တိကျစွာ ကိုက်ညီသည့် scope များဖြစ်သည်။ ၎င်းတို့သည် `MANAGEMENT_API_KEY_SCOPES` ၏ အပြင်ဘက်တွင် ရှိသည်။ `mcp:connect` သည် `/api/mcp/` non-loopback carve-out ကိုသာ ဖွင့်ပေးသည်။
 
-MCP tool တစ်ခုစီသည် `MCP_TOOL_SCOPES` မှတစ်ဆင့် သတ်မှတ်ထားသော scope များ လိုအပ်သည်။ စာရင်းအပြည့်အစုံ (`MCP_SCOPE_LIST`) မှာ-
+### MCP tool scopes
 
-```
-read:health, read:combos, write:combos, read:quota, read:usage,
-read:models, execute:completions, execute:search, write:budget,
-write:resilience, pricing:write, read:cache, write:cache,
-read:compression, write:compression, read:proxies
-```
+Catalog နှင့် ကိုက်ညီမှု စည်းမျဉ်းများ (တူညီသော string၊ သို့မဟုတ် `*` ဖြင့် အဆုံးသတ်သော ခွင့်ပြုထားသည့် scope)၊
+[MCP tool scopes](../frameworks/MCP-SERVER.md#mcp-tool-scopes)။
+`src/shared/constants/mcpScopes.ts` ရှိ `MCP_SCOPE_LIST` သည် မူရင်း typed
+subset ဖြစ်ပြီး၊ ထို full catalog မဟုတ်ပါ။ အကောင်အထည်ဖော်မှုသည်
+`open-sse/mcp-server/scopeEnforcement.ts` တွင် `resolveCallerScopeContext()`
+မှ MCP auth အချက်အလက်၊ request metadata သို့မဟုတ် `OMNIROUTE_MCP_SCOPES` မှ scope များကို ဖြေရှင်းပြီးနောက် လုပ်ဆောင်သည်။
+`OMNIROUTE_MCP_ENFORCE_SCOPES=true` မဟုတ်ပါက ၎င်းသည် ပိတ်ထားသည်။
 
-`open-sse/mcp-server/server.ts` ရှိ scope စည်းကမ်းသတ်မှတ်ချက်သည် `resolveCallerScopeContext()` က MCP auth အချက်အလက်၊ request metadata သို့မဟုတ် `OMNIROUTE_MCP_SCOPES` မှ scope များကို ဖြေရှင်းပြီးနောက် tool တစ်ခုစီ၏ scope စာရင်းကို `evaluateToolScopes()` သို့ ပေးပို့သည်။
+### Access-token scopes
 
-## Auth လိုအပ်မှု အဖွင့်/အပိတ်
+`oma_live_…` token များပေါ်ရှိ `read` / `write` / `admin` ကို `scopeSatisfies`
+(`src/lib/accessTokens/scopes.ts`) ဖြင့် အဆင့်သတ်မှတ်သည်။ ဤအဆင့်သည် access-token
+credential အတွက်သာ သက်ဆိုင်သည်။ [Management Authentication](../guides/MANAGEMENT-AUTH.md) ကို ကြည့်ပါ။
 
-`src/shared/utils/apiAuth.ts` ရှိ `isAuthRequired()` သည် request တစ်ခုအတွက် **မည်သည့်** auth ကိုမဆို အတည်ပြုစစ်ဆေးမည်လားဆိုသည်ကို ဆုံးဖြတ်သည်-
+## Auth လိုအပ်ချက် ခလုတ်
 
-- `settings.requireLogin === false` → auth ကို စနစ်တစ်ခုလုံးအတွက် ပိတ်ထားသည်။
-- Password သတ်မှတ်မထားဘဲ `INITIAL_PASSWORD` env var လည်း မရှိပါက → bootstrap mode သည် onboarding wizard နှင့် loopback request များကို ခွင့်ပြုသော်လည်း ကွန်ရက်ပေါ် ဖွင့်လှစ်ထားသော request များအတွက် credential များ လိုအပ်နေဆဲဖြစ်သည်။
-- DB error တစ်ခုခု ဖြစ်ပေါ်ပါက → ပုံမှန်အားဖြင့် လုံခြုံမှုရှိစေရန် ဝင်ရောက်ခွင့်ကို ပိတ်ထားသည် (secure-by-default)။
+`src/shared/utils/apiAuth.ts` ရှိ `isAuthRequired()` သည် request တစ်ခုအတွက် **မည်သည့်** auth ကိုမဆို တည်ဆဲ လုပ်ရမလား ဆုံးဖြတ်သည်:
 
-Client API key စည်းကမ်းသတ်မှတ်ချက်သည် `process.env.REQUIRE_API_KEY` ကို တိုက်ရိုက်ဖတ်ခြင်းမဟုတ်ဘဲ `src/shared/utils/featureFlags.ts` ရှိ `isRequireApiKeyEnabled()` ကို အသုံးပြုသည်။ ဤအချက်သည် deploy လုပ်ထားသော instance များအတွက် အရေးကြီးသည်။ Dashboard → Feature Flags တွင် `REQUIRE_API_KEY` ကို အဖွင့်/အပိတ် ပြောင်းလဲခြင်းက DB override တစ်ခုကို သိမ်းဆည်းပြီး ဤ helper ကို အတူတကွ အသုံးပြုသော `/v1/*`, `/v1beta/*`, `/models`, `/responses`, `/chat/completions`, `/codex/*` နှင့် အခြား client-API auth စစ်ဆေးမှုများအပေါ် ချက်ချင်း သက်ရောက်သည်။ Feature flag store ကို ဖတ်၍မရပါက client API auth သည် ဝင်ရောက်ခွင့်ကို ပိတ်ထားပြီး key တစ်ခု လိုအပ်သည်။
+- `settings.requireLogin === false` → auth ကို global အရ ပိတ်ထားသည်၊ ဒါပေမဲ့ always-protected tier ([Route Guard Tiers](../security/ROUTE_GUARD_TIERS.md)) နှင့် ၎င်းလက်ခံသော credential ကို ထုတ်ပေးသည့် ခေါ်ဆိုမှုများကတော့ login ဖွင့်ထားစဉ်နှင့် တူညီသော credential လိုအပ်သည်: sync token ထုတ်ခြင်း၊ မည်သည့် scope ဖြင့်မဆို CLI access token ထုတ်ခြင်း၊ နှင့် `manage`/`admin` scope ပါသော API key ဖန်တီးခြင်း၊ ထို scope ကို key တစ်ခုသို့ ပေးခြင်း၊ သို့မဟုတ် ထို key ကို regenerate သို့မဟုတ် ပြခြင်း (`src/lib/api/requireManagementAuth.ts` ရှိ `requireCredentialForManagementScopedKey()`)။ Inference-only key များသည် ဖွင့်ထားဆဲ ဖြစ်သည်။
+- Password သတ်မှတ်မထားပြီး **နှင့်** `INITIAL_PASSWORD` env var မရှိပါက → bootstrap mode သည် onboarding wizard နှင့် loopback request များကို ခွင့်ပြုသော်လည်း ပြင်ပ network request များသည် credential လိုအပ်ဆဲ ဖြစ်သည်။
+- DB error မည်သည့်အချိန်မဆို → fail closed (ဘေးကင်းရေးကို မူလအဖြစ် ထားသည်)။
+
+Client API key enforcement သည် `src/shared/utils/featureFlags.ts` ရှိ `isRequireApiKeyEnabled()` ကို အသုံးပြုသည်၊ တိုက်ရိုက် `process.env.REQUIRE_API_KEY` ကို ဖတ်ခြင်း မဟုတ်ပါ။ ၎င်းသည် deployed instance များအတွက် အရေးကြီးသည်: Dashboard → Feature Flags တွင် `REQUIRE_API_KEY` ကို ပြောင်းခြင်းက DB override ကို သိမ်းပြီး `/v1/*`၊ `/v1beta/*`၊ `/models`၊ `/responses`၊ `/chat/completions`၊ `/codex/*` နှင့် ဤ helper ကို မျှဝေသော အခြား client-API auth စစ်ဆေးမှုများကို ချက်ချင်း သက်ရောက်စေသည်။ Feature flag store ကို ဖတ်၍ မရပါက client API auth သည် fail closed ဖြစ်ပြီး key တစ်ခု လိုအပ်သည်။
 
 ## လိုက်ဖက်ညီမှုကို ချိုးဖောက်သော ပြောင်းလဲမှု — v3.8.0
 
@@ -267,7 +258,7 @@ Handler များအတွင်း `assertAuth(req, expectedClass)` ကိ�
 
 ## ထပ်မံကြည့်ရှုရန်
 
-- [API_REFERENCE.md](../reference/API_REFERENCE.md) — endpoint တစ်ခုချင်းစီအလိုက် auth အမှတ်အသား
+- [API_REFERENCE.md](../reference/API_REFERENCE.md) — endpoint တစ်ခုစီအတွက် auth marker
 - [COMPLIANCE.md](../security/COMPLIANCE.md) — auth event များအတွက် audit log
-- [MCP-SERVER.md](../frameworks/MCP-SERVER.md) — MCP scope အတည်ပြုကျင့်သုံးမှု အသေးစိတ်
-- အရင်းအမြစ်- `src/server/authz/`, `src/lib/api/requireManagementAuth.ts`
+- [MCP-SERVER.md](../frameworks/MCP-SERVER.md#three-scope-namespaces) — scope namespace သုံးခုနှင့် MCP tool-scope catalog
+- အရင်းအမြစ်: `src/server/authz/`, `src/lib/api/requireManagementAuth.ts`

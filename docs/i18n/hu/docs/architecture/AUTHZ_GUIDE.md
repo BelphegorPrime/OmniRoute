@@ -1,15 +1,15 @@
 # Authorization Guide (Magyar)
 
-🌐 **Languages:** 🇺🇸 [English](../../../../architecture/AUTHZ_GUIDE.md) · 🇪🇹 [am](../../../am/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇿 [az](../../../az/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇰 [da](../../../da/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇪 [de](../../../de/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇷 [el](../../../el/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇸 [es](../../../es/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇪 [et](../../../et/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇱 [he](../../../he/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇩 [id](../../../id/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇹 [it](../../../it/docs/architecture/AUTHZ_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇭 [km](../../../km/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇲 [my](../../../my/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇴 [no](../../../no/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [or](../../../or/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇰 [si](../../../si/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [te](../../../te/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇭 [th](../../../th/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/architecture/AUTHZ_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/AUTHZ_GUIDE.md)
+🌐 **Languages:** 🇺🇸 [English](../../../../architecture/AUTHZ_GUIDE.md) · 🇪🇹 [am](../../../am/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇿 [az](../../../az/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇰 [da](../../../da/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇪 [de](../../../de/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇷 [el](../../../el/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇸 [es](../../../es/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇪 [et](../../../et/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇷 [fr](../../../fr/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇱 [he](../../../he/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇩 [id](../../../id/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇹 [it](../../../it/docs/architecture/AUTHZ_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇭 [km](../../../km/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇲 [my](../../../my/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇴 [no](../../../no/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [or](../../../or/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇰 [si](../../../si/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [te](../../../te/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇭 [th](../../../th/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/architecture/AUTHZ_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/AUTHZ_GUIDE.md)
 
 ---
 
-> **Hiteles forrás:** `src/server/authz/`, `src/shared/constants/publicApiRoutes.ts`, `src/lib/api/requireManagementAuth.ts`, `src/shared/utils/apiAuth.ts`
-> **Utolsó frissítés:** 2026-06-28 — v3.8.40
+> **Igazság forrása:** `src/server/authz/`, `src/shared/constants/publicApiRoutes.ts`, `src/lib/api/requireManagementAuth.ts`, `src/shared/utils/apiAuth.ts`
+> **Utolsó frissítés:** 2026-09-22 — hatókör névterek mutatnak az MCP-SERVER.md-re
 
-Az OmniRoute útvonal-tudatos engedélyezési folyamattal védi az összes API-kérést. A besorolás **determinisztikus** és **alapértelmezetten tiltó** — minden, ami nem sorolható be, `MANAGEMENT` besorolást kap, és munkamenetet vagy kezelési szintű tokent igényel. Ez az oldal az útvonalakat karbantartó vagy új végpontokat tervező mérnökök számára ismerteti a modellt.
+Az OmniRoute útvonal-érzékeny engedélyezési folyamattal rendelkezik, amely minden API kérést ellenőriz. Az osztályozás **determinisztikus** és **fail-closed** (hibásan zárt) — minden, ami nem osztályozható, `MANAGEMENT` kategóriába kerül, és munkamenet vagy menedzsment szintű tokent igényel. Ez az oldal a modelljét magyarázza el azoknak a mérnököknek, akik útvonalakat tartanak karban vagy új végpontokat terveznek.
 
-![AuthZ-folyamat (3 útvonalosztály + házirend-kiértékelés)](../diagrams/exported/authz-pipeline.svg)
+![AuthZ folyamat (3 útvonalkategória + házirend-értékelés)](../diagrams/exported/authz-pipeline.svg)
 
 > Forrás: [diagrams/authz-pipeline.mmd](../diagrams/authz-pipeline.mmd)
 
@@ -17,67 +17,63 @@ Az OmniRoute útvonal-tudatos engedélyezési folyamattal védi az összes API-k
 
 ### 1. API-kulcs (Bearer)
 
-Az OpenAI-/Anthropic-/Gemini-kompatibilis kliens-API-khoz, valamint néhány kezelési útvonalhoz használatos, ha a kulcs rendelkezik `manage` hatókörrel.
+Az OpenAI/Anthropic/Gemini-kompatibilis kliens API-khoz és néhány kezelési útvonalhoz használatos, ha a kulcsnak van `manage` hatóköre.
 
 ```
 Authorization: Bearer <api-key>
 ```
 
-A `src/sse/services/auth.ts` fájlban található `isValidApiKey()` / `extractApiKey()` ellenőrzi, és a `src/shared/utils/apiAuth.ts` fájl exportálja újra. Az ellenőrző az `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` környezeti változókat is elfogadja állandó átengedési kulcsokként (#1350. probléma).
+Az `isValidApiKey()` / `extractApiKey()` függvények ellenőrzik a `src/sse/services/auth.ts` fájlban, és a `src/shared/utils/apiAuth.ts` fájlon keresztül exportálódnak újra. Az ellenőrző az `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` környezeti változókat is elfogadja állandó átengedő kulcsként (#1350-es issue).
 
-### 2. Irányítópult-munkamenet (auth_token cookie)
+### 2. Irányítópult-munkamenet (auth_token süti)
 
-Az irányítópult oldalaihoz és a rendszergazdai műveletekhez.
+Az irányítópult oldalaihoz és az adminisztrációs műveletekhez.
 
 ```
 Cookie: auth_token=<JWT signed with JWT_SECRET>
 ```
 
-Egy cookie csak akkor számít munkamenetnek, ha a JWT ellenőrzése sikeres, **és** tartalmazza az `authenticated: true` értéket
-(`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). A cookie minden
-felhasználója (útvonalőr, az authz-folyamat frissítése, WebSocket-kézfogás, élő
-szerver, `/api/settings/require-login`, `/api/auth/status`) ezen a segédfüggvényen halad keresztül.
-Léteznek más, `JWT_SECRET` használatával aláírt JWT-k is — a Cursor CLI átengedési mechanizmusa
-`iss "omniroute" / aud "cursor-cli"` tokeneket bocsát ki a kulcsok birtokosai számára —, ezek azonban soha nem minősülnek munkamenetnek
-(#13298).
+A süti csak akkor számít munkamenetnek, ha a JWT ellenőrzése sikeres **és** tartalmazza az `authenticated: true` értéket (`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). A süti minden felhasználója — az irányítópult útvonalvédelme (`isDashboardSessionAuthenticated()`), az authz-folyamat frissítése, a WebSocket-kézfogás, az élő kiszolgáló, a `/api/settings/require-login` és a `/api/auth/status` — ezen a segédfüggvényen keresztül megy.
+A `JWT_SECRET`-tel aláírt más JWT-k is léteznek — a Cursor CLI átengedő folyamata `iss "omniroute" / aud "cursor-cli"` tokeneket állít ki a kulcs birtokosainak —, ezek soha nem számítanak munkamenetnek (#13298).
 
-A `src/shared/utils/apiAuth.ts` fájlban található `isDashboardSessionAuthenticated()` ellenőrzi. A folyamat automatikusan frissíti a JWT-t, ha a 30 napos élettartamából kevesebb mint 7 nap van hátra.
+Az `isDashboardSessionAuthenticated()` ellenőrzi a `src/shared/utils/apiAuth.ts` fájlban. A folyamat automatikusan megújítja a JWT-t, ha a 30 napos élettartamából kevesebb mint 7 nap van hátra.
 
-Egyes kezelési útvonalak **mindkét** módot elfogadják: cookie VAGY `Bearer <key>`, ha az API-kulcs rendelkezik `manage` (vagy `admin`) hatókörrel. Ez teszi lehetővé a v3.8-ban bevezetett, „API-hívásokon keresztül konfigurálható” munkafolyamatot.
+A munkamenet a 30 nap letelte előtt is véget érhet: minden kiállítás a `mintDashboardSessionToken` függvényen keresztül történik (kiállítási idő `iat`, azonosító `jti`), az ellenőrző pedig két beállítást vizsgál. A `sessionsValidAfter` értékét a jelszócsere állítja be, így az előtte kiállított összes munkamenet érvénytelenné válik (a jelszót megváltoztató böngésző új sütit kap). A `revokedDashboardSessions` listához a `POST /api/auth/logout` hozzáadja a kijelentkezett munkamenet `jti` értékét. A régebbi kiadás által kiállított munkamenetekben egyik állítás sincs, ezek az első jelszócseréig érvényesek maradnak. Ha a beállítások nem olvashatók be, a munkamenet nem bízható meg.
 
-#### Opcionális OIDC-bejelentkezési védelem (#6973)
+Néhány kezelési útvonal **bármelyik** módot elfogadja: sütit VAGY `Bearer <key>` fejlécet, ha az API-kulcsnak van `manage` (vagy `admin`) hatóköre. Ez teszi lehetővé a v3.8-ban bevezetett, API-hívásokon keresztül konfigurálható munkafolyamatot.
 
-Az irányítópult rendszergazdai bejelentkezése az alapértelmezett jelszavas bejelentkezés mellett egy **külön engedélyezhető** OIDC- (OpenID Connect-) folyamatot is támogat — a jelszavas bejelentkezés soha nem szűnik meg, csak kiegészül:
+#### Opcionális OIDC-bejelentkezési kapu (#6973)
 
-- Letiltva marad, hacsak a `settings.oidcEnabled === true` feltétel **és** az `oidcIssuer` /
-  `oidcClientId` / `oidcClientSecret` nincs mind konfigurálva (Beállítások → Hitelesítés).
-  Ellenkező esetben a `GET /api/auth/oidc/login` `400` választ ad vissza.
-- A `GET /api/auth/oidc/login` felderíti az `authorization_endpoint` értékét a kibocsátó
-  `/.well-known/openid-configuration` végpontjáról (ennek hiányában az
-  `<issuer>/authorize` útvonalat használja), a bejövő kérésből összeállítja az átirányítási URI-t
-  (figyelembe véve az `x-forwarded-proto` fejlécet), majd átirányít az IdP-hez egy véletlenszerű `state`
-  értékkel, amelyet egy `httpOnly` attribútumú `oidc_state` cookie tárol.
-- A `GET /api/auth/oidc/callback` ellenőrzi a `state` értékét, beváltja az engedélyezési
-  kódot, majd a kibocsátó JWKS-készletével ellenőrzi az ID-token aláírását
-  (a `jose` `createRemoteJWKSet` függvényével, JWKS URI-nként gyorsítótárazva), továbbá elvégzi az `issuer`/`audience`
-  ellenőrzéseket. Az opcionális `oidcAllowedSubjects` engedélyezési lista a token
-  `sub` jogcímével vagy `email` jogcímével keres egyezést — az e-mail-jogcímet csak akkor fogadja el,
-  ha `email_verified === true`, így az IdP-nél nem ellenőrzött e-mail-cím soha nem juthat át
-  a védelmen.
-- Siker esetén **pontosan ugyanazt** a 30 napos `auth_token` JWT-t bocsátja ki, mint a jelszavas
-  bejelentkezés (`src/app/api/auth/login/route.ts`), így az irányítópult
-  munkamenet-folyamatának többi része (automatikus frissítés, cookie-attribútumok) változatlan marad —
-  az OIDC csak a cookie kibocsátásának módját helyettesíti, nem az általa biztosított jogosultságokat.
+Az irányítópult adminisztrátori bejelentkezése egy **opcionális** OIDC (OpenID Connect) folyamatot is támogat az alapértelmezett jelszavas bejelentkezés mellett — a jelszavas bejelentkezés soha nem szűnik meg, csak kiegészül:
+
+- Csak akkor engedélyezett, ha `settings.oidcEnabled === true`, **és** az `oidcIssuer` / `oidcClientId` / `oidcClientSecret` mind be van állítva (Beállítások → Hitelesítés). Ellenkező esetben a `GET /api/auth/oidc/login` `400`-at ad vissza.
+- A `GET /api/auth/oidc/login` az `authorization_endpoint` címet a kiállító `/.well-known/openid-configuration` végpontjáról deríti fel (visszalépésként `<issuer>/authorize`), a visszairányítási URI-t a bejövő kérésből építi (`x-forwarded-proto`-kompatibilisen), majd egy véletlen `state` értékkel, a `httpOnly` `oidc_state` sütiben tárolva átirányít az IdP-hez.
+- A `GET /api/auth/oidc/callback` ellenőrzi a `state` értéket, beváltja az engedélyezési kódot, és az ID-token aláírását a kiállító JWKS-ével ellenőrzi (`jose` `createRemoteJWKSet`, JWKS URI-nként gyorsítótárazva), `issuer`/`audience` ellenőrzéssel. Az `oidcAllowedSubjects` engedélylista kötelező: a token `sub` állításával vagy `email` állításával egyezik. Az e-mail állítás csak akkor érvényes, ha `email_verified === true`, így az IdP-nél nem ellenőrzött e-mail soha nem juthat át a kapun. Bejegyzések nélkül a visszahívás minden bejelentkezést elutasít (`not_configured`).
+- Sikeres bejelentkezés esetén **pontosan ugyanazt** a 30 napos `auth_token` JWT-t állítja ki, mint a jelszavas bejelentkezés (`src/app/api/auth/login/route.ts`), így az irányítópult munkamenet-folyamatának többi része (automatikus megújítás, süti-jelzők) változatlan. Az OIDC csak azt cseréli le, hogyan jön létre a süti, azt nem, amit ad.
+- Minden `oidc*` beállítás (`oidcEnabled`, `oidcDisablePasswordLogin`, `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`, `oidcRedirectPath`, `oidcScopes`) szerepel a `SECURITY_IMPACTING_SETTINGS_KEYS` listában (`src/shared/constants/securityImpactingSettings.ts`): a `PATCH /api/settings` `400 PASSWORD_REQUIRED` választ ad, hacsak a törzs nem tartalmazza a kezelési jelszót `currentPassword` mezőben (helytelen jelszó esetén `401 PASSWORD_MISMATCH`). Az `oidcDisablePasswordLogin` megtiltja a jelszavas _bejelentkezést_ (`POST /api/auth/login`), de megtartja a tárolt jelszó-hash-t, az újrahitelesítés pedig továbbra is ezzel ellenőrzi a `currentPassword` értéket.
+- A `corsOrigins` és a `bruteForceProtection` is szerepel a `SECURITY_IMPACTING_SETTINGS_KEYS` listában: ezek lazítása gyengíti a bejelentkezés védelmét, ezért ugyanazt az újrahitelesítést (`currentPassword`) kérik (a Biztonság fül ezt kéri), a JSON-importálás pedig eldobja őket.
+- Minden biztonsági szabálykulcs — a `SECURITY_IMPACTING_SETTINGS_KEYS` bejegyzései, minden `oidc*` kulcs és az irányítópult-munkamenet állapota — **kizárólag operátor** által módosítható a `PATCH /api/settings` végponton: a `manage` hatókörű API-kulcs vagy `oma_` hozzáférési token `403`-at kap akkor is, ha a helyes `currentPassword` értéket küldi, az elutasítás pedig `settings.update_failed` eseményként, `reason: OPERATOR_REQUIRED` okkal kerül naplózásra (`requireOperatorCredential()` a `src/lib/api/operatorCredential.ts` fájlban). A normál beállítások (téma, megjelenítési beállítások) a `manage` kulccsal vagy `admin` hozzáférési tokennel továbbra is írhatók. A `/api/settings` bármely módosítása (és a `/api/settings/require-login`) az `admin` hozzáférési token hatókört igényli (`ADMIN_MUTATION_EXACT_PATHS` a `src/server/authz/accessScopes.ts` fájlban, pontos útvonal-egyezéssel); a `GET` a `read` hatókört igényli, a többi `/api/settings/*` alútvonal (proxyk, combo-alapértelmezések, modell-aliasok, tömörítés, tisztítások…) pedig a metódusból következtetett `write` hatókört tartja meg.
+- A `POST /api/settings/import-json` kihagyja ezt az újrahitelesítést, ezért az íráskor eldobja az `IMPORT_STRIPPED_SETTINGS_KEYS` listában szereplő kulcsokat (ugyanabban a fájlban): a jelszót és a `currentPassword` mezőt, minden `SECURITY_IMPACTING_SETTINGS_KEYS` bejegyzést, valamint az irányítópult-munkamenet állapotát (`sessionsValidAfter`, `revokedDashboardSessions`). Egy régebbi mentés importálása ezért nem támaszthat fel olyan munkamenetet, amelyet jelszócsere vagy kijelentkezés már lezárt.
+- Csak akkor engedélyezett, ha `settings.oidcEnabled === true`, **és** az `oidcIssuer` / `oidcClientId` / `oidcClientSecret` mind be van állítva (Beállítások → Hitelesítés). A `GET /api/auth/oidc/login` ellenkező esetben `400`-at ad vissza.
+- A `GET /api/auth/oidc/login` az `authorization_endpoint` címet a kiállító `/.well-known/openid-configuration` végpontjáról deríti fel (visszalépésként `<issuer>/authorize`), a visszairányítási URI-t a bejövő kérésből építi (`x-forwarded-proto`-kompatibilisen), majd egy véletlen `state` értékkel, a `httpOnly` `oidc_state` sütiben tárolva átirányít az IdP-hez.
+- A `GET /api/auth/oidc/callback` ellenőrzi a `state` értéket, beváltja az engedélyezési kódot, és az ID-token aláírását a kiállító JWKS-ével ellenőrzi (`jose` `createRemoteJWKSet`, JWKS URI-nként gyorsítótárazva), `issuer`/`audience` ellenőrzéssel. Az `oidcAllowedSubjects` engedélylista kötelező: a token `sub` állításával vagy `email` állításával egyezik. Az e-mail állítás csak akkor érvényes, ha `email_verified === true`, így az IdP-nél nem ellenőrzött e-mail soha nem juthat át a kapun. Bejegyzések nélkül a visszahívás minden bejelentkezést elutasít (`not_configured`).
+- Sikeres bejelentkezés esetén **pontosan ugyanazt** a 30 napos `auth_token` JWT-t állítja ki, mint a jelszavas bejelentkezés (`src/app/api/auth/login/route.ts`), így az irányítópult munkamenet-folyamatának többi része (automatikus megújítás, süti-jelzők) változatlan. Az OIDC csak azt cseréli le, hogyan jön létre a süti, azt nem, amit ad.
+- Minden `oidc*` beállítás (`oidcEnabled`, `oidcDisablePasswordLogin`, `oidcIssuer`, `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`, `oidcRedirectPath`, `oidcScopes`) szerepel a `SECURITY_IMPACTING_SETTINGS_KEYS` listában (`src/shared/constants/securityImpactingSettings.ts`): a `PATCH /api/settings` `400 PASSWORD_REQUIRED` választ ad, hacsak a törzs nem tartalmazza a kezelési jelszót `currentPassword` mezőben (helytelen jelszó esetén `401 PASSWORD_MISMATCH`). Az `oidcDisablePasswordLogin` megtiltja a jelszavas _bejelentkezést_ (`POST /api/auth/login`), de megtartja a tárolt jelszó-hash-t, az újrahitelesítés pedig továbbra is ezzel ellenőrzi a `currentPassword` értéket.
+- A `corsOrigins` és a `bruteForceProtection` is szerepel a `SECURITY_IMPACTING_SETTINGS_KEYS` listában: ezek lazítása gyengíti a bejelentkezés védelmét, ezért ugyanazt az újrahitelesítést (`currentPassword`) kérik (a Biztonság fül ezt kéri), a JSON-importálás pedig eldobja őket.
+- Minden biztonsági szabálykulcs — a `SECURITY_IMPACTING_SETTINGS_KEYS` bejegyzései, minden `oidc*` kulcs és az irányítópult-munkamenet állapota — **kizárólag operátor** által módosítható a `PATCH /api/settings` végponton: a `manage` hatókörű API-kulcs vagy `oma_` hozzáférési token `403`-at kap akkor is, ha a helyes `currentPassword` értéket küldi, az elutasítás pedig `settings.update_failed` eseményként, `reason: OPERATOR_REQUIRED` okkal kerül naplózásra (`requireOperatorCredential()` a `src/lib/api/operatorCredential.ts` fájlban). A normál beállítások (téma, megjelenítési beállítások) a `manage` kulccsal vagy `admin` hozzáférési tokennel továbbra is írhatók. A `/api/settings` bármely módosítása (és a `/api/settings/require-login`) az `admin` hozzáférési token hatókört igényli (`ADMIN_MUTATION_EXACT_PATHS` a `src/server/authz/accessScopes.ts` fájlban, pontos útvonal-egyezéssel); a `GET` a `read` hatókört igényli, a többi `/api/settings/*` alútvonal (proxyk, combo-alapértelmezések, modell-aliasok, tömörítés, tisztítások…) pedig a metódusból következtetett `write` hatókört tartja meg.
+- A `POST /api/settings/import-json` kihagyja ezt az újrahitelesítést, ezért az íráskor eldobja az `IMPORT_STRIPPED_SETTINGS_KEYS` listában szereplő kulcsokat (ugyanabban a fájlban): a jelszót és a `currentPassword` mezőt, minden `SECURITY_IMPACTING_SETTINGS_KEYS` bejegyzést, valamint az irányítópult-munkamenet állapotát (`sessionsValidAfter`, `revokedDashboardSessions`). Egy régebbi mentés importálása ezért nem támaszthat fel olyan munkamenetet, amelyet jelszócsere vagy kijelentkezés már lezárt.
 
 ## Útvonalosztályok
 
-A `src/server/authz/types.ts` három osztályt definiál; minden olyan útvonal, amely nem sorolható be determinisztikusan, alapértelmezetten a `MANAGEMENT` osztályba kerül.
+A `src/server/authz/types.ts` három osztályt határoz meg. Minden olyan útvonal, amelyet nem lehet determinisztikusan besorolni, a `MANAGEMENT` osztályba kerül.
 
-| Osztály      | Leírás                                                                                                                                                        | Szükséges hitelesítés                                                        |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `PUBLIC`     | Kifejezetten biztonságos útvonalak — bejelentkezés, kijelentkezés, állapot, inicializálás, rendszerállapot-ellenőrzés, bevezetési rendszerindítás.            | Nincs                                                                        |
-| `CLIENT_API` | Modellkiszolgáló végpontok — `/api/v1/*`, `/api/v1beta/*`, valamint a `/v1/*`, `/v1beta/*`, `/chat/completions`, `/responses`, `/models`, `/codex/*` aliasok. | Bearer-kulcs, ha az effektív `REQUIRE_API_KEY` funkciójelző engedélyezve van |
-| `MANAGEMENT` | Vezérlőpultoldalak, beállítások, szolgáltatók, kulcsok, adminisztrációs és diagnosztikai végpontok.                                                           | Vezérlőpult-munkamenet VAGY `manage` hatókörrel rendelkező Bearer            |
+| Osztály      | Leírás                                                                                                                                                          | Szükséges hitelesítés                                                           |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `PUBLIC`     | Kifejezetten biztonságos útvonalak — bejelentkezés, kijelentkezés, állapot, inicializálás, állapotellenőrzés és a beállítás kezdeti végpontjai.                 | Nincs                                                                           |
+| `CLIENT_API` | Modellkiszolgáló végpontok — `/api/v1/*`, `/api/v1beta/*`, valamint az aliasok: `/v1/*`, `/v1beta/*`, `/chat/completions`, `/responses`, `/models`, `/codex/*`. | Bearer-kulcs, ha az effektív `REQUIRE_API_KEY` funkciókapcsoló be van kapcsolva |
+| `MANAGEMENT` | Irányítópult-oldalak, beállítások, szolgáltatók, kulcsok, adminisztrációs és diagnosztikai végpontok.                                                           | Irányítópult-munkamenet VAGY Bearer `manage` hatókörrel                         |
+
+Néhány `MANAGEMENT` művelet **kizárólag operátor** által végezhető: a `manage` kulcs ehhez nem elég. A hitelesítő adatok exportálása (`GET /api/settings/export-json`, `GET /api/db-backups/export`, `GET /api/db-backups/exportAll`), visszaállítás az élő adatok fölé (`POST /api/db-backups/import`, beleértve a `dryRun=true` változatot, `POST /api/db-backups` azonosító szerinti visszaállítás, `POST /api/settings/import-json`), a visszaállítási pontok megsemmisítése (`DELETE /api/db-backups` takarítás, és `PATCH /api/db-backups`, mert az általa mentett megőrzési idő vezérli minden mentés utáni automatikus törlést) irányítópult-munkamenetet, a helyi CLI alanyt vagy a letiltott bejelentkezést követeli meg. Szinkronizációs token kiállítása (`POST /api/sync/tokens`) és `admin` CLI hozzáférési token létrehozása (`POST /api/cli/tokens`) minden bejelentkezési módban irányítópult-munkamenetet vagy a helyi CLI alanyt igényel. Bármely hatókörű API-kulcs és `oma_` hozzáférési token nem operátori hitelesítő adat: ha ilyet kell megadni, `403`-at kapnak. Az ellenőrzés a `src/lib/api/operatorCredential.ts` fájlban van (`resolveOperatorCredential()` / `requireOperatorCredential()`). A bejelentkezési beállítások módosítása is kizárólag operátori feladat: a `POST /api/settings/require-login` (kezelési jelszó beállítása / `requireLogin` átkapcsolása) jelszó megléte után csak ezekkel a hitelesítő adatokkal fogadja el a kérést. Az első indításkori bootstrap ablak (még nincs jelszó) változatlan marad, a jelszó cseréjéhez pedig az irányítópult-munkamenetnek el kell küldenie a `currentPassword` mezőt (hiány vagy hibás érték esetén `403`, `settings.update_failed` eseményként naplózva). A helyi CLI és a bejelentkezés nélküli példány megőrzi a helyreállítási utat, és jelszót jelszó nélkül is állíthat be, mert mindkettő ahhoz a géphez van kötve, amelyen az adatkönyvtár található.
 
 ## Feldolgozási folyamat
 
@@ -198,36 +194,50 @@ A halmazt az alak, ne pedig a kényelmi szempontok alapján válaszd ki. Egyetle
 
 ## Hatókörök
 
-Az API-kulcsok egy `scopes` tömböt tartalmaznak (JSON-ként tárolva az `api_keys.scopes` mezőben, lásd: `src/lib/db/apiKeys.ts`).
+Három névtér. Minden ellenőrző csak a saját stringjeit olvassa. Az összehasonlítás,
+beleértve azt is, hogy miért hiúsul meg a `manage` a `scopeMatches` ellenőrzésen
+a `read:compression` esetében, és miért nem tud egy `read` hozzáférési token
+`PATCH /api/keys/{id}` kérést végrehajtani, itt található:
+[Három hatókör névtér](../frameworks/MCP-SERVER.md#three-scope-namespaces).
 
-### Felügyeleti hatókör
+Az API kulcsok tartalmaznak egy `scopes` tömböt (JSON formátumban tárolva az
+`api_keys.scopes` mezőben, lásd `src/lib/db/apiKeys.ts`).
 
-- `manage` / `admin` — hozzáférést biztosít a kulcs számára a felügyeleti API-végpontokhoz, ha Bearer-tokenként küldik el.
+### Kezelési hatókör
 
-### MCP-hatókörök (`src/shared/constants/mcpScopes.ts`)
+- `manage` / `admin` — `hasManageScope`. Bearer hozzáférés a kezelési API útvonalakhoz.
+- Az `mcp:connect`, `self:usage`, `self:account-quota` és
+  `policy:bypass-provider-quota` additív, pontosan egyező hatókörök. Ezek
+  kívül esnek a `MANAGEMENT_API_KEY_SCOPES` hatókörön. Az `mcp:connect` csak
+  az `/api/mcp/` nem-loopback kivágást nyitja meg.
 
-Minden MCP-eszköz meghatározott hatóköröket igényel az `MCP_TOOL_SCOPES` alapján. A teljes lista (`MCP_SCOPE_LIST`):
+### MCP eszköz hatókörök
 
-```
-read:health, read:combos, write:combos, read:quota, read:usage,
-read:models, execute:completions, execute:search, write:budget,
-write:resilience, pricing:write, read:cache, write:cache,
-read:compression, write:compression, read:proxies
-```
+Katalógus és illesztési szabályok (azonos string, vagy egy `*`-ra végződő
+megadott hatókör): [MCP eszköz hatókörök](../frameworks/MCP-SERVER.md#mcp-tool-scopes).
+Az `MCP_SCOPE_LIST` a `src/shared/constants/mcpScopes.ts` fájlban az eredeti
+típusos részhalmaz, nem a teljes katalógus. A kényszerítés az
+`open-sse/mcp-server/scopeEnforcement.ts` fájlban fut, miután a
+`resolveCallerScopeContext()` feloldja a hatóköröket az MCP hitelesítési
+információkból, a kérés metaadataiból vagy az `OMNIROUTE_MCP_SCOPES` alapján.
+Ez kikapcsolva marad, hacsak az `OMNIROUTE_MCP_ENFORCE_SCOPES=true` nincs beállítva.
 
-A hatókörök kikényszerítése az `open-sse/mcp-server/server.ts` fájlban minden eszköz hatókörlistáját átadja az
-`evaluateToolScopes()` függvénynek, miután a `resolveCallerScopeContext()` feloldotta a hatóköröket az MCP hitelesítési adataiból,
-a kérés metaadataiból vagy az `OMNIROUTE_MCP_SCOPES` változóból.
+### Hozzáférési token hatókörök
 
-## Hitelesítési követelmény kapcsolója
+`read` / `write` / `admin` az `oma_live_…` tokeneken, a `scopeSatisfies`
+(`src/lib/accessTokens/scopes.ts`) alapján rangsorolva. Ez a rangsor csak a
+hozzáférési token hitelesítő adatokra vonatkozik. Lásd:
+[Kezelési hitelesítés](../guides/MANAGEMENT-AUTH.md).
 
-A `src/shared/utils/apiAuth.ts` fájlban található `isAuthRequired()` dönti el, hogy egy kéréshez szükséges-e **bármilyen** hitelesítés:
+## Hitelesítés-kötelezőség kapcsoló
 
-- `settings.requireLogin === false` → a hitelesítés globálisan le van tiltva.
-- Nincs beállítva jelszó, **és** nincs `INITIAL_PASSWORD` környezeti változó → a rendszerindítási mód engedélyezi a bevezető varázslót és a loopback kéréseket, de a hálózaton elérhető kérésekhez továbbra is szükségesek hitelesítő adatok.
-- Bármilyen adatbázishiba → zárt módon hiúsul meg (alapértelmezetten biztonságos).
+Az `isAuthRequired()` a `src/shared/utils/apiAuth.ts` fájlban dönti el, hogy egy kérésnél érvényesül-e **bármilyen** hitelesítés:
 
-A kliensoldali API-kulcsok kikényszerítése a `src/shared/utils/featureFlags.ts` fájlban található `isRequireApiKeyEnabled()` függvényt használja, nem pedig a `process.env.REQUIRE_API_KEY` közvetlen kiolvasását. Ez fontos a telepített példányoknál: a `REQUIRE_API_KEY` átkapcsolása a Vezérlőpult → Funkciójelzők felületen adatbázis-felülírást tárol, és azonnal hatással van a `/v1/*`, `/v1beta/*`, `/models`, `/responses`, `/chat/completions`, `/codex/*` és más, ezt a segédfüggvényt használó kliens-API hitelesítési ellenőrzésekre. Ha a funkciójelzők tárhelye nem olvasható, a kliens-API hitelesítése zárt módon hiúsul meg, és kulcsot követel meg.
+- `settings.requireLogin === false` → a hitelesítés globálisan ki van kapcsolva, kivéve az mindig védett szintet (lásd: [Útvonalvédelmi szintek](../security/ROUTE_GUARD_TIERS.md)), valamint azokat a hívásokat, amelyek olyan hitelesítő adatot állítanak ki, amelyet a rendszer elfogad. Ezekhez ugyanaz a hitelesítő adat kell, mint bejelentkezéssel: szinkronizációs tokenek kiállítása, CLI hozzáférési tokenek kiállítása bármilyen hatókörrel, valamint `manage`/`admin` hatókörű API-kulcs létrehozása, ilyen hatókör megadása egy kulcsnak, vagy ilyen kulcs újragenerálása és megjelenítése (`requireCredentialForManagementScopedKey()` a `src/lib/api/requireManagementAuth.ts` fájlban). A következtetési célú kulcsok nyitva maradnak.
+- Nincs jelszó beállítva **és** nincs `INITIAL_PASSWORD` környezeti változó → bootstrap mód: a beállító varázsló és a loopback kérések engedélyezettek, de a külső hálózati kéréseknek továbbra is hitelesítő adat kell.
+- Bármilyen adatbázis-hiba → zárt állapot (biztonságos alapértelmezés).
+
+Az ügyfél-API kulcs érvényesítése az `isRequireApiKeyEnabled()` függvényt használja a `src/shared/utils/featureFlags.ts` fájlban, nem közvetlenül a `process.env.REQUIRE_API_KEY` olvasását. Ez a telepített példányoknál fontos: a `REQUIRE_API_KEY` átkapcsolása az Irányítópult → Funkciókapcsolók menüben DB-felülírást tárol, és azonnal hat a `/v1/*`, `/v1beta/*`, `/models`, `/responses`, `/chat/completions`, `/codex/*` útvonalakra és a többi ügyfél-API hitelesítési ellenőrzésre, amelyek ezt a segédfüggvényt használják. Ha a funkciókapcsoló-tár nem olvasható, az ügyfél-API hitelesítés zárt állapotba kerül, és kulcsot kér.
 
 ## Inkompatibilis változás — v3.8.0
 
@@ -266,6 +276,6 @@ A kezelőkön belül használja az `assertAuth(req, expectedClass)` függvényt 
 ## Lásd még
 
 - [API_REFERENCE.md](../reference/API_REFERENCE.md) — hitelesítési jelölő végpontonként
-- [COMPLIANCE.md](../security/COMPLIANCE.md) — hitelesítési események naplója
-- [MCP-SERVER.md](../frameworks/MCP-SERVER.md) — az MCP-hatókörök kikényszerítésének részletei
+- [COMPLIANCE.md](../security/COMPLIANCE.md) — naplózási napló hitelesítési eseményekhez
+- [MCP-SERVER.md](../frameworks/MCP-SERVER.md#three-scope-namespaces) — három hatókör-névtér és MCP eszköz-hatókör katalógus
 - Forrás: `src/server/authz/`, `src/lib/api/requireManagementAuth.ts`

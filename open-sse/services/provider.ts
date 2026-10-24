@@ -6,12 +6,20 @@ import {
   buildClaudeCodeCompatibleHeaders,
   CLAUDE_CODE_COMPATIBLE_DEFAULT_CHAT_PATH,
   joinClaudeCodeCompatibleUrl,
+  maybeAppendSkillsBeta,
 } from "./claudeCodeCompatible.ts";
 import { getClaudeCodeCompatibleRequestDefaults } from "@/lib/providers/requestDefaults";
 import { buildClineHeaders } from "@/shared/utils/clineAuth";
 import { usesCcWireImage } from "./ccWireImageBuiltins.ts";
 
 const OPENAI_COMPATIBLE_PREFIX = "openai-compatible-";
+const OPENAI_COMPATIBLE_ID_TYPES = [
+  "responses",
+  "embeddings",
+  "audio-transcriptions",
+  "audio-speech",
+  "images-generations",
+] as const;
 const OPENAI_COMPATIBLE_DEFAULTS = {
   baseUrl: "https://api.openai.com/v1",
 };
@@ -60,12 +68,14 @@ export function getOpenAICompatibleType(
   ) {
     return configuredType;
   }
-  if (provider.includes("responses")) return "responses";
-  if (provider.includes("embeddings")) return "embeddings";
-  if (provider.includes("audio-transcriptions")) return "audio-transcriptions";
-  if (provider.includes("audio-speech")) return "audio-speech";
-  if (provider.includes("images-generations")) return "images-generations";
-  return "chat";
+  // Legacy fallback: the type is the fixed segment right after the prefix
+  // (`openai-compatible-<type>-<suffix>`, or the bare `openai-compatible-<type>`).
+  // Anchored so an operator-chosen suffix (e.g. `-chat-my-responses`) never flips it.
+  const marker = provider.slice(OPENAI_COMPATIBLE_PREFIX.length);
+  const legacyType = OPENAI_COMPATIBLE_ID_TYPES.find(
+    (type) => marker === type || marker.startsWith(`${type}-`)
+  );
+  return legacyType || "chat";
 }
 
 function buildOpenAICompatibleUrl(baseUrl, apiType) {
@@ -111,6 +121,19 @@ export function detectFormatFromEndpoint(body, endpointPath = "") {
   // a cloudcode reply regardless of which provider actually served it.
   if (/\/antigravity(?=\/|:|$)/i.test(path) || /^antigravity(?=\/|:|$)/i.test(path)) {
     return "antigravity";
+  }
+
+  // #14165: the /v1beta Gemini ingress converts gemini -> openai chat format
+  // before re-entering handleChat while the request URL keeps its /v1beta
+  // path. With no path branch, detectFormat's `max_tokens` heuristic misread
+  // the converted body (messages + max_tokens) as claude, so non-streaming
+  // replies came back anthropic-shaped and streaming replies were empty. The
+  // ingress always produces an openai chat body; a body that still carries
+  // the raw gemini `contents` envelope keeps the body-based detection below.
+  if (/\/v1beta(?:\/|$)/i.test(path) || /^v1beta(?:\/|$)/i.test(path)) {
+    if (!(body && typeof body === "object" && body.contents && Array.isArray(body.contents))) {
+      return "openai";
+    }
   }
 
   if (
@@ -335,7 +358,6 @@ export function buildProviderUrl(
 
 // Build provider headers
 export function buildProviderHeaders(provider, credentials, stream = true, body = null) {
-  void body;
   const config = getProviderConfig(provider);
   const entry = getRegistryEntry(provider);
   const headers = {
@@ -370,6 +392,9 @@ export function buildProviderHeaders(provider, credentials, stream = true, body 
         ccHeaders["Authorization"] = `Bearer ${token}`;
       }
     }
+    // For CC-compatible providers returning early, ensure skills beta is conditionally applied
+    // (within this block, isClaudeCodeCompatible(provider) is guaranteed true):
+    maybeAppendSkillsBeta(ccHeaders, provider, body, true);
     return ccHeaders;
   }
   if (isAnthropicCompatible(provider)) {
@@ -433,6 +458,9 @@ export function buildProviderHeaders(provider, credentials, stream = true, body 
     headers["Accept"] = "text/event-stream";
   }
 
+  // For standard/compatible provider paths, ensure skills beta is conditionally applied
+  maybeAppendSkillsBeta(headers, provider, body);
+
   return headers;
 }
 
@@ -474,9 +502,10 @@ export function hasThinkingConfig(body) {
 
 // Normalize thinking config based on last message role
 // - If lastMessage is not user → remove Claude/Gemini-style thinking config
+// - Preserve an explicit Claude opt-out; it is request-level intent, not a thinking turn
 // - Keep OpenAI Chat Completions reasoning_effort as a request-level option.
 export function normalizeThinkingConfig(body) {
-  if (!isLastMessageFromUser(body)) {
+  if (!isLastMessageFromUser(body) && body.thinking?.type !== "disabled") {
     delete body.thinking;
   }
   return body;

@@ -1,85 +1,112 @@
 # Authorization Guide (Français)
 
-🌐 **Languages:** 🇺🇸 [English](../../../../architecture/AUTHZ_GUIDE.md) · 🇪🇹 [am](../../../am/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇿 [az](../../../az/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇰 [da](../../../da/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇪 [de](../../../de/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇷 [el](../../../el/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇸 [es](../../../es/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇪 [et](../../../et/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇱 [he](../../../he/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇩 [id](../../../id/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇹 [it](../../../it/docs/architecture/AUTHZ_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇭 [km](../../../km/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇲 [my](../../../my/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇴 [no](../../../no/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [or](../../../or/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇰 [si](../../../si/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [te](../../../te/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇭 [th](../../../th/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/architecture/AUTHZ_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/AUTHZ_GUIDE.md)
+🌐 **Languages:** 🇺🇸 [English](../../../../architecture/AUTHZ_GUIDE.md) · 🇪🇹 [am](../../../am/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇦 [ar](../../../ar/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇿 [az](../../../az/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇬 [bg](../../../bg/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇩 [bn](../../../bn/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇦 [bs](../../../bs/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇿 [cs](../../../cs/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇰 [da](../../../da/docs/architecture/AUTHZ_GUIDE.md) · 🇩🇪 [de](../../../de/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇷 [el](../../../el/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇸 [es](../../../es/docs/architecture/AUTHZ_GUIDE.md) · 🇪🇪 [et](../../../et/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇷 [fa](../../../fa/docs/architecture/AUTHZ_GUIDE.md) · 🇫🇮 [fi](../../../fi/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇪 [ga](../../../ga/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [gu](../../../gu/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ha](../../../ha/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇱 [he](../../../he/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [hi](../../../hi/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇷 [hr](../../../hr/docs/architecture/AUTHZ_GUIDE.md) · 🇭🇺 [hu](../../../hu/docs/architecture/AUTHZ_GUIDE.md) · 🇦🇲 [hy](../../../hy/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇩 [id](../../../id/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [ig](../../../ig/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇹 [it](../../../it/docs/architecture/AUTHZ_GUIDE.md) · 🇯🇵 [ja](../../../ja/docs/architecture/AUTHZ_GUIDE.md) · 🇬🇪 [ka](../../../ka/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇭 [km](../../../km/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [kn](../../../kn/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇷 [ko](../../../ko/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇹 [lt](../../../lt/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇻 [lv](../../../lv/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ml](../../../ml/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [mr](../../../mr/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇾 [ms](../../../ms/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇹 [mt](../../../mt/docs/architecture/AUTHZ_GUIDE.md) · 🇲🇲 [my](../../../my/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇵 [ne](../../../ne/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇱 [nl](../../../nl/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇴 [no](../../../no/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [or](../../../or/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [pa](../../../pa/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇭 [phi](../../../phi/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇱 [pl](../../../pl/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇹 [pt](../../../pt/docs/architecture/AUTHZ_GUIDE.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇴 [ro](../../../ro/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇺 [ru](../../../ru/docs/architecture/AUTHZ_GUIDE.md) · 🇱🇰 [si](../../../si/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇰 [sk](../../../sk/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇮 [sl](../../../sl/docs/architecture/AUTHZ_GUIDE.md) · 🇷🇸 [sr](../../../sr/docs/architecture/AUTHZ_GUIDE.md) · 🇸🇪 [sv](../../../sv/docs/architecture/AUTHZ_GUIDE.md) · 🇰🇪 [sw](../../../sw/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [ta](../../../ta/docs/architecture/AUTHZ_GUIDE.md) · 🇮🇳 [te](../../../te/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇭 [th](../../../th/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇷 [tr](../../../tr/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/AUTHZ_GUIDE.md) · 🇵🇰 [ur](../../../ur/docs/architecture/AUTHZ_GUIDE.md) · 🇺🇿 [uz](../../../uz/docs/architecture/AUTHZ_GUIDE.md) · 🇻🇳 [vi](../../../vi/docs/architecture/AUTHZ_GUIDE.md) · 🇳🇬 [yo](../../../yo/docs/architecture/AUTHZ_GUIDE.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/AUTHZ_GUIDE.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/AUTHZ_GUIDE.md)
 
 ---
 
-> **Source de référence :** `src/server/authz/`, `src/shared/constants/publicApiRoutes.ts`, `src/lib/api/requireManagementAuth.ts`, `src/shared/utils/apiAuth.ts`
-> **Dernière mise à jour :** 2026-06-28 — v3.8.40
+> **Source de vérité :** `src/server/authz/`, `src/shared/constants/publicApiRoutes.ts`, `src/lib/api/requireManagementAuth.ts`, `src/shared/utils/apiAuth.ts`
+> **Dernière mise à jour :** 2026-09-22 — les espaces de noms de portée pointent vers MCP-SERVER.md
 
-OmniRoute dispose d’un pipeline d’autorisation tenant compte des routes, qui contrôle chaque requête API. La classification est **déterministe** et **fermée par défaut** — tout ce qui ne peut pas être classifié finit dans `MANAGEMENT` et exige une session ou un jeton de niveau gestion. Cette page explique le modèle aux ingénieurs chargés de maintenir les routes ou de concevoir de nouveaux points de terminaison.
+OmniRoute dispose d'un pipeline d'autorisation sensible aux routes qui filtre chaque requête API. La classification est **déterministe** et **fermée par défaut** — tout ce qui ne peut pas être classifié est considéré comme `MANAGEMENT` et exige une session ou un jeton de niveau gestion. Cette page explique le modèle aux ingénieurs qui maintiennent des routes ou conçoivent de nouveaux points de terminaison.
 
-![Pipeline AuthZ (3 classes de routes + évaluation des politiques)](../diagrams/exported/authz-pipeline.svg)
+![Pipeline d'autorisation (3 classes de routes + évaluation des politiques)](../diagrams/exported/authz-pipeline.svg)
 
 > Source : [diagrams/authz-pipeline.mmd](../diagrams/authz-pipeline.mmd)
 
-## Deux modes d’authentification
+## Deux modes d'authentification
 
-### 1. Clé API (Bearer)
+### 1. Clé d'API (Bearer)
 
-Utilisée pour les API clientes compatibles avec OpenAI/Anthropic/Gemini et pour quelques routes de gestion lorsque la clé possède la portée `manage`.
+Utilisée pour les API client compatibles OpenAI, Anthropic et Gemini, ainsi que pour quelques routes de gestion lorsque la clé possède la portée `manage`.
 
 ```
 Authorization: Bearer <api-key>
 ```
 
-Validée par `isValidApiKey()` / `extractApiKey()` dans `src/sse/services/auth.ts` et réexportée via `src/shared/utils/apiAuth.ts`. Le validateur accepte également les variables d’environnement `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` comme clés de relais persistantes (problème #1350).
+Validée par `isValidApiKey()` / `extractApiKey()` dans `src/sse/services/auth.ts` et réexportée via `src/shared/utils/apiAuth.ts`. Le validateur accepte également les variables d'environnement `OMNIROUTE_API_KEY` / `ROUTER_API_KEY` comme clés de transit persistantes (issue #1350).
 
 ### 2. Session du tableau de bord (cookie auth_token)
 
-Pour les pages du tableau de bord et les opérations d’administration.
+Pour les pages du tableau de bord et les opérations d'administration.
 
 ```
-Cookie: auth_token=<JWT signé avec JWT_SECRET>
+Cookie: auth_token=<JWT signed with JWT_SECRET>
 ```
 
-Un cookie est considéré comme une session uniquement lorsque le JWT est vérifié **et** contient `authenticated: true`
-(`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). Chaque
-consommateur du cookie (garde de route, actualisation du pipeline AuthZ, négociation WebSocket, serveur
-temps réel, `/api/settings/require-login`, `/api/auth/status`) passe par cet utilitaire.
-Il existe d’autres JWT signés avec `JWT_SECRET` — le relais de la CLI Cursor émet
-des jetons `iss "omniroute" / aud "cursor-cli"` pour les détenteurs de clés — qui ne sont jamais considérés comme des sessions
-(#13298).
+Un cookie n'est une session que lorsque le JWT est vérifié **et** contient `authenticated: true`
+(`src/shared/utils/dashboardSessionToken.ts` → `verifyDashboardSessionToken`). Chaque consommateur du cookie (le garde de routes du tableau de bord (`isDashboardSessionAuthenticated()`), le rafraîchissement du pipeline d'autorisation, la poignée de main WebSocket, le serveur en direct, `/api/settings/require-login`, `/api/auth/status`) passe par cet helper. D'autres JWT signés avec `JWT_SECRET` existent (le passthrough de la Cursor CLI émet des jetons `iss "omniroute" / aud "cursor-cli"` pour les détenteurs de clés), mais ne sont jamais des sessions (#13298).
 
-Vérifiée par `isDashboardSessionAuthenticated()` dans `src/shared/utils/apiAuth.ts`. Le pipeline actualise automatiquement le JWT lorsqu’il lui reste moins de 7 jours sur sa durée de vie de 30 jours.
+Vérifié par `isDashboardSessionAuthenticated()` dans `src/shared/utils/apiAuth.ts`. Le pipeline rafraîchit automatiquement le JWT lorsqu'il lui reste moins de 7 jours sur sa durée de vie de 30 jours.
 
-Certaines routes de gestion acceptent **l’un ou l’autre** mode : cookie OU `Bearer <key>` lorsque la clé API possède la portée `manage` (ou `admin`). C’est ce qui rend possible le flux de travail « configurable par des appels API » ajouté dans la v3.8.
+Une session peut aussi prendre fin avant ses 30 jours : chaque émetteur passe par `mintDashboardSessionToken` (avec une date d'émission `iat` et un identifiant `jti`), et le vérificateur contrôle deux réglages : `sessionsValidAfter`, défini par un changement de mot de passe afin que toute session émise avant cesse d'être valide (le navigateur qui a changé le mot de passe reçoit un nouveau cookie), et `revokedDashboardSessions`, auquel `POST /api/auth/logout` ajoute le `jti` de la session fermée. Les sessions émises par une version antérieure ne portent aucune de ces revendications et restent valides jusqu'au premier changement de mot de passe. Si les réglages ne peuvent pas être lus, la session n'est pas considérée comme fiable.
 
-#### Barrière de connexion OIDC facultative (#6973)
+Certaines routes de gestion acceptent **l'un ou l'autre** mode : le cookie OU `Bearer <key>` lorsque la clé d'API possède la portée `manage` (ou `admin`). C'est ce qui permet le flux « configurable via des appels d'API » ajouté dans la v3.8.
 
-La connexion administrateur au tableau de bord prend également en charge un flux OIDC (OpenID Connect) **facultatif**
-en complément de la connexion par mot de passe par défaut — la connexion par mot de passe n’est jamais supprimée, seulement
-complétée :
+#### Connexion OIDC optionnelle (#6973)
 
-- Désactivé sauf si `settings.oidcEnabled === true` **et** si `oidcIssuer` /
+La connexion administrateur du tableau de bord prend aussi en charge un flux OIDC (OpenID Connect) **optionnel**, en complément de la connexion par mot de passe par défaut. La connexion par mot de passe n'est jamais supprimée, elle est seulement complétée :
+
+- Désactivée sauf si `settings.oidcEnabled === true` **et** que `oidcIssuer` /
   `oidcClientId` / `oidcClientSecret` sont tous configurés (Paramètres → Auth).
   `GET /api/auth/oidc/login` renvoie `400` dans le cas contraire.
-- `GET /api/auth/oidc/login` découvre le `authorization_endpoint` à partir de
-  `/.well-known/openid-configuration` de l’émetteur (avec repli sur
-  `<issuer>/authorize`), construit l’URI de redirection à partir de la requête entrante
-  (en tenant compte de `x-forwarded-proto`) et redirige vers l’IdP avec un `state`
-  aléatoire stocké dans un cookie `oidc_state` `httpOnly`.
-- `GET /api/auth/oidc/callback` valide `state`, échange le code d’autorisation
-  et vérifie la signature du jeton d’identité au moyen du JWKS de l’émetteur
-  (`createRemoteJWKSet` de `jose`, mis en cache par URI JWKS), avec des contrôles `issuer`/`audience`.
-  Une liste d’autorisation `oidcAllowedSubjects` facultative vérifie la correspondance avec la revendication
-  `sub` ou la revendication `email` du jeton — la revendication d’adresse e-mail n’est prise en compte que lorsque
-  `email_verified === true`, de sorte qu’une adresse e-mail non vérifiée auprès de l’IdP ne puisse jamais franchir
-  la barrière.
-- En cas de succès, il émet **exactement le même** JWT `auth_token` valable 30 jours que celui émis par la connexion
-  par mot de passe (`src/app/api/auth/login/route.ts`) ; le reste du
-  pipeline de session du tableau de bord (actualisation automatique, attributs du cookie) demeure donc inchangé —
-  OIDC remplace uniquement la manière dont le cookie est émis, et non les droits qu’il accorde.
+- `GET /api/auth/oidc/login` découvre l'`authorization_endpoint` à partir de
+  `/.well-known/openid-configuration` de l'émetteur (repli : `<issuer>/authorize`), construit
+  l'URI de redirection à partir de la requête entrante (en tenant compte de `x-forwarded-proto`)
+  et redirige vers l'IdP avec un `state` aléatoire stocké dans un cookie `oidc_state` en
+  `httpOnly`.
+- `GET /api/auth/oidc/callback` valide `state`, échange le code d'autorisation et vérifie la
+  signature du jeton ID via le JWKS de l'émetteur (`createRemoteJWKSet` de `jose`, mis en cache
+  par URI de JWKS) avec des contrôles de `issuer`/`audience`. La liste d'autorisation
+  `oidcAllowedSubjects` est obligatoire : elle correspond à la revendication `sub` du jeton ou à
+  sa revendication `email`. La revendication d'e-mail n'est prise en compte que lorsque
+  `email_verified === true`, si bien qu'un e-mail non vérifié chez l'IdP ne peut jamais passer la
+  barrière. Sans entrée, le callback refuse toute connexion (`not_configured`).
+- En cas de succès, il émet **exactement le même** JWT `auth_token` de 30 jours que la connexion
+  par mot de passe (`src/app/api/auth/login/route.ts`), de sorte que le reste du pipeline de
+  session du tableau de bord (rafraîchissement automatique, indicateurs du cookie) reste
+  inchangé. OIDC ne remplace que la manière dont le cookie est obtenu, pas ce qu'il accorde.
+- Tous les réglages `oidc*` (`oidcEnabled`, `oidcDisablePasswordLogin`, `oidcIssuer`,
+  `oidcClientId`, `oidcClientSecret`, `oidcAllowedSubjects`, `oidcRedirectPath`, `oidcScopes`)
+  figurent dans `SECURITY_IMPACTING_SETTINGS_KEYS` (`src/shared/constants/securityImpactingSettings.ts`) :
+  `PATCH /api/settings` répond `400 PASSWORD_REQUIRED` à moins que le corps ne contienne le mot
+  de passe de gestion sous la forme `currentPassword` (`401 PASSWORD_MISMATCH` s'il est erroné).
+  `oidcDisablePasswordLogin` interdit la _connexion_ par mot de passe (`POST /api/auth/login`) mais
+  conserve le hachage du mot de passe, et la réauthentification continue de vérifier
+  `currentPassword` par rapport à lui.
+- `corsOrigins` et `bruteForceProtection` figurent aussi dans `SECURITY_IMPACTING_SETTINGS_KEYS` :
+  assouplir l'un des deux affaiblit les défenses de connexion. Ils exigent donc la même
+  réauthentification par `currentPassword` (l'onglet Sécurité la demande), et l'import JSON
+  les ignore.
+- Chaque clé de politique de sécurité (les entrées de `SECURITY_IMPACTING_SETTINGS_KEYS`, chaque
+  clé `oidc*` et l'état de session du tableau de bord) est **réservée à l'opérateur** sur
+  `PATCH /api/settings` : une clé d'API de portée `manage` ou un jeton d'accès `oma_` reçoit `403`
+  même lorsqu'il envoie le bon `currentPassword`, et le refus est audité comme
+  `settings.update_failed` avec `reason: OPERATOR_REQUIRED` (`requireOperatorCredential()` dans
+  `src/lib/api/operatorCredential.ts`). Les réglages ordinaires (thème, préférences d'affichage)
+  restent modifiables avec une clé `manage` ou un jeton d'accès `admin`. Toute modification de
+  `/api/settings` lui-même (et de `/api/settings/require-login`) exige en outre la portée de jeton
+  d'accès `admin` (`ADMIN_MUTATION_EXACT_PATHS` dans `src/server/authz/accessScopes.ts`, correspondance
+  exacte du chemin). `GET` reste `read`, et les autres sous-routes `/api/settings/*` (proxys,
+  valeurs par défaut des combos, alias de modèles, compression, purges…) conservent la portée
+  `write` déduite de la méthode.
+- `POST /api/settings/import-json` ne demande pas cette réauthentification ; il supprime donc, avant
+  l'écriture, chaque clé de `IMPORT_STRIPPED_SETTINGS_KEYS` (même fichier) : le mot de passe et
+  `currentPassword`, chaque entrée de `SECURITY_IMPACTING_SETTINGS_KEYS`, et l'état de session du
+  tableau de bord (`sessionsValidAfter`, `revokedDashboardSessions`). Importer une ancienne
+  sauvegarde ne peut donc pas ressusciter une session qu'un changement de mot de passe ou une
+  déconnexion a déjà terminée.
 
 ## Classes de routes
 
-`src/server/authz/types.ts` définit trois classes ; toute route qui ne peut pas être classée de manière déterministe utilise par défaut `MANAGEMENT`.
+`src/server/authz/types.ts` définit trois classes ; toute route qui ne peut pas être classée de façon déterministe revient à `MANAGEMENT`.
 
 | Classe       | Description                                                                                                                                                                      | Authentification requise                                                                |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `PUBLIC`     | Routes explicitement sûres — connexion, déconnexion, état, initialisation, santé, amorçage de l’intégration.                                                                     | Aucune                                                                                  |
-| `CLIENT_API` | Points de terminaison de service des modèles — `/api/v1/*`, `/api/v1beta/*`, ainsi que les alias `/v1/*`, `/v1beta/*`, `/chat/completions`, `/responses`, `/models`, `/codex/*`. | Clé Bearer lorsque l’indicateur de fonctionnalité effectif `REQUIRE_API_KEY` est activé |
-| `MANAGEMENT` | Pages du tableau de bord, paramètres, fournisseurs, clés, ainsi que points de terminaison d’administration et de diagnostic.                                                     | Session du tableau de bord OU Bearer avec la portée `manage`                            |
+| `PUBLIC`     | Routes explicitement sûres : connexion, déconnexion, statut, initialisation, vérification de l'état et amorçage de l'onboarding.                                                 | Aucune                                                                                  |
+| `CLIENT_API` | Points de terminaison de service des modèles : `/api/v1/*`, `/api/v1beta/*`, ainsi que les alias `/v1/*`, `/v1beta/*`, `/chat/completions`, `/responses`, `/models`, `/codex/*`. | Clé Bearer lorsque l'indicateur de fonctionnalité `REQUIRE_API_KEY` effectif est activé |
+| `MANAGEMENT` | Pages du tableau de bord, paramètres, fournisseurs, clés, points de terminaison d'administration et de diagnostic.                                                               | Session du tableau de bord OU Bearer avec la portée `manage`                            |
+
+Quelques actions de `MANAGEMENT` sont **réservées à l'opérateur** : une clé `manage` ne suffit pas. L'export des identifiants stockés (`GET /api/settings/export-json`, `GET /api/db-backups/export`, `GET /api/db-backups/exportAll`), la restauration d'une sauvegarde par-dessus les données en service (`POST /api/db-backups/import`, y compris avec `dryRun=true`, `POST /api/db-backups` avec restauration par identifiant, `POST /api/settings/import-json`), et la suppression des points de restauration (nettoyage par `DELETE /api/db-backups` et `PATCH /api/db-backups`, car la rétention qu'il enregistre pilote l'élagage automatique après chaque sauvegarde) exigent une session du tableau de bord, l'identité de la CLI locale, ou une connexion désactivée. L'émission d'un jeton de synchronisation (`POST /api/sync/tokens`) et la création d'un jeton d'accès CLI de portée `admin` (`POST /api/cli/tokens`) exigent, quel que soit le mode de connexion, une session du tableau de bord ou l'identité de la CLI locale. Les clés d'API de toute portée et les jetons d'accès `oma_` ne sont pas des identifiants opérateur : ils reçoivent `403` chaque fois que l'un de ces identifiants est requis. La vérification se trouve dans `src/lib/api/operatorCredential.ts` (`resolveOperatorCredential()` / `requireOperatorCredential()`). La modification des réglages de connexion est également réservée à l'opérateur : `POST /api/settings/require-login` (définir le mot de passe de gestion / activer ou désactiver `requireLogin`) n'accepte ces identifiants qu'une fois un mot de passe existant ; la fenêtre d'amorçage de la première exécution (pas encore de mot de passe) reste inchangée. Une session du tableau de bord doit envoyer `currentPassword` pour remplacer le mot de passe (`403` s'il est absent ou erroné, audité comme `settings.update_failed`). La CLI locale et une instance à connexion désactivée conservent le chemin de récupération et peuvent définir un mot de passe sans cette étape, car tous deux sont liés à l'hôte qui possède le répertoire de données.
 
 ## Pipeline
 
@@ -200,36 +227,43 @@ Choisissez l’ensemble en fonction de la forme, et non par commodité. Une rout
 
 ## Portées
 
-Les clés d’API comportent un tableau `scopes` (stocké au format JSON dans `api_keys.scopes`, voir `src/lib/db/apiKeys.ts`).
+Trois espaces de noms. Chaque vérificateur ne lit que ses propres chaînes. La comparaison côte à côte, y compris pourquoi `manage` échoue `scopeMatches` pour `read:compression` et pourquoi un jeton d'accès `read` ne peut pas `PATCH /api/keys/{id}`, se trouve dans [Trois espaces de noms de portée](../frameworks/MCP-SERVER.md#three-scope-namespaces).
+
+Les clés API contiennent un tableau `scopes` (stocké au format JSON dans `api_keys.scopes`, voir `src/lib/db/apiKeys.ts`).
 
 ### Portée de gestion
 
-- `manage` / `admin` — accorde à la clé l’accès aux points de terminaison de l’API de gestion lorsqu’elle est transmise comme jeton Bearer.
+- `manage` / `admin` — `hasManageScope`. Accès Bearer aux routes de l'API de gestion.
+- `mcp:connect`, `self:usage`, `self:account-quota`, et
+  `policy:bypass-provider-quota` sont des portées additives à correspondance exacte. Elles se situent
+  en dehors de `MANAGEMENT_API_KEY_SCOPES`. `mcp:connect` ouvre uniquement la
+  découpe non-loopback `/api/mcp/`.
 
-### Portées MCP (`src/shared/constants/mcpScopes.ts`)
+### Portées des outils MCP
 
-Chaque outil MCP nécessite des portées spécifiques via `MCP_TOOL_SCOPES`. Liste complète (`MCP_SCOPE_LIST`) :
+Catalogue et règles de correspondance (chaîne identique, ou une portée accordée se terminant par `*`) :
+[Portées des outils MCP](../frameworks/MCP-SERVER.md#mcp-tool-scopes).
+`MCP_SCOPE_LIST` dans `src/shared/constants/mcpScopes.ts` est le sous-ensemble typé original,
+et non le catalogue complet. L'application s'exécute dans
+`open-sse/mcp-server/scopeEnforcement.ts` après que `resolveCallerScopeContext()`
+résolve les portées à partir des informations d'authentification MCP, des métadonnées de requête ou de `OMNIROUTE_MCP_SCOPES`.
+Elle reste désactivée à moins que `OMNIROUTE_MCP_ENFORCE_SCOPES=true`.
 
-```
-read:health, read:combos, write:combos, read:quota, read:usage,
-read:models, execute:completions, execute:search, write:budget,
-write:resilience, pricing:write, read:cache, write:cache,
-read:compression, write:compression, read:proxies
-```
+### Portées des jetons d'accès
 
-L’application des portées dans `open-sse/mcp-server/server.ts` transmet la liste des portées de chaque outil à
-`evaluateToolScopes()` après que `resolveCallerScopeContext()` a résolu les portées à partir des informations d’authentification MCP,
-des métadonnées de la requête ou de `OMNIROUTE_MCP_SCOPES`.
+`read` / `write` / `admin` sur les jetons `oma_live_…`, classés par `scopeSatisfies`
+(`src/lib/accessTokens/scopes.ts`). Ce classement s'applique uniquement aux identifiants
+du jeton d'accès. Voir [Authentification de gestion](../guides/MANAGEMENT-AUTH.md).
 
-## Option d’authentification obligatoire
+## Bascule « authentification requise »
 
-`isAuthRequired()` dans `src/shared/utils/apiAuth.ts` détermine si une authentification **quelconque** est imposée pour une requête :
+`isAuthRequired()` dans `src/shared/utils/apiAuth.ts` décide si **une quelconque** authentification est imposée à une requête :
 
-- `settings.requireLogin === false` → l’authentification est désactivée globalement.
-- Aucun mot de passe configuré **et** aucune variable d’environnement `INITIAL_PASSWORD` → le mode d’amorçage autorise l’assistant d’intégration et les requêtes en boucle locale, mais les requêtes exposées sur le réseau nécessitent toujours des identifiants.
-- Toute erreur de base de données → verrouillage par défaut (sécurisé par défaut).
+- `settings.requireLogin === false` → l'authentification est désactivée globalement, à l'exception du niveau toujours protégé (voir [Niveaux du Route Guard](../security/ROUTE_GUARD_TIERS.md)) et des appels qui délivrent un identifiant accepté par celui-ci. Ces appels exigent le même identifiant qu'avec la connexion activée : émettre des jetons de synchronisation, créer des jetons d'accès CLI de n'importe quelle portée, créer une clé d'API de portée `manage`/`admin`, accorder cette portée à une clé, ou régénérer ou révéler une telle clé (`requireCredentialForManagementScopedKey()` dans `src/lib/api/requireManagementAuth.ts`). Les clés réservées à l'inférence restent ouvertes.
+- Aucun mot de passe configuré **et** aucune variable d'environnement `INITIAL_PASSWORD` → le mode d'amorçage autorise l'assistant d'onboarding et les requêtes loopback, mais les requêtes réseau exposées exigent toujours des identifiants.
+- Toute erreur de base de données → échec fermé (sécurisé par défaut).
 
-L’application des clés d’API clientes utilise `isRequireApiKeyEnabled()` dans `src/shared/utils/featureFlags.ts`, et non une lecture directe de `process.env.REQUIRE_API_KEY`. Cela est important pour les instances déployées : modifier `REQUIRE_API_KEY` dans Dashboard → Feature Flags enregistre une surcharge dans la base de données et affecte immédiatement `/v1/*`, `/v1beta/*`, `/models`, `/responses`, `/chat/completions`, `/codex/*` ainsi que les autres contrôles d’authentification de l’API cliente qui partagent cette fonction d’assistance. Si le stockage des indicateurs de fonctionnalité ne peut pas être lu, l’authentification de l’API cliente est verrouillée par défaut et exige une clé.
+L'application des clés d'API client utilise `isRequireApiKeyEnabled()` dans `src/shared/utils/featureFlags.ts`, et non une lecture directe de `process.env.REQUIRE_API_KEY`. Cela compte pour les instances déployées : activer ou désactiver `REQUIRE_API_KEY` dans Dashboard → Feature Flags enregistre une surcharge en base et affecte immédiatement `/v1/*`, `/v1beta/*`, `/models`, `/responses`, `/chat/completions`, `/codex/*` et les autres vérifications d'authentification de l'API client qui partagent ce helper. Si le magasin des feature flags ne peut pas être lu, l'authentification de l'API client échoue en mode fermé et exige une clé.
 
 ## Changement incompatible — v3.8.0
 
@@ -267,7 +301,7 @@ Utilisez `assertAuth(req, expectedClass)` dans les gestionnaires — cette fonct
 
 ## Voir aussi
 
-- [API_REFERENCE.md](../reference/API_REFERENCE.md) — marqueur d’authentification par point de terminaison
-- [COMPLIANCE.md](../security/COMPLIANCE.md) — journal d’audit des événements d’authentification
-- [MCP-SERVER.md](../frameworks/MCP-SERVER.md) — détails sur l’application des portées MCP
+- [API_REFERENCE.md](../reference/API_REFERENCE.md) — marqueur d'authentification par point d'accès
+- [COMPLIANCE.md](../security/COMPLIANCE.md) — journal d'audit pour les événements d'authentification
+- [MCP-SERVER.md](../frameworks/MCP-SERVER.md#three-scope-namespaces) — trois espaces de noms de portée et catalogue de portée d'outil MCP
 - Source : `src/server/authz/`, `src/lib/api/requireManagementAuth.ts`

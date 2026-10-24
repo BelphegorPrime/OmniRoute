@@ -1,6 +1,6 @@
 # OmniRoute Codebase Documentation (Türkçe)
 
-🌐 **Languages:** 🇺🇸 [English](../../../../architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇹 [am](../../../am/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇦 [ar](../../../ar/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇿 [az](../../../az/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇬 [bg](../../../bg/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇩 [bn](../../../bn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇿 [cs](../../../cs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇰 [da](../../../da/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇪 [de](../../../de/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇷 [el](../../../el/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇸 [es](../../../es/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇪 [et](../../../et/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇷 [fa](../../../fa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇮 [fi](../../../fi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇷 [fr](../../../fr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇪 [ga](../../../ga/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [gu](../../../gu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ha](../../../ha/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇱 [he](../../../he/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [hi](../../../hi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇷 [hr](../../../hr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇺 [hu](../../../hu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇲 [hy](../../../hy/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇩 [id](../../../id/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ig](../../../ig/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇹 [it](../../../it/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇯🇵 [ja](../../../ja/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇪 [ka](../../../ka/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇭 [km](../../../km/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [kn](../../../kn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇷 [ko](../../../ko/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇹 [lt](../../../lt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇻 [lv](../../../lv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ml](../../../ml/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [mr](../../../mr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇾 [ms](../../../ms/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇹 [mt](../../../mt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇲 [my](../../../my/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇵 [ne](../../../ne/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇱 [nl](../../../nl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇴 [no](../../../no/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [or](../../../or/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [pa](../../../pa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇭 [phi](../../../phi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇱 [pl](../../../pl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇹 [pt](../../../pt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇴 [ro](../../../ro/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇺 [ru](../../../ru/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇰 [si](../../../si/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇰 [sk](../../../sk/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇮 [sl](../../../sl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇸 [sr](../../../sr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇪 [sv](../../../sv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇪 [sw](../../../sw/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ta](../../../ta/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [te](../../../te/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇭 [th](../../../th/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇰 [ur](../../../ur/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇿 [uz](../../../uz/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇻🇳 [vi](../../../vi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [yo](../../../yo/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/CODEBASE_DOCUMENTATION.md)
+🌐 **Languages:** 🇺🇸 [English](../../../../architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇹 [am](../../../am/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇦 [ar](../../../ar/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇿 [az](../../../az/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇬 [bg](../../../bg/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇩 [bn](../../../bn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇦 [bs](../../../bs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇿 [cs](../../../cs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇰 [da](../../../da/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇪 [de](../../../de/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇷 [el](../../../el/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇸 [es](../../../es/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇪 [et](../../../et/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇷 [fa](../../../fa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇮 [fi](../../../fi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇷 [fr](../../../fr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇪 [ga](../../../ga/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [gu](../../../gu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ha](../../../ha/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇱 [he](../../../he/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [hi](../../../hi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇷 [hr](../../../hr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇺 [hu](../../../hu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇲 [hy](../../../hy/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇩 [id](../../../id/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ig](../../../ig/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇹 [it](../../../it/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇯🇵 [ja](../../../ja/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇪 [ka](../../../ka/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇭 [km](../../../km/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [kn](../../../kn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇷 [ko](../../../ko/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇹 [lt](../../../lt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇻 [lv](../../../lv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ml](../../../ml/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [mr](../../../mr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇾 [ms](../../../ms/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇹 [mt](../../../mt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇲 [my](../../../my/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇵 [ne](../../../ne/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇱 [nl](../../../nl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇴 [no](../../../no/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [or](../../../or/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [pa](../../../pa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇭 [phi](../../../phi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇱 [pl](../../../pl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇹 [pt](../../../pt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇴 [ro](../../../ro/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇺 [ru](../../../ru/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇰 [si](../../../si/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇰 [sk](../../../sk/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇮 [sl](../../../sl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇸 [sr](../../../sr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇪 [sv](../../../sv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇪 [sw](../../../sw/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ta](../../../ta/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [te](../../../te/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇭 [th](../../../th/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇰 [ur](../../../ur/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇿 [uz](../../../uz/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇻🇳 [vi](../../../vi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [yo](../../../yo/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/CODEBASE_DOCUMENTATION.md)
 
 ---
 
@@ -437,47 +437,51 @@ Odaklanmış alt dizinlere ayrılmıştır:
 ## 4. `open-sse/` — Akış motoru çalışma alanı
 
 `@omniroute/open-sse` olarak yayımlanan ayrı bir npm çalışma alanıdır. İstek
-işleme, yürütücüler, çeviriciler, servisler, dönüştürücü ve MCP sunucusunu kapsar.
+işleme, yürütücüler, çeviriciler, servisler, dönüştürücü ve MCP sunucusunu yönetir.
 
 ```
 open-sse/
-├── index.ts                Genel dışa aktarımlar
+├── index.ts                Herkese açık dışa aktarımlar
 ├── package.json            Çalışma alanı manifesti
 ├── tsconfig.json
 ├── types.d.ts
-├── config/                 Sağlayıcı kayıtları, üstbilgi profilleri, kimlik, …
+├── config/                 Sağlayıcı kayıtları, başlık profilleri, kimlik, …
 ├── handlers/               İstek işleyicileri (sohbet, gömmeler, ses, görüntü, …)
-├── executors/              Sağlayıcıya özgü 108 HTTP yürütücüsü
+├── executors/              156 sağlayıcı yürütücü modülü (yürütücü sınıfları + sağlayıcı başına yardımcılar)
 ├── translator/             Biçim dönüştürme (OpenAI ↔ Claude ↔ Gemini ↔ Cursor ↔ Kiro)
 ├── transformer/            Responses API ↔ Chat Completions akış dönüştürücüsü
-├── services/               80'den fazla servis modülü (kombinasyonlar, geri dönüş, kotalar, kimlik, …)
+├── services/               80+ servis modülü (kombolar, geri dönüş, kotalar, kimlik, …)
 ├── utils/                  Akış yardımcıları, TLS istemcisi, AWS SigV4, proxy fetch, …
 └── mcp-server/             MCP sunucusu (3 aktarım, 33 kapsam, 110 araç)
 ```
 
 ### 4.1 `open-sse/handlers/`
 
-| İşleyici                | Amaç                                                                                      |
-| ----------------------- | ----------------------------------------------------------------------------------------- |
-| `chatCore.ts`           | Ana sohbet işlem hattı (önbellek, hız sınırı, kombinasyon yönlendirme, yürütücü dağıtımı) |
-| `responsesHandler.ts`   | OpenAI Responses API giriş noktası                                                        |
-| `embeddings.ts`         | Gömmeler                                                                                  |
-| `imageGeneration.ts`    | Görüntü oluşturma                                                                         |
-| `audioSpeech.ts`        | Metinden konuşmaya                                                                        |
-| `audioTranscription.ts` | Konuşmadan metne                                                                          |
-| `videoGeneration.ts`    | Video oluşturma                                                                           |
-| `musicGeneration.ts`    | Müzik oluşturma                                                                           |
-| `rerank.ts`             | Yeniden sıralama                                                                          |
-| `moderations.ts`        | Moderasyon                                                                                |
-| `search.ts`             | Web araması                                                                               |
-| `sseParser.ts`          | SSE olay ayrıştırıcısı                                                                    |
-| `usageExtractor.ts`     | Üst kaynak akışlarından token sayılarını çıkarır                                          |
-| `responseSanitizer.ts`  | Sağlayıcıya özgü gereksiz verileri kaldırır                                               |
-| `responseTranslator.ts` | Sağlayıcı yanıtı ile çevirici katmanı arasındaki bağlantı                                 |
+| İşleyici                | Amaç                                                                                |
+| ----------------------- | ----------------------------------------------------------------------------------- |
+| `chatCore.ts`           | Ana sohbet işlem hattı (önbellek, hız sınırı, kombo yönlendirme, yürütücü dağıtımı) |
+| `responsesHandler.ts`   | OpenAI Responses API giriş noktası                                                  |
+| `embeddings.ts`         | Gömmeler                                                                            |
+| `imageGeneration.ts`    | Görüntü oluşturma                                                                   |
+| `audioSpeech.ts`        | Metinden konuşmaya                                                                  |
+| `audioTranscription.ts` | Konuşmadan metne                                                                    |
+| `videoGeneration.ts`    | Video oluşturma                                                                     |
+| `musicGeneration.ts`    | Müzik oluşturma                                                                     |
+| `rerank.ts`             | Yeniden sıralama                                                                    |
+| `moderations.ts`        | Moderasyon                                                                          |
+| `search.ts`             | Web araması                                                                         |
+| `sseParser.ts`          | SSE olay ayrıştırıcısı                                                              |
+| `usageExtractor.ts`     | Yukarı akışlardan token sayılarını çıkarma                                          |
+| `responseSanitizer.ts`  | Sağlayıcıya özgü gürültüyü kaldırma                                                 |
+| `responseTranslator.ts` | Sağlayıcı yanıtı ile çevirici katmanı arasındaki bağlantı                           |
 
 ### 4.2 `open-sse/executors/`
 
-Her biri `BaseExecutor` (`base.ts`) sınıfını genişleten 108 sağlayıcı yürütücüsü:
+156 üst düzey yürütücü modülü (`*.ts` eksi `base.ts`, `index.ts` ve testler — bu sayı
+`npm run check:docs-counts` tarafından ölçülür). Her yürütücü sınıfı, doğrudan veya
+`DefaultExecutor` ya da başka bir yürütücü aracılığıyla `BaseExecutor` (`base.ts`) sınıfını genişletir;
+kalan modüller sağlayıcı başına yardımcılardır (araç şemaları, fetch/TTS adaptörleri, özel durum işleyicileri).
+Yürütücüler şunları içerir:
 
 `antigravity`, `azure-openai`, `blackbox-web`, `cliproxyapi`,
 `chatgpt-web-codex`, `cloudflare-ai`, `codex`, `commandCode`, `cursor`, `default`, `devin-cli`,
@@ -486,12 +490,12 @@ Her biri `BaseExecutor` (`base.ts`) sınıfını genişleten 108 sağlayıcı y�
 (paylaşılan kimlik yardımcısı) ve `index.ts` (kayıt defteri).
 
 > Not: burada listelenmeyen sağlayıcılar, genel OpenAI uyumlu yürütücüyü kullanan
-> `default.ts` tarafından sunulur. Sağlayıcı kataloğunun tamamı (355 sağlayıcı)
-> `src/shared/constants/providers.ts` içinde bulunur.
+> `default.ts` tarafından sunulur. Tam sağlayıcı kataloğu (375 sağlayıcı)
+> `src/shared/constants/providers.ts` içinde yer alır.
 
 ### 4.3 `open-sse/translator/`
 
-Merkez ve kollar modeliyle çeviri (merkez OpenAI'dır).
+Merkez-uç çevirisi (merkez OpenAI'dır).
 
 - **9 istek çeviricisi** (`translator/request/`):
   `antigravity-to-openai`, `claude-to-gemini`, `claude-to-openai`,
@@ -517,35 +521,35 @@ Merkez ve kollar modeliyle çeviri (merkez OpenAI'dır).
 
 Öne çıkanlar (tam liste `open-sse/services/` altında):
 
-| Konu               | Dosyalar                                                                                                                                                                                                                                          |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Combo yönlendirme  | `combo.ts` (19 strateji), `comboConfig.ts`, `comboMetrics.ts`, `comboManifestMetrics.ts`, `comboAgentMiddleware.ts`                                                                                                                               |
-| Auto Combo motoru  | `autoCombo/` — `engine.ts`, `scoring.ts`, `taskFitness.ts`, `virtualFactory.ts`, `modePacks.ts`, `autoPrefix.ts`, `persistence.ts`, `providerDiversity.ts`, `providerRegistryAccessor.ts`, `routerStrategy.ts`, `selfHealing.ts`, `index.ts`      |
-| Dayanıklılık       | `accountFallback.ts` (bekleme süresi + kilitleme), `errorClassifier.ts`, `requestRejectedStreak.ts`, `emergencyFallback.ts`, `rateLimitManager.ts`, `rateLimitSemaphore.ts`, `accountSemaphore.ts`, `accountSelector.ts`                          |
-| Kotalar            | `quotaMonitor.ts`, `quotaPreflight.ts`, `bailianQuotaFetcher.ts`, `codexQuotaFetcher.ts`, `deepseekQuotaFetcher.ts`, `openrouterQuotaFetcher.ts`, `openrouterFreeWindow.ts`, `crofUsageFetcher.ts`, `antigravityCredits.ts`                       |
-| Önbelleğe alma     | `reasoningCache.ts`, `searchCache.ts`, `signatureCache.ts`, `requestDedup.ts`                                                                                                                                                                     |
-| Yönlendirme zekâsı | `intentClassifier.ts`, `taskAwareRouter.ts`, `backgroundTaskDetector.ts`, `volumeDetector.ts`, `wildcardRouter.ts`, `workflowFSM.ts`, `specificityDetector.ts`, `specificityRules.ts`, `specificityTypes.ts`                                      |
-| Model işleme       | `modelCapabilities.ts`, `modelDeprecation.ts`, `modelFamilyFallback.ts`, `modelStrip.ts`, `model.ts`, `provider.ts`, `providerRequestDefaults.ts`, `providerCostData.ts`, `payloadRules.ts`                                                       |
-| Sıkıştırma         | `compression/` — eksiksiz sıkıştırma motoru bağlantıları                                                                                                                                                                                          |
-| Token + oturum     | `tokenRefresh.ts`, `sessionManager.ts`, `apiKeyRotator.ts`, `contextManager.ts`, `contextHandoff.ts`, `systemPrompt.ts`, `roleNormalizer.ts`, `responsesInputSanitizer.ts`, `toolSchemaSanitizer.ts`, `toolLimitDetector.ts`, `thinkingBudget.ts` |
-| Katman / manifest  | `tierResolver.ts`, `tierConfig.ts`, `tierDefaults.json`, `tierTypes.ts`, `manifestAdapter.ts`                                                                                                                                                     |
-| IP / ağ            | `ipFilter.ts`, `webSearchFallback.ts`                                                                                                                                                                                                             |
-| Toplu işlemler     | `batchProcessor.ts`                                                                                                                                                                                                                               |
-| Kullanım           | `usage.ts`                                                                                                                                                                                                                                        |
+| Konu               | Dosyalar                                                                                                                                                                                                                                                 |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Combo yönlendirme  | `combo.ts` (20 strateji), `comboConfig.ts`, `comboMetrics.ts`, `comboManifestMetrics.ts`, `comboAgentMiddleware.ts`                                                                                                                                      |
+| Auto Combo motoru  | `autoCombo/` — `engine.ts`, `scoring.ts`, `taskFitness.ts`, `virtualFactory.ts`, `modePacks.ts`, `autoPrefix.ts`, `persistence.ts`, `providerDiversity.ts`, `providerRegistryAccessor.ts`, `routerStrategy.ts`, `selfHealing.ts`, `index.ts`             |
+| Dayanıklılık       | `accountFallback.ts` (bekleme süresi + kilitleme), `errorClassifier.ts`, `requestRejectedStreak.ts`, `emergencyFallback.ts`, `rateLimitManager.ts`, `rateLimitSemaphore.ts`, `accountSemaphore.ts`, `accountSelector.ts`                                 |
+| Kotalar            | `quotaMonitor.ts`, `quotaPreflight.ts`, `bailianQuotaFetcher.ts`, `codexQuotaFetcher.ts`, `deepseekQuotaFetcher.ts`, `openrouterQuotaFetcher.ts`, `openrouterFreeWindow.ts`, `llmgatewayQuotaFetcher.ts`, `crofUsageFetcher.ts`, `antigravityCredits.ts` |
+| Önbelleğe alma     | `reasoningCache.ts`, `searchCache.ts`, `signatureCache.ts`, `requestDedup.ts`                                                                                                                                                                            |
+| Yönlendirme zekâsı | `intentClassifier.ts`, `taskAwareRouter.ts`, `backgroundTaskDetector.ts`, `volumeDetector.ts`, `wildcardRouter.ts`, `workflowFSM.ts`, `specificityDetector.ts`, `specificityRules.ts`, `specificityTypes.ts`                                             |
+| Model işleme       | `modelCapabilities.ts`, `modelDeprecation.ts`, `modelFamilyFallback.ts`, `modelStrip.ts`, `model.ts`, `provider.ts`, `providerRequestDefaults.ts`, `providerCostData.ts`, `payloadRules.ts`                                                              |
+| Sıkıştırma         | `compression/` — tam sıkıştırma motoru bağlantılandırması                                                                                                                                                                                                |
+| Token + oturum     | `tokenRefresh.ts`, `sessionManager.ts`, `apiKeyRotator.ts`, `contextManager.ts`, `contextHandoff.ts`, `systemPrompt.ts`, `roleNormalizer.ts`, `responsesInputSanitizer.ts`, `toolSchemaSanitizer.ts`, `toolLimitDetector.ts`, `thinkingBudget.ts`        |
+| Katman / manifest  | `tierResolver.ts`, `tierConfig.ts`, `tierDefaults.json`, `tierTypes.ts`, `manifestAdapter.ts`                                                                                                                                                            |
+| IP / ağ            | `ipFilter.ts`, `webSearchFallback.ts`                                                                                                                                                                                                                    |
+| Toplu işlemler     | `batchProcessor.ts`                                                                                                                                                                                                                                      |
+| Kullanım           | `usage.ts`                                                                                                                                                                                                                                               |
 
 ### 4.6 `open-sse/mcp-server/`
 
-- `server.ts` içinde bağlanmış **110 benzersiz araç** (`schemas/tools.ts` içinde 45 standart araç +
+- `server.ts` içinde bağlanmış **110 benzersiz araç** (`schemas/tools.ts` içinde 45 kanonik araç +
   bellek, beceriler, GitHub becerileri, havuz, oyunlaştırma, eklenti, Notion, Obsidian,
   yerel derlem ve sıkıştırma modülleri — birleşim `countUniqueMcpTools` tarafından sayılır).
 - **3 aktarım yöntemi**: stdio, HTTP Streamable, SSE.
-- Çalışma zamanında uygulanan **33 kapsam** — temel liste `src/shared/constants/mcpScopes.ts` içindedir; tam küme, her araç modülü tarafından bildirilen kapsamların birleşimidir.
+- Çalışma zamanında **33 kapsam** uygulanır — temel liste `src/shared/constants/mcpScopes.ts` içindedir; tam küme, her araç modülü tarafından bildirilen kapsamların birleşimidir.
 - Denetim tablosu: `mcp_tool_audit` (`audit.ts` tarafından doldurulur).
 - Dosyalar: `server.ts`, `index.ts`, `httpTransport.ts`, `audit.ts`, `scopeEnforcement.ts`,
   `runtimeHeartbeat.ts`, `descriptionCompressor.ts`, `schemas/{tools, a2a, audit, index}.ts`,
   `tools/{advancedTools, compressionTools, memoryTools, skillTools}.ts`,
   ayrıca `__tests__/` altındaki testler.
-- Eksiksiz araç kataloğu için [MCP-SERVER.md](../frameworks/MCP-SERVER.md) belgesine bakın.
+- Tam araç kataloğu için [MCP-SERVER.md](../frameworks/MCP-SERVER.md) dosyasına bakın.
 
 ### 4.7 `open-sse/config/`
 
@@ -656,7 +660,7 @@ Yaygın komutlar:
 
 ## 8. `scripts/`
 
-Amaca göre 6 alt klasör hâlinde düzenlenmiştir.
+Amaca göre 6 alt klasör halinde düzenlenmiştir.
 
 - **`scripts/build/`** — `build-next-isolated.mjs`, `prepublish.ts`,
   `prepare-electron-standalone.mjs`, `pack-artifact-policy.ts`,
@@ -668,7 +672,12 @@ Amaca göre 6 alt klasör hâlinde düzenlenmiştir.
   `v1-ws-bridge.mjs`, `smoke-electron-packaged.mjs`,
   `run-playwright-tests.mjs`, `run-ecosystem-tests.mjs`,
   `run-protocol-clients-tests.mjs`, `sync-env.mjs`, `healthcheck.mjs`,
-  `system-info.mjs`.
+  `system-info.mjs` ve ayrıca salt okunur PR gözetim yardımcıları:
+  `ci-discriminate.sh` (bir PR'nin başarısız kontrol imzalarını bir referans PR'ye
+  veya base-red sorununa göre kendisine ait / devralınmış / bilinmeyen olarak
+  sınıflandırır) ve `audit-worktree.sh` (bir çalışanın PR'si kabul edilmeden önce
+  kirli dosyaları, korunan yüzeyleri, kaldırılan assert'leri, bastırma sayılarını,
+  geride kalan geçici tsconfig'leri ve PR başı ile yerel HEAD'i denetler).
 - **`scripts/check/`** — `check-cycles.mjs`, `check-docs-sync.mjs`,
   `check-docs-counts-sync.mjs`, `check-env-doc-sync.mjs`,
   `check-deprecated-versions.mjs`, `check-route-validation.mjs`,

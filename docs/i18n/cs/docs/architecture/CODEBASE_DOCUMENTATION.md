@@ -1,6 +1,6 @@
 # OmniRoute Codebase Documentation (Čeština)
 
-🌐 **Languages:** 🇺🇸 [English](../../../../architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇹 [am](../../../am/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇦 [ar](../../../ar/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇿 [az](../../../az/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇬 [bg](../../../bg/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇩 [bn](../../../bn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇰 [da](../../../da/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇪 [de](../../../de/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇷 [el](../../../el/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇸 [es](../../../es/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇪 [et](../../../et/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇷 [fa](../../../fa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇮 [fi](../../../fi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇷 [fr](../../../fr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇪 [ga](../../../ga/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [gu](../../../gu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ha](../../../ha/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇱 [he](../../../he/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [hi](../../../hi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇷 [hr](../../../hr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇺 [hu](../../../hu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇲 [hy](../../../hy/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇩 [id](../../../id/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ig](../../../ig/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇹 [it](../../../it/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇯🇵 [ja](../../../ja/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇪 [ka](../../../ka/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇭 [km](../../../km/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [kn](../../../kn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇷 [ko](../../../ko/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇹 [lt](../../../lt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇻 [lv](../../../lv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ml](../../../ml/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [mr](../../../mr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇾 [ms](../../../ms/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇹 [mt](../../../mt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇲 [my](../../../my/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇵 [ne](../../../ne/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇱 [nl](../../../nl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇴 [no](../../../no/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [or](../../../or/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [pa](../../../pa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇭 [phi](../../../phi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇱 [pl](../../../pl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇹 [pt](../../../pt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇴 [ro](../../../ro/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇺 [ru](../../../ru/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇰 [si](../../../si/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇰 [sk](../../../sk/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇮 [sl](../../../sl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇸 [sr](../../../sr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇪 [sv](../../../sv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇪 [sw](../../../sw/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ta](../../../ta/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [te](../../../te/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇭 [th](../../../th/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇷 [tr](../../../tr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇰 [ur](../../../ur/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇿 [uz](../../../uz/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇻🇳 [vi](../../../vi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [yo](../../../yo/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/CODEBASE_DOCUMENTATION.md)
+🌐 **Languages:** 🇺🇸 [English](../../../../architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇹 [am](../../../am/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇦 [ar](../../../ar/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇿 [az](../../../az/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇬 [bg](../../../bg/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇩 [bn](../../../bn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇦 [bs](../../../bs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇰 [da](../../../da/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇪 [de](../../../de/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇷 [el](../../../el/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇸 [es](../../../es/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇪 [et](../../../et/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇷 [fa](../../../fa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇮 [fi](../../../fi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇷 [fr](../../../fr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇪 [ga](../../../ga/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [gu](../../../gu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ha](../../../ha/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇱 [he](../../../he/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [hi](../../../hi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇷 [hr](../../../hr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇺 [hu](../../../hu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇲 [hy](../../../hy/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇩 [id](../../../id/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ig](../../../ig/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇹 [it](../../../it/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇯🇵 [ja](../../../ja/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇪 [ka](../../../ka/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇭 [km](../../../km/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [kn](../../../kn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇷 [ko](../../../ko/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇹 [lt](../../../lt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇻 [lv](../../../lv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ml](../../../ml/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [mr](../../../mr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇾 [ms](../../../ms/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇹 [mt](../../../mt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇲 [my](../../../my/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇵 [ne](../../../ne/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇱 [nl](../../../nl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇴 [no](../../../no/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [or](../../../or/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [pa](../../../pa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇭 [phi](../../../phi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇱 [pl](../../../pl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇹 [pt](../../../pt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇴 [ro](../../../ro/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇺 [ru](../../../ru/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇰 [si](../../../si/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇰 [sk](../../../sk/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇮 [sl](../../../sl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇸 [sr](../../../sr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇪 [sv](../../../sv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇪 [sw](../../../sw/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ta](../../../ta/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [te](../../../te/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇭 [th](../../../th/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇷 [tr](../../../tr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇰 [ur](../../../ur/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇿 [uz](../../../uz/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇻🇳 [vi](../../../vi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [yo](../../../yo/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/CODEBASE_DOCUMENTATION.md)
 
 ---
 
@@ -434,9 +434,10 @@ Rozděleno do účelově zaměřených podadresářů:
 
 ---
 
-## 4. `open-sse/` — pracovní prostor streamovacího enginu
+## 4. `open-sse/` — Pracovní prostor streamovacího enginu
 
-Samostatný pracovní prostor npm publikovaný jako `@omniroute/open-sse`. Zajišťuje zpracování požadavků, exekutory, překladače, služby, transformátor a server MCP.
+Samostatný pracovní prostor npm publikovaný jako `@omniroute/open-sse`. Zajišťuje zpracování
+požadavků, exekutory, překladače, služby, transformátor a server MCP.
 
 ```
 open-sse/
@@ -446,51 +447,54 @@ open-sse/
 ├── types.d.ts
 ├── config/                 Registry poskytovatelů, profily hlaviček, identita, …
 ├── handlers/               Obslužné rutiny požadavků (chat, embeddingy, zvuk, obrázky, …)
-├── executors/              108 HTTP exekutorů specifických pro poskytovatele
+├── executors/              156 modulů exekutorů poskytovatelů (třídy exekutorů + pomocné funkce pro jednotlivé poskytovatele)
 ├── translator/             Převod formátů (OpenAI ↔ Claude ↔ Gemini ↔ Cursor ↔ Kiro)
-├── transformer/            Transformátor streamů Responses API ↔ Chat Completions
-├── services/               Více než 80 modulů služeb (kombinace, záložní zpracování, kvóty, identita, …)
-├── utils/                  Pomocné nástroje pro streamování, klient TLS, AWS SigV4, proxy fetch, …
+├── transformer/            Transformátor streamu Responses API ↔ Chat Completions
+├── services/               Více než 80 modulů služeb (kombinace, záložní postupy, kvóty, identita, …)
+├── utils/                  Pomocné funkce pro streamování, klient TLS, AWS SigV4, načítání přes proxy, …
 └── mcp-server/             Server MCP (3 transporty, 33 rozsahů, 110 nástrojů)
 ```
 
 ### 4.1 `open-sse/handlers/`
 
-| Obslužná rutina         | Účel                                                                                           |
-| ----------------------- | ---------------------------------------------------------------------------------------------- |
-| `chatCore.ts`           | Hlavní pipeline chatu (mezipaměť, omezení rychlosti, kombinované směrování, předání exekutoru) |
-| `responsesHandler.ts`   | Vstupní bod OpenAI Responses API                                                               |
-| `embeddings.ts`         | Embeddingy                                                                                     |
-| `imageGeneration.ts`    | Generování obrázků                                                                             |
-| `audioSpeech.ts`        | Převod textu na řeč                                                                            |
-| `audioTranscription.ts` | Převod řeči na text                                                                            |
-| `videoGeneration.ts`    | Generování videa                                                                               |
-| `musicGeneration.ts`    | Generování hudby                                                                               |
-| `rerank.ts`             | Změna pořadí                                                                                   |
-| `moderations.ts`        | Moderování                                                                                     |
-| `search.ts`             | Vyhledávání na webu                                                                            |
-| `sseParser.ts`          | Parser událostí SSE                                                                            |
-| `usageExtractor.ts`     | Extrakce počtů tokenů z upstream streamů                                                       |
-| `responseSanitizer.ts`  | Odstranění šumu specifického pro poskytovatele                                                 |
-| `responseTranslator.ts` | Propojení mezi odpovědí poskytovatele a překladovou vrstvou                                    |
+| Obslužná rutina         | Účel                                                                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------------ |
+| `chatCore.ts`           | Hlavní chatovací pipeline (mezipaměť, omezení rychlosti, směrování kombinací, předání exekutoru) |
+| `responsesHandler.ts`   | Vstupní bod OpenAI Responses API                                                                 |
+| `embeddings.ts`         | Embeddingy                                                                                       |
+| `imageGeneration.ts`    | Generování obrázků                                                                               |
+| `audioSpeech.ts`        | Převod textu na řeč                                                                              |
+| `audioTranscription.ts` | Převod řeči na text                                                                              |
+| `videoGeneration.ts`    | Generování videa                                                                                 |
+| `musicGeneration.ts`    | Generování hudby                                                                                 |
+| `rerank.ts`             | Změna pořadí                                                                                     |
+| `moderations.ts`        | Moderování                                                                                       |
+| `search.ts`             | Vyhledávání na webu                                                                              |
+| `sseParser.ts`          | Parser událostí SSE                                                                              |
+| `usageExtractor.ts`     | Získávání počtů tokenů z upstreamových streamů                                                   |
+| `responseSanitizer.ts`  | Odstranění šumu specifického pro poskytovatele                                                   |
+| `responseTranslator.ts` | Propojení mezi odpovědí poskytovatele a překladovou vrstvou                                      |
 
 ### 4.2 `open-sse/executors/`
 
-108 exekutorů poskytovatelů, z nichž každý rozšiřuje `BaseExecutor` (`base.ts`):
+156 modulů exekutorů nejvyšší úrovně (`*.ts` bez `base.ts`, `index.ts` a testů — tento počet
+měří `npm run check:docs-counts`). Každá třída exekutoru rozšiřuje `BaseExecutor` (`base.ts`),
+buď přímo, nebo prostřednictvím `DefaultExecutor` či jiného exekutoru; zbývající moduly jsou
+pomocné moduly pro jednotlivé poskytovatele (schémata nástrojů, adaptéry fetch/TTS, obsluha specifických odlišností). Mezi exekutory patří:
 
 `antigravity`, `azure-openai`, `blackbox-web`, `cliproxyapi`,
 `chatgpt-web-codex`, `cloudflare-ai`, `codex`, `commandCode`, `cursor`, `default`, `devin-cli`,
 `muse-spark-web`, `nlpcloud`, `opencode`, `perplexity-web`, `petals`,
 `pollinations`, `qoder`, `vertex`, `devin-desktop`, dále `claudeIdentity.ts`
-(sdílená pomocná komponenta pro identitu) a `index.ts` (registr).
+(sdílená pomocná funkce pro identitu) a `index.ts` (registr).
 
-> Poznámka: poskytovatelé, kteří zde nejsou uvedeni, jsou obsluhováni souborem `default.ts` pomocí obecného
-> exekutoru kompatibilního s OpenAI. Úplný katalog poskytovatelů (355 poskytovatelů) se nachází v
+> Poznámka: poskytovatele, kteří zde nejsou uvedeni, obsluhuje `default.ts` pomocí obecného
+> exekutoru kompatibilního s OpenAI. Kompletní katalog poskytovatelů (375 poskytovatelů) se nachází v
 > `src/shared/constants/providers.ts`.
 
 ### 4.3 `open-sse/translator/`
 
-Překlad v modelu hub-and-spoke (OpenAI je centrálním uzlem).
+Překlad s architekturou hub-and-spoke (OpenAI je centrální uzel).
 
 - **9 překladačů požadavků** (`translator/request/`):
   `antigravity-to-openai`, `claude-to-gemini`, `claude-to-openai`,
@@ -500,32 +504,32 @@ Překlad v modelu hub-and-spoke (OpenAI je centrálním uzlem).
   `claude-to-openai`, `cursor-to-openai`, `gemini-to-claude`, `gemini-to-openai`,
   `kiro-to-openai`, `openai-responses`, `openai-to-antigravity`,
   `openai-to-claude`.
-- **9 pomocných komponent** (`translator/helpers/`):
+- **9 pomocných modulů** (`translator/helpers/`):
   `claudeHelper`, `geminiHelper`, `geminiToolsSanitizer`, `maxTokensHelper`,
   `openaiHelper`, `responsesApiHelper`, `schemaCoercion`, `toolCallHelper` a
-  testy pomocných komponent.
-- **Pomocné komponenty pro obrázky** (`translator/image/sizeMapper.ts`).
-- Na nejvyšší úrovni: `bootstrap.ts`, `formats.ts`, `registry.ts`, `index.ts`.
+  testy pomocných modulů.
+- **Pomocné moduly pro obrázky** (`translator/image/sizeMapper.ts`).
+- Nejvyšší úroveň: `bootstrap.ts`, `formats.ts`, `registry.ts`, `index.ts`.
 
 ### 4.4 `open-sse/transformer/`
 
-- `responsesTransformer.ts` — převodník Responses API ↔ Chat Completions založený na `TransformStream`
-  (používaný univerzální routou `responses/`).
+- `responsesTransformer.ts` — převodník Responses API ↔ Chat Completions založený na
+  `TransformStream` (používá jej záchytná route `responses/`).
 
 ### 4.5 `open-sse/services/`
 
-Hlavní části (úplný seznam v `open-sse/services/`):
+Nejdůležitější položky (úplný seznam v `open-sse/services/`):
 
 | Oblast                 | Soubory                                                                                                                                                                                                                                                  |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Směrování Combo        | `combo.ts` (19 strategií), `comboConfig.ts`, `comboMetrics.ts`, `comboManifestMetrics.ts`, `comboAgentMiddleware.ts`                                                                                                                                     |
+| Směrování Combo        | `combo.ts` (20 strategií), `comboConfig.ts`, `comboMetrics.ts`, `comboManifestMetrics.ts`, `comboAgentMiddleware.ts`                                                                                                                                     |
 | Engine Auto Combo      | `autoCombo/` — `engine.ts`, `scoring.ts`, `taskFitness.ts`, `virtualFactory.ts`, `modePacks.ts`, `autoPrefix.ts`, `persistence.ts`, `providerDiversity.ts`, `providerRegistryAccessor.ts`, `routerStrategy.ts`, `selfHealing.ts`, `index.ts`             |
-| Odolnost               | `accountFallback.ts` (prodleva + uzamčení), `errorClassifier.ts`, `requestRejectedStreak.ts`, `emergencyFallback.ts`, `rateLimitManager.ts`, `rateLimitSemaphore.ts`, `accountSemaphore.ts`, `accountSelector.ts`                                        |
+| Odolnost               | `accountFallback.ts` (doba čekání + uzamčení), `errorClassifier.ts`, `requestRejectedStreak.ts`, `emergencyFallback.ts`, `rateLimitManager.ts`, `rateLimitSemaphore.ts`, `accountSemaphore.ts`, `accountSelector.ts`                                     |
 | Kvóty                  | `quotaMonitor.ts`, `quotaPreflight.ts`, `bailianQuotaFetcher.ts`, `codexQuotaFetcher.ts`, `deepseekQuotaFetcher.ts`, `openrouterQuotaFetcher.ts`, `openrouterFreeWindow.ts`, `llmgatewayQuotaFetcher.ts`, `crofUsageFetcher.ts`, `antigravityCredits.ts` |
 | Ukládání do mezipaměti | `reasoningCache.ts`, `searchCache.ts`, `signatureCache.ts`, `requestDedup.ts`                                                                                                                                                                            |
 | Inteligentní směrování | `intentClassifier.ts`, `taskAwareRouter.ts`, `backgroundTaskDetector.ts`, `volumeDetector.ts`, `wildcardRouter.ts`, `workflowFSM.ts`, `specificityDetector.ts`, `specificityRules.ts`, `specificityTypes.ts`                                             |
-| Zpracování modelů      | `modelCapabilities.ts`, `modelDeprecation.ts`, `modelFamilyFallback.ts`, `modelStrip.ts`, `model.ts`, `provider.ts`, `providerRequestDefaults.ts`, `providerCostData.ts`, `payloadRules.ts`                                                              |
-| Komprese               | `compression/` — kompletní propojení kompresního enginu                                                                                                                                                                                                  |
+| Práce s modely         | `modelCapabilities.ts`, `modelDeprecation.ts`, `modelFamilyFallback.ts`, `modelStrip.ts`, `model.ts`, `provider.ts`, `providerRequestDefaults.ts`, `providerCostData.ts`, `payloadRules.ts`                                                              |
+| Komprese               | `compression/` — kompletní zapojení kompresního enginu                                                                                                                                                                                                   |
 | Tokeny + relace        | `tokenRefresh.ts`, `sessionManager.ts`, `apiKeyRotator.ts`, `contextManager.ts`, `contextHandoff.ts`, `systemPrompt.ts`, `roleNormalizer.ts`, `responsesInputSanitizer.ts`, `toolSchemaSanitizer.ts`, `toolLimitDetector.ts`, `thinkingBudget.ts`        |
 | Úroveň / manifest      | `tierResolver.ts`, `tierConfig.ts`, `tierDefaults.json`, `tierTypes.ts`, `manifestAdapter.ts`                                                                                                                                                            |
 | IP / síť               | `ipFilter.ts`, `webSearchFallback.ts`                                                                                                                                                                                                                    |
@@ -534,17 +538,17 @@ Hlavní části (úplný seznam v `open-sse/services/`):
 
 ### 4.6 `open-sse/mcp-server/`
 
-- **110 jedinečných nástrojů** propojených v `server.ts` (45 kanonických v `schemas/tools.ts` +
-  moduly pro paměť, dovednosti, dovednosti GitHubu, fond, gamifikaci, pluginy, Notion, Obsidian,
-  lokální korpus a kompresi — sjednocení počítá `countUniqueMcpTools`).
+- **110 jedinečných nástrojů** zapojených v `server.ts` (45 kanonických v `schemas/tools.ts` +
+  moduly paměti, dovedností, GitHub dovedností, fondu, gamifikace, pluginů, Notionu, Obsidianu,
+  místního korpusu a komprese — sjednocení spočítané pomocí `countUniqueMcpTools`).
 - **3 transporty**: stdio, HTTP Streamable, SSE.
-- **33 rozsahů oprávnění** vynucovaných za běhu — základní seznam je v `src/shared/constants/mcpScopes.ts`, úplnou sadu tvoří sjednocení rozsahů deklarovaných jednotlivými moduly nástrojů.
-- Tabulka auditu: `mcp_tool_audit` (plněná modulem `audit.ts`).
+- **33 rozsahů oprávnění** vynucovaných za běhu — základní seznam v `src/shared/constants/mcpScopes.ts`, úplná sada je sjednocením rozsahů deklarovaných jednotlivými moduly nástrojů.
+- Tabulka auditu: `mcp_tool_audit` (naplňovaná pomocí `audit.ts`).
 - Soubory: `server.ts`, `index.ts`, `httpTransport.ts`, `audit.ts`, `scopeEnforcement.ts`,
   `runtimeHeartbeat.ts`, `descriptionCompressor.ts`, `schemas/{tools, a2a, audit, index}.ts`,
   `tools/{advancedTools, compressionTools, memoryTools, skillTools}.ts`,
-  plus testy v `__tests__/`.
-- Úplný katalog nástrojů najdete v [MCP-SERVER.md](../frameworks/MCP-SERVER.md).
+  a dále testy v `__tests__/`.
+- Úplný katalog nástrojů naleznete v dokumentu [MCP-SERVER.md](../frameworks/MCP-SERVER.md).
 
 ### 4.7 `open-sse/config/`
 
@@ -667,7 +671,11 @@ Uspořádáno podle účelu do 6 podsložek.
   `v1-ws-bridge.mjs`, `smoke-electron-packaged.mjs`,
   `run-playwright-tests.mjs`, `run-ecosystem-tests.mjs`,
   `run-protocol-clients-tests.mjs`, `sync-env.mjs`, `healthcheck.mjs`,
-  `system-info.mjs`.
+  `system-info.mjs` a pomocné nástroje pouze pro čtení určené k dohledu nad PR:
+  `ci-discriminate.sh` (třídí signatury neúspěšných kontrol PR na vlastní / zděděné /
+  neznámé porovnáním s referenčním PR nebo hlášením o chybách v základní větvi) a `audit-worktree.sh`
+  (změněné soubory, chráněné oblasti, odstraněné aserce, počty potlačení, zbylé
+  dočasné soubory tsconfig, hlavička PR oproti lokálnímu HEAD — před přijetím PR pracovníka).
 - **`scripts/check/`** — `check-cycles.mjs`, `check-docs-sync.mjs`,
   `check-docs-counts-sync.mjs`, `check-env-doc-sync.mjs`,
   `check-deprecated-versions.mjs`, `check-route-validation.mjs`,

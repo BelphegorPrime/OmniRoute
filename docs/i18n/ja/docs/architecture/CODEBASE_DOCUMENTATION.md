@@ -1,6 +1,6 @@
 # OmniRoute Codebase Documentation (日本語)
 
-🌐 **Languages:** 🇺🇸 [English](../../../../architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇹 [am](../../../am/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇦 [ar](../../../ar/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇿 [az](../../../az/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇬 [bg](../../../bg/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇩 [bn](../../../bn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇿 [cs](../../../cs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇰 [da](../../../da/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇪 [de](../../../de/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇷 [el](../../../el/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇸 [es](../../../es/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇪 [et](../../../et/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇷 [fa](../../../fa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇮 [fi](../../../fi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇷 [fr](../../../fr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇪 [ga](../../../ga/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [gu](../../../gu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ha](../../../ha/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇱 [he](../../../he/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [hi](../../../hi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇷 [hr](../../../hr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇺 [hu](../../../hu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇲 [hy](../../../hy/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇩 [id](../../../id/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ig](../../../ig/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇹 [it](../../../it/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇪 [ka](../../../ka/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇭 [km](../../../km/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [kn](../../../kn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇷 [ko](../../../ko/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇹 [lt](../../../lt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇻 [lv](../../../lv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ml](../../../ml/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [mr](../../../mr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇾 [ms](../../../ms/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇹 [mt](../../../mt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇲 [my](../../../my/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇵 [ne](../../../ne/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇱 [nl](../../../nl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇴 [no](../../../no/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [or](../../../or/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [pa](../../../pa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇭 [phi](../../../phi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇱 [pl](../../../pl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇹 [pt](../../../pt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇴 [ro](../../../ro/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇺 [ru](../../../ru/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇰 [si](../../../si/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇰 [sk](../../../sk/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇮 [sl](../../../sl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇸 [sr](../../../sr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇪 [sv](../../../sv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇪 [sw](../../../sw/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ta](../../../ta/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [te](../../../te/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇭 [th](../../../th/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇷 [tr](../../../tr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇰 [ur](../../../ur/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇿 [uz](../../../uz/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇻🇳 [vi](../../../vi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [yo](../../../yo/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/CODEBASE_DOCUMENTATION.md)
+🌐 **Languages:** 🇺🇸 [English](../../../../architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇹 [am](../../../am/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇦 [ar](../../../ar/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇿 [az](../../../az/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇬 [bg](../../../bg/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇩 [bn](../../../bn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇦 [bs](../../../bs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇿 [cs](../../../cs/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇰 [da](../../../da/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇩🇪 [de](../../../de/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇷 [el](../../../el/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇸 [es](../../../es/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇪🇪 [et](../../../et/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇷 [fa](../../../fa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇮 [fi](../../../fi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇫🇷 [fr](../../../fr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇪 [ga](../../../ga/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [gu](../../../gu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ha](../../../ha/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇱 [he](../../../he/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [hi](../../../hi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇷 [hr](../../../hr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇭🇺 [hu](../../../hu/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇦🇲 [hy](../../../hy/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇩 [id](../../../id/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [ig](../../../ig/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇹 [it](../../../it/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇬🇪 [ka](../../../ka/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇭 [km](../../../km/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [kn](../../../kn/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇷 [ko](../../../ko/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇹 [lt](../../../lt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇻 [lv](../../../lv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ml](../../../ml/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [mr](../../../mr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇾 [ms](../../../ms/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇹 [mt](../../../mt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇲🇲 [my](../../../my/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇵 [ne](../../../ne/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇱 [nl](../../../nl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇴 [no](../../../no/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [or](../../../or/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [pa](../../../pa/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇭 [phi](../../../phi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇱 [pl](../../../pl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇹 [pt](../../../pt/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇧🇷 [pt-BR](../../../pt-BR/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇴 [ro](../../../ro/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇺 [ru](../../../ru/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇱🇰 [si](../../../si/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇰 [sk](../../../sk/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇮 [sl](../../../sl/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇷🇸 [sr](../../../sr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇸🇪 [sv](../../../sv/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇰🇪 [sw](../../../sw/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [ta](../../../ta/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇮🇳 [te](../../../te/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇭 [th](../../../th/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇷 [tr](../../../tr/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇦 [uk-UA](../../../uk-UA/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇵🇰 [ur](../../../ur/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇺🇿 [uz](../../../uz/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇻🇳 [vi](../../../vi/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇳🇬 [yo](../../../yo/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇨🇳 [zh-CN](../../../zh-CN/docs/architecture/CODEBASE_DOCUMENTATION.md) · 🇹🇼 [zh-TW](../../../zh-TW/docs/architecture/CODEBASE_DOCUMENTATION.md)
 
 ---
 
@@ -433,9 +433,9 @@ server/
 
 ---
 
-## 4. `open-sse/` — ストリーミングエンジンのワークスペース
+## 4. `open-sse/` — ストリーミングエンジンワークスペース
 
-`@omniroute/open-sse` として公開される独立した npm ワークスペースです。リクエスト処理、エグゼキューター、トランスレーター、サービス、トランスフォーマー、および MCP サーバーを管理します。
+`@omniroute/open-sse` として公開される独立した npm ワークスペース。リクエスト処理、エグゼキューター、トランスレーター、サービス、トランスフォーマー、および MCP サーバーを管理します。
 
 ```
 open-sse/
@@ -443,14 +443,14 @@ open-sse/
 ├── package.json            ワークスペースマニフェスト
 ├── tsconfig.json
 ├── types.d.ts
-├── config/                 プロバイダーレジストリ、ヘッダープロファイル、ID、…
-├── handlers/               リクエストハンドラー（チャット、埋め込み、音声、画像、…）
-├── executors/              プロバイダー固有の HTTP エグゼキューター 108 個
+├── config/                 プロバイダーレジストリ、ヘッダープロファイル、ID など
+├── handlers/               リクエストハンドラー（チャット、埋め込み、音声、画像など）
+├── executors/              156 個のプロバイダーエグゼキューターモジュール（エグゼキュータークラス + プロバイダーごとのヘルパー）
 ├── translator/             形式変換（OpenAI ↔ Claude ↔ Gemini ↔ Cursor ↔ Kiro）
 ├── transformer/            Responses API ↔ Chat Completions ストリームトランスフォーマー
-├── services/               80 以上のサービスモジュール（コンボ、フォールバック、クォータ、ID、…）
-├── utils/                  ストリーミングヘルパー、TLS クライアント、AWS SigV4、プロキシフェッチ、…
-└── mcp-server/             MCP サーバー（3 つのトランスポート、33 のスコープ、110 個のツール）
+├── services/               80 以上のサービスモジュール（コンボ、フォールバック、クォータ、ID など）
+├── utils/                  ストリーミングヘルパー、TLS クライアント、AWS SigV4、プロキシフェッチなど
+└── mcp-server/             MCP サーバー（3 つのトランスポート、33 のスコープ、110 のツール）
 ```
 
 ### 4.1 `open-sse/handlers/`
@@ -462,49 +462,49 @@ open-sse/
 | `embeddings.ts`         | 埋め込み                                                                                                   |
 | `imageGeneration.ts`    | 画像生成                                                                                                   |
 | `audioSpeech.ts`        | テキスト読み上げ                                                                                           |
-| `audioTranscription.ts` | 音声テキスト変換                                                                                           |
+| `audioTranscription.ts` | 音声文字起こし                                                                                             |
 | `videoGeneration.ts`    | 動画生成                                                                                                   |
 | `musicGeneration.ts`    | 音楽生成                                                                                                   |
 | `rerank.ts`             | 再ランキング                                                                                               |
 | `moderations.ts`        | モデレーション                                                                                             |
 | `search.ts`             | Web 検索                                                                                                   |
 | `sseParser.ts`          | SSE イベントパーサー                                                                                       |
-| `usageExtractor.ts`     | アップストリームのストリームからトークン数を抽出                                                           |
+| `usageExtractor.ts`     | アップストリームからトークン数を抽出                                                                       |
 | `responseSanitizer.ts`  | プロバイダー固有のノイズを除去                                                                             |
-| `responseTranslator.ts` | プロバイダーのレスポンスとトランスレーター層をつなぐ連携コード                                             |
+| `responseTranslator.ts` | プロバイダーのレスポンスとトランスレーター層を接続                                                         |
 
 ### 4.2 `open-sse/executors/`
 
-108 個のプロバイダーエグゼキューターがあり、それぞれが `BaseExecutor`（`base.ts`）を拡張しています。
+トップレベルのエグゼキューターモジュールは 156 個です（`*.ts` から `base.ts`、`index.ts`、およびテストを除外した数であり、`npm run check:docs-counts` で計測されます）。各エグゼキュータークラスは、直接、または `DefaultExecutor` や別のエグゼキューターを介して `BaseExecutor`（`base.ts`）を継承します。残りのモジュールは、プロバイダーごとのヘルパー（ツールスキーマ、フェッチ/TTS アダプター、特殊挙動のハンドラー）です。エグゼキューターには以下が含まれます。
 
-`antigravity`, `azure-openai`, `blackbox-web`, `cliproxyapi`,
-`chatgpt-web-codex`, `cloudflare-ai`, `codex`, `commandCode`, `cursor`, `default`, `devin-cli`,
-`muse-spark-web`, `nlpcloud`, `opencode`, `perplexity-web`, `petals`,
-`pollinations`, `qoder`, `vertex`, `devin-desktop`、および `claudeIdentity.ts`
+`antigravity`、`azure-openai`、`blackbox-web`、`cliproxyapi`、
+`chatgpt-web-codex`、`cloudflare-ai`、`codex`、`commandCode`、`cursor`、`default`、`devin-cli`、
+`muse-spark-web`、`nlpcloud`、`opencode`、`perplexity-web`、`petals`、
+`pollinations`、`qoder`、`vertex`、`devin-desktop`、さらに `claudeIdentity.ts`
 （共有 ID ヘルパー）と `index.ts`（レジストリ）。
 
-> 注: ここに記載されていないプロバイダーは、汎用の
-> OpenAI 互換エグゼキューターを使用する `default.ts` によって処理されます。プロバイダーの全カタログ（355 プロバイダー）は
+> 注: ここに記載されていないプロバイダーは、汎用の OpenAI 互換エグゼキューターを使用する `default.ts` によって処理されます。
+> 完全なプロバイダーカタログ（375 プロバイダー）は
 > `src/shared/constants/providers.ts` にあります。
 
 ### 4.3 `open-sse/translator/`
 
-ハブアンドスポーク方式の変換（OpenAI がハブ）。
+ハブ・アンド・スポーク方式の変換（OpenAI がハブ）。
 
 - **9 個のリクエストトランスレーター**（`translator/request/`）:
-  `antigravity-to-openai`, `claude-to-gemini`, `claude-to-openai`,
-  `gemini-to-openai`, `openai-responses`, `openai-to-claude`,
-  `openai-to-cursor`, `openai-to-gemini`, `openai-to-kiro`。
+  `antigravity-to-openai`、`claude-to-gemini`、`claude-to-openai`、
+  `gemini-to-openai`、`openai-responses`、`openai-to-claude`、
+  `openai-to-cursor`、`openai-to-gemini`、`openai-to-kiro`。
 - **9 個のレスポンストランスレーター**（`translator/response/`）:
-  `claude-to-openai`, `cursor-to-openai`, `gemini-to-claude`, `gemini-to-openai`,
-  `kiro-to-openai`, `openai-responses`, `openai-to-antigravity`,
+  `claude-to-openai`、`cursor-to-openai`、`gemini-to-claude`、`gemini-to-openai`、
+  `kiro-to-openai`、`openai-responses`、`openai-to-antigravity`、
   `openai-to-claude`。
 - **9 個のヘルパー**（`translator/helpers/`）:
-  `claudeHelper`, `geminiHelper`, `geminiToolsSanitizer`, `maxTokensHelper`,
-  `openaiHelper`, `responsesApiHelper`, `schemaCoercion`, `toolCallHelper`、および
-  ヘルパーのテスト。
+  `claudeHelper`、`geminiHelper`、`geminiToolsSanitizer`、`maxTokensHelper`、
+  `openaiHelper`、`responsesApiHelper`、`schemaCoercion`、`toolCallHelper`、および
+  ヘルパーテスト。
 - **画像ヘルパー**（`translator/image/sizeMapper.ts`）。
-- トップレベル: `bootstrap.ts`, `formats.ts`, `registry.ts`, `index.ts`。
+- トップレベル: `bootstrap.ts`、`formats.ts`、`registry.ts`、`index.ts`。
 
 ### 4.4 `open-sse/transformer/`
 
@@ -513,37 +513,37 @@ open-sse/
 
 ### 4.5 `open-sse/services/`
 
-主要項目（完全な一覧は `open-sse/services/` 配下）:
+主なもの（完全な一覧は `open-sse/services/` 以下）:
 
-| 関心領域                     | ファイル                                                                                                                                                                                                                                          |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Combo ルーティング           | `combo.ts`（19 の戦略）、`comboConfig.ts`、`comboMetrics.ts`、`comboManifestMetrics.ts`、`comboAgentMiddleware.ts`                                                                                                                                |
-| Auto Combo エンジン          | `autoCombo/` — `engine.ts`、`scoring.ts`、`taskFitness.ts`、`virtualFactory.ts`、`modePacks.ts`、`autoPrefix.ts`、`persistence.ts`、`providerDiversity.ts`、`providerRegistryAccessor.ts`、`routerStrategy.ts`、`selfHealing.ts`、`index.ts`      |
-| レジリエンス                 | `accountFallback.ts`（クールダウン + ロックアウト）、`errorClassifier.ts`、`requestRejectedStreak.ts`、`emergencyFallback.ts`、`rateLimitManager.ts`、`rateLimitSemaphore.ts`、`accountSemaphore.ts`、`accountSelector.ts`                        |
-| クォータ                     | `quotaMonitor.ts`、`quotaPreflight.ts`、`bailianQuotaFetcher.ts`、`codexQuotaFetcher.ts`、`deepseekQuotaFetcher.ts`、`openrouterQuotaFetcher.ts`、`openrouterFreeWindow.ts`、`crofUsageFetcher.ts`、`antigravityCredits.ts`                       |
-| キャッシュ                   | `reasoningCache.ts`、`searchCache.ts`、`signatureCache.ts`、`requestDedup.ts`                                                                                                                                                                     |
-| ルーティングインテリジェンス | `intentClassifier.ts`、`taskAwareRouter.ts`、`backgroundTaskDetector.ts`、`volumeDetector.ts`、`wildcardRouter.ts`、`workflowFSM.ts`、`specificityDetector.ts`、`specificityRules.ts`、`specificityTypes.ts`                                      |
-| モデル処理                   | `modelCapabilities.ts`、`modelDeprecation.ts`、`modelFamilyFallback.ts`、`modelStrip.ts`、`model.ts`、`provider.ts`、`providerRequestDefaults.ts`、`providerCostData.ts`、`payloadRules.ts`                                                       |
-| 圧縮                         | `compression/` — 完全な圧縮エンジンの配線                                                                                                                                                                                                         |
-| トークン + セッション        | `tokenRefresh.ts`、`sessionManager.ts`、`apiKeyRotator.ts`、`contextManager.ts`、`contextHandoff.ts`、`systemPrompt.ts`、`roleNormalizer.ts`、`responsesInputSanitizer.ts`、`toolSchemaSanitizer.ts`、`toolLimitDetector.ts`、`thinkingBudget.ts` |
-| ティア / マニフェスト        | `tierResolver.ts`、`tierConfig.ts`、`tierDefaults.json`、`tierTypes.ts`、`manifestAdapter.ts`                                                                                                                                                     |
-| IP / ネットワーク            | `ipFilter.ts`、`webSearchFallback.ts`                                                                                                                                                                                                             |
-| バッチ                       | `batchProcessor.ts`                                                                                                                                                                                                                               |
-| 使用量                       | `usage.ts`                                                                                                                                                                                                                                        |
+| 関心領域                     | ファイル                                                                                                                                                                                                                                                 |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| コンボルーティング           | `combo.ts`（20種類の戦略）、`comboConfig.ts`、`comboMetrics.ts`、`comboManifestMetrics.ts`、`comboAgentMiddleware.ts`                                                                                                                                    |
+| Auto Combo エンジン          | `autoCombo/` — `engine.ts`、`scoring.ts`、`taskFitness.ts`、`virtualFactory.ts`、`modePacks.ts`、`autoPrefix.ts`、`persistence.ts`、`providerDiversity.ts`、`providerRegistryAccessor.ts`、`routerStrategy.ts`、`selfHealing.ts`、`index.ts`             |
+| 耐障害性                     | `accountFallback.ts`（クールダウン + ロックアウト）、`errorClassifier.ts`、`requestRejectedStreak.ts`、`emergencyFallback.ts`、`rateLimitManager.ts`、`rateLimitSemaphore.ts`、`accountSemaphore.ts`、`accountSelector.ts`                               |
+| クォータ                     | `quotaMonitor.ts`、`quotaPreflight.ts`、`bailianQuotaFetcher.ts`、`codexQuotaFetcher.ts`、`deepseekQuotaFetcher.ts`、`openrouterQuotaFetcher.ts`、`openrouterFreeWindow.ts`、`llmgatewayQuotaFetcher.ts`、`crofUsageFetcher.ts`、`antigravityCredits.ts` |
+| キャッシュ                   | `reasoningCache.ts`、`searchCache.ts`、`signatureCache.ts`、`requestDedup.ts`                                                                                                                                                                            |
+| ルーティングインテリジェンス | `intentClassifier.ts`、`taskAwareRouter.ts`、`backgroundTaskDetector.ts`、`volumeDetector.ts`、`wildcardRouter.ts`、`workflowFSM.ts`、`specificityDetector.ts`、`specificityRules.ts`、`specificityTypes.ts`                                             |
+| モデル処理                   | `modelCapabilities.ts`、`modelDeprecation.ts`、`modelFamilyFallback.ts`、`modelStrip.ts`、`model.ts`、`provider.ts`、`providerRequestDefaults.ts`、`providerCostData.ts`、`payloadRules.ts`                                                              |
+| 圧縮                         | `compression/` — 圧縮エンジンの完全な配線                                                                                                                                                                                                                |
+| トークン + セッション        | `tokenRefresh.ts`、`sessionManager.ts`、`apiKeyRotator.ts`、`contextManager.ts`、`contextHandoff.ts`、`systemPrompt.ts`、`roleNormalizer.ts`、`responsesInputSanitizer.ts`、`toolSchemaSanitizer.ts`、`toolLimitDetector.ts`、`thinkingBudget.ts`        |
+| ティア / マニフェスト        | `tierResolver.ts`、`tierConfig.ts`、`tierDefaults.json`、`tierTypes.ts`、`manifestAdapter.ts`                                                                                                                                                            |
+| IP / ネットワーク            | `ipFilter.ts`、`webSearchFallback.ts`                                                                                                                                                                                                                    |
+| バッチ                       | `batchProcessor.ts`                                                                                                                                                                                                                                      |
+| 使用量                       | `usage.ts`                                                                                                                                                                                                                                               |
 
 ### 4.6 `open-sse/mcp-server/`
 
-- **110 個の一意なツール**が `server.ts` で配線されています（`schemas/tools.ts` 内の 45 個の正規ツール +
+- `server.ts` で接続された**一意なツール110個**（`schemas/tools.ts` 内の標準ツール45個 +
   メモリ、スキル、GitHub スキル、プール、ゲーミフィケーション、プラグイン、Notion、Obsidian、
-  ローカルコーパス、および圧縮モジュール — 和集合を `countUniqueMcpTools` でカウント）。
-- **3 つのトランスポート**：stdio、HTTP Streamable、SSE。
-- **33 個のスコープ**をランタイムで適用 — 基本リストは `src/shared/constants/mcpScopes.ts` にあり、完全なセットは各ツールモジュールで宣言されたスコープの和集合です。
-- 監査テーブル：`mcp_tool_audit`（`audit.ts` によりデータ投入）。
+  ローカルコーパス、圧縮モジュール — `countUniqueMcpTools` により和集合を集計）。
+- **3つのトランスポート**：stdio、HTTP Streamable、SSE。
+- 実行時に適用される**33個のスコープ** — 基本リストは `src/shared/constants/mcpScopes.ts` にあり、完全なセットは各ツールモジュールで宣言されたスコープの和集合です。
+- 監査テーブル：`mcp_tool_audit`（`audit.ts` によってデータが投入されます）。
 - ファイル：`server.ts`、`index.ts`、`httpTransport.ts`、`audit.ts`、`scopeEnforcement.ts`、
   `runtimeHeartbeat.ts`、`descriptionCompressor.ts`、`schemas/{tools, a2a, audit, index}.ts`、
   `tools/{advancedTools, compressionTools, memoryTools, skillTools}.ts`、
   および `__tests__/` 配下のテスト。
-- ツールカタログの全容については、[MCP-SERVER.md](../frameworks/MCP-SERVER.md)を参照してください。
+- ツールカタログの全一覧については、[MCP-SERVER.md](../frameworks/MCP-SERVER.md)を参照してください。
 
 ### 4.7 `open-sse/config/`
 
@@ -561,7 +561,7 @@ open-sse/
 
 ### 4.8 `open-sse/utils/`
 
-ストリーミングのプリミティブとプロバイダーヘルパー：`stream.ts`、`streamHandler.ts`、
+ストリーミングプリミティブおよびプロバイダーヘルパー: `stream.ts`、`streamHandler.ts`、
 `streamHelpers.ts`、`streamPayloadCollector.ts`、`streamReadiness.ts`、
 `sseHeartbeat.ts`、`proxyFetch.ts`、`proxyDispatcher.ts`、`tlsClient.ts`、
 `networkProxy.ts`、`awsSigV4.ts`、`cacheControlPolicy.ts`、
@@ -656,29 +656,33 @@ bin/
 
 目的別に6つのサブフォルダーに整理されています。
 
-- **`scripts/build/`** — `build-next-isolated.mjs`, `prepublish.ts`,
-  `prepare-electron-standalone.mjs`, `pack-artifact-policy.ts`,
-  `validate-pack-artifact.ts`, `postinstall.mjs`, `postinstallSupport.mjs`,
-  `uninstall.mjs`, `bootstrap-env.mjs`, `runtime-env.mjs`,
+- **`scripts/build/`** — `build-next-isolated.mjs`、`prepublish.ts`、
+  `prepare-electron-standalone.mjs`、`pack-artifact-policy.ts`、
+  `validate-pack-artifact.ts`、`postinstall.mjs`、`postinstallSupport.mjs`、
+  `uninstall.mjs`、`bootstrap-env.mjs`、`runtime-env.mjs`、
   `native-binary-compat.mjs`。
-- **`scripts/dev/`** — `run-next.mjs`, `run-next-playwright.mjs`,
-  `run-standalone.mjs`, `standalone-server-ws.mjs`, `responses-ws-proxy.mjs`,
-  `v1-ws-bridge.mjs`, `smoke-electron-packaged.mjs`,
-  `run-playwright-tests.mjs`, `run-ecosystem-tests.mjs`,
-  `run-protocol-clients-tests.mjs`, `sync-env.mjs`, `healthcheck.mjs`,
-  `system-info.mjs`。
-- **`scripts/check/`** — `check-cycles.mjs`, `check-docs-sync.mjs`,
-  `check-docs-counts-sync.mjs`, `check-env-doc-sync.mjs`,
-  `check-deprecated-versions.mjs`, `check-route-validation.mjs`,
-  `check-t11-any-budget.mjs`, `check-pr-test-policy.mjs`,
-  `check-supported-node-runtime.ts`, `test-report-summary.mjs`。
-- **`scripts/docs/`** — `generate-docs-index.mjs`, `gen-provider-reference.ts`。
-- **`scripts/i18n/`** — `generate-multilang.mjs`, `run-visual-qa.mjs`,
-  `generate-qa-checklist.mjs`, `apply-priority-overrides.mjs`,
-  `validate_translation.py`, `check_translations.py`, `i18n_autotranslate.py`,
+- **`scripts/dev/`** — `run-next.mjs`、`run-next-playwright.mjs`、
+  `run-standalone.mjs`、`standalone-server-ws.mjs`、`responses-ws-proxy.mjs`、
+  `v1-ws-bridge.mjs`、`smoke-electron-packaged.mjs`、
+  `run-playwright-tests.mjs`、`run-ecosystem-tests.mjs`、
+  `run-protocol-clients-tests.mjs`、`sync-env.mjs`、`healthcheck.mjs`、
+  `system-info.mjs`に加え、読み取り専用のPR監視用ヘルパーである
+  `ci-discriminate.sh`（PRで失敗したチェックのシグネチャを、参照PRまたはbase-red issueと比較して、
+  自身に起因するもの／継承されたもの／不明なものに分類）と`audit-worktree.sh`
+  （ワーカーのPRを受け入れる前に、変更のあるファイル、保護対象領域、削除されたassert、
+  抑制の数、残存する一時tsconfig、PRのheadとローカルHEADを確認）。
+- **`scripts/check/`** — `check-cycles.mjs`、`check-docs-sync.mjs`、
+  `check-docs-counts-sync.mjs`、`check-env-doc-sync.mjs`、
+  `check-deprecated-versions.mjs`、`check-route-validation.mjs`、
+  `check-t11-any-budget.mjs`、`check-pr-test-policy.mjs`、
+  `check-supported-node-runtime.ts`、`test-report-summary.mjs`。
+- **`scripts/docs/`** — `generate-docs-index.mjs`、`gen-provider-reference.ts`。
+- **`scripts/i18n/`** — `generate-multilang.mjs`、`run-visual-qa.mjs`、
+  `generate-qa-checklist.mjs`、`apply-priority-overrides.mjs`、
+  `validate_translation.py`、`check_translations.py`、`i18n_autotranslate.py`、
   `untranslatable-keys.json`。
-- **`scripts/ad-hoc/`** — `cursor-tap.cjs`, `sync-cursor-models.mjs`,
-  `migrate-env.mjs`, `dbsetup.js`。
+- **`scripts/ad-hoc/`** — `cursor-tap.cjs`、`sync-cursor-models.mjs`、
+  `migrate-env.mjs`、`dbsetup.js`。
 
 ---
 
