@@ -25,10 +25,8 @@
     "confirm": "നിങ്ങൾക്ക് ഉറപ്പാണോ?",
     "refresh": "പുതുക്കുക",
     "close": "അടയ്ക്കുക",
-    "dialogTitleFallback": "ഡയലോഗ്",
     "previousPage": "മുൻ പേജ്",
     "nextPage": "അടുത്ത പേജ്",
-    "pagination": "പേജിനേഷൻ",
     "capsLockOn": "Caps Lock ഓണാണ്",
     "dismissNotification": "അറിയിപ്പ് ഒഴിവാക്കുക",
     "toggleColumns": "കോളങ്ങൾ കാണിക്കുക/മറയ്ക്കുക",
@@ -184,7 +182,6 @@
     "combos": "കോംബോകൾ",
     "noModelsFound": "മോഡലുകളൊന്നും കണ്ടെത്തിയില്ല",
     "clear": "മായ്ക്കുക",
-    "clearFilters": "ഫിൽട്ടറുകൾ മായ്ക്കുക",
     "done": "പൂർത്തിയായി",
     "selectAll": "എല്ലാം തിരഞ്ഞെടുക്കുക",
     "unselectAll": "എല്ലാം തിരഞ്ഞെടുത്തത് ഒഴിവാക്കുക",
@@ -1002,6 +999,9 @@
     "batchFilePreview": "പ്രിവ്യൂ",
     "batchFilePreviewTruncated": "ആദ്യത്തെ {shown} വരികൾ കാണിക്കുന്നു (ആകെ {total} വരികൾ)",
     "batchFileDownloadFull": "പൂർണ്ണ ഫയൽ ഡൗൺലോഡ് ചെയ്യുക",
+    "dialogTitleFallback": "ഡയലോഗ്",
+    "pagination": "പേജിനേഷൻ",
+    "clearFilters": "ഫിൽട്ടറുകൾ മായ്ക്കുക",
     "tokensPageTitle": "ടോക്കണുകൾ",
     "tokensPageDescription": "API കീകൾക്കിടയിൽ ടോക്കണുകൾ അയയ്ക്കുക, ക്ഷണക്കോഡുകൾ പങ്കിടുക, കമ്മ്യൂണിറ്റി സെർവറുകൾ ബന്ധിപ്പിക്കുക.",
     "tokensServerUrlLabel": "സെർവർ URL"
@@ -1624,8 +1624,6 @@
     "quickNavigation": "ദ്രുത നാവിഗേഷൻ",
     "quickNavigationTitle": "ദ്രുത നാവിഗേഷൻ (⌘K / Ctrl+K)",
     "openQuickNavigation": "ദ്രുത നാവിഗേഷൻ തുറക്കുക",
-    "openMenu": "മെനു തുറക്കുക",
-    "products": "Keak ഉൽപ്പന്നങ്ങൾ",
     "switchToLightMode": "ലൈറ്റ് മോഡിലേക്ക് മാറുക",
     "switchToDarkMode": "ഡാർക്ക് മോഡിലേക്ക് മാറുക",
     "language": "ഭാഷ",
@@ -1726,7 +1724,9 @@
     "settingsAdvancedDescription": "വിപുലമായ പേലോഡ് നിയമങ്ങൾ, അഭ്യർത്ഥനാ പരിധികൾ, പ്രോക്സി API ക്രമീകരണങ്ങൾ",
     "mitmProxyDescription": "ട്രാഫിക് പരിശോധനയ്ക്കും ഡീബഗ്ഗിംഗിനുമായി MITM പ്രോക്സി ക്രമീകരണങ്ങൾ കോൺഫിഗർ ചെയ്യുക",
     "oneProxyDescription": "വിപുലമായ പ്രോക്സി ചെയിനിംഗിനായി 1Proxy ക്രമീകരണങ്ങൾ കോൺഫിഗർ ചെയ്യുക",
-    "omniSkillsDescription": "പ്രോംപ്റ്റുകളുടെയും ടൂളുകളുടെയും സ്വയമേവയുള്ള നിർവഹണത്തിനായി സാൻഡ്ബോക്സ് സ്കില്ലുകൾ ഇൻസ്റ്റാൾ ചെയ്ത് നിയന്ത്രിക്കുക"
+    "omniSkillsDescription": "പ്രോംപ്റ്റുകളുടെയും ടൂളുകളുടെയും സ്വയമേവയുള്ള നിർവഹണത്തിനായി സാൻഡ്ബോക്സ് സ്കില്ലുകൾ ഇൻസ്റ്റാൾ ചെയ്ത് നിയന്ത്രിക്കുക",
+    "openMenu": "മെനു തുറക്കുക",
+    "products": "Keak ഉൽപ്പന്നങ്ങൾ"
   },
   "cloudSyncStatus": {
     "synced": "സമന്വയിപ്പിച്ചിരിക്കുന്നു",
@@ -2509,6 +2509,10 @@
     "selectAtLeastOneConnection": "കുറഞ്ഞത് ഒരു കണക്ഷനെങ്കിലും തിരഞ്ഞെടുക്കുക, അല്ലെങ്കിൽ എല്ലാ കണക്ഷനുകളും തിരഞ്ഞെടുക്കുക.",
     "allConnectionsDesc": "ഈ കീയ്ക്ക് സജീവമായ ഏത് കണക്ഷനും ഉപയോഗിക്കാം.",
     "restrictedToConnections": "{count, plural, one {# കണക്ഷനിലേക്ക്} other {# കണക്ഷനുകളിലേക്ക്}} പരിമിതപ്പെടുത്തിയിരിക്കുന്നു.",
+    "preferredConnections": "മുൻഗണനയുള്ള കണക്ഷനുകൾ",
+    "preferredConnectionsDesc": "ഓരോ കീയ്ക്കുമുള്ള മുൻഗണനാ ക്രമം. മുൻഗണനയുള്ള കണക്ഷൻ ലഭ്യമല്ലെങ്കിൽ, റൂട്ടിംഗ് അടുത്ത യോഗ്യമായ കണക്ഷനിലേക്ക് മാറും.",
+    "preferredConnectionsNone": "മുൻഗണനയൊന്നും സജ്ജമാക്കിയിട്ടില്ല — ഡിഫോൾട്ട് റൂട്ടിംഗ് തന്ത്രം ഉപയോഗിക്കുന്നു.",
+    "preferredConnectionsClear": "മായ്ക്കുക",
     "removeSelection": "{name} നീക്കംചെയ്യുക"
   },
   "auditLog": {
@@ -3417,13 +3421,13 @@
     "comboRefMember": "കോമ്പോ → {name}"
   },
   "combos": {
+    "autoTosIncludeLabel": "ToS: avoid എന്ന് അടയാളപ്പെടുത്തിയ ദാതാക്കളെ auto-യിൽ ഉൾപ്പെടുത്തുക",
+    "autoTosDescription": "സ്വതവേ ഓഫാണ്. ഒരൊറ്റ അക്കൗണ്ടിന് മാത്രമല്ല, എല്ലാ auto കോംബോകൾക്കും ബാധകമാണ്. ദാതാവിനെ ബന്ധിപ്പിക്കുന്നത് ഈ ഓപ്ഷൻ പ്രവർത്തനക്ഷമമാക്കില്ല.",
+    "autoTosSaveError": "ToS നയം സംരക്ഷിക്കാനായില്ല. മുമ്പത്തെ ക്രമീകരണം തന്നെയാണ് കാണിക്കുന്നത്. വീണ്ടും ശ്രമിക്കുക.",
+    "autoTosLoadError": "ToS നയം ലോഡ് ചെയ്യാനായില്ല. മാറ്റുന്നതിന് മുമ്പ് വീണ്ടും ശ്രമിക്കുക.",
     "title": "കോംബോകൾ",
     "description": "വെയ്റ്റഡ് റൂട്ടിംഗും ഫാൾബാക്ക് പിന്തുണയും ഉപയോഗിച്ച് മോഡൽ കോംബോകൾ സൃഷ്ടിക്കുക",
     "autoCatalogTitle": "ഓട്ടോ-റൂട്ടിംഗ് കാറ്റലോഗ്",
-    "autoTosLoadError": "ToS നയം ലോഡ് ചെയ്യാനായില്ല. മാറ്റുന്നതിന് മുമ്പ് വീണ്ടും ശ്രമിക്കുക.",
-    "autoTosSaveError": "ToS നയം സംരക്ഷിക്കാനായില്ല. മുമ്പത്തെ ക്രമീകരണം തന്നെയാണ് കാണിക്കുന്നത്. വീണ്ടും ശ്രമിക്കുക.",
-    "autoTosIncludeLabel": "ToS: avoid എന്ന് അടയാളപ്പെടുത്തിയ ദാതാക്കളെ auto-യിൽ ഉൾപ്പെടുത്തുക",
-    "autoTosDescription": "സ്വതവേ ഓഫാണ്. ഒരൊറ്റ അക്കൗണ്ടിന് മാത്രമല്ല, എല്ലാ auto കോംബോകൾക്കും ബാധകമാണ്. ദാതാവിനെ ബന്ധിപ്പിക്കുന്നത് ഈ ഓപ്ഷൻ പ്രവർത്തനക്ഷമമാക്കില്ല.",
     "autoCatalogTemplateCount": "{count} ടെംപ്ലേറ്റുകൾ",
     "autoCatalogDescription": "കണക്റ്റ് ചെയ്ത പ്രൊവൈഡർമാരിൽ നിന്ന് ഡൈനാമിക്കായി നിർണ്ണയിക്കപ്പെടുന്ന ബിൽറ്റ്-ഇൻ auto/* കോംബോകൾ. ഈ ID-കളിൽ ഏതും മോഡൽ ഫീൽഡായി ഉപയോഗിക്കാം — സജ്ജീകരണം ആവശ്യമില്ല.",
     "autoCatalogExpand": "ഓട്ടോ-റൂട്ടിംഗ് കാറ്റലോഗ് വിടർത്തുക",
@@ -3576,7 +3580,6 @@
     "playgroundNoCombosYet": "ഇതുവരെ കോംബോകളൊന്നും കോൺഫിഗർ ചെയ്തിട്ടില്ല.",
     "playgroundCreateFirst": "ആദ്യം ഒരെണ്ണം സൃഷ്ടിക്കുക",
     "weighted": "ഭാരിതം",
-    "weightPercent": "വെയ്റ്റ് (%)",
     "leastUsed": "ഏറ്റവും കുറച്ച് ഉപയോഗിച്ചത്",
     "costOpt": "ചെലവ്-ഒപ്റ്റിമൈസ്ഡ്",
     "strategyGuideTitle": "ഈ തന്ത്രം എങ്ങനെ ഉപയോഗിക്കാം",
@@ -3738,7 +3741,6 @@
     "builderGlobalAccountCount": "{count, plural, one {# അക്കൗണ്ട്} other {# അക്കൗണ്ടുകൾ}}",
     "builderGlobalAdded": "ചേർത്തു",
     "builderGlobalAdd": "ചേർക്കുക",
-    "clearSearch": "തിരയൽ മായ്ക്കുക",
     "manualModel": "മാനുവൽ മോഡൽ",
     "manualModelInvalid": "ഒരു മോഡൽ provider/model എന്ന രൂപത്തിൽ നൽകുക.",
     "manualModelUnknownProvider": "അജ്ഞാതമായ പ്രൊവൈഡർ പ്രിഫിക്സ്.",
@@ -3955,6 +3957,7 @@
     "builderComboRefStep": "കോംബോ റഫറൻസ് ചേർക്കുക",
     "builderPinnedAccount": "പിൻ ചെയ്ത അക്കൗണ്ട്",
     "builderLegacyEntry": "ലെഗസി എൻട്രി",
+    "builderStaleModel": "ലൈവ് കാറ്റലോഗിൽ ഇല്ല",
     "reviewName": "പേര്",
     "reviewStrategy": "തന്ത്രം",
     "reviewSteps": "ഘട്ടങ്ങൾ",
@@ -3992,10 +3995,6 @@
     "responseValidationMinLength": "ഉള്ളടക്കത്തിന്റെ കുറഞ്ഞ ദൈർഘ്യം (പ്രതീകങ്ങൾ)",
     "responseValidationJsonPaths": "JSON-path പരിശോധനകൾ",
     "responseValidationAddCheck": "+ പരിശോധന ചേർക്കുക",
-    "responseValidationRemoveCheck": "പരിശോധന നീക്കംചെയ്യുക",
-    "responseValidationPath": "JSON പാത",
-    "responseValidationCondition": "വ്യവസ്ഥ",
-    "responseValidationValue": "പ്രതീക്ഷിക്കുന്ന മൂല്യം",
     "agentFeaturesSystemMessageOverride": "സിസ്റ്റം സന്ദേശം ഓവർറൈഡ് ചെയ്യുക",
     "agentFeaturesSystemMessagePlaceholder": "നിങ്ങൾ ഒരു വിദഗ്ധ സഹായിയാണ്...",
     "agentFeaturesSystemMessageHint": "ഏജന്റുകൾക്കായുള്ള സിസ്റ്റം സന്ദേശ ഓവർറൈഡ്",
@@ -4037,7 +4036,13 @@
     "duplicateAutoComboSnapshotMsg": "ഈ ടെംപ്ലേറ്റുമായി പൊരുത്തപ്പെടുന്ന, നിലവിൽ കണക്റ്റ് ചെയ്തിരിക്കുന്ന പ്രൊവൈഡർമാരുടെയും മോഡലുകളുടെയും ഒരു സ്നാപ്പ്ഷോട്ട് എഡിറ്റ് ചെയ്യാവുന്ന കോംബോയാക്കി മാറ്റും.",
     "duplicateAutoComboFailedPrefix": "ഓട്ടോ-കോംബോ പകർത്തുന്നതിൽ പരാജയപ്പെട്ടു:",
     "duplicateAutoComboUnknownError": "അജ്ഞാത പിശക്",
-    "duplicateAutoComboTitle": "{name}-ൽ നിന്ന് ഒരു സ്റ്റാറ്റിക് കോംബോ സൃഷ്ടിക്കുക"
+    "duplicateAutoComboTitle": "{name}-ൽ നിന്ന് ഒരു സ്റ്റാറ്റിക് കോംബോ സൃഷ്ടിക്കുക",
+    "weightPercent": "വെയ്റ്റ് (%)",
+    "clearSearch": "തിരയൽ മായ്ക്കുക",
+    "responseValidationRemoveCheck": "പരിശോധന നീക്കംചെയ്യുക",
+    "responseValidationPath": "JSON പാത",
+    "responseValidationCondition": "വ്യവസ്ഥ",
+    "responseValidationValue": "പ്രതീക്ഷിക്കുന്ന മൂല്യം"
   },
   "costs": {
     "title": "ചെലവുകൾ",
@@ -6564,7 +6569,6 @@
       "monsterapi": "monsterapi.ai-ൽ API കീ നേടുക",
       "moonshot": "ഒരു API കീ ഉപയോഗിച്ച് Kimi കണക്റ്റ് ചെയ്യുക.",
       "morph": "സൗജന്യ ടയർ: പ്രതിമാസം 250K ക്രെഡിറ്റുകൾ, $0",
-      "apmix": "apmix.ai/dashboard-ൽ നിന്നുള്ള API കീ ഉപയോഗിച്ച് Apmix ബന്ധിപ്പിക്കുക — ഒരു സബ്സ്ക്രിപ്ഷൻ, ധാരാളം മോഡലുകൾ.",
       "nanogpt": "ഒരു API കീ ഉപയോഗിച്ച് NanoGPT കണക്റ്റ് ചെയ്യുക.",
       "nebius": "API പരിശോധനയ്ക്കായി സൈൻ അപ്പ് ചെയ്യുമ്പോൾ ~$1 ട്രയൽ ക്രെഡിറ്റുകൾ",
       "nlpcloud": "OpenAI chat/completions-ന് പകരം NLP Cloud ഒരു പ്രൊപ്രൈറ്ററി ചാറ്റ്ബോട്ട് API ഉപയോഗിക്കുന്നു. OmniRoute, OpenAI സന്ദേശങ്ങളെ input/context/history-ലേക്ക് പൊരുത്തപ്പെടുത്തുകയും പിന്തുണയ്ക്കുന്ന ചാറ്റ്ബോട്ട് മോഡലുകളുടെ ഒരു ലോക്കൽ കാറ്റലോഗ് ലഭ്യമാക്കുകയും ചെയ്യുന്നു.",
@@ -6661,7 +6665,8 @@
       "kiro": "സൗജന്യ ടിയർ: പ്രതിമാസം 50 ക്രെഡിറ്റുകൾ (~25K–100K tokens). ⚠️ Kiro ToS മൂന്നാം കക്ഷി proxy/harness ഉപയോഗം നിരോധിക്കുന്നു.",
       "codex": "നിലവിലുള്ള OAuth പ്രവാഹം ഉപയോഗിച്ച് OpenAI Codex കണക്റ്റ് ചെയ്യുക.",
       "qwen": "നിലവിലുള്ള OAuth പ്രവാഹം ഉപയോഗിച്ച് Qwen Code കണക്റ്റ് ചെയ്യുക.",
-      "github-models": "github.com/settings/tokens-ൽ 'models: read' സ്കോപ്പുള്ള ഒരു GitHub PAT സൃഷ്ടിക്കുക"
+      "github-models": "github.com/settings/tokens-ൽ 'models: read' സ്കോപ്പുള്ള ഒരു GitHub PAT സൃഷ്ടിക്കുക",
+      "apmix": "apmix.ai/dashboard-ൽ നിന്നുള്ള API കീ ഉപയോഗിച്ച് Apmix ബന്ധിപ്പിക്കുക — ഒരു സബ്സ്ക്രിപ്ഷൻ, ധാരാളം മോഡലുകൾ."
     },
     "passthroughModelsDescription": "{provider} പ്രൊവൈഡർ-നേറ്റീവ് മോഡൽ ID-കൾ സ്വീകരിക്കുന്നു. /models-ൽ നിന്ന് ഇമ്പോർട്ട് ചെയ്യുക അല്ലെങ്കിൽ റൂട്ടിംഗിനായി ഇഷ്ടാനുസൃത ID-കൾ ചേർക്കുക.",
     "bedrockModelsDescription": "Amazon Bedrock മോഡലുകൾ AWS മേഖല അനുസരിച്ചാണ് പരിധിനിർണ്ണയിച്ചിരിക്കുന്നത്. /models-ൽ നിന്ന് ഇമ്പോർട്ട് ചെയ്യുക അല്ലെങ്കിൽ തിരഞ്ഞെടുത്ത മേഖലയിൽ പ്രവർത്തനക്ഷമമാക്കിയ Bedrock മോഡൽ ID-കൾ ചേർക്കുക.",
@@ -7731,7 +7736,6 @@
     "configured": "കോൺഫിഗർ ചെയ്തത്",
     "none": "ഒന്നുമില്ല",
     "modelOverrideValuePlaceholder": "സംഖ്യാ മൂല്യം",
-    "modelOverrideKey": "ഓവർറൈഡ് കീ",
     "modelOverrideReasoningEffortsPlaceholder": "ഇംഗ്ലീഷിൽ കോമ ഉപയോഗിച്ച് വേർതിരിച്ചത്, ഉദാ. low, medium, high",
     "addKeyValue": "കീ-വാല്യു ചേർക്കുക",
     "noModelOverrides": "ഈ മോഡലിനായി ഓവർറൈഡുകളൊന്നും കോൺഫിഗർ ചെയ്തിട്ടില്ല.",
@@ -8976,7 +8980,8 @@
       "statsTitle": "പുനരാരംഭിച്ചതിന് ശേഷമുള്ള കണ്ടെത്തലുകൾ",
       "statsEmpty": "ഇതുവരെ കണ്ടെത്തലുകളൊന്നുമില്ല.",
       "statsRequest": "അഭ്യർത്ഥനകൾ"
-    }
+    },
+    "modelOverrideKey": "ഓവർറൈഡ് കീ"
   },
   "contextRtk": {
     "title": "RTK എഞ്ചിൻ",
@@ -10321,7 +10326,11 @@
     "updatedShort": "പുതുക്കിയത്",
     "lastRefreshed": "അവസാനം പുതുക്കിയത്",
     "providerQuota": "ദാതാവിന്റെ ക്വോട്ട",
-    "providerQuotaHomeHint": "ബന്ധിപ്പിച്ച അക്കൗണ്ടുകളിലുടനീളമുള്ള തത്സമയ നില"
+    "providerQuotaHomeHint": "ബന്ധിപ്പിച്ച അക്കൗണ്ടുകളിലുടനീളമുള്ള തത്സമയ നില",
+    "claudeResetCreditDefaultTitle": "Claude ലിമിറ്റ് റീസെറ്റ്",
+    "confirmRedeemClaudeResetCredit": "റിഡീം ചെയ്യുന്നത് യോഗ്യമായ Claude ഉപയോഗ പരിധികൾ ഉടനടി റീസെറ്റ് ചെയ്യുകയും ഈ ക്രെഡിറ്റ് ശാശ്വതമായി ഉപയോഗിച്ചു തീർക്കുകയും ചെയ്യുന്നു.",
+    "claudeResetCreditsModalTitle": "Claude റീസെറ്റ് ക്രെഡിറ്റുകൾ",
+    "claudeResetCreditsModalExplainer": "ഈ അക്കൗണ്ടിനായി ലഭ്യമായ Claude റീസെറ്റ് ക്രെഡിറ്റുകളും പ്രതിവാര സെഷൻ റീസെറ്റുകളും."
   },
   "modals": {
     "waitingAuth": "അംഗീകാരത്തിനായി കാത്തിരിക്കുന്നു",
@@ -11479,7 +11488,6 @@
     "tableHealth": "പ്രവർത്തനക്ഷമത (24 മണിക്കൂർ)",
     "tableUsage": "ഉപയോഗം",
     "tableActions": "പ്രവർത്തനങ്ങൾ",
-    "moreActions": "കൂടുതൽ പ്രവർത്തനങ്ങൾ",
     "test": "പരിശോധിക്കുക",
     "edit": "തിരുത്തുക",
     "delete": "ഇല്ലാതാക്കുക",
@@ -11620,6 +11628,7 @@
     "poolSetAsideKindIpQuota429": "IP നിരക്ക് പരിധി (429)",
     "poolSetAsideKindSlow": "മന്ദഗതിയുള്ള പ്രതികരണങ്ങൾ",
     "poolSetAsideKindGeoBlocked": "പ്രദേശം നിരോധിച്ചത് (403/451)",
+    "poolSetAsideKindOperatorReported": "ഓപ്പറേറ്റർ റിപ്പോർട്ട് ചെയ്ത തടസ്സം",
     "poolSetAsideUntil": "റൊട്ടേഷനിലേക്ക് തിരികെ {endsAt}",
     "poolSetAsideRepeat": "മാറ്റിവച്ചു {count, plural, one {# തവണ} other {# തവണ}}",
     "poolUnknownAddress": "അജ്ഞാത വിലാസം",
@@ -11636,7 +11645,8 @@
     "notMeasured": "അളന്നിട്ടില്ല",
     "upstream4xx": "{count} ഉപ്‌സ്‌ട്രീം ക്ലയന്റ് പിശകുകൾ",
     "upstream5xx": "{count} ഉപ്‌സ്‌ട്രീം സെർവർ പിശകുകൾ",
-    "uniformEgressLine": "{provider}-ൽ {exits} എക്സിറ്റുകളിൽ {affected} എണ്ണം ഒരുമിച്ച് പരാജയപ്പെടുന്നു (കഴിഞ്ഞ {hours} മണിക്കൂറിൽ) — ഇത് എക്സിറ്റ് പ്രശ്നമല്ല"
+    "uniformEgressLine": "{provider}-ൽ {exits} എക്സിറ്റുകളിൽ {affected} എണ്ണം ഒരുമിച്ച് പരാജയപ്പെടുന്നു (കഴിഞ്ഞ {hours} മണിക്കൂറിൽ) — ഇത് എക്സിറ്റ് പ്രശ്നമല്ല",
+    "moreActions": "കൂടുതൽ പ്രവർത്തനങ്ങൾ"
   },
   "playground": {
     "title": "മോഡൽ പ്ലേഗ്രൗണ്ട്",
@@ -13884,7 +13894,6 @@
     "latency": "ലേറ്റൻസി",
     "quota": "ക്വോട്ട",
     "rangeWindow": "{range} സമയപരിധി",
-    "timeRange": "സമയപരിധി",
     "runtimeHealthBlend": "റൺടൈം/ആരോഗ്യ സംയോജനം",
     "averageResponseTime": "ശരാശരി പ്രതികരണ സമയം",
     "worstQuota": "ഏറ്റവും മോശം ക്വോട്ട",
@@ -13939,7 +13948,8 @@
     "unknown": "അജ്ഞാതം",
     "unknownProvider": "അജ്ഞാത പ്രൊവൈഡർ",
     "unknownModel": "അജ്ഞാത മോഡൽ",
-    "resolvedTargetMetrics": "{requests} അഭ്യർത്ഥനകൾ · {success} വിജയം · {latency} · ക്വാട്ട {quota}"
+    "resolvedTargetMetrics": "{requests} അഭ്യർത്ഥനകൾ · {success} വിജയം · {latency} · ക്വാട്ട {quota}",
+    "timeRange": "സമയപരിധി"
   },
   "usageLimits": {
     "usdUsageQuota": "USD ഉപയോഗ ക്വാട്ട",

@@ -25,10 +25,8 @@
     "confirm": "Da li ste",
     "refresh": "Osvježi",
     "close": "Zatvori",
-    "dialogTitleFallback": "Dijalog",
     "previousPage": "Prethodna stranica",
     "nextPage": "Sljedeća stranica",
-    "pagination": "Paginacija",
     "capsLockOn": "Caps Lock je uključen",
     "dismissNotification": "Zatvori obavijest",
     "toggleColumns": "Promijeni kolone",
@@ -184,7 +182,6 @@
     "combos": "Kombinacije",
     "noModelsFound": "Nema pronađenih modela",
     "clear": "Očisti",
-    "clearFilters": "Očisti filtere",
     "done": "Gotovo",
     "selectAll": "Odaberi sve",
     "unselectAll": "Poništi odabir svih",
@@ -1002,6 +999,9 @@
     "batchFilePreview": "Pregled",
     "batchFilePreviewTruncated": "Prikazane prve {shown} linije (ukupno {total} linija)",
     "batchFileDownloadFull": "Preuzmi cijelu datoteku",
+    "dialogTitleFallback": "Dijalog",
+    "pagination": "Paginacija",
+    "clearFilters": "Očisti filtere",
     "tokensPageTitle": "Tokeni",
     "tokensPageDescription": "Šaljite tokene između API ključeva, dijelite pozivne kodove i povezujte servere zajednice.",
     "tokensServerUrlLabel": "URL servera"
@@ -1624,8 +1624,6 @@
     "quickNavigation": "Brza navigacija",
     "quickNavigationTitle": "Brza navigacija (⌘K / Ctrl+K)",
     "openQuickNavigation": "Otvori brzu navigaciju",
-    "openMenu": "Otvori meni",
-    "products": "Keak proizvodi",
     "switchToLightMode": "Prebaci na svijetli način",
     "switchToDarkMode": "Prebaci na tamni način",
     "language": "Jezik",
@@ -1726,7 +1724,9 @@
     "settingsAdvancedDescription": "Napredna pravila payload-a, limiti zahtjeva i postavke proxy API-ja",
     "mitmProxyDescription": "Konfigurišite MITM proxy postavke za inspekciju saobraćaja i debugovanje",
     "oneProxyDescription": "Konfigurišite 1Proxy postavke za napredno proxy povezivanje",
-    "omniSkillsDescription": "Instalirajte i upravljajte sandbox vještinama za automatizovano izvršavanje promptova i alata"
+    "omniSkillsDescription": "Instalirajte i upravljajte sandbox vještinama za automatizovano izvršavanje promptova i alata",
+    "openMenu": "Otvori meni",
+    "products": "Keak proizvodi"
   },
   "cloudSyncStatus": {
     "synced": "Sinhronizovano",
@@ -2509,6 +2509,10 @@
     "selectAtLeastOneConnection": "Odaberite najmanje jednu konekciju ili odaberite Sve konekcije.",
     "allConnectionsDesc": "Ovaj ključ može koristiti bilo koju aktivnu konekciju.",
     "restrictedToConnections": "Ograničeno na {count, plural, one {# konekciju} other {# konekcija}}.",
+    "preferredConnections": "Preferirane konekcije",
+    "preferredConnectionsDesc": "Redoslijed prioriteta po ključu. Ako preferirana konekcija nije dostupna, rutiranje prelazi na sljedeću prihvatljivu.",
+    "preferredConnectionsNone": "Nije postavljena preferencija — koristi se zadana strategija rutiranja.",
+    "preferredConnectionsClear": "Očisti",
     "removeSelection": "Ukloni {name}"
   },
   "auditLog": {
@@ -3417,13 +3421,13 @@
     "comboRefMember": "Kombinacija → {name}"
   },
   "combos": {
-    "title": "Kombinacije",
-    "description": "Kreirajte kombinacije modela sa ponderisanim rutiranjem i podrškom za fallback",
-    "autoCatalogTitle": "Katalog auto-rutiranja",
     "autoTosLoadError": "Nije moguće učitati pravila uslova korištenja. Pokušajte ponovo prije izmjene.",
     "autoTosSaveError": "Nije moguće sačuvati pravila uslova korištenja. I dalje je prikazana prethodna postavka. Pokušajte ponovo.",
     "autoTosIncludeLabel": "Uključi u auto pružaoce označene sa ToS: avoid",
     "autoTosDescription": "Podrazumijevano je isključeno. Važi za sve auto kombinacije, ne samo za jedan račun. Povezivanje pružaoca ne uključuje ovu opciju.",
+    "title": "Kombinacije",
+    "description": "Kreirajte kombinacije modela sa ponderisanim rutiranjem i podrškom za fallback",
+    "autoCatalogTitle": "Katalog auto-rutiranja",
     "autoCatalogTemplateCount": "{count} šablona",
     "autoCatalogDescription": "Ugrađene auto/* kombinacije se dinamički rješavaju iz povezanih provajdera. Koristite bilo koji od ovih ID-eva kao polje modela — nije potrebna konfiguracija.",
     "autoCatalogExpand": "Proširi katalog auto-rutiranja",
@@ -3576,7 +3580,6 @@
     "playgroundNoCombosYet": "Još uvijek nema konfigurisanih combo postavki.",
     "playgroundCreateFirst": "Prvo kreirajte jednu",
     "weighted": "Ponderirano",
-    "weightPercent": "Težina (%)",
     "leastUsed": "Najmanje korišteno",
     "costOpt": "Optimizacija troškova",
     "strategyGuideTitle": "Kako koristiti ovu strategiju",
@@ -3738,7 +3741,6 @@
     "builderGlobalAccountCount": "{count, plural, one {# račun} other {# računa}}",
     "builderGlobalAdded": "Dodano",
     "builderGlobalAdd": "Dodaj",
-    "clearSearch": "Očisti pretragu",
     "manualModel": "Ručni model",
     "manualModelInvalid": "Unesite model u formatu provajder/model.",
     "manualModelUnknownProvider": "Nepoznat prefiks provajdera.",
@@ -3955,6 +3957,7 @@
     "builderComboRefStep": "Dodaj combo referencu",
     "builderPinnedAccount": "Zakačeni račun",
     "builderLegacyEntry": "Legacy unos",
+    "builderStaleModel": "Nije u aktivnom katalogu",
     "reviewName": "Naziv",
     "reviewStrategy": "Strategija",
     "reviewSteps": "Koraci",
@@ -3992,10 +3995,6 @@
     "responseValidationMinLength": "Minimalna dužina sadržaja (znakovi)",
     "responseValidationJsonPaths": "JSON-path provjere",
     "responseValidationAddCheck": "+ Dodaj provjeru",
-    "responseValidationRemoveCheck": "Ukloni provjeru",
-    "responseValidationPath": "JSON putanja",
-    "responseValidationCondition": "Uslov",
-    "responseValidationValue": "Očekivana vrijednost",
     "agentFeaturesSystemMessageOverride": "Nadjači sistemsku poruku",
     "agentFeaturesSystemMessagePlaceholder": "Vi ste stručni asistent...",
     "agentFeaturesSystemMessageHint": "Nadjačavanje sistemske poruke za agente",
@@ -4037,7 +4036,13 @@
     "duplicateAutoComboSnapshotMsg": "Ovo će napraviti snapshot povezanih providera/modela koji odgovaraju ovom šablonu u uredivi combo.",
     "duplicateAutoComboFailedPrefix": "Neuspjelo dupliranje auto-comba:",
     "duplicateAutoComboUnknownError": "Nepoznata greška",
-    "duplicateAutoComboTitle": "Kreiraj statični combo iz {name}"
+    "duplicateAutoComboTitle": "Kreiraj statični combo iz {name}",
+    "weightPercent": "Težina (%)",
+    "clearSearch": "Očisti pretragu",
+    "responseValidationRemoveCheck": "Ukloni provjeru",
+    "responseValidationPath": "JSON putanja",
+    "responseValidationCondition": "Uslov",
+    "responseValidationValue": "Očekivana vrijednost"
   },
   "costs": {
     "title": "Troškovi",
@@ -7731,7 +7736,6 @@
     "configured": "konfigurisano",
     "none": "Nijedan",
     "modelOverrideValuePlaceholder": "Numerička vrijednost",
-    "modelOverrideKey": "Ključ za nadjačavanje",
     "modelOverrideReasoningEffortsPlaceholder": "Engleski, razdvojeno zarezima, npr. Low, medium, high",
     "addKeyValue": "Dodaj vrijednost ključa",
     "noModelOverrides": "Nema konfigurisanih nadjačavanja za ovaj model.",
@@ -8976,7 +8980,8 @@
       "statsTitle": "Otkrivanja od ponovnog pokretanja",
       "statsEmpty": "Još nema otkrivanja.",
       "statsRequest": "Zahtjevi"
-    }
+    },
+    "modelOverrideKey": "Ključ za nadjačavanje"
   },
   "contextRtk": {
     "title": "RTK pogon",
@@ -10321,7 +10326,11 @@
     "updatedShort": "Ažurirano",
     "lastRefreshed": "Posljednje osvježavanje",
     "providerQuota": "Kvota provajdera",
-    "providerQuotaHomeHint": "Status uživo kroz povezane račune"
+    "providerQuotaHomeHint": "Status uživo kroz povezane račune",
+    "claudeResetCreditDefaultTitle": "Reset Claude limita",
+    "confirmRedeemClaudeResetCredit": "Iskorištavanje odmah resetuje prihvatljive Claude limite korištenja i trajno troši ovaj kredit.",
+    "claudeResetCreditsModalTitle": "Claude krediti za reset",
+    "claudeResetCreditsModalExplainer": "Dostupni Claude krediti za reset i sedmični reseti sesija za ovaj račun."
   },
   "modals": {
     "waitingAuth": "Čekanje autorizacije",
@@ -11479,7 +11488,6 @@
     "tableHealth": "Zdravlje (24h)",
     "tableUsage": "Korištenje",
     "tableActions": "Akcije",
-    "moreActions": "Više radnji",
     "test": "Testiraj",
     "edit": "Uredi",
     "delete": "Obriši",
@@ -11620,6 +11628,7 @@
     "poolSetAsideKindIpQuota429": "ograničenje brzine po IP-u (429)",
     "poolSetAsideKindSlow": "spori odgovori",
     "poolSetAsideKindGeoBlocked": "regija blokirana (403/451)",
+    "poolSetAsideKindOperatorReported": "neispravnost prijavio operater",
     "poolSetAsideUntil": "Nazad u rotaciji {endsAt}",
     "poolSetAsideRepeat": "Sklonjeno {count, plural, one {# put} other {# puta}}",
     "poolUnknownAddress": "Nepoznata adresa",
@@ -11636,7 +11645,8 @@
     "notMeasured": "Nije mjereno",
     "upstream4xx": "{count} grešaka klijenta na izvoru",
     "upstream5xx": "{count} grešaka servera na izvoru",
-    "uniformEgressLine": "{affected} od {exits} izlaza neuspješno zajedno na {provider} (posljednjih {hours}h) — nije problem izlaza"
+    "uniformEgressLine": "{affected} od {exits} izlaza neuspješno zajedno na {provider} (posljednjih {hours}h) — nije problem izlaza",
+    "moreActions": "Više radnji"
   },
   "playground": {
     "title": "Testno okruženje za modele",
@@ -13884,7 +13894,6 @@
     "latency": "Latencija",
     "quota": "Kvota",
     "rangeWindow": "prozor od {range}",
-    "timeRange": "Vremenski raspon",
     "runtimeHealthBlend": "blend runtime/zdravlja",
     "averageResponseTime": "prosječno vrijeme odgovora",
     "worstQuota": "Najgora kvota",
@@ -13939,7 +13948,8 @@
     "unknown": "nepoznato",
     "unknownProvider": "nepoznati pružalac",
     "unknownModel": "nepoznati model",
-    "resolvedTargetMetrics": "{requests} zahtjeva · {success} uspješno · {latency} · kvota {quota}"
+    "resolvedTargetMetrics": "{requests} zahtjeva · {success} uspješno · {latency} · kvota {quota}",
+    "timeRange": "Vremenski raspon"
   },
   "usageLimits": {
     "usdUsageQuota": "USD kvota potrošnje",
