@@ -65,7 +65,7 @@ export function geminiInlineImagePart(
 }
 
 /**
- * Error message when the request carries a reference image that cannot be inlined (#5190).
+ * Error message when the request carries a reference image that cannot be inlined (9router #5190).
  * Gemini image models only take inline bytes, and remote URLs are deliberately not fetched
  * (SSRF surface), so an http(s) URL would otherwise be dropped and the model would answer a
  * text-only prompt. Returns null when there is no reference or it inlines cleanly.
