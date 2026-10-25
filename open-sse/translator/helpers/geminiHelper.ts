@@ -847,7 +847,7 @@ function flattenAnyOfOneOf(obj: unknown): void {
 }
 
 // Gemini only accepts `items` on an ARRAY node and `properties` on an OBJECT node
-// ("items: field predicate failed: $type == Type.ARRAY", upstream 9router #5000),
+// ("items: field predicate failed: $type == Type.ARRAY", 9router #5000),
 // so a union that keeps those keywords must collapse to the member they belong to.
 function pickUnionType(types: unknown[], record: JsonRecord): unknown {
   const nonNullTypes = types.filter((t) => t !== "null");
@@ -1104,7 +1104,7 @@ export function cleanJSONSchemaForAntigravity(
     if (!record.type && (record.properties !== undefined || record.required !== undefined)) {
       record.type = "object";
     } else if (!record.type && record.items !== undefined) {
-      // Gemini rejects `items` on an untyped node (upstream 9router #5000).
+      // Gemini rejects `items` on an untyped node (9router #5000).
       record.type = "array";
     }
 
