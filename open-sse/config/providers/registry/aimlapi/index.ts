@@ -8,18 +8,6 @@ export const aimlapiProvider: RegistryEntry = {
   baseUrl: "https://api.aimlapi.com/v1/chat/completions",
   authType: "apikey",
   authHeader: "bearer",
-  // Attribution, same mechanism the openrouter/orcarouter/cline entries use:
-  // BaseExecutor.buildHeadersPreamble() spreads config.headers into a fresh
-  // object per request, so these are scoped to this provider's own dispatch and
-  // cannot ride a request to another upstream, and the constant below is never
-  // mutated. HTTP-Referer/X-Title follow the OpenRouter convention and identify
-  // the CALLING app (OmniRoute), not the upstream gateway.
-  headers: {
-    "HTTP-Referer": "https://github.com/diegosouzapw/OmniRoute",
-    "X-Title": "OmniRoute",
-    "X-AIMLAPI-Source": "agent/omniroute",
-    "X-AIMLAPI-Partner-ID": "part_T2iNtMuQ3JBmEPwyOKCLOxaP",
-  },
   // Static fallback ONLY — the live catalog (353 chat models) is discovered via
   // PROVIDER_MODELS_CONFIG.aimlapi and supersedes this list whenever the fetch
   // succeeds, so these entries are what a user sees when discovery is down.
