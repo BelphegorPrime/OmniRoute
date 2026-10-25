@@ -40,3 +40,25 @@ test("both plugin variants install exactly their checked-in lockfiles", () => {
   }
   assert.ok(workflow.on.pull_request.paths.includes(".github/workflows/opencode-plugin-ci.yml"));
 });
+
+test("subpackage CI pins include the October 2026 Node security fixes", () => {
+  const minimums = { 22: "22.23.4", 24: "24.22.1" };
+  for (const name of ["opencode-provider-ci", "opencode-plugin-ci"]) {
+    const workflow = load(read(`.github/workflows/${name}.yml`));
+    for (const job of Object.values(workflow.jobs)) {
+      const versions = [
+        ...(job.strategy?.matrix?.node ?? []),
+        ...(job.steps ?? [])
+          .filter((step) => step.uses?.startsWith("actions/setup-node@"))
+          .map((step) => step.with["node-version"])
+          .filter((version) => !String(version).includes("${{")),
+      ];
+      for (const version of versions) {
+        assert.ok(semver.valid(version), `${name}: Node ${version} must be an exact pin`);
+        const floor = minimums[semver.major(version)];
+        assert.ok(floor, `${name}: review the security floor for Node ${version}`);
+        assert.ok(semver.gte(version, floor), `${name}: Node ${version} predates ${floor}`);
+      }
+    }
+  }
+});
