@@ -74,13 +74,44 @@ function observe({
   mkdirSync(artifacts, { recursive: true });
   const dir = mkdtempSync(join(artifacts, "workflow-evidence-test-"));
   try {
-    writeFileSync(join(dir, "package.json"), '{"type":"commonjs"}\n');
+    writeFileSync(
+      join(dir, "package.json"),
+      JSON.stringify({
+        type: "commonjs",
+        scripts: { "check:workflows": "node scripts/check/check-workflows.mjs" },
+      })
+    );
     for (const path of ["scripts/quality", "config/quality", ".github/workflows", "bin"]) {
       mkdirSync(join(dir, path), { recursive: true });
     }
-    for (const name of ["validate-release-green.mjs", "gate-process.mjs"]) {
+    for (const name of [
+      "validate-release-green.mjs",
+      "gate-process.mjs",
+      "release-green-static-profile.mjs",
+    ]) {
       cpSync(new URL(`scripts/quality/${name}`, root), join(dir, "scripts/quality", name));
     }
+    writeFileSync(
+      join(dir, "config/quality/release-green-static-profile.json"),
+      JSON.stringify({
+        schemaVersion: 1,
+        sourceJobs: ["lint"],
+        exclusions: [],
+        gates: [
+          {
+            id: "check:workflows",
+            job: "lint",
+            args: ["run", "check:workflows", "--", "--ratchet"],
+            kind: "drift",
+            command: "node scripts/check/check-workflows.mjs",
+          },
+        ],
+      })
+    );
+    writeFileSync(
+      join(dir, ".github/workflows/quality.yml"),
+      "on: push\njobs:\n  fast:\n    steps:\n      - run: |\n          gates=(\n            workflows\n          )\n          ratchet_gates=(\n            workflows\n          )\n"
+    );
     writeFileSync(
       join(dir, "config/quality/quality-baseline.json"),
       JSON.stringify({

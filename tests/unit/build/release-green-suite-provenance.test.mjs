@@ -39,7 +39,11 @@ function observe(mutate = () => {}, { extra = false, workflow = workflowSha } = 
       mkdirSync(join(dir, path), { recursive: true });
     writeFileSync(join(dir, "package.json"), '{"type":"commonjs"}');
     writeFileSync(join(dir, "package-lock.json"), "{}");
-    for (const file of ["validate-release-green.mjs", "gate-process.mjs"])
+    for (const file of [
+      "validate-release-green.mjs",
+      "gate-process.mjs",
+      "release-green-static-profile.mjs",
+    ])
       copyFileSync(join(root, "scripts/quality", file), join(dir, "scripts/quality", file));
     writeFileSync(
       join(dir, "config/quality/quality-baseline.json"),
