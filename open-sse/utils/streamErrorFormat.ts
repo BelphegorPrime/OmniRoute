@@ -327,7 +327,7 @@ export function projectStreamFailureEvent(payload: unknown): ProjectedStreamFail
 }
 
 // Anthropic's documented error types. Claude clients treat an unknown type (for example the
-// OpenAI-only `server_error`) like a bad request and fail the turn instead of retrying (#5185).
+// OpenAI-only `server_error`) like a bad request and fail the turn instead of retrying (9router #5185).
 const ANTHROPIC_ERROR_TYPES = new Set([
   "invalid_request_error",
   "authentication_error",
