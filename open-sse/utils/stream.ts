@@ -2135,7 +2135,7 @@ export function createSSEStream(options: StreamOptions = {}) {
                         // A fragment that opens a new slot must carry an id — strict
                         // OpenAI-compatible clients (@ai-sdk/openai-compatible) throw
                         // "Expected 'id' to be a string." otherwise. Fill a stable one
-                        // and force re-serialization so the client sees it (#4992).
+                        // and force re-serialization so the client sees it (9router #4992).
                         if (tc && (tc.id == null || tc.id === "")) {
                           tc.id = `call_${crypto.randomUUID().replace(/-/g, "").slice(0, 24)}`;
                           toolCallIdCoerced = true;
