@@ -54,7 +54,7 @@ A 50-agent web-research pass (official docs + last-7-days news, adversarially ve
 - **Gemini** — `2.0 Flash` / `2.0 Flash-Lite` shut down 2026-06-01 and `2.5 Pro` left the free tier (2026-04); free tier is now **Flash-family only** (2.5/3/3.1/3.5 Flash + Gemma). The catalog now **pools** the Flash family (was inflated by counting each variant separately: 462M → 60M).
 - **Corrected numbers:** `cloudflare-ai` 122M → **30M** (real 10k-Neurons/day), `doubao` reclassified as a one-time signup credit (not recurring), `llm7` 4M → **150M** (documented 5M tokens/day), `together` "-Free" endpoints discontinued → $25 signup credit also removed (requires $5 minimum purchase, no free trial), `longcat` Preview ended + Flash models retired → **LongCat-2.0** only, reclassified as a one-time **10M**-token signup credit (KYC-gated, not recurring).
 - **Poolside direct inference ending (verified 2026-10-20):** the [official platform](https://platform.poolside.ai/) announces shutdown on **2026-10-31** and directs users to download its models from Hugging Face for self-hosting. The direct `poolside` provider carries this warning. The hand-curated free catalog has no direct Poolside entries; its Poolside-named entries belong to `kilo-gateway`. This announcement does not establish the availability of models served by Kilo, Cline, NVIDIA or other gateways, so those listings are not retired on that basis.
-- **New free providers discovered:** ⭐ **Kilo Code** (`kilo-gateway` — rotating "Auto Free" set: NVIDIA Nemotron 3 family, StepFun, Poolside, Nex-N2-Pro), ⭐ **OpenCode Zen** (`opencode-zen` — 6 rotating free coding models), ⭐ **Z.AI / Zhipu** (`glm-cn` — GLM-4-Flash / 4.5-Flash / 4.7-Flash permanently free + 20M signup bonus), and `arcee-ai` Trinity Large Preview.
+- **New free providers discovered:** ⭐ **Kilo Code** (`kilo-gateway` — rotating "Auto Free" set: NVIDIA Nemotron 3 family, StepFun, Poolside, Nex-N2-Pro), ⭐ **OpenCode Zen** (`opencode-zen` — 10 rotating free coding models, refreshed 2026-10-20), ⭐ **Z.AI / Zhipu** (`glm-cn` — GLM-4-Flash / 4.5-Flash / 4.7-Flash permanently free + 20M signup bonus), and `arcee-ai` Trinity Large Preview.
 - **New honest tiers** (see Methodology): a _permanently-free-but-uncapped_ category (real recurring access, no token cap to count) and a _deposit-unlock boost_ (OpenRouter $10 → +24M/mo), both surfaced **separately** so they never inflate the headline.
 
 > The detailed per-provider table further down is the **2026-06-05 snapshot**; the deltas above supersede it. The live, canonical source is the per-model catalog `open-sse/config/freeModelCatalog.ts`.
@@ -271,7 +271,7 @@ Most "free tokens per month" figures in this space are sums of per-model labels.
 | `gemini`         | uncapped      | uncapped\*       | —                  | caution   | 4      |
 | `kilo-gateway`   | uncapped      | uncapped\*       | —                  | caution   | 7      |
 | `ollama-cloud`   | uncapped      | uncapped\*       | —                  | ambiguous | 8      |
-| `opencode-zen`   | uncapped      | uncapped\*       | —                  | caution   | 6      |
+| `opencode-zen`   | uncapped      | uncapped\*       | —                  | caution   | 10     |
 | `tencent`        | uncapped      | uncapped\*       | —                  | caution   | 1      |
 | `vertex`         | signup credit | —                | ~300M              | caution   | 10     |
 | `agentrouter`    | signup credit | —                | ~200M              | caution   | 4      |
