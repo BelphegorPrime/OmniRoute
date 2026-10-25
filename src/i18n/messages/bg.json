@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Само избраните връзки",
     "selectAtLeastOneConnection": "Изберете поне една връзка или изберете „Всички връзки“.",
     "allConnectionsDesc": "Този ключ може да използва всяка активна връзка.",
-    "restrictedToConnections": "Ограничено до {count, plural, one {# връзка} other {# връзки}}."
+    "restrictedToConnections": "Ограничено до {count, plural, one {# връзка} other {# връзки}}.",
+    "preferredConnections": "Предпочитани връзки",
+    "preferredConnectionsDesc": "Ред на приоритет за всеки ключ. Ако предпочитана връзка е недостъпна, маршрутизирането преминава към следващата допустима.",
+    "preferredConnectionsNone": "Няма зададено предпочитание — използва се стратегията за маршрутизиране по подразбиране.",
+    "preferredConnectionsClear": "Изчисти"
   },
   "auditLog": {
     "title": "Дневник за одит",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Добавяне на препратка към комбинация",
     "builderPinnedAccount": "Закачен акаунт",
     "builderLegacyEntry": "Остарял запис",
+    "builderStaleModel": "Липсва в актуалния каталог",
     "reviewName": "Име",
     "reviewStrategy": "Стратегия",
     "reviewSteps": "Стъпки",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Нулиране на лимита на Claude",
+    "confirmRedeemClaudeResetCredit": "Активирането незабавно нулира отговарящите на условията лимити за използване на Claude и окончателно изразходва този кредит.",
+    "claudeResetCreditsModalTitle": "Кредити за нулиране на Claude",
+    "claudeResetCreditsModalExplainer": "Налични кредити за нулиране на Claude и седмични нулирания на сесиите за този акаунт."
   },
   "modals": {
     "waitingAuth": "Изчакване на разрешение",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "ограничение на скоростта по IP (429)",
     "poolSetAsideKindSlow": "бавни отговори",
     "poolSetAsideKindGeoBlocked": "регион блокиран (403/451)",
+    "poolSetAsideKindOperatorReported": "сигнализиран прекъсване от оператора",
     "poolSetAsideUntil": "Обратно в ротация {endsAt}",
     "poolSetAsideRepeat": "Оставено настрана {count, plural, one {# път} other {# пъти}}",
     "poolUnknownAddress": "Неизвестен адрес",

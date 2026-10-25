@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "କେବଳ ଚୟନିତ ସଂଯୋଗଗୁଡ଼ିକ",
     "selectAtLeastOneConnection": "ଅତି କମ୍ରେ ଗୋଟିଏ ସଂଯୋଗ ଚୟନ କରନ୍ତୁ କିମ୍ବା ସମସ୍ତ ସଂଯୋଗ ବାଛନ୍ତୁ।",
     "allConnectionsDesc": "ଏହି କୀ ଯେକୌଣସି ସକ୍ରିୟ ସଂଯୋଗ ବ୍ୟବହାର କରିପାରିବ।",
-    "restrictedToConnections": "{count, plural, one {#ଟି ସଂଯୋଗ} other {#ଟି ସଂଯୋଗ}} ମଧ୍ୟରେ ସୀମିତ।"
+    "restrictedToConnections": "{count, plural, one {#ଟି ସଂଯୋଗ} other {#ଟି ସଂଯୋଗ}} ମଧ୍ୟରେ ସୀମିତ।",
+    "preferredConnections": "ପସନ୍ଦର ସଂଯୋଗଗୁଡ଼ିକ",
+    "preferredConnectionsDesc": "ପ୍ରତ୍ୟେକ କି ପାଇଁ ପ୍ରାଥମିକତା କ୍ରମ। ଯଦି ପସନ୍ଦର ସଂଯୋଗ ଉପଲବ୍ଧ ନଥାଏ, ରାଉଟିଂ ପରବର୍ତ୍ତୀ ଯୋଗ୍ୟ ସଂଯୋଗକୁ ଯାଏ।",
+    "preferredConnectionsNone": "କୌଣସି ପସନ୍ଦ ସେଟ୍ କରାଯାଇନାହିଁ — ଡିଫଲ୍ଟ ରାଉଟିଂ କୌଶଳ ବ୍ୟବହୃତ ହୁଏ।",
+    "preferredConnectionsClear": "ସଫା କରନ୍ତୁ"
   },
   "auditLog": {
     "title": "ଅଡିଟ୍ ଲଗ୍",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "କମ୍ବୋ ରେଫରେନ୍ସ ଯୋଡ଼ନ୍ତୁ",
     "builderPinnedAccount": "ପିନ୍ କରାଯାଇଥିବା ଆକାଉଣ୍ଟ",
     "builderLegacyEntry": "ଲେଗେସି ଏଣ୍ଟ୍ରି",
+    "builderStaleModel": "ଲାଇଭ୍ କ୍ୟାଟାଲଗରେ ନାହିଁ",
     "reviewName": "ନାମ",
     "reviewStrategy": "କୌଶଳ",
     "reviewSteps": "ପଦକ୍ଷେପଗୁଡ଼ିକ",
@@ -10291,7 +10296,11 @@
     "updatedShort": "ଅଦ୍ୟତନ କରାଯାଇଛି",
     "lastRefreshed": "ଶେଷ ଥର ସତେଜ କରାଯାଇଛି",
     "providerQuota": "ପ୍ରଦାନକାରୀ କୋଟା",
-    "providerQuotaHomeHint": "ସଂଯୁକ୍ତ ଆକାଉଣ୍ଟଗୁଡ଼ିକର ଲାଇଭ୍ ସ୍ଥିତି"
+    "providerQuotaHomeHint": "ସଂଯୁକ୍ତ ଆକାଉଣ୍ଟଗୁଡ଼ିକର ଲାଇଭ୍ ସ୍ଥିତି",
+    "claudeResetCreditDefaultTitle": "Claude ସୀମା ରିସେଟ୍",
+    "confirmRedeemClaudeResetCredit": "ରିଡିମ୍ କରିବା ଦ୍ୱାରା ଯୋଗ୍ୟ Claude ବ୍ୟବହାର ସୀମା ତୁରନ୍ତ ରିସେଟ୍ ହୋଇଥାଏ ଏବଂ ଏହି କ୍ରେଡିଟ୍ ସ୍ଥାୟୀ ଭାବରେ ଖର୍ଚ୍ଚ ହୋଇଯାଏ।",
+    "claudeResetCreditsModalTitle": "Claude ରିସେଟ୍ କ୍ରେଡିଟ୍",
+    "claudeResetCreditsModalExplainer": "ଏହି ଆକାଉଣ୍ଟ ପାଇଁ ଉପଲବ୍ଧ Claude ରିସେଟ୍ କ୍ରେଡିଟ୍ ଏବଂ ସାପ୍ତାହିକ ସେସନ୍ ରିସେଟ୍।"
   },
   "modals": {
     "waitingAuth": "ଅନୁମୋଦନ ପାଇଁ ଅପେକ୍ଷାରତ",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP ହାର ସୀମା (429)",
     "poolSetAsideKindSlow": "ଧୀର ପ୍ରତିକ୍ରିୟା",
     "poolSetAsideKindGeoBlocked": "ଅଞ୍ଚଳ ଅବରୋଧିତ (403/451)",
+    "poolSetAsideKindOperatorReported": "ଅପରେଟର ଦ୍ୱାରା ରିପୋର୍ଟ କରାଯାଇଥିବା ବିପର୍ଯ୍ୟୟ",
     "poolSetAsideUntil": "ଘୂର୍ଣ୍ଣନକୁ ଫେରନ୍ତୁ {endsAt}",
     "poolSetAsideRepeat": "ଅଲଗା ରଖାଯାଇଛି {count, plural, one {# ଥର} other {# ଥର}}",
     "poolUnknownAddress": "ଅଜଣା ଠିକଣା",

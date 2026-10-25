@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "தேர்ந்தெடுக்கப்பட்ட இணைப்புகள் மட்டும்",
     "selectAtLeastOneConnection": "குறைந்தது ஓர் இணைப்பையாவது தேர்ந்தெடுக்கவும் அல்லது அனைத்து இணைப்புகளும் என்பதைத் தேர்வுசெய்யவும்.",
     "allConnectionsDesc": "இந்த விசை செயலில் உள்ள எந்த இணைப்பையும் பயன்படுத்தலாம்.",
-    "restrictedToConnections": "{count, plural, one {# இணைப்புக்கு} other {# இணைப்புகளுக்கு}} வரையறுக்கப்பட்டுள்ளது."
+    "restrictedToConnections": "{count, plural, one {# இணைப்புக்கு} other {# இணைப்புகளுக்கு}} வரையறுக்கப்பட்டுள்ளது.",
+    "preferredConnections": "விருப்ப இணைப்புகள்",
+    "preferredConnectionsDesc": "ஒவ்வொரு விசைக்குமான முன்னுரிமை வரிசை. விருப்ப இணைப்பு கிடைக்கவில்லை என்றால், ரூட்டிங் அடுத்த தகுதியான இணைப்புக்கு மாறும்.",
+    "preferredConnectionsNone": "எந்த விருப்பமும் அமைக்கப்படவில்லை — இயல்புநிலை ரூட்டிங் உத்தி பயன்படுத்தப்படுகிறது.",
+    "preferredConnectionsClear": "அழி"
   },
   "auditLog": {
     "title": "தணிக்கைப் பதிவு",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Combo குறிப்பைச் சேர்க்கவும்",
     "builderPinnedAccount": "நிலையாகப் பொருத்தப்பட்ட கணக்கு",
     "builderLegacyEntry": "பழைய பதிவு",
+    "builderStaleModel": "நேரடி பட்டியலில் இல்லை",
     "reviewName": "பெயர்",
     "reviewStrategy": "உத்தி",
     "reviewSteps": "படிகள்",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Claude வரம்பு மீட்டமைப்பு",
+    "confirmRedeemClaudeResetCredit": "மீட்பதன் மூலம் தகுதியுள்ள Claude பயன்பாட்டு வரம்புகள் உடனடியாக மீட்டமைக்கப்படும் மற்றும் இந்தக் கிரெடிட் நிரந்தரமாகப் பயன்படுத்தப்படும்.",
+    "claudeResetCreditsModalTitle": "Claude மீட்டமைப்பு கிரெடிட்கள்",
+    "claudeResetCreditsModalExplainer": "இந்தக் கணக்கிற்குக் கிடைக்கும் Claude மீட்டமைப்பு கிரெடிட்கள் மற்றும் வாராந்திர அமர்வு மீட்டமைப்புகள்."
   },
   "modals": {
     "waitingAuth": "அங்கீகாரத்திற்காகக் காத்திருக்கிறது",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP விகித வரம்பு (429)",
     "poolSetAsideKindSlow": "மெதுவான பதில்கள்",
     "poolSetAsideKindGeoBlocked": "பகுதி தடைசெய்யப்பட்டது (403/451)",
+    "poolSetAsideKindOperatorReported": "ஆபரேட்டர் புகாரளித்த செயலிழப்பு",
     "poolSetAsideUntil": "சுழற்சிக்கு திரும்பு {endsAt}",
     "poolSetAsideRepeat": "ஒதுக்கி வைக்கப்பட்டது {count, plural, one {# முறை} other {# முறை}}",
     "poolUnknownAddress": "தெரியாத முகவரி",

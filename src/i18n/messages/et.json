@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Ainult valitud ühendused",
     "selectAtLeastOneConnection": "Vali vähemalt üks ühendus või suvand „Kõik ühendused“.",
     "allConnectionsDesc": "See võti võib kasutada mis tahes aktiivset ühendust.",
-    "restrictedToConnections": "Piiratud {count, plural, one {# ühendusega} other {# ühendusega}}."
+    "restrictedToConnections": "Piiratud {count, plural, one {# ühendusega} other {# ühendusega}}.",
+    "preferredConnections": "Eelistatud ühendused",
+    "preferredConnectionsDesc": "Võtmepõhine prioriteedijärjestus. Kui eelistatud ühendus pole saadaval, liigub suunamine järgmisele sobivale.",
+    "preferredConnectionsNone": "Eelistust pole määratud — kasutatakse vaikimisi suunamisstrateegiat.",
+    "preferredConnectionsClear": "Tühjenda"
   },
   "auditLog": {
     "title": "Auditilogi",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Lisa kombo viide",
     "builderPinnedAccount": "Fikseeritud konto",
     "builderLegacyEntry": "Pärandkirje",
+    "builderStaleModel": "Pole reaalajas kataloogis",
     "reviewName": "Nimi",
     "reviewStrategy": "Strateegia",
     "reviewSteps": "Sammud",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Claude'i limiidi lähtestamine",
+    "confirmRedeemClaudeResetCredit": "Lunastamine lähtestab kohe kohaldatavad Claude'i kasutuslimiidid ja kulutab selle krediidi jäädavalt.",
+    "claudeResetCreditsModalTitle": "Claude'i lähtestuskrediidid",
+    "claudeResetCreditsModalExplainer": "Selle konto saadaolevad Claude'i lähtestuskrediidid ja iganädalased seansilähtestused."
   },
   "modals": {
     "waitingAuth": "Autoriseerimise ootel",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP päringupiirang (429)",
     "poolSetAsideKindSlow": "aeglased vastused",
     "poolSetAsideKindGeoBlocked": "regiooniblokeeritud (403/451)",
+    "poolSetAsideKindOperatorReported": "operaatori poolt teatatud häire",
     "poolSetAsideUntil": "Tagasi rotatsioonis {endsAt}",
     "poolSetAsideRepeat": "Kõrvale pandud {count, plural, one {# kord} other {# korda}}",
     "poolUnknownAddress": "Tundmatu aadress",

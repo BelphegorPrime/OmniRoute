@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Только выбранные подключения",
     "selectAtLeastOneConnection": "Выберите хотя бы одно подключение или вариант «Все подключения».",
     "allConnectionsDesc": "Этот ключ позволяет использовать любое активное подключение.",
-    "restrictedToConnections": "Доступ ограничен: {count, plural, one {# подключением} few {# подключениями} many {# подключениями} other {# подключения}}."
+    "restrictedToConnections": "Доступ ограничен: {count, plural, one {# подключением} few {# подключениями} many {# подключениями} other {# подключения}}.",
+    "preferredConnections": "Предпочтительные подключения",
+    "preferredConnectionsDesc": "Порядок приоритета для каждого ключа. Если предпочтительное подключение недоступно, маршрутизация переходит к следующему подходящему.",
+    "preferredConnectionsNone": "Предпочтение не задано — используется стратегия маршрутизации по умолчанию.",
+    "preferredConnectionsClear": "Очистить"
   },
   "auditLog": {
     "title": "Журнал аудита",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Добавить ссылку на комбо",
     "builderPinnedAccount": "Закреплённая учётная запись",
     "builderLegacyEntry": "Устаревшая запись",
+    "builderStaleModel": "Нет в актуальном каталоге",
     "reviewName": "Название",
     "reviewStrategy": "Стратегия",
     "reviewSteps": "Шаги",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Платные кредиты Codex",
     "codexPaidCreditsAvailable": "Доступно (баланс не сообщается)",
     "codexPaidCreditsUnavailable": "Недоступно или достигнут лимит расходов",
-    "codexPaidCreditsUnlimited": "Безлимитно"
+    "codexPaidCreditsUnlimited": "Безлимитно",
+    "claudeResetCreditDefaultTitle": "Сброс лимитов Claude",
+    "confirmRedeemClaudeResetCredit": "Активация мгновенно сбрасывает применимые лимиты использования Claude и безвозвратно расходует этот кредит.",
+    "claudeResetCreditsModalTitle": "Кредиты на сброс Claude",
+    "claudeResetCreditsModalExplainer": "Доступные кредиты на сброс Claude и еженедельные сбросы сессий для этого аккаунта."
   },
   "modals": {
     "waitingAuth": "Ожидание авторизации",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "ограничение частоты по IP (429)",
     "poolSetAsideKindSlow": "медленные ответы",
     "poolSetAsideKindGeoBlocked": "заблокировано по региону (403/451)",
+    "poolSetAsideKindOperatorReported": "сбой, сообщенный оператором",
     "poolSetAsideUntil": "Снова в ротации {endsAt}",
     "poolSetAsideRepeat": "Отложен {count, plural, one {# раз} other {# раз}}",
     "poolUnknownAddress": "Неизвестный адрес",

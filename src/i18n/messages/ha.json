@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Haɗin da aka zaɓa kawai",
     "selectAtLeastOneConnection": "Zaɓi aƙalla haɗi ɗaya ko kuma zaɓi Duk haɗin.",
     "allConnectionsDesc": "Wannan maɓalli na iya amfani da kowane haɗi mai aiki.",
-    "restrictedToConnections": "An taƙaita zuwa {count, plural, one {haɗi #} other {haɗi #}}."
+    "restrictedToConnections": "An taƙaita zuwa {count, plural, one {haɗi #} other {haɗi #}}.",
+    "preferredConnections": "Haɗe-haɗen da aka fi so",
+    "preferredConnectionsDesc": "Tsarin fifiko na kowane maɓalli. Idan haɗin da aka fi so ba ya samuwa, hanyar tura buƙata za ta koma ga na gaba da ya cancanta.",
+    "preferredConnectionsNone": "Ba a saita fifiko ba — ana amfani da tsohuwar dabarar tura buƙata.",
+    "preferredConnectionsClear": "Share"
   },
   "auditLog": {
     "title": "Rajistar Bincike",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Ƙara manunin haɗi",
     "builderPinnedAccount": "Tsayayyen Asusu",
     "builderLegacyEntry": "Tsohuwar shigarwa",
+    "builderStaleModel": "Ba ya cikin kundin kai tsaye",
     "reviewName": "Suna",
     "reviewStrategy": "Dabara",
     "reviewSteps": "Matakai",
@@ -10291,7 +10296,11 @@
     "updatedShort": "An sabunta",
     "lastRefreshed": "Sabuntawa ta ƙarshe",
     "providerQuota": "Ƙayyadadden kason mai bayarwa",
-    "providerQuotaHomeHint": "Matsayi na ainihin lokaci a duk asusun da aka haɗa"
+    "providerQuotaHomeHint": "Matsayi na ainihin lokaci a duk asusun da aka haɗa",
+    "claudeResetCreditDefaultTitle": "Sake saitin iyakar Claude",
+    "confirmRedeemClaudeResetCredit": "Karɓa nan take yana sake saita iyakokin amfani da Claude da suka cancanta kuma yana cinye wannan kiredit ɗin dindindin.",
+    "claudeResetCreditsModalTitle": "Kiredit ɗin sake saitin Claude",
+    "claudeResetCreditsModalExplainer": "Kiredit ɗin sake saitin Claude da sake saitin zama na mako-mako da ke akwai don wannan asusun."
   },
   "modals": {
     "waitingAuth": "Ana Jiran Izini",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "iyakar saurin IP (429)",
     "poolSetAsideKindSlow": "amsoshi masu jinkiri",
     "poolSetAsideKindGeoBlocked": "Yankin an toshe (403/451)",
+    "poolSetAsideKindOperatorReported": "ragar da mai mulki ya ba da rahoto",
     "poolSetAsideUntil": "Komawa cikin juyawa {endsAt}",
     "poolSetAsideRepeat": "An ajiye a gefe {count, plural, one {# sau} other {# sau}}",
     "poolUnknownAddress": "Adireshi mara sani",

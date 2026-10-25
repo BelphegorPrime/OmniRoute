@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Hanya koneksi yang dipilih",
     "selectAtLeastOneConnection": "Pilih setidaknya satu koneksi atau pilih Semua koneksi.",
     "allConnectionsDesc": "Kunci ini dapat menggunakan koneksi aktif apa pun.",
-    "restrictedToConnections": "Dibatasi untuk {count, plural, one {# koneksi} other {# koneksi}}."
+    "restrictedToConnections": "Dibatasi untuk {count, plural, one {# koneksi} other {# koneksi}}.",
+    "preferredConnections": "Koneksi pilihan",
+    "preferredConnectionsDesc": "Urutan prioritas per kunci. Jika koneksi pilihan tidak tersedia, perutean beralih ke koneksi memenuhi syarat berikutnya.",
+    "preferredConnectionsNone": "Tidak ada preferensi — strategi perutean bawaan digunakan.",
+    "preferredConnectionsClear": "Hapus"
   },
   "auditLog": {
     "title": "Catatan Audit",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Tambahkan referensi combo",
     "builderPinnedAccount": "Akun yang Disematkan",
     "builderLegacyEntry": "Entri lama",
+    "builderStaleModel": "Tidak ada di katalog langsung",
     "reviewName": "Nama",
     "reviewStrategy": "Strategi",
     "reviewSteps": "Langkah",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Kredit Codex berbayar",
     "codexPaidCreditsAvailable": "Tersedia (saldo tidak dilaporkan)",
     "codexPaidCreditsUnavailable": "Tidak tersedia atau batas pengeluaran tercapai",
-    "codexPaidCreditsUnlimited": "Tak terbatas"
+    "codexPaidCreditsUnlimited": "Tak terbatas",
+    "claudeResetCreditDefaultTitle": "Reset batas Claude",
+    "confirmRedeemClaudeResetCredit": "Menukarkan akan langsung mereset batas penggunaan Claude yang memenuhi syarat dan menghabiskan kredit ini secara permanen.",
+    "claudeResetCreditsModalTitle": "Kredit reset Claude",
+    "claudeResetCreditsModalExplainer": "Kredit reset Claude dan reset sesi mingguan yang tersedia untuk akun ini."
   },
   "modals": {
     "waitingAuth": "Menunggu Otorisasi",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "batas laju IP (429)",
     "poolSetAsideKindSlow": "respon lambat",
     "poolSetAsideKindGeoBlocked": "wilayah diblokir (403/451)",
+    "poolSetAsideKindOperatorReported": "gangguan dilaporkan oleh operator",
     "poolSetAsideUntil": "Kembali ke rotasi {endsAt}",
     "poolSetAsideRepeat": "Disisihkan {count, plural, one {# kali} other {# kali}}",
     "poolUnknownAddress": "Alamat tidak dikenal",

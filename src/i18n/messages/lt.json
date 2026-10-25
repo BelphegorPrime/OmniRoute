@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Tik pasirinkti ryšiai",
     "selectAtLeastOneConnection": "Pasirinkite bent vieną ryšį arba parinktį „Visi ryšiai“.",
     "allConnectionsDesc": "Šis raktas gali naudoti bet kurį aktyvų ryšį.",
-    "restrictedToConnections": "Prieiga apribota iki {count, plural, one {# ryšio} other {# ryšių}}."
+    "restrictedToConnections": "Prieiga apribota iki {count, plural, one {# ryšio} other {# ryšių}}.",
+    "preferredConnections": "Pageidaujami ryšiai",
+    "preferredConnectionsDesc": "Kiekvieno rakto prioriteto tvarka. Jei pageidaujamas ryšys nepasiekiamas, maršrutizavimas pereina prie kito tinkamo.",
+    "preferredConnectionsNone": "Pageidavimas nenustatytas — naudojama numatytoji maršrutizavimo strategija.",
+    "preferredConnectionsClear": "Išvalyti"
   },
   "auditLog": {
     "title": "Audito žurnalas",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Pridėti kombinacijos nuorodą",
     "builderPinnedAccount": "Prisegta paskyra",
     "builderLegacyEntry": "Senos versijos įrašas",
+    "builderStaleModel": "Nėra tiesioginiame kataloge",
     "reviewName": "Pavadinimas",
     "reviewStrategy": "Strategija",
     "reviewSteps": "Žingsniai",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Claude limito atstatymas",
+    "confirmRedeemClaudeResetCredit": "Panaudojus iš karto atstatomi atitinkami Claude naudojimo limitai ir visam laikui sunaudojamas šis kreditas.",
+    "claudeResetCreditsModalTitle": "Claude atstatymo kreditai",
+    "claudeResetCreditsModalExplainer": "Šiai paskyrai pasiekiami Claude atstatymo kreditai ir savaitiniai seansų atstatymai."
   },
   "modals": {
     "waitingAuth": "Laukiama autorizacijos",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP užklausų ribojimas (429)",
     "poolSetAsideKindSlow": "lėti atsakymai",
     "poolSetAsideKindGeoBlocked": "regionas užblokuotas (403/451)",
+    "poolSetAsideKindOperatorReported": "praradimą pranešė operatorius",
     "poolSetAsideUntil": "Grįžta į rotaciją {endsAt}",
     "poolSetAsideRepeat": "Atidėta {count, plural, one {# kartą} other {# kartus}}",
     "poolUnknownAddress": "Nežinomas adresas",

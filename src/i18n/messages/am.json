@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "የተመረጡ ግንኙነቶች ብቻ",
     "selectAtLeastOneConnection": "ቢያንስ አንድ ግንኙነት ይምረጡ ወይም «ሁሉም ግንኙነቶች»ን ይምረጡ።",
     "allConnectionsDesc": "ይህ ቁልፍ ማንኛውንም ንቁ ግንኙነት መጠቀም ይችላል።",
-    "restrictedToConnections": "ለ{count, plural, one {# ግንኙነት} other {# ግንኙነቶች}} ብቻ የተገደበ።"
+    "restrictedToConnections": "ለ{count, plural, one {# ግንኙነት} other {# ግንኙነቶች}} ብቻ የተገደበ።",
+    "preferredConnections": "ተመራጭ ግንኙነቶች",
+    "preferredConnectionsDesc": "በቁልፍ የተወሰነ የቅድሚያ ቅደም ተከተል። ተመራጭ ግንኙነት ካልተገኘ፣ ማዘዋወሩ ወደሚቀጥለው ብቁ ግንኙነት ይሸጋገራል።",
+    "preferredConnectionsNone": "ምንም ምርጫ አልተዘጋጀም — ነባሪው የማዘዋወር ስልት ጥቅም ላይ ይውላል።",
+    "preferredConnectionsClear": "አጽዳ"
   },
   "auditLog": {
     "title": "የኦዲት መዝገብ",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "የጥምር ማጣቀሻ ያክሉ",
     "builderPinnedAccount": "የተሰካ መለያ",
     "builderLegacyEntry": "የቀድሞ ስሪት ግቤት",
+    "builderStaleModel": "በቀጥታ ካታሎግ ውስጥ የለም",
     "reviewName": "ስም",
     "reviewStrategy": "ስትራቴጂ",
     "reviewSteps": "ደረጃዎች",
@@ -10291,7 +10296,11 @@
     "updatedShort": "ተዘምኗል",
     "lastRefreshed": "ለመጨረሻ ጊዜ የታደሰው",
     "providerQuota": "የአቅራቢ ኮታ",
-    "providerQuotaHomeHint": "በተገናኙ መለያዎች ላይ ያለው የቀጥታ ሁኔታ"
+    "providerQuotaHomeHint": "በተገናኙ መለያዎች ላይ ያለው የቀጥታ ሁኔታ",
+    "claudeResetCreditDefaultTitle": "የClaude ገደብ ዳግም ማስጀመሪያ",
+    "confirmRedeemClaudeResetCredit": "መዋጀት ወዲያውኑ ብቁ የClaude የአጠቃቀም ገደቦችን ዳግም ያስጀምራል እና ይህን ክሬዲት በቋሚነት ይጨርሳል።",
+    "claudeResetCreditsModalTitle": "የClaude ዳግም ማስጀመሪያ ክሬዲቶች",
+    "claudeResetCreditsModalExplainer": "ለዚህ መለያ የሚገኙ የClaude ዳግም ማስጀመሪያ ክሬዲቶች እና ሳምንታዊ የክፍለ-ጊዜ ዳግም ማስጀመሪያዎች።"
   },
   "modals": {
     "waitingAuth": "ፈቃድ በመጠበቅ ላይ",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "የIP ፍጥነት ገደብ (429)",
     "poolSetAsideKindSlow": "ዝግታ ምላሾች",
     "poolSetAsideKindGeoBlocked": "ክልል ተቋርጧል (403/451)",
+    "poolSetAsideKindOperatorReported": "በአጠቃላይ የሚታወቅ መሣሪያ ችግር",
     "poolSetAsideUntil": "ወደ ሽክርክር ተመልሷል {endsAt}",
     "poolSetAsideRepeat": "ወደ ጎን ተቀምጧል {count, plural, one {# ጊዜ} other {# ጊዜ}}",
     "poolUnknownAddress": "ያልታወቀ አድራሻ",

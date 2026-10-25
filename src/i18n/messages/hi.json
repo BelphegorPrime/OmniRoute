@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "केवल चयनित कनेक्शन",
     "selectAtLeastOneConnection": "कम-से-कम एक कनेक्शन चुनें या सभी कनेक्शन चुनें।",
     "allConnectionsDesc": "यह कुंजी किसी भी सक्रिय कनेक्शन का उपयोग कर सकती है।",
-    "restrictedToConnections": "{count, plural, one {# कनेक्शन} other {# कनेक्शनों}} तक सीमित।"
+    "restrictedToConnections": "{count, plural, one {# कनेक्शन} other {# कनेक्शनों}} तक सीमित।",
+    "preferredConnections": "पसंदीदा कनेक्शन",
+    "preferredConnectionsDesc": "प्रत्येक कुंजी के लिए प्राथमिकता क्रम। यदि कोई पसंदीदा कनेक्शन उपलब्ध नहीं है, तो रूटिंग अगले योग्य कनेक्शन पर चली जाती है।",
+    "preferredConnectionsNone": "कोई प्राथमिकता सेट नहीं है — डिफ़ॉल्ट रूटिंग रणनीति का उपयोग किया जाता है।",
+    "preferredConnectionsClear": "साफ़ करें"
   },
   "auditLog": {
     "title": "ऑडिट लॉग",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "कॉम्बो संदर्भ जोड़ें",
     "builderPinnedAccount": "पिन किया गया खाता",
     "builderLegacyEntry": "लेगेसी प्रविष्टि",
+    "builderStaleModel": "लाइव कैटलॉग में नहीं है",
     "reviewName": "नाम",
     "reviewStrategy": "रणनीति",
     "reviewSteps": "चरण",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "सशुल्क Codex क्रेडिट",
     "codexPaidCreditsAvailable": "उपलब्ध (शेष राशि की रिपोर्ट नहीं)",
     "codexPaidCreditsUnavailable": "अनुपलब्ध या खर्च सीमा पूरी हो गई",
-    "codexPaidCreditsUnlimited": "असीमित"
+    "codexPaidCreditsUnlimited": "असीमित",
+    "claudeResetCreditDefaultTitle": "Claude सीमा रीसेट",
+    "confirmRedeemClaudeResetCredit": "रिडीम करने पर पात्र Claude उपयोग सीमाएं तुरंत रीसेट हो जाती हैं और यह क्रेडिट स्थायी रूप से खर्च हो जाता है।",
+    "claudeResetCreditsModalTitle": "Claude रीसेट क्रेडिट",
+    "claudeResetCreditsModalExplainer": "इस खाते के लिए उपलब्ध Claude रीसेट क्रेडिट और साप्ताहिक सत्र रीसेट।"
   },
   "modals": {
     "waitingAuth": "प्राधिकरण की प्रतीक्षा की जा रही है",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP दर सीमा (429)",
     "poolSetAsideKindSlow": "धीमी प्रतिक्रियाएँ",
     "poolSetAsideKindGeoBlocked": "क्षेत्र अवरुद्ध (403/451)",
+    "poolSetAsideKindOperatorReported": "ऑपरेटर द्वारा रिपोर्ट की गई सेवा बाधा",
     "poolSetAsideUntil": "रोटेशन में वापस {endsAt}",
     "poolSetAsideRepeat": "अलग रखा गया {count, plural, one {# बार} other {# बार}}",
     "poolUnknownAddress": "अज्ञात पता",

@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Samo izbrane povezave",
     "selectAtLeastOneConnection": "Izberite vsaj eno povezavo ali možnost Vse povezave.",
     "allConnectionsDesc": "Ta ključ lahko uporablja katero koli aktivno povezavo.",
-    "restrictedToConnections": "Omejeno na {count, plural, one {# povezavo} two {# povezavi} few {# povezave} other {# povezav}}."
+    "restrictedToConnections": "Omejeno na {count, plural, one {# povezavo} two {# povezavi} few {# povezave} other {# povezav}}.",
+    "preferredConnections": "Prednostne povezave",
+    "preferredConnectionsDesc": "Vrstni red prioritete za vsak ključ. Če prednostna povezava ni na voljo, usmerjanje preide na naslednjo ustrezno.",
+    "preferredConnectionsNone": "Prednost ni nastavljena — uporablja se privzeta strategija usmerjanja.",
+    "preferredConnectionsClear": "Počisti"
   },
   "auditLog": {
     "title": "Dnevnik revizij",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Dodaj sklic na kombinacijo",
     "builderPinnedAccount": "Pripeti račun",
     "builderLegacyEntry": "Vnos starejše različice",
+    "builderStaleModel": "Ni v živem katalogu",
     "reviewName": "Ime",
     "reviewStrategy": "Strategija",
     "reviewSteps": "Koraki",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Ponastavitev omejitve Claude",
+    "confirmRedeemClaudeResetCredit": "Vnovčenje takoj ponastavi veljavne omejitve uporabe Claude in trajno porabi ta kredit.",
+    "claudeResetCreditsModalTitle": "Krediti za ponastavitev Claude",
+    "claudeResetCreditsModalExplainer": "Razpoložljivi krediti za ponastavitev Claude in tedenske ponastavitve sej za ta račun."
   },
   "modals": {
     "waitingAuth": "Čakanje na avtorizacijo",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "omejitev hitrosti po IP (429)",
     "poolSetAsideKindSlow": "počasni odzivi",
     "poolSetAsideKindGeoBlocked": "regionalno blokirano (403/451)",
+    "poolSetAsideKindOperatorReported": "izpad, ki ga je prijavil operater",
     "poolSetAsideUntil": "Nazaj v rotaciji {endsAt}",
     "poolSetAsideRepeat": "Odloženo {count, plural, one {#krat} other {#krat}}",
     "poolUnknownAddress": "Neznan naslov",

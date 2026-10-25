@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "仅选定的连接",
     "selectAtLeastOneConnection": "请至少选择一个连接，或选择“所有连接”。",
     "allConnectionsDesc": "此密钥可以使用任何活跃连接。",
-    "restrictedToConnections": "仅限用于 {count, plural, one {# 个连接} other {# 个连接}}。"
+    "restrictedToConnections": "仅限用于 {count, plural, one {# 个连接} other {# 个连接}}。",
+    "preferredConnections": "首选连接",
+    "preferredConnectionsDesc": "按密钥设置的优先顺序。如果首选连接不可用，路由会回退到下一个符合条件的连接。",
+    "preferredConnectionsNone": "未设置偏好 — 使用默认路由策略。",
+    "preferredConnectionsClear": "清除"
   },
   "auditLog": {
     "title": "审核日志",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "添加组合引用步骤",
     "builderPinnedAccount": "固定账户",
     "builderLegacyEntry": "旧版条目",
+    "builderStaleModel": "不在实时目录中",
     "reviewName": "名称",
     "reviewStrategy": "策略",
     "reviewSteps": "步骤",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Claude 限额重置",
+    "confirmRedeemClaudeResetCredit": "兑换将立即重置符合条件的 Claude 使用限额，并永久消耗此点数。",
+    "claudeResetCreditsModalTitle": "Claude 重置点数",
+    "claudeResetCreditsModalExplainer": "此账户可用的 Claude 重置点数和每周会话重置次数。"
   },
   "modals": {
     "waitingAuth": "等待授权",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP 速率限制 (429)",
     "poolSetAsideKindSlow": "响应缓慢",
     "poolSetAsideKindGeoBlocked": "地区受限 (403/451)",
+    "poolSetAsideKindOperatorReported": "运营商报告的故障",
     "poolSetAsideUntil": "{endsAt}恢复轮换",
     "poolSetAsideRepeat": "已搁置{count, plural, one {#次} other {#次}}",
     "poolUnknownAddress": "未知地址",

@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "เฉพาะการเชื่อมต่อที่เลือก",
     "selectAtLeastOneConnection": "เลือกการเชื่อมต่ออย่างน้อยหนึ่งรายการ หรือเลือกการเชื่อมต่อทั้งหมด",
     "allConnectionsDesc": "คีย์นี้สามารถใช้การเชื่อมต่อใดก็ได้ที่เปิดใช้งานอยู่",
-    "restrictedToConnections": "จำกัดไว้ที่ {count, plural, one {# การเชื่อมต่อ} other {# การเชื่อมต่อ}}"
+    "restrictedToConnections": "จำกัดไว้ที่ {count, plural, one {# การเชื่อมต่อ} other {# การเชื่อมต่อ}}",
+    "preferredConnections": "การเชื่อมต่อที่ต้องการ",
+    "preferredConnectionsDesc": "ลำดับความสำคัญสำหรับแต่ละคีย์ หากการเชื่อมต่อที่ต้องการใช้งานไม่ได้ การกำหนดเส้นทางจะเปลี่ยนไปใช้การเชื่อมต่อที่มีสิทธิ์ถัดไป",
+    "preferredConnectionsNone": "ไม่ได้ตั้งค่าการกำหนดลำดับ — ใช้กลยุทธ์การกำหนดเส้นทางเริ่มต้น",
+    "preferredConnectionsClear": "ล้าง"
   },
   "auditLog": {
     "title": "บันทึกการตรวจสอบ",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "เพิ่มข้อมูลอ้างอิงคอมโบ",
     "builderPinnedAccount": "บัญชีที่ตรึงไว้",
     "builderLegacyEntry": "รายการแบบเดิม",
+    "builderStaleModel": "ไม่อยู่ในแคตตาล็อกสด",
     "reviewName": "ชื่อ",
     "reviewStrategy": "กลยุทธ์",
     "reviewSteps": "ขั้นตอน",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "เครดิต Codex แบบชำระเงิน",
     "codexPaidCreditsAvailable": "พร้อมใช้งาน (ไม่รายงานยอดคงเหลือ)",
     "codexPaidCreditsUnavailable": "ไม่พร้อมใช้งานหรือถึงขีดจำกัดการใช้จ่ายแล้ว",
-    "codexPaidCreditsUnlimited": "ไม่จำกัด"
+    "codexPaidCreditsUnlimited": "ไม่จำกัด",
+    "claudeResetCreditDefaultTitle": "รีเซ็ตขีดจำกัด Claude",
+    "confirmRedeemClaudeResetCredit": "การแลกรับจะรีเซ็ตขีดจำกัดการใช้งาน Claude ที่เข้าเกณฑ์ทันที และจะใช้เครดิตนี้ไปอย่างถาวร",
+    "claudeResetCreditsModalTitle": "เครดิตรีเซ็ต Claude",
+    "claudeResetCreditsModalExplainer": "เครดิตรีเซ็ต Claude ที่มีอยู่และการรีเซ็ตเซสชันรายสัปดาห์สำหรับบัญชีนี้"
   },
   "modals": {
     "waitingAuth": "รอการอนุญาต",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "จำกัดอัตราตาม IP (429)",
     "poolSetAsideKindSlow": "การตอบสนองช้า",
     "poolSetAsideKindGeoBlocked": "ถูกบล็อกตามภูมิภาค (403/451)",
+    "poolSetAsideKindOperatorReported": "การขัดข้องที่ผู้ให้บริการรายงาน",
     "poolSetAsideUntil": "กลับเข้าหมุนเวียน {endsAt}",
     "poolSetAsideRepeat": "กันไว้ {count, plural, one {# ครั้ง} other {# ครั้ง}}",
     "poolUnknownAddress": "ที่อยู่ไม่ทราบ",

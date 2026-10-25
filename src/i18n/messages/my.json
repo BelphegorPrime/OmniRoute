@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "ရွေးချယ်ထားသော ချိတ်ဆက်မှုများသာ",
     "selectAtLeastOneConnection": "အနည်းဆုံး ချိတ်ဆက်မှုတစ်ခုကို ရွေးပါ သို့မဟုတ် ချိတ်ဆက်မှုအားလုံးကို ရွေးပါ။",
     "allConnectionsDesc": "ဤ key သည် အသက်ဝင်နေသော မည်သည့်ချိတ်ဆက်မှုကိုမဆို အသုံးပြုနိုင်သည်။",
-    "restrictedToConnections": "{count, plural, one {ချိတ်ဆက်မှု # ခု} other {ချိတ်ဆက်မှု # ခု}} သာ အသုံးပြုခွင့်ရှိသည်။"
+    "restrictedToConnections": "{count, plural, one {ချိတ်ဆက်မှု # ခု} other {ချိတ်ဆက်မှု # ခု}} သာ အသုံးပြုခွင့်ရှိသည်။",
+    "preferredConnections": "ဦးစားပေး ချိတ်ဆက်မှုများ",
+    "preferredConnectionsDesc": "ကီးတစ်ခုချင်းစီအတွက် ဦးစားပေးအစီအစဉ်။ ဦးစားပေးချိတ်ဆက်မှု မရရှိနိုင်ပါက လမ်းကြောင်းပေးခြင်းသည် နောက်ထပ်အရည်အချင်းပြည့်မီသော ချိတ်ဆက်မှုသို့ ပြောင်းသွားပါမည်။",
+    "preferredConnectionsNone": "ဦးစားပေးမှု သတ်မှတ်ထားခြင်းမရှိပါ — မူလ လမ်းကြောင်းပေးနည်းဗျူဟာကို အသုံးပြုပါသည်။",
+    "preferredConnectionsClear": "ရှင်းလင်းရန်"
   },
   "auditLog": {
     "title": "စစ်ဆေးမှတ်တမ်း",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "ကွန်ဘို ကိုးကားချက် ထည့်ရန်",
     "builderPinnedAccount": "ပင်တွဲထားသော အကောင့်",
     "builderLegacyEntry": "စနစ်ဟောင်းမှ ထည့်သွင်းမှု",
+    "builderStaleModel": "တိုက်ရိုက်ကတ်တလောက်တွင် မရှိပါ",
     "reviewName": "အမည်",
     "reviewStrategy": "မဟာဗျူဟာ",
     "reviewSteps": "အဆင့်များ",
@@ -10291,7 +10296,11 @@
     "updatedShort": "အပ်ဒိတ်လုပ်ထားသည်",
     "lastRefreshed": "နောက်ဆုံး ပြန်လည်ရယူခဲ့ချိန်",
     "providerQuota": "ဝန်ဆောင်မှုပေးသူ၏ ခွဲတမ်း",
-    "providerQuotaHomeHint": "ချိတ်ဆက်ထားသောအကောင့်များအားလုံး၏ လက်ရှိအခြေအနေ"
+    "providerQuotaHomeHint": "ချိတ်ဆက်ထားသောအကောင့်များအားလုံး၏ လက်ရှိအခြေအနေ",
+    "claudeResetCreditDefaultTitle": "Claude ကန့်သတ်ချက် ပြန်လည်သတ်မှတ်ခြင်း",
+    "confirmRedeemClaudeResetCredit": "လဲလှယ်အသုံးပြုခြင်းသည် သတ်မှတ်အရည်အချင်းပြည့်မီသော Claude အသုံးပြုမှုကန့်သတ်ချက်များကို ချက်ချင်း ပြန်လည်သတ်မှတ်ပေးပြီး ဤခရက်ဒစ်ကို အပြီးတိုင် သုံးစွဲသွားမည်ဖြစ်သည်။",
+    "claudeResetCreditsModalTitle": "Claude ပြန်လည်သတ်မှတ်ခြင်း ခရက်ဒစ်များ",
+    "claudeResetCreditsModalExplainer": "ဤအကောင့်အတွက် ရရှိနိုင်သော Claude ပြန်လည်သတ်မှတ်ခြင်း ခရက်ဒစ်များနှင့် အပတ်စဉ် session ပြန်လည်သတ်မှတ်မှုများ။"
   },
   "modals": {
     "waitingAuth": "ခွင့်ပြုချက်ကို စောင့်ဆိုင်းနေသည်",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP နှုန်းကန့်သတ်ချက် (429)",
     "poolSetAsideKindSlow": "နှေးကွေးသော တုံ့ပြန်ချက်များ",
     "poolSetAsideKindGeoBlocked": "ဒေသကတားမြစ်ထားသည် (403/451)",
+    "poolSetAsideKindOperatorReported": "လုပ်ငန်းဆောင်ရွက်သူမှ အစီရင်ခံသော ပြတ်တောက်မှု",
     "poolSetAsideUntil": "အလှည့်သို့ ပြန်ရောက်မည် {endsAt}",
     "poolSetAsideRepeat": "ဖယ်ထားသည် {count, plural, one {# ကြိမ်} other {# ကြိမ်}}",
     "poolUnknownAddress": "မသိသောလိပ်စာ",

@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "តែការតភ្ជាប់ដែលបានជ្រើសរើសប៉ុណ្ណោះ",
     "selectAtLeastOneConnection": "ជ្រើសរើសការតភ្ជាប់យ៉ាងហោចណាស់មួយ ឬជ្រើសរើសការតភ្ជាប់ទាំងអស់។",
     "allConnectionsDesc": "សោនេះអាចប្រើការតភ្ជាប់សកម្មណាមួយបាន។",
-    "restrictedToConnections": "បានកំណត់ត្រឹម {count, plural, one {# ការតភ្ជាប់} other {# ការតភ្ជាប់}}។"
+    "restrictedToConnections": "បានកំណត់ត្រឹម {count, plural, one {# ការតភ្ជាប់} other {# ការតភ្ជាប់}}។",
+    "preferredConnections": "ការតភ្ជាប់ដែលពេញចិត្ត",
+    "preferredConnectionsDesc": "លំដាប់អាទិភាពសម្រាប់សោនីមួយៗ។ ប្រសិនបើការតភ្ជាប់ដែលពេញចិត្តមិនអាចប្រើបាន ការបញ្ជូនបន្តនឹងប្តូរទៅការតភ្ជាប់ដែលមានសិទ្ធិបន្ទាប់។",
+    "preferredConnectionsNone": "មិនបានកំណត់ចំណូលចិត្តទេ — យុទ្ធសាស្ត្របញ្ជូនបន្តលំនាំដើមត្រូវបានប្រើ។",
+    "preferredConnectionsClear": "សម្អាត"
   },
   "auditLog": {
     "title": "កំណត់ហេតុសវនកម្ម",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "បន្ថែមសេចក្ដីយោងបន្សំ",
     "builderPinnedAccount": "គណនីដែលបានខ្ទាស់",
     "builderLegacyEntry": "ធាតុពីជំនាន់មុន",
+    "builderStaleModel": "មិនមាននៅក្នុងកាតាឡុកផ្ទាល់ទេ",
     "reviewName": "ឈ្មោះ",
     "reviewStrategy": "យុទ្ធសាស្ត្រ",
     "reviewSteps": "ជំហាន",
@@ -10291,7 +10296,11 @@
     "updatedShort": "បានធ្វើបច្ចុប្បន្នភាព",
     "lastRefreshed": "បានធ្វើឱ្យស្រស់ចុងក្រោយ",
     "providerQuota": "កូតារបស់អ្នកផ្តល់សេវា",
-    "providerQuotaHomeHint": "ស្ថានភាពផ្ទាល់នៅទូទាំងគណនីដែលបានភ្ជាប់"
+    "providerQuotaHomeHint": "ស្ថានភាពផ្ទាល់នៅទូទាំងគណនីដែលបានភ្ជាប់",
+    "claudeResetCreditDefaultTitle": "ការកំណត់ដែនកំណត់ Claude ឡើងវិញ",
+    "confirmRedeemClaudeResetCredit": "ការប្តូរយកនឹងកំណត់ដែនកំណត់នៃការប្រើប្រាស់ Claude ដែលមានសិទ្ធិឡើងវិញភ្លាមៗ និងប្រើប្រាស់ក្រេឌីតនេះជាអចិន្ត្រៃយ៍។",
+    "claudeResetCreditsModalTitle": "ក្រេឌីតកំណត់ Claude ឡើងវិញ",
+    "claudeResetCreditsModalExplainer": "ក្រេឌីតកំណត់ Claude ឡើងវិញដែលមាន និងការកំណត់វគ្គឡើងវិញប្រចាំសប្តាហ៍សម្រាប់គណនីនេះ។"
   },
   "modals": {
     "waitingAuth": "កំពុងរង់ចាំការផ្តល់សិទ្ធិ",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "ដែនកំណត់អត្រា IP (429)",
     "poolSetAsideKindSlow": "ការឆ្លើយតបយឺត",
     "poolSetAsideKindGeoBlocked": "តំបន់បានរារាំង (403/451)",
+    "poolSetAsideKindOperatorReported": "ការលែងដំណើរការដែលអ្នកប្រតិបត្តិរាយការណ៍",
     "poolSetAsideUntil": "ត្រឡប់ទៅការបង្វិល {endsAt}",
     "poolSetAsideRepeat": "ដាក់ឡែក {count, plural, one {# ដង} other {# ដង}}",
     "poolUnknownAddress": "អាសយដ្ឋានមិនស្គាល់",

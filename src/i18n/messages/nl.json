@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Alleen geselecteerde verbindingen",
     "selectAtLeastOneConnection": "Selecteer ten minste één verbinding of kies Alle verbindingen.",
     "allConnectionsDesc": "Deze sleutel kan elke actieve verbinding gebruiken.",
-    "restrictedToConnections": "Beperkt tot {count, plural, one {# verbinding} other {# verbindingen}}."
+    "restrictedToConnections": "Beperkt tot {count, plural, one {# verbinding} other {# verbindingen}}.",
+    "preferredConnections": "Voorkeursverbindingen",
+    "preferredConnectionsDesc": "Prioriteitsvolgorde per sleutel. Als een voorkeursverbinding niet beschikbaar is, valt de routering terug op de volgende geschikte.",
+    "preferredConnectionsNone": "Geen voorkeur ingesteld — de standaard routeringsstrategie wordt gebruikt.",
+    "preferredConnectionsClear": "Wissen"
   },
   "auditLog": {
     "title": "Auditlogboek",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Comboreferentie toevoegen",
     "builderPinnedAccount": "Vastgezet account",
     "builderLegacyEntry": "Verouderde invoer",
+    "builderStaleModel": "Niet in de live-catalogus",
     "reviewName": "Naam",
     "reviewStrategy": "Strategie",
     "reviewSteps": "Stappen",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Betaalde Codex-credits",
     "codexPaidCreditsAvailable": "Beschikbaar (saldo niet gemeld)",
     "codexPaidCreditsUnavailable": "Niet beschikbaar of bestedingslimiet bereikt",
-    "codexPaidCreditsUnlimited": "Onbeperkt"
+    "codexPaidCreditsUnlimited": "Onbeperkt",
+    "claudeResetCreditDefaultTitle": "Claude-limietreset",
+    "confirmRedeemClaudeResetCredit": "Inwisselen reset direct de in aanmerking komende Claude-gebruikslimieten en verbruikt dit tegoed definitief.",
+    "claudeResetCreditsModalTitle": "Claude-resetcredits",
+    "claudeResetCreditsModalExplainer": "Beschikbare Claude-resetcredits en wekelijkse sessieresets voor dit account."
   },
   "modals": {
     "waitingAuth": "Wachten op toestemming",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP-snelheidslimiet (429)",
     "poolSetAsideKindSlow": "trage reacties",
     "poolSetAsideKindGeoBlocked": "regio geblokkeerd (403/451)",
+    "poolSetAsideKindOperatorReported": "storing gemeld door operator",
     "poolSetAsideUntil": "Terug in rotatie {endsAt}",
     "poolSetAsideRepeat": "Terzijde gesteld {count, plural, one {# keer} other {# keer}}",
     "poolUnknownAddress": "Onbekend adres",

@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Naanị njikọ ndị ahọrọ",
     "selectAtLeastOneConnection": "Họrọ opekata mpe otu njikọ ma ọ bụ họrọ Njikọ niile.",
     "allConnectionsDesc": "Igodo a nwere ike iji njikọ ọ bụla na-arụ ọrụ.",
-    "restrictedToConnections": "Ejedebere ya na {count, plural, one {# njikọ} other {# njikọ}}."
+    "restrictedToConnections": "Ejedebere ya na {count, plural, one {# njikọ} other {# njikọ}}.",
+    "preferredConnections": "Njikọ ndị a họọrọ karịa",
+    "preferredConnectionsDesc": "Usoro mbụ maka igodo ọ bụla. Ọ bụrụ na njikọ a họọrọ adịghị, nduzi na-aga n'njikọ ruru eru na-esote.",
+    "preferredConnectionsNone": "Edobeghị mmasị ọ bụla — a na-eji usoro nduzi ndabara.",
+    "preferredConnectionsClear": "Kpochapụ"
   },
   "auditLog": {
     "title": "Ndekọ Nnyocha",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Tinye ntụaka combo",
     "builderPinnedAccount": "Account a kpọgidere",
     "builderLegacyEntry": "Ndenye ochie",
+    "builderStaleModel": "Ọ nọghị na katalọgụ dị ndụ",
     "reviewName": "Aha",
     "reviewStrategy": "Atụmatụ",
     "reviewSteps": "Nzọụkwụ",
@@ -10291,7 +10296,11 @@
     "updatedShort": "Emelitere",
     "lastRefreshed": "Oge ikpeazụ emere ka ọ dị ọhụrụ",
     "providerQuota": "Oke ojiji onye na-eweta ọrụ",
-    "providerQuotaHomeHint": "Ọnọdụ ozugbo n'ofe akaụntụ ejikọrọ"
+    "providerQuotaHomeHint": "Ọnọdụ ozugbo n'ofe akaụntụ ejikọrọ",
+    "claudeResetCreditDefaultTitle": "Ntọgharị oke Claude",
+    "confirmRedeemClaudeResetCredit": "Ịgbapụta na-atọgharị oke ojiji Claude ruru eru ozugbo ma na-emefu kredit a kpamkpam.",
+    "claudeResetCreditsModalTitle": "Kredit ntọgharị Claude",
+    "claudeResetCreditsModalExplainer": "Kredit ntọgharị Claude dịnụ na ntọgharị nnọkọ nke izu ụka maka akaụntụ a."
   },
   "modals": {
     "waitingAuth": "Na-eche maka ikike",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "oke ọsọ IP (429)",
     "poolSetAsideKindSlow": "nzaghachi nwayọ",
     "poolSetAsideKindGeoBlocked": "egbochiri mpaghara (403/451)",
+    "poolSetAsideKindOperatorReported": "mgba mbata dị ka onye nhazi na-egosi",
     "poolSetAsideUntil": "Laghachi na ntụgharị {endsAt}",
     "poolSetAsideRepeat": "E wepụrụ {count, plural, one {# ugboro} other {# ugboro}}",
     "poolUnknownAddress": "Adreesị amaghị",

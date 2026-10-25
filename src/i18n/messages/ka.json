@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "მხოლოდ არჩეული კავშირები",
     "selectAtLeastOneConnection": "აირჩიეთ მინიმუმ ერთი კავშირი ან მონიშნეთ „ყველა კავშირი“.",
     "allConnectionsDesc": "ამ გასაღებს შეუძლია ნებისმიერი აქტიური კავშირის გამოყენება.",
-    "restrictedToConnections": "შეზღუდულია {count, plural, one {# კავშირით} other {# კავშირით}}."
+    "restrictedToConnections": "შეზღუდულია {count, plural, one {# კავშირით} other {# კავშირით}}.",
+    "preferredConnections": "სასურველი კავშირები",
+    "preferredConnectionsDesc": "პრიორიტეტის რიგი თითოეული გასაღებისთვის. თუ სასურველი კავშირი მიუწვდომელია, მარშრუტიზაცია გადადის შემდეგ შესაბამის კავშირზე.",
+    "preferredConnectionsNone": "უპირატესობა არ არის დაყენებული — გამოიყენება ნაგულისხმევი მარშრუტიზაციის სტრატეგია.",
+    "preferredConnectionsClear": "გასუფთავება"
   },
   "auditLog": {
     "title": "აუდიტის ჟურნალი",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "კომბოს მითითების დამატება",
     "builderPinnedAccount": "მიმაგრებული ანგარიში",
     "builderLegacyEntry": "მოძველებული ჩანაწერი",
+    "builderStaleModel": "არ არის ცოცხალ კატალოგში",
     "reviewName": "სახელი",
     "reviewStrategy": "სტრატეგია",
     "reviewSteps": "ეტაპები",
@@ -10291,7 +10296,11 @@
     "updatedShort": "განახლებულია",
     "lastRefreshed": "ბოლო განახლება",
     "providerQuota": "პროვაიდერის კვოტა",
-    "providerQuotaHomeHint": "დაკავშირებული ანგარიშების მიმდინარე სტატუსი"
+    "providerQuotaHomeHint": "დაკავშირებული ანგარიშების მიმდინარე სტატუსი",
+    "claudeResetCreditDefaultTitle": "Claude-ის ლიმიტის განულება",
+    "confirmRedeemClaudeResetCredit": "გააქტიურება დაუყოვნებლივ ანულებს Claude-ის გამოყენების შესაბამის ლიმიტებს და სამუდამოდ ხარჯავს ამ კრედიტს.",
+    "claudeResetCreditsModalTitle": "Claude-ის განულების კრედიტები",
+    "claudeResetCreditsModalExplainer": "Claude-ის განულების ხელმისაწვდომი კრედიტები და სესიის ყოველკვირეული განულებები ამ ანგარიშისთვის."
   },
   "modals": {
     "waitingAuth": "ავტორიზაციის მოლოდინი",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP სიჩქარის ლიმიტი (429)",
     "poolSetAsideKindSlow": "ნელი პასუხები",
     "poolSetAsideKindGeoBlocked": "რეგიონი დაბლოკილია (403/451)",
+    "poolSetAsideKindOperatorReported": "ოპერატორის მიერ გამოცხადებული გათიშვა",
     "poolSetAsideUntil": "როტაციაში დაბრუნება {endsAt}",
     "poolSetAsideRepeat": "გვერდზე გადადებული {count, plural, one {# ჯერ} other {# ჯერ}}",
     "poolUnknownAddress": "უცნობი მისამართი",

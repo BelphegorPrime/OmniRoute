@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Bare valgte tilkoblinger",
     "selectAtLeastOneConnection": "Velg minst én tilkobling, eller velg Alle tilkoblinger.",
     "allConnectionsDesc": "Denne nøkkelen kan bruke en hvilken som helst aktiv tilkobling.",
-    "restrictedToConnections": "Begrenset til {count, plural, one {# tilkobling} other {# tilkoblinger}}."
+    "restrictedToConnections": "Begrenset til {count, plural, one {# tilkobling} other {# tilkoblinger}}.",
+    "preferredConnections": "Foretrukne tilkoblinger",
+    "preferredConnectionsDesc": "Prioriteringsrekkefølge per nøkkel. Hvis en foretrukken tilkobling ikke er tilgjengelig, faller rutingen tilbake til den neste kvalifiserte.",
+    "preferredConnectionsNone": "Ingen preferanse angitt — standard rutingstrategi brukes.",
+    "preferredConnectionsClear": "Tøm"
   },
   "auditLog": {
     "title": "Revisjonslogg",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Legg til kombinasjonsreferanse",
     "builderPinnedAccount": "Festet konto",
     "builderLegacyEntry": "Eldre oppføring",
+    "builderStaleModel": "Ikke i live-katalogen",
     "reviewName": "Navn",
     "reviewStrategy": "Strategi",
     "reviewSteps": "Trinn",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Tilbakestilling av Claude-grense",
+    "confirmRedeemClaudeResetCredit": "Innløsing tilbakestiller umiddelbart de kvalifiserte Claude-bruksgrensene og forbruker denne kreditten permanent.",
+    "claudeResetCreditsModalTitle": "Claude-tilbakestillingskreditter",
+    "claudeResetCreditsModalExplainer": "Tilgjengelige Claude-tilbakestillingskreditter og ukentlige økttilbakestillinger for denne kontoen."
   },
   "modals": {
     "waitingAuth": "Venter på autorisasjon",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP-hastighetsbegrensning (429)",
     "poolSetAsideKindSlow": "trege svar",
     "poolSetAsideKindGeoBlocked": "region-blokkert (403/451)",
+    "poolSetAsideKindOperatorReported": "avbrudd rapportert av operatør",
     "poolSetAsideUntil": "Tilbake i rotasjon {endsAt}",
     "poolSetAsideRepeat": "Satt til side {count, plural, one {# gang} other {# ganger}}",
     "poolUnknownAddress": "Ukjent adresse",

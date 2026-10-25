@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Csak a kiválasztott kapcsolatok",
     "selectAtLeastOneConnection": "Válasszon ki legalább egy kapcsolatot, vagy válassza az Összes kapcsolat lehetőséget.",
     "allConnectionsDesc": "Ez a kulcs bármely aktív kapcsolatot használhatja.",
-    "restrictedToConnections": "{count, plural, one {# kapcsolatra} other {# kapcsolatra}} korlátozva."
+    "restrictedToConnections": "{count, plural, one {# kapcsolatra} other {# kapcsolatra}} korlátozva.",
+    "preferredConnections": "Előnyben részesített kapcsolatok",
+    "preferredConnectionsDesc": "Kulcsonkénti prioritási sorrend. Ha egy előnyben részesített kapcsolat nem érhető el, az útválasztás a következő jogosultra vált.",
+    "preferredConnectionsNone": "Nincs beállított preferencia — az alapértelmezett útválasztási stratégia érvényes.",
+    "preferredConnectionsClear": "Törlés"
   },
   "auditLog": {
     "title": "Ellenőrzési napló",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Kombinációhivatkozás hozzáadása",
     "builderPinnedAccount": "Rögzített fiók",
     "builderLegacyEntry": "Örökölt bejegyzés",
+    "builderStaleModel": "Nincs az élő katalógusban",
     "reviewName": "Név",
     "reviewStrategy": "Stratégia",
     "reviewSteps": "Lépések",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Claude-korlát visszaállítása",
+    "confirmRedeemClaudeResetCredit": "A beváltás azonnal visszaállítja a jogosult Claude használati korlátokat, és véglegesen felhasználja ezt a kreditet.",
+    "claudeResetCreditsModalTitle": "Claude-visszaállítási kreditek",
+    "claudeResetCreditsModalExplainer": "Elérhető Claude-visszaállítási kreditek és heti munkamenet-visszaállítások ehhez a fiókhoz."
   },
   "modals": {
     "waitingAuth": "Várakozás az engedélyezésre",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP-alapú sebességkorlát (429)",
     "poolSetAsideKindSlow": "lassú válaszok",
     "poolSetAsideKindGeoBlocked": "régió blokkolva (403/451)",
+    "poolSetAsideKindOperatorReported": "üzemszünet, amelyet az üzemeltető jelentett",
     "poolSetAsideUntil": "Vissza a rotációba {endsAt}",
     "poolSetAsideRepeat": "Félretéve {count, plural, one {# alkalommal} other {# alkalommal}}",
     "poolUnknownAddress": "Ismeretlen cím",

@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Endast valda anslutningar",
     "selectAtLeastOneConnection": "Välj minst en anslutning eller välj Alla anslutningar.",
     "allConnectionsDesc": "Den här nyckeln kan använda alla aktiva anslutningar.",
-    "restrictedToConnections": "Begränsad till {count, plural, one {# anslutning} other {# anslutningar}}."
+    "restrictedToConnections": "Begränsad till {count, plural, one {# anslutning} other {# anslutningar}}.",
+    "preferredConnections": "Föredragna anslutningar",
+    "preferredConnectionsDesc": "Prioritetsordning per nyckel. Om en föredragen anslutning inte är tillgänglig faller routningen tillbaka på nästa behöriga.",
+    "preferredConnectionsNone": "Ingen preferens angiven — standardstrategin för routning används.",
+    "preferredConnectionsClear": "Rensa"
   },
   "auditLog": {
     "title": "Revisionslogg",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Lägg till kombinationsreferens",
     "builderPinnedAccount": "Fäst konto",
     "builderLegacyEntry": "Äldre post",
+    "builderStaleModel": "Finns inte i livekatalogen",
     "reviewName": "Namn",
     "reviewStrategy": "Strategi",
     "reviewSteps": "Steg",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Återställning av Claude-gräns",
+    "confirmRedeemClaudeResetCredit": "Inlösen återställer omedelbart de berättigade Claude-användningsgränserna och förbrukar denna kredit permanent.",
+    "claudeResetCreditsModalTitle": "Claude-återställningskrediter",
+    "claudeResetCreditsModalExplainer": "Tillgängliga Claude-återställningskrediter och veckovisa sessionsåterställningar för detta konto."
   },
   "modals": {
     "waitingAuth": "Väntar på auktorisering",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP-hastighetsbegränsning (429)",
     "poolSetAsideKindSlow": "långsamma svar",
     "poolSetAsideKindGeoBlocked": "regionsblockerad (403/451)",
+    "poolSetAsideKindOperatorReported": "avbrott rapporterat av operatör",
     "poolSetAsideUntil": "Tillbaka i rotation {endsAt}",
     "poolSetAsideRepeat": "Åsidosatt {count, plural, one {# gång} other {# gånger}}",
     "poolUnknownAddress": "Okänd adress",

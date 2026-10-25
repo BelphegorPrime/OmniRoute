@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Naisc roghnaithe amháin",
     "selectAtLeastOneConnection": "Roghnaigh nasc amháin ar a laghad nó roghnaigh Gach nasc.",
     "allConnectionsDesc": "Is féidir leis an eochair seo aon nasc gníomhach a úsáid.",
-    "restrictedToConnections": "Srianta do {count, plural, one {# nasc} other {# nasc}}."
+    "restrictedToConnections": "Srianta do {count, plural, one {# nasc} other {# nasc}}.",
+    "preferredConnections": "Naisc roghnaithe",
+    "preferredConnectionsDesc": "Ord tosaíochta in aghaidh na heochrach. Mura bhfuil nasc roghnaithe ar fáil, téann an ródú ar aghaidh chuig an gcéad cheann incháilithe eile.",
+    "preferredConnectionsNone": "Níl aon rogha socraithe — úsáidtear an straitéis ródaithe réamhshocraithe.",
+    "preferredConnectionsClear": "Glan"
   },
   "auditLog": {
     "title": "Log Iniúchta",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Cuir tagairt do theaglaim leis",
     "builderPinnedAccount": "Cuntas Pionnáilte",
     "builderLegacyEntry": "Iontráil leagáide",
+    "builderStaleModel": "Níl sé sa chatalóg beo",
     "reviewName": "Ainm",
     "reviewStrategy": "Straitéis",
     "reviewSteps": "Céimeanna",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Athshocrú teorann Claude",
+    "confirmRedeemClaudeResetCredit": "Athshocraíonn fuascailt láithreach na teorainneacha úsáide incháilithe Claude agus ídíonn sé an creidmheas seo go buan.",
+    "claudeResetCreditsModalTitle": "Creidmheasanna athshocraithe Claude",
+    "claudeResetCreditsModalExplainer": "Creidmheasanna athshocraithe Claude agus athshocruithe seisiúin sheachtainiúla atá ar fáil don chuntas seo."
   },
   "modals": {
     "waitingAuth": "Ag fanacht le húdarú",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "teorainn ráta IP (429)",
     "poolSetAsideKindSlow": "freagraí mall",
     "poolSetAsideKindGeoBlocked": "réigiún blocáilte (403/451)",
+    "poolSetAsideKindOperatorReported": "teagmháil tuairiscithe ag oibreoir",
     "poolSetAsideUntil": "Ar ais sa rothlú {endsAt}",
     "poolSetAsideRepeat": "Curtha ar leataobh {count, plural, one {# uair} other {# uair}}",
     "poolUnknownAddress": "Seoladh anaithnid",

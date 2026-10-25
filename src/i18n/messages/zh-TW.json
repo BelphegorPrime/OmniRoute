@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "僅限選取的連線",
     "selectAtLeastOneConnection": "請至少選取一個連線，或選擇「所有連線」。",
     "allConnectionsDesc": "此金鑰可使用任何作用中的連線。",
-    "restrictedToConnections": "僅限使用 {count, plural, one {# 個連線} other {# 個連線}}。"
+    "restrictedToConnections": "僅限使用 {count, plural, one {# 個連線} other {# 個連線}}。",
+    "preferredConnections": "偏好連線",
+    "preferredConnectionsDesc": "依金鑰設定的優先順序。若偏好連線無法使用，路由會改用下一個符合條件的連線。",
+    "preferredConnectionsNone": "未設定偏好 — 使用預設路由策略。",
+    "preferredConnectionsClear": "清除"
   },
   "auditLog": {
     "title": "稽核日誌",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "新增組合引用步驟",
     "builderPinnedAccount": "固定帳戶",
     "builderLegacyEntry": "舊版條目",
+    "builderStaleModel": "不在即時目錄中",
     "reviewName": "名稱",
     "reviewStrategy": "策略",
     "reviewSteps": "步驟",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Codex 付費額度",
     "codexPaidCreditsAvailable": "可用（未回報餘額）",
     "codexPaidCreditsUnavailable": "無法使用或已達支出上限",
-    "codexPaidCreditsUnlimited": "無限"
+    "codexPaidCreditsUnlimited": "無限",
+    "claudeResetCreditDefaultTitle": "Claude 限額重設",
+    "confirmRedeemClaudeResetCredit": "兌換將立即重設符合條件的 Claude 使用限額，並永久消耗此點數。",
+    "claudeResetCreditsModalTitle": "Claude 重設點數",
+    "claudeResetCreditsModalExplainer": "此帳戶可用的 Claude 重設點數與每週工作階段重設次數。"
   },
   "modals": {
     "waitingAuth": "等待授權",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP 速率限制 (429)",
     "poolSetAsideKindSlow": "回應緩慢",
     "poolSetAsideKindGeoBlocked": "區域封鎖 (403/451)",
+    "poolSetAsideKindOperatorReported": "營運商回報的中斷",
     "poolSetAsideUntil": "{endsAt}恢復輪換",
     "poolSetAsideRepeat": "已擱置{count, plural, one {#次} other {#次}}",
     "poolUnknownAddress": "未知位址",

@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Yalnızca seçili bağlantılar",
     "selectAtLeastOneConnection": "En az bir bağlantı seçin veya “Tüm bağlantılar” seçeneğini belirleyin.",
     "allConnectionsDesc": "Bu anahtar herhangi bir etkin bağlantıyı kullanabilir.",
-    "restrictedToConnections": "{count, plural, one {# bağlantıyla} other {# bağlantıyla}} sınırlandırıldı."
+    "restrictedToConnections": "{count, plural, one {# bağlantıyla} other {# bağlantıyla}} sınırlandırıldı.",
+    "preferredConnections": "Tercih edilen bağlantılar",
+    "preferredConnectionsDesc": "Anahtar başına öncelik sırası. Tercih edilen bir bağlantı kullanılamıyorsa yönlendirme bir sonraki uygun bağlantıya geçer.",
+    "preferredConnectionsNone": "Tercih ayarlanmadı — varsayılan yönlendirme stratejisi kullanılır.",
+    "preferredConnectionsClear": "Temizle"
   },
   "auditLog": {
     "title": "Denetim Günlüğü",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Kombinasyon referansı ekle",
     "builderPinnedAccount": "Sabitlenmiş Hesap",
     "builderLegacyEntry": "Eski kayıt",
+    "builderStaleModel": "Canlı katalogda yok",
     "reviewName": "Ad",
     "reviewStrategy": "Strateji",
     "reviewSteps": "Adımlar",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Ücretli Codex kredileri",
     "codexPaidCreditsAvailable": "Kullanılabilir (bakiye bildirilmedi)",
     "codexPaidCreditsUnavailable": "Kullanılamıyor veya harcama limitine ulaşıldı",
-    "codexPaidCreditsUnlimited": "Sınırsız"
+    "codexPaidCreditsUnlimited": "Sınırsız",
+    "claudeResetCreditDefaultTitle": "Claude limit sıfırlama",
+    "confirmRedeemClaudeResetCredit": "Kullanmak, uygun Claude kullanım limitlerini anında sıfırlar ve bu krediyi kalıcı olarak tüketir.",
+    "claudeResetCreditsModalTitle": "Claude sıfırlama kredileri",
+    "claudeResetCreditsModalExplainer": "Bu hesap için kullanılabilir Claude sıfırlama kredileri ve haftalık oturum sıfırlamaları."
   },
   "modals": {
     "waitingAuth": "Yetkilendirme bekleniyor",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP hız sınırı (429)",
     "poolSetAsideKindSlow": "yavaş yanıtlar",
     "poolSetAsideKindGeoBlocked": "bölge engelli (403/451)",
+    "poolSetAsideKindOperatorReported": "operatör tarafından bildirilen kesinti",
     "poolSetAsideUntil": "Rotasyona geri döndü {endsAt}",
     "poolSetAsideRepeat": "Kenara ayrıldı {count, plural, one {# kez} other {# kez}}",
     "poolUnknownAddress": "Bilinmeyen adres",

@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Лише вибрані з’єднання",
     "selectAtLeastOneConnection": "Виберіть принаймні одне з’єднання або варіант «Усі з’єднання».",
     "allConnectionsDesc": "Цей ключ може використовувати будь-яке активне з’єднання.",
-    "restrictedToConnections": "Обмежено до {count, plural, one {# з’єднання} other {# з’єднань}}."
+    "restrictedToConnections": "Обмежено до {count, plural, one {# з’єднання} other {# з’єднань}}.",
+    "preferredConnections": "Бажані підключення",
+    "preferredConnectionsDesc": "Порядок пріоритету для кожного ключа. Якщо бажане підключення недоступне, маршрутизація переходить до наступного придатного.",
+    "preferredConnectionsNone": "Перевагу не задано — використовується стратегія маршрутизації за замовчуванням.",
+    "preferredConnectionsClear": "Очистити"
   },
   "auditLog": {
     "title": "Журнал аудиту",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Додати посилання на комбінацію",
     "builderPinnedAccount": "Закріплений обліковий запис",
     "builderLegacyEntry": "Застарілий запис",
+    "builderStaleModel": "Немає в актуальному каталозі",
     "reviewName": "Назва",
     "reviewStrategy": "Стратегія",
     "reviewSteps": "Кроки",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Платні кредити Codex",
     "codexPaidCreditsAvailable": "Доступно (баланс не повідомляється)",
     "codexPaidCreditsUnavailable": "Недоступно або досягнуто ліміт витрат",
-    "codexPaidCreditsUnlimited": "Без обмежень"
+    "codexPaidCreditsUnlimited": "Без обмежень",
+    "claudeResetCreditDefaultTitle": "Скидання лімітів Claude",
+    "confirmRedeemClaudeResetCredit": "Активація негайно скидає відповідні ліміти використання Claude та безповоротно витрачає цей кредит.",
+    "claudeResetCreditsModalTitle": "Кредити для скидання Claude",
+    "claudeResetCreditsModalExplainer": "Доступні кредити для скидання Claude та щотижневі скидання сесій для цього облікового запису."
   },
   "modals": {
     "waitingAuth": "Очікування авторизації",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "обмеження частоти за IP (429)",
     "poolSetAsideKindSlow": "повільні відповіді",
     "poolSetAsideKindGeoBlocked": "заблоковано за регіоном (403/451)",
+    "poolSetAsideKindOperatorReported": "збій, повідомлений оператором",
     "poolSetAsideUntil": "Знову в ротації {endsAt}",
     "poolSetAsideRepeat": "Відкладено {count, plural, one {# раз} other {# разів}}",
     "poolUnknownAddress": "Невідома адреса",

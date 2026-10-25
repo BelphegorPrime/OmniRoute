@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "صرف منتخب کنکشنز",
     "selectAtLeastOneConnection": "کم از کم ایک کنکشن منتخب کریں یا تمام کنکشنز کا انتخاب کریں۔",
     "allConnectionsDesc": "یہ کلید کوئی بھی فعال کنکشن استعمال کر سکتی ہے۔",
-    "restrictedToConnections": "{count, plural, one {# کنکشن} other {# کنکشنز}} تک محدود۔"
+    "restrictedToConnections": "{count, plural, one {# کنکشن} other {# کنکشنز}} تک محدود۔",
+    "preferredConnections": "ترجیحی کنکشنز",
+    "preferredConnectionsDesc": "ہر کلید کے لیے ترجیحی ترتیب۔ اگر کوئی ترجیحی کنکشن دستیاب نہ ہو تو روٹنگ اگلے اہل کنکشن پر منتقل ہو جاتی ہے۔",
+    "preferredConnectionsNone": "کوئی ترجیح مقرر نہیں — طے شدہ روٹنگ حکمت عملی استعمال ہوتی ہے۔",
+    "preferredConnectionsClear": "صاف کریں"
   },
   "auditLog": {
     "title": "آڈٹ لاگ",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "کومبو حوالہ شامل کریں",
     "builderPinnedAccount": "پن شدہ اکاؤنٹ",
     "builderLegacyEntry": "لیگیسی اندراج",
+    "builderStaleModel": "لائیو کیٹلاگ میں نہیں ہے",
     "reviewName": "نام",
     "reviewStrategy": "حکمتِ عملی",
     "reviewSteps": "مراحل",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Claude لمٹ ری سیٹ",
+    "confirmRedeemClaudeResetCredit": "ریڈیم کرنے سے فوری طور پر اہل Claude کے استعمال کی حدود ری سیٹ ہو جاتی ہیں اور یہ کریڈٹ مستقل طور پر خرچ ہو جاتا ہے۔",
+    "claudeResetCreditsModalTitle": "Claude ری سیٹ کریڈٹس",
+    "claudeResetCreditsModalExplainer": "اس اکاؤنٹ کے لیے دستیاب Claude ری سیٹ کریڈٹس اور ہفتہ وار سیشن ری سیٹس۔"
   },
   "modals": {
     "waitingAuth": "اجازت کا انتظار ہے",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP شرح کی حد (429)",
     "poolSetAsideKindSlow": "سست جوابات",
     "poolSetAsideKindGeoBlocked": "علاقہ مسدود (403/451)",
+    "poolSetAsideKindOperatorReported": "آپریٹر کی جانب سے اطلاع دی گئی خرابی",
     "poolSetAsideUntil": "روٹیشن میں واپس {endsAt}",
     "poolSetAsideRepeat": "الگ رکھا گیا {count, plural, one {# بار} other {# بار}}",
     "poolUnknownAddress": "نامعلوم پتہ",

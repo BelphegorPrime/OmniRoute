@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Mga napiling koneksyon lamang",
     "selectAtLeastOneConnection": "Pumili ng kahit isang koneksyon o piliin ang Lahat ng koneksyon.",
     "allConnectionsDesc": "Maaaring gumamit ang key na ito ng anumang aktibong koneksyon.",
-    "restrictedToConnections": "Limitado sa {count, plural, one {# koneksyon} other {# koneksyon}}."
+    "restrictedToConnections": "Limitado sa {count, plural, one {# koneksyon} other {# koneksyon}}.",
+    "preferredConnections": "Mga gustong koneksyon",
+    "preferredConnectionsDesc": "Pagkakasunod-sunod ng priyoridad bawat key. Kung hindi available ang isang gustong koneksyon, lilipat ang routing sa susunod na kwalipikado.",
+    "preferredConnectionsNone": "Walang nakatakdang kagustuhan — ginagamit ang default na routing strategy.",
+    "preferredConnectionsClear": "I-clear"
   },
   "auditLog": {
     "title": "Log ng Audit",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Magdagdag ng combo reference",
     "builderPinnedAccount": "Naka-pin na Account",
     "builderLegacyEntry": "Legacy na entry",
+    "builderStaleModel": "Wala sa live na katalogo",
     "reviewName": "Pangalan",
     "reviewStrategy": "Estratehiya",
     "reviewSteps": "Mga Hakbang",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Mga bayad na kredito sa Codex",
     "codexPaidCreditsAvailable": "Magagamit (hindi iniulat ang balanse)",
     "codexPaidCreditsUnavailable": "Hindi magagamit o naabot na ang limitasyon sa paggastos",
-    "codexPaidCreditsUnlimited": "Walang limitasyon"
+    "codexPaidCreditsUnlimited": "Walang limitasyon",
+    "claudeResetCreditDefaultTitle": "Pag-reset ng limit ng Claude",
+    "confirmRedeemClaudeResetCredit": "Ang pag-redeem ay agad na nagre-reset ng mga kwalipikadong limitasyon sa paggamit ng Claude at permanenteng gagamitin ang credit na ito.",
+    "claudeResetCreditsModalTitle": "Mga credit sa pag-reset ng Claude",
+    "claudeResetCreditsModalExplainer": "Mga available na credit sa pag-reset ng Claude at lingguhang pag-reset ng session para sa account na ito."
   },
   "modals": {
     "waitingAuth": "Naghihintay ng Awtorisasyon",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "limitasyon sa rate ng IP (429)",
     "poolSetAsideKindSlow": "mabagal na mga tugon",
     "poolSetAsideKindGeoBlocked": "binalaan ng rehiyon (403/451)",
+    "poolSetAsideKindOperatorReported": "outage na iniulat ng operator",
     "poolSetAsideUntil": "Balik sa pag-ikot {endsAt}",
     "poolSetAsideRepeat": "Isinantabi {count, plural, one {# beses} other {# beses}}",
     "poolUnknownAddress": "Hindi kilalang address",

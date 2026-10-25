@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "רק חיבורים שנבחרו",
     "selectAtLeastOneConnection": "יש לבחור חיבור אחד לפחות או לבחור באפשרות כל החיבורים.",
     "allConnectionsDesc": "מפתח זה יכול להשתמש בכל חיבור פעיל.",
-    "restrictedToConnections": "מוגבל ל-{count, plural, one {חיבור אחד} other {# חיבורים}}."
+    "restrictedToConnections": "מוגבל ל-{count, plural, one {חיבור אחד} other {# חיבורים}}.",
+    "preferredConnections": "חיבורים מועדפים",
+    "preferredConnectionsDesc": "סדר עדיפויות לכל מפתח. אם חיבור מועדף אינו זמין, הניתוב עובר לחיבור הכשיר הבא.",
+    "preferredConnectionsNone": "לא הוגדרה העדפה — נעשה שימוש באסטרטגיית הניתוב המוגדרת כברירת מחדל.",
+    "preferredConnectionsClear": "נקה"
   },
   "auditLog": {
     "title": "יומן ביקורת",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "הוספת הפניה לשילוב",
     "builderPinnedAccount": "חשבון מוצמד",
     "builderLegacyEntry": "רשומה מדור קודם",
+    "builderStaleModel": "לא נמצא בקטלוג החי",
     "reviewName": "שם",
     "reviewStrategy": "אסטרטגיה",
     "reviewSteps": "שלבים",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "איפוס מגבלת Claude",
+    "confirmRedeemClaudeResetCredit": "מימוש מאפס מיידית את מגבלות השימוש הזכאיות של Claude ומנצל קרדיט זה לצמיתות.",
+    "claudeResetCreditsModalTitle": "קרדיטים לאיפוס Claude",
+    "claudeResetCreditsModalExplainer": "קרדיטים זמינים לאיפוס Claude ואיפוסי סשן שבועיים עבור חשבון זה."
   },
   "modals": {
     "waitingAuth": "ממתין לאישור",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "הגבלת קצב לפי IP ‏(429)",
     "poolSetAsideKindSlow": "תגובות איטיות",
     "poolSetAsideKindGeoBlocked": "אזור חסום (403/451)",
+    "poolSetAsideKindOperatorReported": "תקלה שדווחה על ידי מפעיל",
     "poolSetAsideUntil": "חוזר לרוטציה {endsAt}",
     "poolSetAsideRepeat": "הושם בצד {count, plural, one {# פעם} other {# פעמים}}",
     "poolUnknownAddress": "כתובת לא ידועה",

@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Hanya sambungan yang dipilih",
     "selectAtLeastOneConnection": "Pilih sekurang-kurangnya satu sambungan atau pilih Semua sambungan.",
     "allConnectionsDesc": "Kunci ini boleh menggunakan mana-mana sambungan aktif.",
-    "restrictedToConnections": "Terhad kepada {count, plural, one {# sambungan} other {# sambungan}}."
+    "restrictedToConnections": "Terhad kepada {count, plural, one {# sambungan} other {# sambungan}}.",
+    "preferredConnections": "Sambungan pilihan",
+    "preferredConnectionsDesc": "Susunan keutamaan bagi setiap kunci. Jika sambungan pilihan tidak tersedia, penghalaan beralih kepada sambungan layak yang seterusnya.",
+    "preferredConnectionsNone": "Tiada keutamaan ditetapkan — strategi penghalaan lalai digunakan.",
+    "preferredConnectionsClear": "Kosongkan"
   },
   "auditLog": {
     "title": "Log Audit",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Tambah rujukan kombo",
     "builderPinnedAccount": "Akaun Disematkan",
     "builderLegacyEntry": "Entri legasi",
+    "builderStaleModel": "Tiada dalam katalog langsung",
     "reviewName": "Nama",
     "reviewStrategy": "Strategi",
     "reviewSteps": "Langkah",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Tetapan semula had Claude",
+    "confirmRedeemClaudeResetCredit": "Penebusan akan menetapkan semula had penggunaan Claude yang layak dengan serta-merta dan menggunakan kredit ini secara kekal.",
+    "claudeResetCreditsModalTitle": "Kredit tetapan semula Claude",
+    "claudeResetCreditsModalExplainer": "Kredit tetapan semula Claude yang tersedia dan tetapan semula sesi mingguan untuk akaun ini."
   },
   "modals": {
     "waitingAuth": "Menunggu Keizinan",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "had kadar IP (429)",
     "poolSetAsideKindSlow": "respons perlahan",
     "poolSetAsideKindGeoBlocked": "wilayah-diblokir (403/451)",
+    "poolSetAsideKindOperatorReported": "gangguan dilaporkan oleh pengendali",
     "poolSetAsideUntil": "Kembali dalam putaran {endsAt}",
     "poolSetAsideRepeat": "Diketepikan {count, plural, one {# kali} other {# kali}}",
     "poolUnknownAddress": "Alamat tidak diketahui",

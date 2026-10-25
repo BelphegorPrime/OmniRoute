@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Solo le connessioni selezionate",
     "selectAtLeastOneConnection": "Seleziona almeno una connessione oppure scegli Tutte le connessioni.",
     "allConnectionsDesc": "Questa chiave può utilizzare qualsiasi connessione attiva.",
-    "restrictedToConnections": "Limitata a {count, plural, one {# connessione} other {# connessioni}}."
+    "restrictedToConnections": "Limitata a {count, plural, one {# connessione} other {# connessioni}}.",
+    "preferredConnections": "Connessioni preferite",
+    "preferredConnectionsDesc": "Ordine di priorità per chiave. Se una connessione preferita non è disponibile, l'instradamento passa alla successiva idonea.",
+    "preferredConnectionsNone": "Nessuna preferenza impostata: viene usata la strategia di instradamento predefinita.",
+    "preferredConnectionsClear": "Cancella"
   },
   "auditLog": {
     "title": "Registro di controllo",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Aggiungi riferimento alla combo",
     "builderPinnedAccount": "Account vincolato",
     "builderLegacyEntry": "Voce legacy",
+    "builderStaleModel": "Non presente nel catalogo live",
     "reviewName": "Nome",
     "reviewStrategy": "Strategia",
     "reviewSteps": "Passaggi",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Crediti a pagamento Codex",
     "codexPaidCreditsAvailable": "Disponibili (saldo non riportato)",
     "codexPaidCreditsUnavailable": "Non disponibili o limite di spesa raggiunto",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Ripristino limite Claude",
+    "confirmRedeemClaudeResetCredit": "Il riscatto ripristina immediatamente i limiti di utilizzo di Claude idonei e consuma permanentemente questo credito.",
+    "claudeResetCreditsModalTitle": "Crediti di ripristino Claude",
+    "claudeResetCreditsModalExplainer": "Crediti di ripristino Claude disponibili e ripristini settimanali delle sessioni per questo account."
   },
   "modals": {
     "waitingAuth": "In attesa di autorizzazione",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "limite di frequenza per IP (429)",
     "poolSetAsideKindSlow": "risposte lente",
     "poolSetAsideKindGeoBlocked": "bloccato per regione (403/451)",
+    "poolSetAsideKindOperatorReported": "guasto segnalato dall'operatore",
     "poolSetAsideUntil": "Di nuovo in rotazione {endsAt}",
     "poolSetAsideRepeat": "Accantonato {count, plural, one {# volta} other {# volte}}",
     "poolUnknownAddress": "Indirizzo sconosciuto",

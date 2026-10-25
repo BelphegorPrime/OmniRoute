@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "শুধু নির্বাচিত সংযোগগুলো",
     "selectAtLeastOneConnection": "অন্তত একটি সংযোগ নির্বাচন করুন অথবা সব সংযোগ বেছে নিন।",
     "allConnectionsDesc": "এই কীটি যেকোনো সক্রিয় সংযোগ ব্যবহার করতে পারে।",
-    "restrictedToConnections": "{count, plural, one {#টি সংযোগে} other {#টি সংযোগে}} সীমাবদ্ধ।"
+    "restrictedToConnections": "{count, plural, one {#টি সংযোগে} other {#টি সংযোগে}} সীমাবদ্ধ।",
+    "preferredConnections": "পছন্দের সংযোগ",
+    "preferredConnectionsDesc": "প্রতিটি কী-এর জন্য অগ্রাধিকার ক্রম। কোনো পছন্দের সংযোগ উপলব্ধ না থাকলে রাউটিং পরবর্তী যোগ্য সংযোগে চলে যায়।",
+    "preferredConnectionsNone": "কোনো পছন্দ নির্ধারণ করা হয়নি — ডিফল্ট রাউটিং কৌশল ব্যবহার করা হয়।",
+    "preferredConnectionsClear": "মুছুন"
   },
   "auditLog": {
     "title": "অডিট লগ",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "কম্বো রেফারেন্স যোগ করুন",
     "builderPinnedAccount": "পিন করা অ্যাকাউন্ট",
     "builderLegacyEntry": "লিগ্যাসি এন্ট্রি",
+    "builderStaleModel": "লাইভ ক্যাটালগে নেই",
     "reviewName": "নাম",
     "reviewStrategy": "কৌশল",
     "reviewSteps": "ধাপসমূহ",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Claude সীমা রিসেট",
+    "confirmRedeemClaudeResetCredit": "রিডিম করার সাথে সাথে উপযুক্ত Claude ব্যবহারের সীমা রিসেট হয়ে যায় এবং এই ক্রেডিটটি স্থায়ীভাবে ব্যবহৃত হয়।",
+    "claudeResetCreditsModalTitle": "Claude রিসেট ক্রেডিট",
+    "claudeResetCreditsModalExplainer": "এই অ্যাকাউন্টের জন্য উপলব্ধ Claude রিসেট ক্রেডিট এবং সাপ্তাহিক সেশন রিসেট।"
   },
   "modals": {
     "waitingAuth": "অনুমোদনের জন্য অপেক্ষা করা হচ্ছে",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP রেট সীমা (429)",
     "poolSetAsideKindSlow": "ধীর প্রতিক্রিয়া",
     "poolSetAsideKindGeoBlocked": "অঞ্চল ব্লকড (403/451)",
+    "poolSetAsideKindOperatorReported": "অপারেটর কর্তৃক রিপোর্ট করা বিঘ্ন",
     "poolSetAsideUntil": "রোটেশনে ফিরেছে {endsAt}",
     "poolSetAsideRepeat": "সরিয়ে রাখা হয়েছে {count, plural, one {# বার} other {# বার}}",
     "poolUnknownAddress": "অজানা ঠিকানা",

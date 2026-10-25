@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Iba vybrané pripojenia",
     "selectAtLeastOneConnection": "Vyberte aspoň jedno pripojenie alebo možnosť Všetky pripojenia.",
     "allConnectionsDesc": "Tento kľúč môže používať ľubovoľné aktívne pripojenie.",
-    "restrictedToConnections": "Obmedzené na {count, plural, one {# pripojenie} other {# pripojení}}."
+    "restrictedToConnections": "Obmedzené na {count, plural, one {# pripojenie} other {# pripojení}}.",
+    "preferredConnections": "Preferované pripojenia",
+    "preferredConnectionsDesc": "Poradie priority pre každý kľúč. Ak preferované pripojenie nie je dostupné, smerovanie prejde na ďalšie vhodné.",
+    "preferredConnectionsNone": "Nie je nastavená žiadna preferencia — použije sa predvolená stratégia smerovania.",
+    "preferredConnectionsClear": "Vymazať"
   },
   "auditLog": {
     "title": "Protokol auditu",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Pridať referenciu kombinácie",
     "builderPinnedAccount": "Pripnutý účet",
     "builderLegacyEntry": "Staršia položka",
+    "builderStaleModel": "Nie je v aktuálnom katalógu",
     "reviewName": "Názov",
     "reviewStrategy": "Stratégia",
     "reviewSteps": "Kroky",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Reset limitu Claude",
+    "confirmRedeemClaudeResetCredit": "Uplatnenie okamžite resetuje príslušné limity využitia Claude a natrvalo spotrebuje tento kredit.",
+    "claudeResetCreditsModalTitle": "Kredity na reset Claude",
+    "claudeResetCreditsModalExplainer": "Dostupné kredity na reset Claude a týždenné resety relácií pre tento účet."
   },
   "modals": {
     "waitingAuth": "Čaká sa na autorizáciu",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "obmedzenie rýchlosti podľa IP (429)",
     "poolSetAsideKindSlow": "pomalé odpovede",
     "poolSetAsideKindGeoBlocked": "blokovaný región (403/451)",
+    "poolSetAsideKindOperatorReported": "výpadok nahlásený operátorom",
     "poolSetAsideUntil": "Späť v rotácii {endsAt}",
     "poolSetAsideRepeat": "Odložené {count, plural, one {#krát} other {#krát}}",
     "poolUnknownAddress": "Neznáma adresa",

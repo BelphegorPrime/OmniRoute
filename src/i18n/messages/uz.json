@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Faqat tanlangan ulanishlar",
     "selectAtLeastOneConnection": "Kamida bitta ulanishni tanlang yoki Barcha ulanishlar variantini tanlang.",
     "allConnectionsDesc": "Bu kalit istalgan faol ulanishdan foydalanishi mumkin.",
-    "restrictedToConnections": "{count, plural, one {# ta ulanish bilan} other {# ta ulanish bilan}} cheklangan."
+    "restrictedToConnections": "{count, plural, one {# ta ulanish bilan} other {# ta ulanish bilan}} cheklangan.",
+    "preferredConnections": "Afzal ulanishlar",
+    "preferredConnectionsDesc": "Har bir kalit uchun ustuvorlik tartibi. Afzal ulanish mavjud bo'lmasa, marshrutlash keyingi mos ulanishga o'tadi.",
+    "preferredConnectionsNone": "Afzallik belgilanmagan — standart marshrutlash strategiyasi qo'llaniladi.",
+    "preferredConnectionsClear": "Tozalash"
   },
   "auditLog": {
     "title": "Audit jurnali",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Kombo havolasini qo‘shish",
     "builderPinnedAccount": "Mahkamlangan hisob",
     "builderLegacyEntry": "Eski yozuv",
+    "builderStaleModel": "Jonli katalogda yoʻq",
     "reviewName": "Nomi",
     "reviewStrategy": "Strategiya",
     "reviewSteps": "Qadamlar",
@@ -10291,7 +10296,11 @@
     "updatedShort": "Yangilangan",
     "lastRefreshed": "Oxirgi yangilanish",
     "providerQuota": "Provayder kvotasi",
-    "providerQuotaHomeHint": "Ulangan hisoblar bo‘yicha joriy holat"
+    "providerQuotaHomeHint": "Ulangan hisoblar bo‘yicha joriy holat",
+    "claudeResetCreditDefaultTitle": "Claude limitini tiklash",
+    "confirmRedeemClaudeResetCredit": "Faollashtirish mos keluvchi Claude foydalanish limitlarini darhol tiklaydi va ushbu kreditni butunlay sarflaydi.",
+    "claudeResetCreditsModalTitle": "Claude tiklash kreditlari",
+    "claudeResetCreditsModalExplainer": "Ushbu hisob uchun mavjud Claude tiklash kreditlari va haftalik sessiya tiklashlari."
   },
   "modals": {
     "waitingAuth": "Avtorizatsiya kutilmoqda",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP tezlik cheklovi (429)",
     "poolSetAsideKindSlow": "sekin javoblar",
     "poolSetAsideKindGeoBlocked": "hudud boʻyicha bloklangan (403/451)",
+    "poolSetAsideKindOperatorReported": "operator tomonidan xabar qilingan uzilish",
     "poolSetAsideUntil": "Rotatsiyaga qaytish {endsAt}",
     "poolSetAsideRepeat": "Chetga qo‘yilgan {count, plural, one {# marta} other {# marta}}",
     "poolUnknownAddress": "Noma’lum manzil",

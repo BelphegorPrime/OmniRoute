@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "فقط اتصالهای انتخابشده",
     "selectAtLeastOneConnection": "حداقل یک اتصال را انتخاب کنید یا «همه اتصالها» را برگزینید.",
     "allConnectionsDesc": "این کلید میتواند از هر اتصال فعالی استفاده کند.",
-    "restrictedToConnections": "محدود به {count, plural, one {# اتصال} other {# اتصال}}."
+    "restrictedToConnections": "محدود به {count, plural, one {# اتصال} other {# اتصال}}.",
+    "preferredConnections": "اتصال‌های ترجیحی",
+    "preferredConnectionsDesc": "ترتیب اولویت برای هر کلید. اگر یک اتصال ترجیحی در دسترس نباشد، مسیریابی به اتصال واجد شرایط بعدی منتقل می‌شود.",
+    "preferredConnectionsNone": "هیچ ترجیحی تنظیم نشده است — از راهبرد پیش‌فرض مسیریابی استفاده می‌شود.",
+    "preferredConnectionsClear": "پاک کردن"
   },
   "auditLog": {
     "title": "گزارش ممیزی",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "افزودن ارجاع ترکیب",
     "builderPinnedAccount": "حساب سنجاقشده",
     "builderLegacyEntry": "ورودی قدیمی",
+    "builderStaleModel": "در کاتالوگ زنده نیست",
     "reviewName": "نام",
     "reviewStrategy": "راهبرد",
     "reviewSteps": "مراحل",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "بازنشانی محدودیت Claude",
+    "confirmRedeemClaudeResetCredit": "استفاده از این اعتبار، بلافاصله محدودیت‌های واجد شرایط استفاده از Claude را بازنشانی کرده و این اعتبار را به‌طور دائم مصرف می‌کند.",
+    "claudeResetCreditsModalTitle": "اعتبارهای بازنشانی Claude",
+    "claudeResetCreditsModalExplainer": "اعتبارهای در دسترس بازنشانی Claude و بازنشانی‌های هفتگی نشست برای این حساب کاربری."
   },
   "modals": {
     "waitingAuth": "در انتظار تأیید مجوز",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "محدودیت نرخ IP ‏(429)",
     "poolSetAsideKindSlow": "پاسخ‌های کند",
     "poolSetAsideKindGeoBlocked": "منع منطقه (403/451)",
+    "poolSetAsideKindOperatorReported": "قطعی گزارش‌شده توسط اپراتور",
     "poolSetAsideUntil": "بازگشت به چرخه {endsAt}",
     "poolSetAsideRepeat": "کنار گذاشته شده {count, plural, one {# بار} other {# بار}}",
     "poolUnknownAddress": "نشانی ناشناس",

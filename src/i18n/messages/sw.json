@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Miunganisho iliyochaguliwa pekee",
     "selectAtLeastOneConnection": "Chagua angalau muunganisho mmoja au uchague Miunganisho yote.",
     "allConnectionsDesc": "Ufunguo huu unaweza kutumia muunganisho wowote ulio amilifu.",
-    "restrictedToConnections": "Imezuiliwa kwa {count, plural, one {# muunganisho} other {# miunganisho}}."
+    "restrictedToConnections": "Imezuiliwa kwa {count, plural, one {# muunganisho} other {# miunganisho}}.",
+    "preferredConnections": "Miunganisho inayopendelewa",
+    "preferredConnectionsDesc": "Mpangilio wa kipaumbele kwa kila ufunguo. Ikiwa muunganisho unaopendelewa haupatikani, uelekezaji huhamia kwenye unaofuata unaostahiki.",
+    "preferredConnectionsNone": "Hakuna mapendeleo yaliyowekwa — mkakati chaguomsingi wa uelekezaji unatumika.",
+    "preferredConnectionsClear": "Futa"
   },
   "auditLog": {
     "title": "Kumbukumbu ya Ukaguzi",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Ongeza rejeleo la kombo",
     "builderPinnedAccount": "Akaunti Iliyobandikwa",
     "builderLegacyEntry": "Ingizo la zamani",
+    "builderStaleModel": "Haipo kwenye katalogi hai",
     "reviewName": "Jina",
     "reviewStrategy": "Mkakati",
     "reviewSteps": "Hatua",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Uwekaji upya wa kikomo cha Claude",
+    "confirmRedeemClaudeResetCredit": "Kukomboa kunaweka upya mara moja vikomo vinavyostahiki vya matumizi ya Claude na kutumia salio hili kabisa.",
+    "claudeResetCreditsModalTitle": "Masalio ya kuweka upya ya Claude",
+    "claudeResetCreditsModalExplainer": "Masalio ya kuweka upya ya Claude yanayopatikana na uwekaji upya wa vipindi vya kila wiki kwa akaunti hii."
   },
   "modals": {
     "waitingAuth": "Inasubiri Uidhinishaji",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "kikomo cha kasi cha IP (429)",
     "poolSetAsideKindSlow": "majibu polepole",
     "poolSetAsideKindGeoBlocked": "kuzuiliwa kwa mkoa (403/451)",
+    "poolSetAsideKindOperatorReported": "kukatika kwa umeme kumeripotiwa na mtendaji",
     "poolSetAsideUntil": "Kurudi kwenye mzunguko {endsAt}",
     "poolSetAsideRepeat": "Imewekwa kando {count, plural, one {# mara} other {# mara}}",
     "poolUnknownAddress": "Anwani isiyojulikana",

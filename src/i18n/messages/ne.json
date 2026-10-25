@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "चयन गरिएका जडानहरू मात्र",
     "selectAtLeastOneConnection": "कम्तीमा एउटा जडान चयन गर्नुहोस् वा सबै जडानहरू रोज्नुहोस्।",
     "allConnectionsDesc": "यो कुञ्जीले कुनै पनि सक्रिय जडान प्रयोग गर्न सक्छ।",
-    "restrictedToConnections": "{count, plural, one {# जडान} other {# जडानहरू}} मा सीमित।"
+    "restrictedToConnections": "{count, plural, one {# जडान} other {# जडानहरू}} मा सीमित।",
+    "preferredConnections": "रुचाइएका जडानहरू",
+    "preferredConnectionsDesc": "प्रत्येक कुञ्जीका लागि प्राथमिकता क्रम। रुचाइएको जडान उपलब्ध नभए, राउटिङ अर्को योग्य जडानमा जान्छ।",
+    "preferredConnectionsNone": "कुनै रुचि सेट गरिएको छैन — पूर्वनिर्धारित राउटिङ रणनीति प्रयोग हुन्छ।",
+    "preferredConnectionsClear": "खाली गर्नुहोस्"
   },
   "auditLog": {
     "title": "अडिट लग",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "कम्बो सन्दर्भ थप्नुहोस्",
     "builderPinnedAccount": "पिन गरिएको खाता",
     "builderLegacyEntry": "पुरानो प्रविष्टि",
+    "builderStaleModel": "लाइभ क्याटलगमा छैन",
     "reviewName": "नाम",
     "reviewStrategy": "रणनीति",
     "reviewSteps": "चरणहरू",
@@ -10291,7 +10296,11 @@
     "updatedShort": "अद्यावधिक गरिएको",
     "lastRefreshed": "पछिल्लो पटक रिफ्रेस गरिएको",
     "providerQuota": "प्रदायक कोटा",
-    "providerQuotaHomeHint": "जडान गरिएका खाताहरूको प्रत्यक्ष स्थिति"
+    "providerQuotaHomeHint": "जडान गरिएका खाताहरूको प्रत्यक्ष स्थिति",
+    "claudeResetCreditDefaultTitle": "Claude सीमा रिसेट",
+    "confirmRedeemClaudeResetCredit": "रिडिम गर्नाले योग्य Claude उपयोग सीमाहरू तुरुन्तै रिसेट हुन्छ र यो क्रेडिट स्थायी रूपमा खपत हुन्छ।",
+    "claudeResetCreditsModalTitle": "Claude रिसेट क्रेडिटहरू",
+    "claudeResetCreditsModalExplainer": "यस खाताका लागि उपलब्ध Claude रिसेट क्रेडिटहरू र साप्ताहिक सत्र रिसेटहरू।"
   },
   "modals": {
     "waitingAuth": "प्राधिकरणको प्रतीक्षामा",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP दर सीमा (429)",
     "poolSetAsideKindSlow": "ढिलो प्रतिक्रिया",
     "poolSetAsideKindGeoBlocked": "क्षेत्र-रोकिएको (403/451)",
+    "poolSetAsideKindOperatorReported": "सञ्चालकद्वारा रिपोर्ट गरिएको आउटेज",
     "poolSetAsideUntil": "रोटेसनमा फर्कियो {endsAt}",
     "poolSetAsideRepeat": "छेउमा राखियो {count, plural, one {# पटक} other {# पटक}}",
     "poolUnknownAddress": "अज्ञात ठेगाना",

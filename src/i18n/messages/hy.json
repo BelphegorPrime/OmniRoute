@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Միայն ընտրված կապերը",
     "selectAtLeastOneConnection": "Ընտրեք առնվազն մեկ կապ կամ ընտրեք «Բոլոր կապերը»։",
     "allConnectionsDesc": "Այս բանալին կարող է օգտագործել ցանկացած ակտիվ կապ։",
-    "restrictedToConnections": "Սահմանափակված է {count, plural, one {# կապով} other {# կապով}}։"
+    "restrictedToConnections": "Սահմանափակված է {count, plural, one {# կապով} other {# կապով}}։",
+    "preferredConnections": "Նախընտրելի կապեր",
+    "preferredConnectionsDesc": "Առաջնահերթության կարգ յուրաքանչյուր բանալու համար։ Եթե նախընտրելի կապը հասանելի չէ, երթուղումն անցնում է հաջորդ համապատասխան կապին։",
+    "preferredConnectionsNone": "Նախընտրություն սահմանված չէ — օգտագործվում է երթուղման լռելյայն ռազմավարությունը։",
+    "preferredConnectionsClear": "Մաքրել"
   },
   "auditLog": {
     "title": "Աուդիտի մատյան",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Ավելացնել կոմբոյի հղում",
     "builderPinnedAccount": "Ամրացված հաշիվ",
     "builderLegacyEntry": "Հին ձևաչափի գրառում",
+    "builderStaleModel": "Կենդանի կատալոգում չկա",
     "reviewName": "Անուն",
     "reviewStrategy": "Ռազմավարություն",
     "reviewSteps": "Քայլեր",
@@ -10291,7 +10296,11 @@
     "updatedShort": "Թարմացվել է",
     "lastRefreshed": "Վերջին թարմացումը",
     "providerQuota": "Մատակարարի քվոտա",
-    "providerQuotaHomeHint": "Միացված հաշիվների ընթացիկ կարգավիճակը"
+    "providerQuotaHomeHint": "Միացված հաշիվների ընթացիկ կարգավիճակը",
+    "claudeResetCreditDefaultTitle": "Claude սահմանաչափի զրոյացում",
+    "confirmRedeemClaudeResetCredit": "Ակտիվացումն անմիջապես զրոյացնում է Claude-ի օգտագործման համապատասխան սահմանաչափերը և անվերադարձ սպառում է այս կրեդիտը:",
+    "claudeResetCreditsModalTitle": "Claude զրոյացման կրեդիտներ",
+    "claudeResetCreditsModalExplainer": "Այս հաշվի համար հասանելի Claude զրոյացման կրեդիտներ և շաբաթական սեանսների զրոյացումներ:"
   },
   "modals": {
     "waitingAuth": "Սպասում է լիազորմանը",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP արագության սահմանափակում (429)",
     "poolSetAsideKindSlow": "դանդաղ պատասխաններ",
     "poolSetAsideKindGeoBlocked": "Տարածաշրջանարգելված (403/451)",
+    "poolSetAsideKindOperatorReported": "օպերատորի կողմից հաղորդված խափանում",
     "poolSetAsideUntil": "Վերադարձ ռոտացիայի {endsAt}",
     "poolSetAsideRepeat": "Մի կողմ դրված {count, plural, one {# անգամ} other {# անգամ}}",
     "poolUnknownAddress": "Անհայտ հասցե",

@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Tylko wybrane połączenia",
     "selectAtLeastOneConnection": "Wybierz co najmniej jedno połączenie lub opcję Wszystkie połączenia.",
     "allConnectionsDesc": "Ten klucz może korzystać z dowolnego aktywnego połączenia.",
-    "restrictedToConnections": "Ograniczono do {count, plural, one {# połączenia} few {# połączeń} many {# połączeń} other {# połączenia}}."
+    "restrictedToConnections": "Ograniczono do {count, plural, one {# połączenia} few {# połączeń} many {# połączeń} other {# połączenia}}.",
+    "preferredConnections": "Preferowane połączenia",
+    "preferredConnectionsDesc": "Kolejność priorytetów dla każdego klucza. Jeśli preferowane połączenie jest niedostępne, routing przechodzi do następnego kwalifikującego się.",
+    "preferredConnectionsNone": "Nie ustawiono preferencji — używana jest domyślna strategia routingu.",
+    "preferredConnectionsClear": "Wyczyść"
   },
   "auditLog": {
     "title": "Rejestr audytu",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Dodaj referencję combo",
     "builderPinnedAccount": "Przypięte konto",
     "builderLegacyEntry": "Wpis legacy",
+    "builderStaleModel": "Brak w katalogu na żywo",
     "reviewName": "Nazwa",
     "reviewStrategy": "Strategia",
     "reviewSteps": "Kroki",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Płatne kredyty Codex",
     "codexPaidCreditsAvailable": "Dostępne (saldo nie jest raportowane)",
     "codexPaidCreditsUnavailable": "Niedostępne lub osiągnięto limit wydatków",
-    "codexPaidCreditsUnlimited": "Bez limitu"
+    "codexPaidCreditsUnlimited": "Bez limitu",
+    "claudeResetCreditDefaultTitle": "Reset limitu Claude",
+    "confirmRedeemClaudeResetCredit": "Wykorzystanie natychmiast resetuje kwalifikujące się limity użycia Claude i trwale zużywa ten kredyt.",
+    "claudeResetCreditsModalTitle": "Kredyty resetu Claude",
+    "claudeResetCreditsModalExplainer": "Dostępne kredyty resetu Claude i cotygodniowe resety sesji dla tego konta."
   },
   "modals": {
     "waitingAuth": "Oczekiwanie na autoryzację",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "limit szybkości dla IP (429)",
     "poolSetAsideKindSlow": "powolne odpowiedzi",
     "poolSetAsideKindGeoBlocked": "zablokowany region (403/451)",
+    "poolSetAsideKindOperatorReported": "awaria zgłoszona przez operatora",
     "poolSetAsideUntil": "Z powrotem w rotacji {endsAt}",
     "poolSetAsideRepeat": "Odłożony {count, plural, one {# raz} other {# razy}}",
     "poolUnknownAddress": "Nieznany adres",

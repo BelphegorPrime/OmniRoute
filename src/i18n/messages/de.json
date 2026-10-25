@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Nur ausgewählte Verbindungen",
     "selectAtLeastOneConnection": "Wählen Sie mindestens eine Verbindung oder „Alle Verbindungen“ aus.",
     "allConnectionsDesc": "Dieser Schlüssel kann jede aktive Verbindung verwenden.",
-    "restrictedToConnections": "Auf {count, plural, one {# Verbindung} other {# Verbindungen}} beschränkt."
+    "restrictedToConnections": "Auf {count, plural, one {# Verbindung} other {# Verbindungen}} beschränkt.",
+    "preferredConnections": "Bevorzugte Verbindungen",
+    "preferredConnectionsDesc": "Prioritätsreihenfolge pro Schlüssel. Ist eine bevorzugte Verbindung nicht verfügbar, weicht das Routing auf die nächste zulässige aus.",
+    "preferredConnectionsNone": "Keine Präferenz festgelegt — die Standard-Routing-Strategie wird verwendet.",
+    "preferredConnectionsClear": "Leeren"
   },
   "auditLog": {
     "title": "Audit-Protokoll",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Kombinationsreferenz hinzufügen",
     "builderPinnedAccount": "Angeheftetes Konto",
     "builderLegacyEntry": "Legacy-Eintrag",
+    "builderStaleModel": "Nicht im Live-Katalog",
     "reviewName": "Name",
     "reviewStrategy": "Strategie",
     "reviewSteps": "Schritte",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Kostenpflichtige Codex-Credits",
     "codexPaidCreditsAvailable": "Verfügbar (Guthaben nicht gemeldet)",
     "codexPaidCreditsUnavailable": "Nicht verfügbar oder Ausgabenlimit erreicht",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Claude-Limit-Reset",
+    "confirmRedeemClaudeResetCredit": "Das Einlösen setzt die berechtigten Claude-Nutzungslimits sofort zurück und verbraucht dieses Guthaben dauerhaft.",
+    "claudeResetCreditsModalTitle": "Claude-Reset-Guthaben",
+    "claudeResetCreditsModalExplainer": "Verfügbares Claude-Reset-Guthaben und wöchentliche Sitzungs-Resets für dieses Konto."
   },
   "modals": {
     "waitingAuth": "Warten auf Autorisierung",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP-Ratenlimit (429)",
     "poolSetAsideKindSlow": "langsame Antworten",
     "poolSetAsideKindGeoBlocked": "regionen-blockiert (403/451)",
+    "poolSetAsideKindOperatorReported": "Störung vom Betreiber gemeldet",
     "poolSetAsideUntil": "Zurück in Rotation {endsAt}",
     "poolSetAsideRepeat": "Zurückgestellt {count, plural, one {# Mal} other {# Mal}}",
     "poolUnknownAddress": "Unbekannte Adresse",

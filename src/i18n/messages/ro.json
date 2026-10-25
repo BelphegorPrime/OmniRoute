@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "Doar conexiunile selectate",
     "selectAtLeastOneConnection": "Selectați cel puțin o conexiune sau alegeți Toate conexiunile.",
     "allConnectionsDesc": "Această cheie poate utiliza orice conexiune activă.",
-    "restrictedToConnections": "Restricționată la {count, plural, one {# conexiune} other {# conexiuni}}."
+    "restrictedToConnections": "Restricționată la {count, plural, one {# conexiune} other {# conexiuni}}.",
+    "preferredConnections": "Conexiuni preferate",
+    "preferredConnectionsDesc": "Ordine de prioritate pentru fiecare cheie. Dacă o conexiune preferată nu este disponibilă, rutarea trece la următoarea eligibilă.",
+    "preferredConnectionsNone": "Nicio preferință setată — se folosește strategia de rutare implicită.",
+    "preferredConnectionsClear": "Golește"
   },
   "auditLog": {
     "title": "Jurnal de audit",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "Adaugă o referință la combinație",
     "builderPinnedAccount": "Cont fixat",
     "builderLegacyEntry": "Intrare moștenită",
+    "builderStaleModel": "Nu este în catalogul live",
     "reviewName": "Nume",
     "reviewStrategy": "Strategie",
     "reviewSteps": "Pași",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Paid Codex credits",
     "codexPaidCreditsAvailable": "Available (balance not reported)",
     "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "codexPaidCreditsUnlimited": "Unlimited",
+    "claudeResetCreditDefaultTitle": "Resetare limită Claude",
+    "confirmRedeemClaudeResetCredit": "Revendicarea resetează imediat limitele de utilizare Claude eligibile și consumă definitiv acest credit.",
+    "claudeResetCreditsModalTitle": "Credite de resetare Claude",
+    "claudeResetCreditsModalExplainer": "Credite de resetare Claude disponibile și resetări săptămânale ale sesiunilor pentru acest cont."
   },
   "modals": {
     "waitingAuth": "În așteptarea autorizației",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "limită de rată pe IP (429)",
     "poolSetAsideKindSlow": "răspunsuri lente",
     "poolSetAsideKindGeoBlocked": "blocare regiune (403/451)",
+    "poolSetAsideKindOperatorReported": "întrerupere raportată de operator",
     "poolSetAsideUntil": "Înapoi în rotație {endsAt}",
     "poolSetAsideRepeat": "Pus deoparte {count, plural, one {# dată} other {# ori}}",
     "poolUnknownAddress": "Adresă necunoscută",

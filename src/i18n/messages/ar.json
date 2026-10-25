@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "الاتصالات المحددة فقط",
     "selectAtLeastOneConnection": "حدّد اتصالًا واحدًا على الأقل أو اختر جميع الاتصالات.",
     "allConnectionsDesc": "يمكن لهذا المفتاح استخدام أي اتصال نشط.",
-    "restrictedToConnections": "مقيّد بـ {count, plural, one {اتصال واحد} other {# اتصالات}}."
+    "restrictedToConnections": "مقيّد بـ {count, plural, one {اتصال واحد} other {# اتصالات}}.",
+    "preferredConnections": "الاتصالات المفضلة",
+    "preferredConnectionsDesc": "ترتيب أولوية خاص بكل مفتاح. إذا لم يكن الاتصال المفضل متاحًا، ينتقل التوجيه إلى الاتصال المؤهل التالي.",
+    "preferredConnectionsNone": "لم يتم تعيين تفضيل — تُستخدم استراتيجية التوجيه الافتراضية.",
+    "preferredConnectionsClear": "مسح"
   },
   "auditLog": {
     "title": "سجل التدقيق",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "إضافة مرجع مجموعة",
     "builderPinnedAccount": "الحساب المثبّت",
     "builderLegacyEntry": "إدخال قديم",
+    "builderStaleModel": "غير موجود في الكتالوج المباشر",
     "reviewName": "الاسم",
     "reviewStrategy": "الاستراتيجية",
     "reviewSteps": "الخطوات",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "أرصدة Codex المدفوعة",
     "codexPaidCreditsAvailable": "متاح (الرصيد غير مُبلَّغ عنه)",
     "codexPaidCreditsUnavailable": "غير متاح أو تم بلوغ حد الإنفاق",
-    "codexPaidCreditsUnlimited": "غير محدود"
+    "codexPaidCreditsUnlimited": "غير محدود",
+    "claudeResetCreditDefaultTitle": "إعادة تعيين حد Claude",
+    "confirmRedeemClaudeResetCredit": "يؤدي الاسترداد إلى إعادة تعيين حدود استخدام Claude المؤهلة فورًا واستهلاك هذا الرصيد بشكل دائم.",
+    "claudeResetCreditsModalTitle": "أرصدة إعادة تعيين Claude",
+    "claudeResetCreditsModalExplainer": "أرصدة إعادة تعيين Claude المتاحة وعمليات إعادة تعيين الجلسات الأسبوعية لهذا الحساب."
   },
   "modals": {
     "waitingAuth": "في انتظار التصريح",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "تقييد معدل عنوان IP ‏(429)",
     "poolSetAsideKindSlow": "استجابات بطيئة",
     "poolSetAsideKindGeoBlocked": "منطقة محظورة (403/451)",
+    "poolSetAsideKindOperatorReported": "عطل أبلغ عنه المشغل",
     "poolSetAsideUntil": "يعود إلى التناوب {endsAt}",
     "poolSetAsideRepeat": "مستبعد {count, plural, one {# مرة} other {# مرات}}",
     "poolUnknownAddress": "عنوان غير معروف",

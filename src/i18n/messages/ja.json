@@ -2495,7 +2495,11 @@
     "onlySelectedConnections": "選択した接続のみ",
     "selectAtLeastOneConnection": "少なくとも1つの接続を選択するか、すべての接続を選択してください。",
     "allConnectionsDesc": "このキーでは、アクティブな接続をすべて使用できます。",
-    "restrictedToConnections": "{count, plural, one {#件の接続に制限} other {#件の接続に制限}}。"
+    "restrictedToConnections": "{count, plural, one {#件の接続に制限} other {#件の接続に制限}}。",
+    "preferredConnections": "優先接続",
+    "preferredConnectionsDesc": "キーごとの優先順位です。優先接続が利用できない場合、ルーティングは次の利用可能な接続にフォールバックします。",
+    "preferredConnectionsNone": "優先設定はありません — デフォルトのルーティング戦略が使用されます。",
+    "preferredConnectionsClear": "クリア"
   },
   "auditLog": {
     "title": "監査ログ",
@@ -3936,6 +3940,7 @@
     "builderComboRefStep": "コンボ参照を追加",
     "builderPinnedAccount": "固定されたアカウント",
     "builderLegacyEntry": "レガシーエントリ",
+    "builderStaleModel": "ライブカタログにありません",
     "reviewName": "名前",
     "reviewStrategy": "戦略",
     "reviewSteps": "ステップ",
@@ -10291,7 +10296,11 @@
     "codexPaidCreditsLabel": "Codex の有料クレジット",
     "codexPaidCreditsAvailable": "利用可能（残高は未報告）",
     "codexPaidCreditsUnavailable": "利用不可、または支出上限に達しました",
-    "codexPaidCreditsUnlimited": "無制限"
+    "codexPaidCreditsUnlimited": "無制限",
+    "claudeResetCreditDefaultTitle": "Claude 制限のリセット",
+    "confirmRedeemClaudeResetCredit": "引き換えると、対象となる Claude の利用制限が即座にリセットされ、このクレジットは完全に消費されます。",
+    "claudeResetCreditsModalTitle": "Claude リセットクレジット",
+    "claudeResetCreditsModalExplainer": "このアカウントで利用可能な Claude リセットクレジットおよび週次セッションリセット。"
   },
   "modals": {
     "waitingAuth": "承認を待っています",
@@ -11587,6 +11596,7 @@
     "poolSetAsideKindIpQuota429": "IP レート制限 (429)",
     "poolSetAsideKindSlow": "遅い応答",
     "poolSetAsideKindGeoBlocked": "地域ブロック (403/451)",
+    "poolSetAsideKindOperatorReported": "オペレーターによる障害報告",
     "poolSetAsideUntil": "{endsAt}にローテーション復帰",
     "poolSetAsideRepeat": "除外{count, plural, one {#回} other {#回}}",
     "poolUnknownAddress": "不明なアドレス",
