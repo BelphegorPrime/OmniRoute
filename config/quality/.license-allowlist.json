@@ -1,6 +1,7 @@
 {
   "_comment": "SPDX license allowlist for OmniRoute (MIT project). Task 7.20 / PLANO-QUALITY-GATES-FASE7.md.",
   "_policy": "Production deps with a license outside 'allowed' and not in 'exceptions' fail the gate. devDeps get an advisory warning only.",
+
   "allowed": [
     "MIT",
     "Apache-2.0",
@@ -19,6 +20,7 @@
     "PSF-2.0",
     "CC-BY-3.0"
   ],
+
   "allowedExpressions": [
     "MIT*",
     "MIT AND ISC",
@@ -29,6 +31,7 @@
     "(BSD-2-Clause OR MIT OR Apache-2.0)",
     "(MPL-2.0 OR Apache-2.0)"
   ],
+
   "exceptions": {
     "@img/sharp-libvips-linux-x64": {
       "license": "LGPL-3.0-or-later",
@@ -92,19 +95,19 @@
     },
     "@fontsource/ibm-plex-mono": {
       "license": "OFL-1.1",
-      "justification": "Self-hosted web font from the Keak CI UI Kit (KEA-7886, #17951). SIL Open Font License 1.1 covers font files only: it permits bundling, redistribution and use with proprietary or MIT software, requires keeping the OFL notice and forbids selling the font by itself or using its Reserved Font Name for derivatives — none of which applies to serving the woff2 files from the dashboard. No code is licensed under OFL. Recorded by the base-red sweep of 2026-10-24 (#17219).",
+      "justification": "SIL Open Font License 1.1 covers only the font files shipped by @fontsource/ibm-plex-mono (self-hosted dashboard typography added by the Keak CI UI Kit migration, KEA-7886). OFL-1.1 permits bundling, embedding and redistribution of the fonts with software of any license as long as the fonts themselves are not sold on their own and keep their notices; it places no copyleft or attribution requirement on OmniRoute's code. The fonts are served as static assets, never modified.",
       "risk": "low",
       "reviewAt": "v4.0.0"
     },
     "@fontsource/instrument-serif": {
       "license": "OFL-1.1",
-      "justification": "Self-hosted web font from the Keak CI UI Kit (KEA-7886, #17951). SIL Open Font License 1.1 covers font files only: it permits bundling, redistribution and use with proprietary or MIT software, requires keeping the OFL notice and forbids selling the font by itself or using its Reserved Font Name for derivatives — none of which applies to serving the woff2 files from the dashboard. No code is licensed under OFL. Recorded by the base-red sweep of 2026-10-24 (#17219).",
+      "justification": "SIL Open Font License 1.1 covers only the font files shipped by @fontsource/instrument-serif (self-hosted dashboard typography added by the Keak CI UI Kit migration, KEA-7886). OFL-1.1 permits bundling, embedding and redistribution of the fonts with software of any license as long as the fonts themselves are not sold on their own and keep their notices; it places no copyleft or attribution requirement on OmniRoute's code. The fonts are served as static assets, never modified.",
       "risk": "low",
       "reviewAt": "v4.0.0"
     },
     "@fontsource/inter": {
       "license": "OFL-1.1",
-      "justification": "Self-hosted web font from the Keak CI UI Kit (KEA-7886, #17951). SIL Open Font License 1.1 covers font files only: it permits bundling, redistribution and use with proprietary or MIT software, requires keeping the OFL notice and forbids selling the font by itself or using its Reserved Font Name for derivatives — none of which applies to serving the woff2 files from the dashboard. No code is licensed under OFL. Recorded by the base-red sweep of 2026-10-24 (#17219).",
+      "justification": "SIL Open Font License 1.1 covers only the font files shipped by @fontsource/inter (self-hosted dashboard typography added by the Keak CI UI Kit migration, KEA-7886). OFL-1.1 permits bundling, embedding and redistribution of the fonts with software of any license as long as the fonts themselves are not sold on their own and keep their notices; it places no copyleft or attribution requirement on OmniRoute's code. The fonts are served as static assets, never modified.",
       "risk": "low",
       "reviewAt": "v4.0.0"
     }

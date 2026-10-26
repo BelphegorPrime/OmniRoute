@@ -4,7 +4,7 @@ import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 
-import * as engineSchemas from "../../open-sse/shared/elevenLabsSchemas";
+import * as engineSchemas from "../../open-sse/handlers/mediaGeneration/elevenLabsSchemas.ts";
 import * as appSchemas from "../../src/shared/validation/schemas/elevenlabs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
@@ -18,7 +18,7 @@ const handler = fs.readFileSync(
 // with the engine and the app path only re-exports them.
 test("the ElevenLabs media handler does not import the request schema from src/", () => {
   assert.doesNotMatch(handler, /from "@\/shared\/validation\/schemas\/elevenlabs"/);
-  assert.match(handler, /from "\.\.\/\.\.\/shared\/elevenLabsSchemas"/);
+  assert.match(handler, /from "\.\/elevenLabsSchemas\.ts"/);
 });
 
 test("the src path re-exports the very same schema objects the engine uses", () => {

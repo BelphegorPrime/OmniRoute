@@ -253,26 +253,34 @@ test("CLI compares candidate debt to the event baseline, including merge queues 
       "utf8"
     )
   );
-  const currentPolicy = JSON.parse(
-    readFileSync(
-      new URL("../../../config/quality/free-catalog-evidence.json", import.meta.url),
-      "utf8"
-    )
-  );
-  // Exercise baseline admission with the current valid policy. New catalog rows
-  // still need their evidence; removing that evidence would test a different
-  // violation and make even the legitimate bootstrap fail after a catalog refresh.
-  const allDebt = currentPolicy.debt;
-  assert.ok(allDebt.length > 0, "the reintroduction scenario needs a legacy identity");
+  // The immutable seed can retain identities subsequently removed from the catalog.
+  // Bootstrap only live rows; retired identities must not become valid debt again.
+  const liveKeys = new Set(FREE_MODEL_BUDGETS.map((entry) => `${entry.provider}/${entry.modelId}`));
+  const allDebt = frozen.entries
+    .map((entry) => `${entry.provider}/${entry.modelId}`)
+    .filter((key) => liveKeys.has(key));
   const git = (...args) =>
     execFileSync("git", args, {
       cwd: dir,
       encoding: "utf8",
       stdio: ["ignore", "pipe", "pipe"],
     }).trim();
+  // Rows audited after the seed froze (e.g. the OpenCode Zen refresh in #17345) are only
+  // valid through their evidence entry, never through debt. Carry the shipped evidence for
+  // those rows into the fixture so the debt manipulations below are the only variable.
+  const shipped = JSON.parse(
+    readFileSync(
+      new URL("../../../config/quality/free-catalog-evidence.json", import.meta.url),
+      "utf8"
+    )
+  );
+  const debtKeys = new Set(allDebt);
+  const evidence = shipped.evidence.filter(
+    (entry) => !debtKeys.has(`${entry.provider}/${entry.modelId}`)
+  );
   const policyPath = join(dir, "config/quality/free-catalog-evidence.json");
   const writePolicy = (debt) =>
-    writeFileSync(policyPath, JSON.stringify({ ...currentPolicy, debt }));
+    writeFileSync(policyPath, JSON.stringify({ schemaVersion: 1, debt, evidence }));
   try {
     git("init");
     git("config", "user.name", "Catalog Test");
