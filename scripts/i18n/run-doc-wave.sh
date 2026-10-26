@@ -137,7 +137,7 @@ done
 log "docs to process: $(echo "$docs" | wc -w)"; for f in $docs; do log "  - $f"; done
 
 run_doc() {  # $1 doc — 0 quando failed=0; 1 após 3 tentativas reais ou cota/backend esgotados
-  local f="$1" i=0 q=0 out rc force=""
+  local f="$1" i=0 q=0 out rc errors force=""
   [ "${FORCE:-0}" = 1 ] && force="--force"
   while [ "$i" -lt 3 ]; do
     i=$((i+1)); log "== $f try $i"
@@ -151,12 +151,14 @@ run_doc() {  # $1 doc — 0 quando failed=0; 1 após 3 tentativas reais ou cota/
        ! grep -Eq 'summary:.*failed=[1-9]' <<< "$out"; then return 0; fi
     log "translation did not complete: command_exit=$rc"
     force=""   # a repetição só refaz os locales que falharam
-    if grep -qiE "429|quota" <<< "$out"; then
+    # Classify terminal errors, not document literals or an earlier recovered retry.
+    errors=$(grep -E '^\[i18n-run\] ERROR .* failed:' <<< "$out" || true)
+    if grep -qiE ' failed: upstream 429([[:space:]:]|$)' <<< "$errors"; then
       q=$((q+1)); i=$((i-1))   # cota não consome tentativa
       log "QUOTA during $f ($q/$QUOTA_MAX): sleeping ${QUOTA_WAIT}s"
       [ "$q" -ge "$QUOTA_MAX" ] && return 1
       sleep "$QUOTA_WAIT"
-    elif grep -qiE "fetch failed|ECONN|upstream 50[234]|timed? ?out" <<< "$out"; then
+    elif grep -qiE ' failed: (fetch failed|ECONN|upstream 50[234]|timed? ?out)' <<< "$errors"; then
       log "TRANSIENT during $f: sleeping ${DOWN_WAIT}s"; sleep "$DOWN_WAIT"
     else
       sleep 30

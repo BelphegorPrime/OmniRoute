@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
@@ -76,6 +76,18 @@ const cp = require("node:child_process");
 const args = process.argv.slice(2);
 const scenario = process.env.WAVE_SCENARIO;
 if (args[0] === "scripts/i18n/run-translation.mjs") {
+  fs.appendFileSync(process.env.FAKE_TRANSLATION_LOG, "attempt\\n");
+  const errors = {
+    "validation-quota-text": "inline code changed: QUOTA_LIMIT and 429",
+    "recovered-quota": "timeout after 60000ms",
+    "quota-error": "upstream 429: quota exhausted",
+  };
+  if (scenario === "recovered-quota") fs.writeSync(1, "[i18n-run] WARN upstream 429 — retrying\\n");
+  if (errors[scenario]) {
+    fs.writeSync(1, "[i18n-run] ERROR docs/example.md [pt-BR] failed: " + errors[scenario] + "\\n");
+    fs.writeSync(1, "[i18n-run] summary: translated=0, skipped=0, failed=1, total considered=1, elapsed=0.1s\\n");
+    process.exit(1);
+  }
   if (scenario === "missing") fs.rmSync("docs/i18n/pt-BR/docs/example.md");
   if (scenario === "large") fs.writeSync(1, "progress ".repeat(40000) + "\\n");
   fs.writeSync(1, "[i18n-run] summary: translated=1, skipped=0, failed=" + (scenario === "translation" ? 1 : 0) + ", total considered=1, elapsed=0.1s\\n");
@@ -104,6 +116,7 @@ process.exit(result.status ?? 2);
       FILES: "docs/example.md",
       WAVE_SCENARIO: scenario,
       FAKE_GIT_LOG: join(root, "git.log"),
+      FAKE_TRANSLATION_LOG: join(root, "translation.log"),
       DOWN_MAX: "1",
       QUOTA_MAX: "1",
     },
@@ -115,6 +128,9 @@ process.exit(result.status ?? 2);
     ...result,
     log: readFileSync(join(out, "fixture.log"), "utf8"),
     git: readFileSync(join(root, "git.log"), "utf8"),
+    attempts: existsSync(join(root, "translation.log"))
+      ? readFileSync(join(root, "translation.log"), "utf8").trim().split("\n").length
+      : 0,
   };
 }
 
@@ -130,6 +146,24 @@ test("large progress output cannot turn a valid summary into a SIGPIPE failure",
   const result = runWave(t, "large");
   assert.equal(result.status, 0, result.log + result.stderr);
   assert.match(result.log, /WAVE END .*status=PASS/);
+});
+
+for (const scenario of ["validation-quota-text", "recovered-quota"]) {
+  test(`wave does not classify ${scenario} as exhausted quota`, (t) => {
+    const result = runWave(t, scenario);
+    assert.notEqual(result.status, 0, result.log);
+    assert.equal(result.attempts, 3, result.log);
+    assert.doesNotMatch(result.log, /QUOTA during/);
+    assert.match(result.log, /WAVE END .*status=FAIL/);
+  });
+}
+
+test("a terminal upstream 429 retains the quota backoff limit", (t) => {
+  const result = runWave(t, "quota-error");
+  assert.notEqual(result.status, 0, result.log);
+  assert.equal(result.attempts, 1, result.log);
+  assert.match(result.log, /QUOTA during/);
+  assert.match(result.log, /WAVE END .*status=FAIL/);
 });
 
 for (const scenario of [
