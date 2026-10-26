@@ -9,6 +9,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Card } from "@/shared/components";
+import Icon from "@/shared/components/Icon";
 import { useNotificationStore } from "@/store/notificationStore";
 import { providerText } from "../providerPageHelpers";
 
@@ -56,11 +57,26 @@ function formatSeconds(seconds: number): string {
   return `${seconds}s`;
 }
 
-interface ProviderRetryDelaySelectProps {
-  providerId: string;
+/** Presets plus a stored non-preset value (set through the API), sorted ascending. */
+function retryDelayOptionSeconds(selected: string): number[] {
+  const optionSeconds: number[] = [...RETRY_DELAY_OPTION_SECONDS];
+  if (selected !== RETRY_DELAY_AUTO && !optionSeconds.includes(Number(selected))) {
+    optionSeconds.push(Number(selected));
+    optionSeconds.sort((a, b) => a - b);
+  }
+  return optionSeconds;
 }
 
-export default function ProviderRetryDelaySelect({ providerId }: ProviderRetryDelaySelectProps) {
+function patchErrorMessage(data: unknown, fallback: string): string {
+  const error = (data as { error?: unknown } | null)?.error;
+  const message = (error as { message?: unknown } | null)?.message;
+  if (typeof message === "string" && message) return message;
+  if (typeof error === "string" && error) return error;
+  return fallback;
+}
+
+/** Loads `providerQuotaOverrides` once and PATCHes the whole map on change (rolls back on failure). */
+function useRetryDelayOverrides(providerId: string) {
   const t = useTranslations("providers");
   const notify = useNotificationStore();
   const [overrides, setOverrides] = useState<ProviderQuotaOverrides>({});
@@ -93,6 +109,7 @@ export default function ProviderRetryDelaySelect({ providerId }: ProviderRetryDe
     async (value: string) => {
       const previous = overrides;
       const next = computeRetryDelayOverrides(previous, providerId, value);
+      const failedText = providerText(t, "retryDelayUpdateFailed", "Failed to update retry delay");
       setOverrides(next);
       setSaving(true);
       try {
@@ -102,24 +119,14 @@ export default function ProviderRetryDelaySelect({ providerId }: ProviderRetryDe
           body: JSON.stringify({ providerQuotaOverrides: next }),
         });
         const data = await response.json().catch(() => ({}));
-        if (!response.ok) {
-          throw new Error(
-            data?.error?.message ||
-              (typeof data?.error === "string" ? data.error : "") ||
-              providerText(t, "retryDelayUpdateFailed", "Failed to update retry delay")
-          );
-        }
+        if (!response.ok) throw new Error(patchErrorMessage(data, failedText));
         if (data?.providerQuotaOverrides) {
           setOverrides(data.providerQuotaOverrides as ProviderQuotaOverrides);
         }
         notify.success(providerText(t, "retryDelaySaved", "Retry delay saved"));
       } catch (error) {
         setOverrides(previous);
-        notify.error(
-          error instanceof Error
-            ? error.message
-            : providerText(t, "retryDelayUpdateFailed", "Failed to update retry delay")
-        );
+        notify.error(error instanceof Error ? error.message : failedText);
       } finally {
         setSaving(false);
       }
@@ -127,20 +134,26 @@ export default function ProviderRetryDelaySelect({ providerId }: ProviderRetryDe
     [notify, overrides, providerId, t]
   );
 
+  return { overrides, loaded, saving, handleChange };
+}
+
+interface ProviderRetryDelaySelectProps {
+  providerId: string;
+}
+
+export default function ProviderRetryDelaySelect({ providerId }: ProviderRetryDelaySelectProps) {
+  const t = useTranslations("providers");
+  const { overrides, loaded, saving, handleChange } = useRetryDelayOverrides(providerId);
+
   const title = providerText(t, "retryDelayTitle", "Retry delay");
   const selected = retryDelaySelectValue(overrides, providerId);
-  // A value stored through the API that is not one of the presets is still shown.
-  const optionSeconds: number[] = [...RETRY_DELAY_OPTION_SECONDS];
-  if (selected !== RETRY_DELAY_AUTO && !optionSeconds.includes(Number(selected))) {
-    optionSeconds.push(Number(selected));
-    optionSeconds.sort((a, b) => a - b);
-  }
+  const optionSeconds = retryDelayOptionSeconds(selected);
 
   return (
     <Card>
       <div className="flex items-center gap-3">
-        <div className="inline-flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-amber-500/10 text-amber-500">
-          <span className="material-symbols-outlined text-[20px]">timer</span>
+        <div className="inline-flex shrink-0 items-center justify-center w-10 h-10 rounded-full bg-warning/10 text-warning">
+          <Icon name="timer" size={20} />
         </div>
         <div className="flex-1 min-w-0">
           <h2 className="text-sm font-semibold">{title}</h2>
