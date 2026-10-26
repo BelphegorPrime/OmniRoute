@@ -92,15 +92,21 @@
     },
     "@fontsource/ibm-plex-mono": {
       "license": "OFL-1.1",
-      "justification": "Self-hosted web font from the Keak CI UI Kit (KEA-7886, #17951). SIL Open Font License 1.1 covers font files only: it permits bundling, redistribution and use with proprietary or MIT software, requires keeping the OFL notice and forbids selling the font by itself or using its Reserved Font Name for derivatives — none of which applies to serving the woff2 files from the dashboard. No code is licensed under OFL. Recorded by the base-red sweep of 2026-10-24 (#17219)."
+      "justification": "Self-hosted web font from the Keak CI UI Kit (KEA-7886, #17951). SIL Open Font License 1.1 covers font files only: it permits bundling, redistribution and use with proprietary or MIT software, requires keeping the OFL notice and forbids selling the font by itself or using its Reserved Font Name for derivatives — none of which applies to serving the woff2 files from the dashboard. No code is licensed under OFL. Recorded by the base-red sweep of 2026-10-24 (#17219).",
+      "risk": "low",
+      "reviewAt": "v4.0.0"
     },
     "@fontsource/instrument-serif": {
       "license": "OFL-1.1",
-      "justification": "Self-hosted web font from the Keak CI UI Kit (KEA-7886, #17951). SIL Open Font License 1.1 covers font files only: it permits bundling, redistribution and use with proprietary or MIT software, requires keeping the OFL notice and forbids selling the font by itself or using its Reserved Font Name for derivatives — none of which applies to serving the woff2 files from the dashboard. No code is licensed under OFL. Recorded by the base-red sweep of 2026-10-24 (#17219)."
+      "justification": "Self-hosted web font from the Keak CI UI Kit (KEA-7886, #17951). SIL Open Font License 1.1 covers font files only: it permits bundling, redistribution and use with proprietary or MIT software, requires keeping the OFL notice and forbids selling the font by itself or using its Reserved Font Name for derivatives — none of which applies to serving the woff2 files from the dashboard. No code is licensed under OFL. Recorded by the base-red sweep of 2026-10-24 (#17219).",
+      "risk": "low",
+      "reviewAt": "v4.0.0"
     },
     "@fontsource/inter": {
       "license": "OFL-1.1",
-      "justification": "Self-hosted web font from the Keak CI UI Kit (KEA-7886, #17951). SIL Open Font License 1.1 covers font files only: it permits bundling, redistribution and use with proprietary or MIT software, requires keeping the OFL notice and forbids selling the font by itself or using its Reserved Font Name for derivatives — none of which applies to serving the woff2 files from the dashboard. No code is licensed under OFL. Recorded by the base-red sweep of 2026-10-24 (#17219)."
+      "justification": "Self-hosted web font from the Keak CI UI Kit (KEA-7886, #17951). SIL Open Font License 1.1 covers font files only: it permits bundling, redistribution and use with proprietary or MIT software, requires keeping the OFL notice and forbids selling the font by itself or using its Reserved Font Name for derivatives — none of which applies to serving the woff2 files from the dashboard. No code is licensed under OFL. Recorded by the base-red sweep of 2026-10-24 (#17219).",
+      "risk": "low",
+      "reviewAt": "v4.0.0"
     }
   }
 }
