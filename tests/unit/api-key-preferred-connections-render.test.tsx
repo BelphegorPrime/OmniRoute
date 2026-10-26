@@ -66,6 +66,8 @@ describe("PreferredConnectionsSection", () => {
     }) as HTMLButtonElement;
     expect(upB.disabled).toBe(true);
     expect(downA.disabled).toBe(true);
+    expect(upB.querySelector("svg")).not.toBeNull();
+    expect(downA.querySelector("svg")).not.toBeNull();
 
     fireEvent.click(rowA.getByRole("button", { name: messages.common.moveUp }));
     expect(handlers.onMovePreferred).toHaveBeenCalledWith("conn-a", -1);
