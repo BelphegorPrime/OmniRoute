@@ -87,6 +87,7 @@ function observe({
     for (const name of [
       "validate-release-green.mjs",
       "gate-process.mjs",
+      "eslint-measurement.mjs",
       "release-green-static-profile.mjs",
     ]) {
       cpSync(new URL(`scripts/quality/${name}`, root), join(dir, "scripts/quality", name));
@@ -152,9 +153,11 @@ function observe({
         `if (process.argv[3] === "check:complexity-ratchets") console.log("complexity=0\\ncognitiveComplexity=0\\n[complexity] OK — 0 violações (baseline 0)\\n[cognitive-complexity] OK — 0 violações (baseline 0)");\n`,
       { mode: 0o755 }
     );
-    writeFileSync(join(bin, "npx"), `#!${process.execPath}\nconsole.log("[]");\n`, {
-      mode: 0o755,
-    });
+    writeFileSync(
+      join(bin, "npx"),
+      `#!${process.execPath}\nconsole.log(JSON.stringify([{ filePath: "fixture.ts", errorCount: 0, warningCount: 0 }]));\n`,
+      { mode: 0o755 }
+    );
     writeFileSync(join(bin, "git"), `#!${process.execPath}\nconsole.log("${sha}");\n`, {
       mode: 0o755,
     });
