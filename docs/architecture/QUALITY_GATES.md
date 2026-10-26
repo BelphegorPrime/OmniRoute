@@ -170,16 +170,18 @@ Runs after `test-coverage`. Blocks merge on failure.
 
 ### Job: `quality-extended`
 
-Entire job is advisory (`continue-on-error: true`). The npm-based ratchets run for
-real; the external scanners install via `gh release download` and self-skip (exit 0)
-when a binary is still absent.
+The job blocks applicable candidates. Bundle size, secret findings, vulnerability
+findings, workflow findings and OpenAPI changes are checked with required ratchets.
+Circular-dependency diagnostics and scanner installation are advisory steps; a failed
+installation does not waive the subsequent required measurement. Missing tools,
+invalid reports or missing baselines leave the required scanner gate INCOMPLETE.
 
 | Script                   | Validates                                                                                                                                                                                       | Blocking                                          |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
 | `check:circular-deps`    | No circular dependencies (dpdm)                                                                                                                                                                 | **Advisory**                                      |
-| `check:bundle-size`      | Bundle size does not exceed the cap                                                                                                                                                             | **Advisory**                                      |
-| `check:secrets`          | Secret scanning (gitleaks) — skips if binary absent                                                                                                                                             | **Advisory**                                      |
-| `check:vuln-ratchet`     | Dependency vulnerabilities (osv-scanner) do not regress — skips if binary absent                                                                                                                | **Advisory**                                      |
+| `check:bundle-size`      | Bundle size does not exceed the cap; an unavailable measurement fails                                                                                                                           | **Blocking with --ratchet**                       |
+| `check:secrets`          | Gitleaks findings do not regress; required scans reject missing tools/source/baseline, failed scans and invalid reports                                                                         | **Blocking with --ratchet**                       |
+| `check:vuln-ratchet`     | Dependency vulnerabilities do not regress; required scans reject missing tools, invalid reports or missing baselines                                                                            | **Blocking with --ratchet**                       |
 | `check:workflows`        | Workflow lint (actionlint + zizmor); missing/broken scanners, invalid reports or missing ratchet baseline fail as INCOMPLETE. Valid findings follow the selected strict/advisory/ratchet policy | Execution required; zizmor ratchet blocking in CI |
 | `check:openapi-breaking` | Public API contract against pinned event commits (PR merge-base, push before, merge-group base; scheduled/manual checkout first parent); required measurement fails closed                      | **Blocking with --ratchet**                       |
 
@@ -609,7 +611,7 @@ several "obvious" merges turned out to hide debt and are **not** clean drop-ins.
 - `check:openapi-security-tiers` (advisory) — ❌ **NOT cleanly flippable.** It exits 0 but warns that several `traffic-inspector` routes under `LOCAL_ONLY_API_PREFIXES` lack the `x-loopback-only: true` annotation. Enforcing it requires adding those annotations to `openapi.yaml` first.
 - `typecheck:noimplicit:core` (advisory) — largely subsumed by the blocking `check:type-coverage` ratchet. Flip to a ratchet or drop the redundant second `tsc` pass.
 - `test:vitest:ui` (now **blocking**) — pre-existing failures are explicitly excluded in `vitest.config.ts` with `// #8618` tracking comments; new failures fail the job.
-- `check:secrets` (gitleaks, blocking ratchet frozen at 3 documented false-positives) — allowlist the 3 to reach 0, or demote to advisory. Overlaps GitHub native secret-scanning + `check:public-creds`.
+- `check:secrets` (gitleaks, blocking ratchet) — the current ceiling is `metrics.secretFindings` in `quality-baseline.json`. Any exception needs a justified `.gitleaks.toml` entry; unavailable measurement is INCOMPLETE. The scan complements GitHub native secret scanning and `check:public-creds`.
 - `check:pr-evidence` (blocking, greps PR-body prose) — high false-positive risk; weakens Hard Rule #18 enforcement if dropped, so this is a genuine policy call.
 - `semgrep` (advisory standalone) — overlaps CodeQL for the OWASP families; wire its baseline to a ratchet or drop.
 
