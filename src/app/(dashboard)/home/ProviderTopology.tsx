@@ -230,6 +230,130 @@ const nodeTypes: NodeTypes = {
 type ProviderHealth = "active" | "error" | "idle";
 type ProviderEntry = { id?: string; provider: string; name?: string; status?: ProviderHealth };
 
+const NODE_W = 156;
+const NODE_H = 28;
+const ROUTER_W = 148;
+const ROUTER_H = 44;
+
+/** Sort: active → error → last-used → healthy(connected) → rest (alpha within groups). */
+function sortProvidersForTopology(
+  providers: ProviderEntry[],
+  activeSet: Set<string>,
+  lastSet: Set<string>,
+  errorSet: Set<string>
+): ProviderEntry[] {
+  const rank = (p: ProviderEntry) => {
+    const id = p.provider.toLowerCase();
+    if (activeSet.has(id)) return 0;
+    if (errorSet.has(id) || p.status === "error") return 1;
+    if (lastSet.has(id)) return 2;
+    if (p.status === "active") return 3;
+    return 4;
+  };
+  return [...providers].sort((a, b) => {
+    const d = rank(a) - rank(b);
+    return d !== 0 ? d : a.provider.toLowerCase().localeCompare(b.provider.toLowerCase()); // ASCII kasıtlı
+  });
+}
+
+/**
+ * Model sub-nodes orbit just outside the outermost ring in use, so they never land
+ * between two provider rings.
+ */
+function computeModelOrbit(providerCount: number): { rx: number; ry: number } {
+  let outerRing = 0;
+  for (let left = providerCount - RINGS[0][0]; left > 0 && outerRing < RINGS.length - 1;) {
+    outerRing++;
+    left -= RINGS[outerRing][0];
+  }
+  return { rx: RINGS[outerRing][1], ry: RINGS[outerRing][2] };
+}
+
+function providerVisualState(
+  p: ProviderEntry,
+  activeSet: Set<string>,
+  lastSet: Set<string>,
+  errorSet: Set<string>
+) {
+  const pid = p.provider.toLowerCase();
+  const active = activeSet.has(pid);
+  // Traffic signals (live/recent request) take precedence; connection health is the
+  // base state shown when a provider has no in-flight or recent traffic, so the map
+  // still reflects "what is connected" at rest instead of going blank after a restart.
+  const trafficError = !active && errorSet.has(pid);
+  const last = !active && !trafficError && lastSet.has(pid);
+  // Health is orthogonal to recency: having just served a request does not make a
+  // connection any less connected. `last` used to suppress `healthy`/`healthError`,
+  // and because the node had no `last` visual it fell all the way through to the idle
+  // grey — so the provider you had just used rendered *less* connected than an idle
+  // peer, while its edge was amber. Health drives the border, `last` only the dot.
+  const healthError = !active && !trafficError && p.status === "error";
+  const healthy = !active && !trafficError && !healthError && p.status === "active";
+  return { active, error: trafficError || healthError, healthy, last };
+}
+
+type LayoutContext = {
+  activeSet: Set<string>;
+  lastSet: Set<string>;
+  errorSet: Set<string>;
+  modelMode: TopologyModelMode;
+  activeRequests: ModelRef[];
+  recentRequests: ModelRef[];
+  orbit: { rx: number; ry: number };
+};
+
+/** Provider node + router edge + its model sub-nodes for slot `i` of a ring of `count`. */
+function layoutProvider(
+  p: ProviderEntry,
+  slot: { i: number; count: number; rx: number; ry: number },
+  ctx: LayoutContext
+): { node: Node; edges: Edge[]; modelNodes: Node[] } {
+  const { active, error, healthy, last } = providerVisualState(
+    p,
+    ctx.activeSet,
+    ctx.lastSet,
+    ctx.errorSet
+  );
+  const config = getProviderConfig(p.provider);
+  const nodeId = `provider-${p.provider}`;
+  const angle = -Math.PI / 2 + (2 * Math.PI * slot.i) / slot.count;
+  const cx = slot.rx * Math.cos(angle);
+  const cy = slot.ry * Math.sin(angle);
+  const { sourceHandle, targetHandle } = getHandles(angle, cx);
+
+  const node: Node = {
+    id: nodeId,
+    type: "provider",
+    position: { x: cx - NODE_W / 2, y: cy - NODE_H / 2 },
+    data: {
+      label: resolveTopologyNodeLabel(p.name, config.name, p.provider),
+      color: config.color || FLOW_EDGE_COLORS.idle,
+      providerId: p.provider,
+      active,
+      error,
+      healthy,
+      last,
+    } satisfies ProviderNodeData,
+    draggable: false,
+  };
+  const edge: Edge = {
+    id: `e-${nodeId}`,
+    source: "router",
+    sourceHandle,
+    target: nodeId,
+    targetHandle,
+    animated: active,
+    style: edgeStyle(active, last, error, healthy),
+  };
+  const sub = buildModelSubNodes(
+    { nodeId, providerId: p.provider, angle, color: config.color || "#6b7280" },
+    selectTopologyModels(p.provider, ctx.modelMode, ctx.activeRequests, ctx.recentRequests),
+    ctx.orbit,
+    (2 * Math.PI) / slot.count
+  );
+  return { node, edges: [edge, ...sub.edges], modelNodes: sub.nodes };
+}
+
 function buildLayout(
   providers: ProviderEntry[],
   activeSet: Set<string>,
@@ -239,112 +363,39 @@ function buildLayout(
   activeRequests: ModelRef[] = [],
   recentRequests: ModelRef[] = []
 ): { nodes: Node[]; edges: Edge[] } {
-  const nodeW = 156;
-  const nodeH = 28;
-  const routerW = 148;
-  const routerH = 44;
-
-  const nodes: Node[] = [];
+  const nodes: Node[] = [
+    {
+      id: "router",
+      type: "router",
+      position: { x: -ROUTER_W / 2, y: -ROUTER_H / 2 },
+      data: { activeCount: activeSet.size },
+      draggable: false,
+    },
+  ];
   const edges: Edge[] = [];
-
-  nodes.push({
-    id: "router",
-    type: "router",
-    position: { x: -routerW / 2, y: -routerH / 2 },
-    data: { activeCount: activeSet.size },
-    draggable: false,
-  });
-
   if (providers.length === 0) return { nodes, edges };
 
-  // Sort: active → error → last-used → healthy(connected) → rest (alpha within groups)
-  const sorted = [...providers].sort((a, b) => {
-    const rank = (p: ProviderEntry) => {
-      const id = p.provider.toLowerCase();
-      if (activeSet.has(id)) return 0;
-      if (errorSet.has(id) || p.status === "error") return 1;
-      if (lastSet.has(id)) return 2;
-      if (p.status === "active") return 3;
-      return 4;
-    };
-    const d = rank(a) - rank(b);
-    return d !== 0 ? d : a.provider.toLowerCase().localeCompare(b.provider.toLowerCase()); // ASCII kasıtlı
-  });
-
-  // Model sub-nodes orbit just outside the outermost ring in use, so they never land
-  // between two provider rings.
-  let outerRing = 0;
-  for (let left = sorted.length - RINGS[0][0]; left > 0 && outerRing < RINGS.length - 1;) {
-    outerRing++;
-    left -= RINGS[outerRing][0];
-  }
-  const orbit = { rx: RINGS[outerRing][1], ry: RINGS[outerRing][2] };
+  const sorted = sortProvidersForTopology(providers, activeSet, lastSet, errorSet);
+  const ctx: LayoutContext = {
+    activeSet,
+    lastSet,
+    errorSet,
+    modelMode,
+    activeRequests,
+    recentRequests,
+    orbit: computeModelOrbit(sorted.length),
+  };
   const modelNodes: Node[] = [];
 
   let provIdx = 0;
   for (let ri = 0; ri < RINGS.length && provIdx < sorted.length; ri++) {
     const [cap, rx, ry] = RINGS[ri];
     const count = Math.min(cap, sorted.length - provIdx);
-
     for (let i = 0; i < count; i++) {
-      const p = sorted[provIdx++];
-      const pid = p.provider.toLowerCase();
-      const active = activeSet.has(pid);
-      // Traffic signals (live/recent request) take precedence; connection health is the
-      // base state shown when a provider has no in-flight or recent traffic, so the map
-      // still reflects "what is connected" at rest instead of going blank after a restart.
-      const trafficError = !active && errorSet.has(pid);
-      const last = !active && !trafficError && lastSet.has(pid);
-      // Health is orthogonal to recency: having just served a request does not make a
-      // connection any less connected. `last` used to suppress `healthy`/`healthError`,
-      // and because the node had no `last` visual it fell all the way through to the idle
-      // grey — so the provider you had just used rendered *less* connected than an idle
-      // peer, while its edge was amber. Health drives the border, `last` only the dot.
-      const healthError = !active && !trafficError && p.status === "error";
-      const healthy = !active && !trafficError && !healthError && p.status === "active";
-      const error = trafficError || healthError;
-      const config = getProviderConfig(p.provider);
-      const nodeId = `provider-${p.provider}`;
-
-      const angle = -Math.PI / 2 + (2 * Math.PI * i) / count;
-      const cx = rx * Math.cos(angle);
-      const cy = ry * Math.sin(angle);
-      const { sourceHandle, targetHandle } = getHandles(angle, cx);
-
-      nodes.push({
-        id: nodeId,
-        type: "provider",
-        position: { x: cx - nodeW / 2, y: cy - nodeH / 2 },
-        data: {
-          label: resolveTopologyNodeLabel(p.name, config.name, p.provider),
-          color: config.color || FLOW_EDGE_COLORS.idle,
-          providerId: p.provider,
-          active,
-          error,
-          healthy,
-          last,
-        } satisfies ProviderNodeData,
-        draggable: false,
-      });
-
-      edges.push({
-        id: `e-${nodeId}`,
-        source: "router",
-        sourceHandle,
-        target: nodeId,
-        targetHandle,
-        animated: active,
-        style: edgeStyle(active, last, error, healthy),
-      });
-
-      const sub = buildModelSubNodes(
-        { nodeId, providerId: p.provider, angle, color: config.color || "#6b7280" },
-        selectTopologyModels(p.provider, modelMode, activeRequests, recentRequests),
-        orbit,
-        (2 * Math.PI) / count
-      );
-      modelNodes.push(...sub.nodes);
-      edges.push(...sub.edges);
+      const placed = layoutProvider(sorted[provIdx++], { i, count, rx, ry }, ctx);
+      nodes.push(placed.node);
+      edges.push(...placed.edges);
+      modelNodes.push(...placed.modelNodes);
     }
   }
 
@@ -370,6 +421,65 @@ const MODEL_MODE_LABEL_KEYS = {
   off: ["topologyModelsOff", "topologyModelsOffHint"],
 } as const;
 
+function ModelModeToolbar({
+  modelMode,
+  onChange,
+}: {
+  modelMode: TopologyModelMode;
+  onChange: (mode: TopologyModelMode) => void;
+}) {
+  const t = useTranslations("common");
+  return (
+    <div
+      role="group"
+      aria-label={t("topologyModels")}
+      className="absolute top-2 left-2 z-10 flex items-center gap-1 rounded-md border border-border bg-bg/90 p-1 text-[11px] shadow-sm"
+    >
+      <span className="px-1 font-semibold text-text-muted">{t("topologyModels")}</span>
+      {MODEL_MODES.map((mode) => {
+        const [labelKey, hintKey] = MODEL_MODE_LABEL_KEYS[mode];
+        const selected = modelMode === mode;
+        return (
+          <button
+            key={mode}
+            type="button"
+            aria-pressed={selected}
+            title={t(hintKey)}
+            onClick={() => onChange(mode)}
+            className={`px-2 py-0.5 rounded font-semibold transition-colors ${
+              selected ? "bg-primary text-white" : "text-text-muted hover:bg-bg-subtle"
+            }`}
+          >
+            {t(labelKey)}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+/** Memoized active/last/error provider-id sets keyed by their string identity. */
+function useTrafficSets(activeRequests: ModelRef[], lastProvider: string, errorProvider: string) {
+  const activeKey = useMemo(
+    () =>
+      activeRequests
+        .map((r) => r.provider?.toLowerCase())
+        .filter(Boolean)
+        .sort()
+        .join(","),
+    [activeRequests]
+  );
+  const lastKey = lastProvider.toLowerCase();
+  const errorKey = errorProvider.toLowerCase();
+  const activeSet = useMemo(
+    () => new Set<string>(activeKey ? activeKey.split(",") : []),
+    [activeKey]
+  );
+  const lastSet = useMemo(() => new Set<string>(lastKey ? [lastKey] : []), [lastKey]);
+  const errorSet = useMemo(() => new Set<string>(errorKey ? [errorKey] : []), [errorKey]);
+  return { activeSet, lastSet, errorSet, lastKey, errorKey };
+}
+
 type Props = {
   providers?: ProviderEntry[];
   activeRequests?: ModelRef[];
@@ -387,24 +497,11 @@ export default function ProviderTopology({
   errorProvider = "",
 }: Props) {
   const t = useTranslations("common");
-  const activeKey = useMemo(
-    () =>
-      activeRequests
-        .map((r) => r.provider?.toLowerCase())
-        .filter(Boolean)
-        .sort()
-        .join(","),
-    [activeRequests]
+  const { activeSet, lastSet, errorSet, lastKey, errorKey } = useTrafficSets(
+    activeRequests,
+    lastProvider,
+    errorProvider
   );
-  const lastKey = lastProvider.toLowerCase();
-  const errorKey = errorProvider.toLowerCase();
-
-  const activeSet = useMemo(
-    () => new Set<string>(activeKey ? activeKey.split(",") : []),
-    [activeKey]
-  );
-  const lastSet = useMemo(() => new Set<string>(lastKey ? [lastKey] : []), [lastKey]);
-  const errorSet = useMemo(() => new Set<string>(errorKey ? [errorKey] : []), [errorKey]);
 
   // AUTO (default) only draws models with a request in flight, so an idle map is unchanged.
   const [modelMode, setModelMode] = useState<TopologyModelMode>("auto");
@@ -466,31 +563,7 @@ export default function ProviderTopology({
 
   return (
     <div className="relative">
-      <div
-        role="group"
-        aria-label={t("topologyModels")}
-        className="absolute top-2 left-2 z-10 flex items-center gap-1 rounded-md border border-border bg-bg/90 p-1 text-[11px] shadow-sm"
-      >
-        <span className="px-1 font-semibold text-text-muted">{t("topologyModels")}</span>
-        {MODEL_MODES.map((mode) => {
-          const [labelKey, hintKey] = MODEL_MODE_LABEL_KEYS[mode];
-          const selected = modelMode === mode;
-          return (
-            <button
-              key={mode}
-              type="button"
-              aria-pressed={selected}
-              title={t(hintKey)}
-              onClick={() => setModelMode(mode)}
-              className={`px-2 py-0.5 rounded font-semibold transition-colors ${
-                selected ? "bg-primary text-white" : "text-text-muted hover:bg-bg-subtle"
-              }`}
-            >
-              {t(labelKey)}
-            </button>
-          );
-        })}
-      </div>
+      <ModelModeToolbar modelMode={modelMode} onChange={setModelMode} />
       <FlowCanvas
         nodes={nodes}
         edges={edges}
