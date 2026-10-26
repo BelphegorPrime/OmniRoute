@@ -67,6 +67,16 @@ including the MCP execution in the first receipt. All four receipts, logs and ma
 execution identities are required. Local `npm run test:vitest:ui` still selects the
 complete suite; one `--shard` run is only partial evidence.
 
+### Unit coverage collection
+
+The twelve unit shards collect V8 coverage during their existing test execution. A successful
+shard runs `scripts/ci/compact-v8-coverage.mjs` to compress the original files without generating
+an intermediate Istanbul report. The final Coverage job verifies all twelve manifests against
+the candidate SHA, runtime, source root and data hashes, then runs c8's reporters and existing
+coverage thresholds. Inputs retain c8's global filename order; per-shard pre-merging is unsafe
+for mixed function/block coverage. Missing, malformed or incompatible shards fail admission.
+Failed test shards retain raw diagnostic coverage separately; it cannot enter the final merge.
+
 ### Static scan inventory
 
 The versioned npm-alias inventory and static-scan membership live in
