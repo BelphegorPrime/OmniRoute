@@ -16,7 +16,8 @@ const { default: AddApiKeyModal } =
 const { default: EditConnectionModal } =
   await import("../../../src/app/(dashboard)/dashboard/providers/[id]/components/modals/EditConnectionModal");
 
-const ZDR_TOGGLE = 'button[role="switch"][aria-label="commandCodeZdrLabel"]';
+// The kit Switch renders input[type=checkbox][role=switch] (UI kit migration, #17951).
+const ZDR_TOGGLE = 'input[role="switch"][aria-label="commandCodeZdrLabel"]';
 
 const containers: Array<{ root: ReturnType<typeof createRoot>; el: HTMLDivElement }> = [];
 
@@ -26,7 +27,16 @@ function mount(node: React.ReactElement) {
   const root = createRoot(el);
   act(() => root.render(node));
   containers.push({ root, el });
-  return el;
+  // The shared Modal is a kit Dialog since KEA-7886: its content is portaled to
+  // document.body, so queries start there (the container is a child of body).
+  return document.body;
+}
+
+function unmountAll() {
+  for (const { root, el } of containers.splice(0)) {
+    act(() => root.unmount());
+    el.remove();
+  }
 }
 
 function renderAdd(props: Record<string, unknown>) {
@@ -95,10 +105,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  for (const { root, el } of containers.splice(0)) {
-    act(() => root.unmount());
-    el.remove();
-  }
+  unmountAll();
   vi.unstubAllGlobals();
 });
 
@@ -112,6 +119,7 @@ describe("AddApiKeyModal — Command Code ZDR toggle", () => {
   it("renders the toggle only for Command Code, off by default", () => {
     const el = renderAdd({ provider: "command-code", providerName: "Command Code" });
     expect(el.querySelector(ZDR_TOGGLE)?.getAttribute("aria-checked")).toBe("false");
+    unmountAll();
     const other = renderAdd({ provider: "openai", providerName: "OpenAI" });
     expect(other.querySelector(ZDR_TOGGLE)).toBeNull();
   });
@@ -153,6 +161,7 @@ describe("EditConnectionModal — Command Code ZDR toggle", () => {
       },
     });
     expect(el.querySelector(ZDR_TOGGLE)?.getAttribute("aria-checked")).toBe("true");
+    unmountAll();
     const other = renderEdit({
       providerId: "openai",
       connection: { id: "oa-1", provider: "openai", authType: "apikey", providerSpecificData: {} },
