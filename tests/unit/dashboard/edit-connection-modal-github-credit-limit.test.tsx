@@ -25,6 +25,9 @@ const { default: EditConnectionModal } =
 
 let container: HTMLDivElement;
 let root: Root;
+// The shared Modal is a kit Dialog since KEA-7886: its content is portaled to
+// document.body, so queries start there (the container is a child of body).
+const view = () => document.body;
 
 beforeEach(() => {
   container = document.createElement("div");
@@ -55,11 +58,11 @@ function renderModal(connection: Record<string, unknown>, onSave = vi.fn()) {
 }
 
 function findCreditLimitInput(): HTMLInputElement | null {
-  const label = Array.from(container.querySelectorAll("label")).find(
+  const label = Array.from(view().querySelectorAll("label")).find(
     (el) => el.textContent === "aiCreditsLimit"
   );
   const forId = label?.getAttribute("for");
-  return forId ? (container.querySelector(`#${forId}`) as HTMLInputElement | null) : null;
+  return forId ? (view().querySelector(`#${forId}`) as HTMLInputElement | null) : null;
 }
 
 async function typeInto(input: HTMLInputElement, value: string) {
@@ -71,7 +74,7 @@ async function typeInto(input: HTMLInputElement, value: string) {
 }
 
 async function clickSave() {
-  const button = Array.from(container.querySelectorAll("button")).find(
+  const button = Array.from(view().querySelectorAll("button")).find(
     (b) => b.textContent === "save"
   );
   expect(button).toBeTruthy();
@@ -130,6 +133,6 @@ describe("EditConnectionModal — GitHub AI Credits limit", () => {
     await typeInto(findCreditLimitInput()!, "-3");
     await clickSave();
     expect(onSave).not.toHaveBeenCalled();
-    expect(container.textContent).toContain("aiCreditsLimitInvalid");
+    expect(view().textContent).toContain("aiCreditsLimitInvalid");
   });
 });
