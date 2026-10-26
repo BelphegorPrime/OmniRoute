@@ -87,6 +87,25 @@ function futureResetAt(resetAt: string | null | undefined, now: number): string 
   return Number.isFinite(ms) && ms > now ? resetAt : null;
 }
 
+/** Fresh reading whose billing period has not rolled over since it was fetched. */
+function isCurrentReading(reading: GitHubCreditReading, now: number): boolean {
+  const fetchedAt = reading.fetchedAt;
+  if (typeof fetchedAt !== "number" || now - fetchedAt > GITHUB_CREDIT_SNAPSHOT_MAX_AGE_MS) {
+    return false;
+  }
+  if (!reading.resetAt) return true;
+  const resetMs = new Date(reading.resetAt).getTime();
+  // The billing period rolled over since the reading: the figure is stale.
+  return !(Number.isFinite(resetMs) && resetMs <= now);
+}
+
+/** `creditsUsed` of a current reading, or null when there is nothing trustworthy to compare. */
+function usableCreditsUsed(reading: GitHubCreditReading | null, now: number): number | null {
+  const used = reading?.creditsUsed;
+  if (typeof used !== "number" || !Number.isFinite(used)) return null;
+  return isCurrentReading(reading as GitHubCreditReading, now) ? used : null;
+}
+
 export function evaluateGitHubCreditLimit(
   limit: number | null,
   reading: GitHubCreditReading | null,
@@ -101,18 +120,8 @@ export function evaluateGitHubCreditLimit(
     };
   }
 
-  const used = reading?.creditsUsed;
-  if (typeof used !== "number" || !Number.isFinite(used)) return NOT_BLOCKED;
-  const fetchedAt = reading?.fetchedAt;
-  if (typeof fetchedAt !== "number" || now - fetchedAt > GITHUB_CREDIT_SNAPSHOT_MAX_AGE_MS) {
-    return NOT_BLOCKED;
-  }
-  if (reading?.resetAt) {
-    const resetMs = new Date(reading.resetAt).getTime();
-    // The billing period rolled over since the reading: the figure is stale.
-    if (Number.isFinite(resetMs) && resetMs <= now) return NOT_BLOCKED;
-  }
-  if (used < limit) return NOT_BLOCKED;
+  const used = usableCreditsUsed(reading, now);
+  if (used === null || used < limit) return NOT_BLOCKED;
 
   return {
     blocked: true,

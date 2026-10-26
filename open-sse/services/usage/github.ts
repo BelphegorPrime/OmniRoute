@@ -30,6 +30,44 @@ export function shouldDisplayGitHubQuota(quota: UsageQuota | null): quota is Usa
   return quota.total > 0 || quota.remainingPercentage !== undefined;
 }
 
+/** Paid plan format (`quota_snapshots`), including the optional AI Credits quota. */
+function buildPaidPlanUsage(dataRecord: JsonRecord, providerSpecificData?: JsonRecord) {
+  const snapshots = toRecord(dataRecord.quota_snapshots);
+  const resetAt = parseResetTime(getFieldValue(dataRecord, "quota_reset_date", "quotaResetDate"));
+  const premiumSnapshot = toRecord(snapshots.premium_interactions);
+  const creditsUsed = parseGitHubCreditsUsed(premiumSnapshot.credits_used);
+  const premiumQuota = isUnallocatedGitHubQuota(premiumSnapshot, creditsUsed)
+    ? null
+    : formatGitHubQuotaSnapshot(snapshots.premium_interactions, resetAt);
+  const chatQuota = formatGitHubQuotaSnapshot(snapshots.chat, resetAt);
+  const completionsQuota = formatGitHubQuotaSnapshot(snapshots.completions, resetAt);
+  const quotas: Record<string, UsageQuota> = {};
+
+  if (shouldDisplayGitHubQuota(premiumQuota)) {
+    quotas.premium_interactions = premiumQuota;
+  }
+  if (shouldDisplayGitHubQuota(chatQuota)) {
+    quotas.chat = chatQuota;
+  }
+  if (shouldDisplayGitHubQuota(completionsQuota)) {
+    quotas.completions = completionsQuota;
+  }
+  if (creditsUsed !== undefined) {
+    quotas[GITHUB_AI_CREDITS_QUOTA_KEY] = buildGitHubAiCreditsQuota(
+      creditsUsed,
+      readGitHubCreditLimit(providerSpecificData),
+      parseResetTime(premiumSnapshot.quota_reset_at) || resetAt
+    );
+  }
+
+  return {
+    plan: inferGitHubPlanName(dataRecord, premiumQuota),
+    tokenBasedBilling: dataRecord.token_based_billing === true,
+    resetDate: getFieldValue(dataRecord, "quota_reset_date", "quotaResetDate"),
+    quotas,
+  };
+}
+
 /**
  * GitHub Copilot Usage
  * Uses GitHub accessToken (not copilotToken) to call copilot_internal/user API
@@ -75,43 +113,7 @@ export async function getGitHubUsage(
 
     // Handle different response formats (paid vs free)
     if (dataRecord.quota_snapshots) {
-      // Paid plan format
-      const snapshots = toRecord(dataRecord.quota_snapshots);
-      const resetAt = parseResetTime(
-        getFieldValue(dataRecord, "quota_reset_date", "quotaResetDate")
-      );
-      const premiumSnapshot = toRecord(snapshots.premium_interactions);
-      const creditsUsed = parseGitHubCreditsUsed(premiumSnapshot.credits_used);
-      const premiumQuota = isUnallocatedGitHubQuota(premiumSnapshot, creditsUsed)
-        ? null
-        : formatGitHubQuotaSnapshot(snapshots.premium_interactions, resetAt);
-      const chatQuota = formatGitHubQuotaSnapshot(snapshots.chat, resetAt);
-      const completionsQuota = formatGitHubQuotaSnapshot(snapshots.completions, resetAt);
-      const quotas: Record<string, UsageQuota> = {};
-
-      if (shouldDisplayGitHubQuota(premiumQuota)) {
-        quotas.premium_interactions = premiumQuota;
-      }
-      if (shouldDisplayGitHubQuota(chatQuota)) {
-        quotas.chat = chatQuota;
-      }
-      if (shouldDisplayGitHubQuota(completionsQuota)) {
-        quotas.completions = completionsQuota;
-      }
-      if (creditsUsed !== undefined) {
-        quotas[GITHUB_AI_CREDITS_QUOTA_KEY] = buildGitHubAiCreditsQuota(
-          creditsUsed,
-          readGitHubCreditLimit(providerSpecificData),
-          parseResetTime(premiumSnapshot.quota_reset_at) || resetAt
-        );
-      }
-
-      return {
-        plan: inferGitHubPlanName(dataRecord, premiumQuota),
-        tokenBasedBilling: dataRecord.token_based_billing === true,
-        resetDate: getFieldValue(dataRecord, "quota_reset_date", "quotaResetDate"),
-        quotas,
-      };
+      return buildPaidPlanUsage(dataRecord, providerSpecificData);
     } else if (dataRecord.monthly_quotas || dataRecord.limited_user_quotas) {
       // Free/limited plan format. NOTE (#2876): the upstream field
       // `limited_user_quotas[name]` is the *remaining* count for the month
