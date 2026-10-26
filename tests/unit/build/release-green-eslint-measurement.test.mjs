@@ -39,6 +39,11 @@ function fixture(run) {
       const source = join(root, "scripts/quality", name);
       if (existsSync(source)) copyFileSync(source, join(dir, "scripts/quality", name));
     }
+    const lookup = join(root, "scripts/i18n/message-lookup.mjs");
+    if (existsSync(lookup)) {
+      mkdirSync(join(dir, "scripts/i18n"), { recursive: true });
+      copyFileSync(lookup, join(dir, "scripts/i18n/message-lookup.mjs"));
+    }
     writeFileSync(join(dir, "package.json"), JSON.stringify({ type: "commonjs" }));
     const executable = (name, body) =>
       writeFileSync(join(dir, name), `#!${process.execPath}\n${body}`, { mode: 0o755 });
