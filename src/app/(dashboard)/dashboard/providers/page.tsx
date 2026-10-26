@@ -1025,10 +1025,7 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("compatibleProviders")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-orange-500"
-                        title={t("compatibleLabel")}
-                      />
+                      <CategoryDot category="compatible" size="md" label={t("compatibleLabel")} />
                       <ProviderCountBadge {...countConfigured(compatibleProviderEntriesAll)} />
                     </span>
                   }
@@ -1108,7 +1105,7 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("oauthProviders")}{" "}
-                      <span className="size-2.5 rounded-full bg-blue-500" title={t("oauthLabel")} />
+                      <CategoryDot category="oauth" size="md" label={t("oauthLabel")} />
                       <ProviderCountBadge
                         {...countConfigured(
                           oauthProviderEntriesAll.filter((e) => !IDE_PROVIDER_IDS.has(e.providerId))
@@ -1174,9 +1171,10 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("ideProviders") || "IDE Providers"}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-cyan-500"
-                        title={t("ideProviders") || "IDE Providers"}
+                      <CategoryDot
+                        category="ide"
+                        size="md"
+                        label={t("ideProviders") || "IDE Providers"}
                       />
                       <ProviderCountBadge {...countConfigured(ideProviderEntriesAll)} />
                     </span>
@@ -1235,9 +1233,10 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("webCookieProviders")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-purple-500"
-                        title={t("webCookieProviders")}
+                      <CategoryDot
+                        category="web-cookie"
+                        size="md"
+                        label={t("webCookieProviders")}
                       />
                       <ProviderCountBadge {...countConfigured(webCookieProviderEntriesAll)} />
                     </span>
@@ -1285,7 +1284,7 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("freeTierProviders")}
-                      <CategoryDot color="bg-green-500" label={t("freeTierLabel")} />
+                      <CategoryDot category="free" size="md" label={t("freeTierLabel")} />
                       <ProviderCountBadge {...countConfigured(freeSectionEntriesAll)} />
                     </span>
                   }
@@ -1330,10 +1329,7 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("apiKeyProviders")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-amber-500"
-                        title={t("apiKeyLabel")}
-                      />
+                      <CategoryDot category="apikey" size="md" label={t("apiKeyLabel")} />
                       <ProviderCountBadge {...countConfigured(apiKeyProviderEntriesAll)} />
                     </span>
                   }
@@ -1405,9 +1401,10 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("upstreamProxyProviders")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-indigo-500"
-                        title={t("upstreamProxyProviders")}
+                      <CategoryDot
+                        category="upstream-proxy"
+                        size="md"
+                        label={t("upstreamProxyProviders")}
                       />
                       <ProviderCountBadge {...countConfigured(upstreamProxyEntriesAll)} />
                     </span>
@@ -1453,10 +1450,7 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("webFetchProvidersHeading")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-orange-500"
-                        title={t("webFetchTooltip")}
-                      />
+                      <CategoryDot category="webfetch" size="md" label={t("webFetchTooltip")} />
                       <ProviderCountBadge {...countConfigured(webFetchEntriesAll)} />
                     </span>
                   }
@@ -1488,10 +1482,7 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("aggregatorsGateways")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-amber-500"
-                        title={t("aggregatorsGateways")}
-                      />
+                      <CategoryDot category="apikey" size="md" label={t("aggregatorsGateways")} />
                       <ProviderCountBadge {...countConfigured(aggregatorProviderEntriesAll)} />
                     </span>
                   }
@@ -1523,10 +1514,7 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("enterpriseCloud")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-amber-500"
-                        title={t("enterpriseCloud")}
-                      />
+                      <CategoryDot category="apikey" size="md" label={t("enterpriseCloud")} />
                       <ProviderCountBadge {...countConfigured(enterpriseProviderEntriesAll)} />
                     </span>
                   }
@@ -1558,9 +1546,10 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("cloudAgentProviders")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-violet-500"
-                        title={t("cloudAgentProviders")}
+                      <CategoryDot
+                        category="cloud-agent"
+                        size="md"
+                        label={t("cloudAgentProviders")}
                       />
                       <ProviderCountBadge {...countConfigured(cloudAgentProviderEntriesAll)} />
                     </span>
@@ -1608,10 +1597,7 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("localProviders")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-emerald-500"
-                        title={t("localProviders")}
-                      />
+                      <CategoryDot category="local" size="md" label={t("localProviders")} />
                       <ProviderCountBadge {...countConfigured(localProviderEntriesAll)} />
                     </span>
                   }
@@ -1656,9 +1642,10 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("searchProvidersHeading")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-teal-500"
-                        title={t("searchProvidersHeading")}
+                      <CategoryDot
+                        category="search"
+                        size="md"
+                        label={t("searchProvidersHeading")}
                       />
                       <ProviderCountBadge {...countConfigured(searchProviderEntriesAll)} />
                     </span>
@@ -1704,9 +1691,10 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("embeddingRerankProviders")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-amber-500"
-                        title={t("embeddingRerankProviders")}
+                      <CategoryDot
+                        category="apikey"
+                        size="md"
+                        label={t("embeddingRerankProviders")}
                       />
                       <ProviderCountBadge {...countConfigured(embeddingRerankProviderEntriesAll)} />
                     </span>
@@ -1739,10 +1727,7 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("imageProviders")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-amber-500"
-                        title={t("imageProviders")}
-                      />
+                      <CategoryDot category="apikey" size="md" label={t("imageProviders")} />
                       <ProviderCountBadge {...countConfigured(imageProviderEntriesAll)} />
                     </span>
                   }
@@ -1774,10 +1759,7 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("audioProvidersHeading")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-rose-500"
-                        title={t("audioProvidersHeading")}
-                      />
+                      <CategoryDot category="audio" size="md" label={t("audioProvidersHeading")} />
                       <ProviderCountBadge {...countConfigured(audioProviderEntriesAll)} />
                     </span>
                   }
@@ -1822,10 +1804,7 @@ function ProvidersPageContent() {
                   title={
                     <span className="flex items-center gap-2">
                       {t("videoProviders")}{" "}
-                      <span
-                        className="size-2.5 rounded-full bg-amber-500"
-                        title={t("videoProviders")}
-                      />
+                      <CategoryDot category="apikey" size="md" label={t("videoProviders")} />
                       <ProviderCountBadge {...countConfigured(videoProviderEntriesAll)} />
                     </span>
                   }
