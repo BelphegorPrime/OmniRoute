@@ -18,7 +18,7 @@ export default function ConnectionEmailCard({
   const showEmail = useEmailPrivacyStore((state) => state.emailsVisible);
   if (!email) return null;
   return (
-    <div className="bg-sidebar/50 p-3 rounded-lg">
+    <div className="bg-bg-subtle p-3 rounded-lg">
       <p className="text-sm text-text-muted mb-1">{label}</p>
       <p className="font-medium" title={showEmail ? email : undefined}>
         {showEmail ? email : maskEmail(email)}

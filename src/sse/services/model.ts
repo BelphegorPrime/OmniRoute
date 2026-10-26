@@ -7,6 +7,7 @@ import { getSyncedAutoAliases } from "@/lib/providerModels/syncedAutoAliases.ts"
 import { getActiveSyncedCatalog } from "@/lib/db/models/activeSyncedCatalog";
 import { getModelCompatOverrides } from "@/lib/db/models/compat";
 import { getNoAuthHydrationProviderIds } from "./noAuthProviderSiblings";
+import { inferGithubUnsyncedTargetFormat } from "./githubResponsesFallback";
 import {
   parseModel,
   getModelInfoCore,
@@ -79,7 +80,7 @@ function buildWildcardAliasMap(settings: Record<string, unknown>): Record<string
  * are folded in last: they are keyed by pattern string (containing `*`/`?`), which
  * cannot collide with a real model id, so ordering never affects exact-alias lookups.
  */
-async function getCombinedModelAliases(): Promise<Record<string, unknown>> {
+export async function getCombinedModelAliases(): Promise<Record<string, unknown>> {
   const [dbAliases, settings, autoAliases] = await Promise.all([
     getModelAliases().catch(() => ({})),
     getCachedSettings().catch(() => ({}) as Record<string, unknown>),
@@ -206,12 +207,16 @@ function findRegistryModel(providerId: string, modelId: string): any {
  * `modelId` with `effort: null` when nothing matches or the provider already owns its
  * own suffix mechanism.
  */
-function resolveSyncedModelIdAndEffort(
+export function resolveSyncedModelIdAndEffort(
   providerId: string,
   modelId: string,
   syncedModels: unknown
 ): { modelId: string; effort: string | null } {
-  if (providerId === "codex" && findRegistryModel(providerId, modelId)) {
+  if (
+    providerId === "codex" &&
+    findRegistryModel(providerId, modelId) &&
+    findSyncedModelMeta(syncedModels, modelId)
+  ) {
     return { modelId, effort: null };
   }
   if (isSyncedEffortSkippedProvider(providerId) || !Array.isArray(syncedModels)) {
@@ -409,9 +414,9 @@ async function lookupModelMeta(
       getActiveSyncedCatalog(providerId),
       // #10898 / #7620: model-compat overrides (apiFormat/targetFormat/
       // supportsVision, isHidden, ...) are stored keyed on the id the operator
-      // wrote them under. For a no-auth alias the model prefix resolves to the
-      // APIKEY gateway id (e.g. "opencode/x" -> providerId "opencode-zen") but
-      // the override was written on the sibling "opencode" row. Merge overrides
+      // wrote them under. For a no-auth alias the model prefix can resolve to an
+      // APIKEY gateway id while the override was written on the sibling no-auth
+      // row (see noAuthProviderSiblings.ts). Merge overrides
       // across the provider AND its no-auth sibling ids (requested id first)
       // instead of canonicalizing the low-level compat key, which would break
       // paths that legitimately key on the raw id (e.g. getHiddenModelsByProvider).
@@ -475,6 +480,10 @@ async function lookupModelMeta(
       compatOverrideMatch
     );
     if (effort) metadata.resolvedThinkingEffort = effort;
+    if (!metadata.targetFormat && !syncedMatch && !registryMatch) {
+      const inferredTargetFormat = inferGithubUnsyncedTargetFormat(providerId, resolvedModelId);
+      if (inferredTargetFormat) metadata.targetFormat = inferredTargetFormat;
+    }
 
     return { modelId: resolvedModelId, metadata, available };
   } catch {
