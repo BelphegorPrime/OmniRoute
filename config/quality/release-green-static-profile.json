@@ -26,6 +26,13 @@
   ],
   "gates": [
     {
+      "id": "check:test-tla-order",
+      "job": "lint",
+      "args": ["run", "check:test-tla-order"],
+      "kind": "hard",
+      "command": "node scripts/check/check-test-tla-order.mjs"
+    },
+    {
       "id": "check:node-runtime",
       "job": "lint",
       "args": ["run", "check:node-runtime"],

@@ -22,6 +22,7 @@ test("full static requirements include audit, mutation and translation drift", a
     "i18n:check",
     "check:ui-icu",
     "i18n:check-keys:cli",
+    "check:test-tla-order",
   ]) {
     assert.ok(
       gates.some((gate) => gate.id === id),
@@ -112,6 +113,23 @@ test("only completed required measurements can pass", () => {
   });
   assert.equal(staticGateOutcome(1, "vulnCount=0").ok, false);
   assert.deepEqual(staticGateOutcome(0, "vulnCount=0"), { ok: true, evidenceState: "COMPLETE" });
+});
+
+test("an interrupted static process never has complete measurement evidence", () => {
+  for (const executionOutcome of ["TIMEOUT", "CANCELLED", "SPAWN_ERROR", "SIGNAL", "UNKNOWN"]) {
+    assert.deepEqual(staticGateOutcome(0, "cached summary: pass", executionOutcome), {
+      ok: false,
+      evidenceState: "INCOMPLETE",
+    });
+    assert.deepEqual(staticGateOutcome(1, "Gate execution failed", executionOutcome), {
+      ok: false,
+      evidenceState: "INCOMPLETE",
+    });
+  }
+  assert.deepEqual(staticGateOutcome(1, "policy violation", "FAIL"), {
+    ok: false,
+    evidenceState: "COMPLETE",
+  });
 });
 
 test("the real profile has executable absolute boundary arguments", () => {

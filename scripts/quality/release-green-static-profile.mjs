@@ -111,7 +111,9 @@ export function loadFullCiProfile(root) {
 }
 
 /** A successful wrapper cannot turn unavailable scanner evidence into a measurement. */
-export function staticGateOutcome(code, output) {
-  const incomplete = /\b[\w.]+=(?:SKIP|INCOMPLETE)\b/.test(String(output));
+export function staticGateOutcome(code, output, executionOutcome = code === 0 ? "PASS" : "FAIL") {
+  const incomplete =
+    !["PASS", "FAIL"].includes(executionOutcome) ||
+    /\b[\w.]+=(?:SKIP|INCOMPLETE)\b/.test(String(output));
   return { ok: code === 0 && !incomplete, evidenceState: incomplete ? "INCOMPLETE" : "COMPLETE" };
 }

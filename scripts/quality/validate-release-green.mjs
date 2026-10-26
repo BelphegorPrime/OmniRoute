@@ -1196,12 +1196,12 @@ async function main() {
       if (prior && !(g.id === "check:workflows" && prior.kind === "hard")) prior.kind = g.kind;
       // Skip a gate the curated pass already ran with the same id (avoid double-running lint).
       if (already.has(g.id)) continue;
-      const { code, out } = await run(npmCmd, g.args, {
+      const { code, out, receipt } = await run(npmCmd, g.args, {
         env: g.env,
         timeout: fullCiTimeoutFor(g.id),
       });
       saveGateLog(`fullci-${g.id.replace(/[^a-z0-9]+/gi, "-")}`, out);
-      const outcome = staticGateOutcome(code, out);
+      const outcome = staticGateOutcome(code, out, receipt.outcome);
       const workflowOutcome =
         g.id === "check:workflows" ? evaluateWorkflowRun({ code, out }) : null;
       record({
