@@ -1,0 +1,1 @@
+- fix(api): advertise wildcard-only combos in /v1/models by expanding provider-wildcard steps in the catalog (#18033)
