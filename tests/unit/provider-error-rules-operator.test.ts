@@ -9,7 +9,7 @@ import {
   type OperatorProviderErrorDefault,
   type OperatorProviderErrorRule,
 } from "../../open-sse/config/providerErrorRules.ts";
-import { checkFallbackError } from "../../open-sse/services/accountFallback.ts";
+import { checkFallbackError, classifyError } from "../../open-sse/services/accountFallback.ts";
 import { updateSettingsSchema } from "../../src/shared/validation/settingsSchemas.ts";
 
 describe("operator error rules", () => {
@@ -315,6 +315,22 @@ describe("operator error rules", () => {
       assert.equal(result.shouldFallback, true);
       assert.equal(result.cooldownMs, 1_800_000);
       assert.equal(result.ruleScope, "connection");
+    });
+
+    it("classifyError keeps the text classification when the default has no reason", () => {
+      const quotaText = "You exceeded your current quota, please check your plan and billing";
+      const before = classifyError(429, quotaText, { provider: "acme" });
+      setOperatorProviderErrorDefaults(defaults);
+      assert.equal(before, "quota_exhausted");
+      assert.equal(classifyError(429, quotaText, { provider: "acme" }), "quota_exhausted");
+    });
+
+    it("classifyError honors an explicit reason on the default", () => {
+      setOperatorProviderErrorDefaults({ acme: { cooldownMs: 120_000, reason: "model_capacity" } });
+      assert.equal(
+        classifyError(429, "You exceeded your current quota", { provider: "acme" }),
+        "model_capacity"
+      );
     });
 
     it("checkFallbackError leaves a 400 untouched by the default", () => {

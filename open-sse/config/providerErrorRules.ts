@@ -46,6 +46,12 @@ export type ProviderErrorRuleMatch = {
   scope: "model" | "provider" | "connection";
   /** Optional explicit cooldown; falls back to the existing per-reason defaults. */
   cooldownMs?: number;
+  /**
+   * Set by the operator catch-all default when it carries no explicit `reason`, so the
+   * reason was only inferred from the HTTP status. `classifyError()` then lets the
+   * error-text classification win, as it does without a default.
+   */
+  reasonFromStatus?: true;
 };
 
 /**
@@ -127,6 +133,7 @@ function matchOperatorDefault(
     reason: fallback.reason ?? catchAllReason(status),
     scope: fallback.scope ?? "connection",
     cooldownMs: fallback.cooldownMs,
+    ...(fallback.reason ? {} : { reasonFromStatus: true as const }),
   };
 }
 

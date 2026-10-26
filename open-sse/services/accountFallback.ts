@@ -1585,7 +1585,9 @@ export function classifyError(
       context.headers ?? null,
       context.body
     );
-    if (match) return match.reason;
+    // A catch-all default without an explicit reason only knows the status; the text
+    // classification below is more specific (e.g. a quota 429 stays quota_exhausted).
+    if (match && !match.reasonFromStatus) return match.reason;
   }
 
   // Text classification takes priority (more specific)
