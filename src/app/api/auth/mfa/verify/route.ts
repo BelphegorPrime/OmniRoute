@@ -75,7 +75,7 @@ export async function POST(request: Request) {
     const secure = shouldUseSecureAuthCookie(request);
     const result = await verifyDashboardSecondFactor(validation.data.code);
     if (!result.ok) {
-      if (result.reason === "not_enabled") {
+      if ("reason" in result && result.reason === "not_enabled") {
         // The factor was turned off after the password step: start over with a plain login.
         cookieStore.set(MFA_PENDING_COOKIE, "", mfaPendingCookieOptions(secure, 0));
         return mfaErrorResponse(401, EXPIRED_MESSAGE, { mfaExpired: true });
