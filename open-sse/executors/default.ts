@@ -62,6 +62,7 @@ import {
 import { forwardOpencodeClientHeaders } from "../utils/opencodeHeaders.ts";
 import { resolveZaiUrl } from "./default/zaiFormatOverride.ts";
 import { normalizePoolConfig, rejectStrictPool } from "./default/poolConfig.ts";
+import { isForceStreamProvider } from "./default/forceStreamBody.ts";
 import { acquireNvidiaConcurrencySlot } from "./default/nvidiaConcurrencyGate.ts";
 import { normalizeOpenAIToolCallIds } from "./default/openaiToolCallIds.ts";
 import { resolveAlibabaProviderBaseUrl } from "@/shared/constants/alibabaProviderRegions";
@@ -932,8 +933,11 @@ export class DefaultExecutor extends BaseExecutor {
       } else if (stream && targetFormat === "openai" && requestFormat !== "openai-responses") {
         // Do not inject stream_options when the outgoing body explicitly disables streaming.
         const defaultsRecord = withDefaults as Record<string, unknown>;
+        // #18007: forceStream providers must stream upstream even if the client body says false.
         const bodyDisablesStreamOptions =
-          defaultsRecord.stream !== undefined && defaultsRecord.stream !== true;
+          !isForceStreamProvider(this.provider) &&
+          defaultsRecord.stream !== undefined &&
+          defaultsRecord.stream !== true;
         if (bodyDisablesStreamOptions) {
           if (Object.prototype.hasOwnProperty.call(defaultsRecord, "stream_options")) {
             const withoutStreamOptions = { ...defaultsRecord };
@@ -953,6 +957,10 @@ export class DefaultExecutor extends BaseExecutor {
           const withoutStreamOptions = { ...withDefaults } as Record<string, unknown>;
           delete withoutStreamOptions.stream_options;
           withDefaults = withoutStreamOptions;
+        }
+        // #18007: stream_options opt-out must not leave a client stream:false on the wire.
+        if (!bodyDisablesStreamOptions && isForceStreamProvider(this.provider)) {
+          withDefaults = { ...(withDefaults as Record<string, unknown>), stream: true };
         }
       } else if (!stream && Object.prototype.hasOwnProperty.call(withDefaults, "stream_options")) {
         // #3884: stream_options is only valid on streaming requests. NVIDIA NIM
@@ -1097,8 +1105,13 @@ export class DefaultExecutor extends BaseExecutor {
 
     // #14888: a positive client budget is a choice. Raising it made reasoning
     // models spend the whole window on thinking and return empty content.
-    if (typeof current !== "number" || current <= 0) {
+    // #17971: an ABSENT client cap must not become a 4096 ceiling (truncates long
+    // reasoning outputs such as Codex compaction). Only repair an explicit invalid
+    // value; always-reasoning models keep their declared limit as the floor (#13198).
+    if (typeof current === "number" && current <= 0) {
       body[tokenKey] = target;
+    } else if (current === undefined && modelEntry.alwaysReasons === true) {
+      body[tokenKey] = modelEntry.maxOutputTokens;
     }
     return body;
   }
