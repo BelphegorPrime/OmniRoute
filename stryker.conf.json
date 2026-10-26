@@ -42,6 +42,10 @@
   "plugins": ["@stryker-mutator/tap-runner"],
   "tap": {
     "testFiles": [
+      "tests/unit/p2c-latency-weight.test.ts",
+      "tests/unit/combo-target-stream-first-output.test.ts",
+      "tests/unit/antigravity-pre-response-nonstream.test.ts",
+      "tests/unit/antigravity-timeout-retry.test.ts",
       "tests/unit/provider-limits-recovery.test.ts",
       "tests/unit/veoaifree-optional-credentials.test.ts",
       "tests/unit/16380-opencode-401-model-scope.test.ts",
