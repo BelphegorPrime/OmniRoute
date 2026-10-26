@@ -66,6 +66,7 @@ describe("PreferredConnectionsSection", () => {
     }) as HTMLButtonElement;
     expect(upB.disabled).toBe(true);
     expect(downA.disabled).toBe(true);
+    expect(rowA.getByText("2").className).toContain("text-accent-foreground");
     expect(upB.querySelector("svg")).not.toBeNull();
     expect(downA.querySelector("svg")).not.toBeNull();
 

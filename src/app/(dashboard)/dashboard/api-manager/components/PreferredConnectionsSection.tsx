@@ -97,7 +97,9 @@ export const PreferredConnectionsSection = memo(function PreferredConnectionsSec
                   >
                     <span
                       className={`w-5 h-5 rounded border flex items-center justify-center shrink-0 text-[10px] font-semibold ${
-                        isPreferred ? "bg-primary border-primary text-white" : "border-border"
+                        isPreferred
+                          ? "bg-primary border-primary text-accent-foreground"
+                          : "border-border"
                       }`}
                     >
                       {isPreferred ? rank + 1 : "+"}
