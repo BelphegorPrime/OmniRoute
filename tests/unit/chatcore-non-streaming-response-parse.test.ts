@@ -100,14 +100,16 @@ test("SSE detected by body heuristic even with non-stream content-type", async (
   assert.equal(res.looksLikeSSE, true);
 });
 
-test("error-only SSE preserves the failed upstream response for provider-error classification", async () => {
-  const sse = 'data: {"error":{"message":"Devin CLI not found in PATH"}}\n\n';
+test("a Responses snapshot preserves the failed upstream response for provider-error classification", async () => {
+  const sse =
+    'data: {"type":"response.created","response":{"id":"resp_1","object":"response","status":"in_progress","model":"gpt-4o-mini","output":[]}}\n\n' +
+    'data: {"error":{"message":"Devin CLI not found in PATH"}}\n\n';
   const res = await parseNonStreamingResponseBody({
     ...baseOpts,
     providerResponse: makeResponse(sse, "text/event-stream"),
   });
-  // #17198 preserves bare error frames as failed Responses payloads; parsing
-  // succeeds, but the provider leg must classify the failed body as an error.
+  // #18170 requires a response snapshot before treating the error as Responses.
+  // Parsing succeeds, but the provider leg must classify the failed body as an error.
   assert.equal(res.kind, "ok");
   if (res.kind !== "ok") return;
   assert.equal(res.responsePayloadFormat, "openai-responses");
@@ -116,6 +118,21 @@ test("error-only SSE preserves the failed upstream response for provider-error c
   assert.deepEqual(res.responseBody.output, []);
   assert.deepEqual(res.responseBody.error, { message: "Devin CLI not found in PATH" });
   assert.equal(res.looksLikeSSE, true);
+});
+
+test("error-only SSE without a response snapshot stays invalid_sse with the upstream diagnostic", async () => {
+  const res = await parseNonStreamingResponseBody({
+    ...baseOpts,
+    providerResponse: makeResponse(
+      'data: {"error":{"message":"Devin CLI not found in PATH"}}\n\n',
+      "text/event-stream"
+    ),
+  });
+  assert.equal(res.kind, "invalid_sse");
+  if (res.kind !== "invalid_sse") return;
+  assert.equal(res.message, "Devin CLI not found in PATH");
+  assert.equal(res.looksLikeSSE, true);
+  assert.ok(res.normalizedProviderPayload);
 });
 
 test("unparseable SSE with no embedded error → generic invalid_sse message", async () => {
