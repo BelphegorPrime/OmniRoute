@@ -27,6 +27,7 @@ import {
 import { describeReleaseChannels } from "@/lib/system/releaseChannel";
 import { resolveGlobalOmniroutePath } from "@/lib/system/globalPackagePath";
 import { restartRunningServer } from "@/lib/system/processManagerRestart";
+import { formatUpdateInstallError } from "@/lib/system/updateInstallError";
 import { APP_CONFIG } from "@/shared/constants/appConfig";
 // #5542 — On Windows npm is `npm.cmd`; Node ≥24 refuses to execFile a `.cmd` without
 // a shell (nodejs/node#52554 → "spawn npm ENOENT"). buildNpmExecOptions enables the
@@ -97,6 +98,8 @@ export async function GET(req: NextRequest) {
     channel: config.mode,
     autoUpdateSupported: validation.supported,
     autoUpdateError: validation.reason,
+    // Host-side compose command for a published-image container (`docker-image` mode).
+    manualUpdateCommand: config.manualUpdateCommand,
     news,
     releaseChannel,
     channels,
@@ -152,6 +155,34 @@ export async function POST(req: NextRequest) {
         error: validation.reason || "Auto-update is not supported in this environment.",
       },
       { status: 400 }
+    );
+  }
+
+  // Socket-free Docker image update: drop a request file in DATA_DIR for the host watcher,
+  // which pulls the image and recreates the container. The dashboard then polls GET.
+  if (config.mode === "docker-trigger") {
+    const launched = await launchAutoUpdate({ latest });
+    if (!launched.started) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: launched.error || "Failed to request the Docker update.",
+          channel: launched.channel,
+        },
+        { status: 500 }
+      );
+    }
+
+    clearLatestVersionCache();
+    return NextResponse.json(
+      {
+        success: true,
+        message: `Update to v${latest} requested. The Docker host is pulling the new image.`,
+        from: current,
+        to: latest,
+        channel: launched.channel,
+      },
+      { status: 202 }
     );
   }
 
@@ -365,7 +396,9 @@ export async function POST(req: NextRequest) {
         });
         console.log(`[AutoUpdate] Successfully updated to v${latest}`);
       } catch (err: any) {
-        const errMsg = err?.stderr || err?.message || String(err);
+        // Windows keeps the running server's package files open, so npm fails with
+        // EBUSY/EPERM — explain the manual recovery instead of dumping npm's stderr.
+        const errMsg = formatUpdateInstallError(err, { platform: process.platform, latest });
         send({ step: "error", status: "failed", message: errMsg });
         console.error(`[AutoUpdate] Update failed:`, err);
       } finally {
