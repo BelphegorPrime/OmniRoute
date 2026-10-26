@@ -896,7 +896,7 @@ async function resolveSectionPlan({ task, state, opts, sections }) {
   return planSectionReuse({ previousHashes, sections, mirrorSections });
 }
 
-async function translateBody(body, localeEntry, backend) {
+export async function translateBody(body, localeEntry, backend) {
   const englishName = localeEntry.english ?? localeEntry.name;
   const native = localeEntry.native ?? localeEntry.name;
   const system = SYSTEM_PROMPT(englishName, native);
@@ -914,6 +914,18 @@ async function translateBody(body, localeEntry, backend) {
       logWarn(
         `  chunk ${i + 1}/${chunks.length} rejected (attempt ${attempt}/${CHUNK_ATTEMPTS}): ${checked.problems.join("; ")}`
       );
+      if (attempt < CHUNK_ATTEMPTS) {
+        messages.push(
+          { role: "assistant", content: checked.text },
+          {
+            role: "user",
+            content:
+              `The previous translation failed validation: ${checked.problems.join("; ")}. ` +
+              "Return a complete corrected translation of the original source. " +
+              "Preserve every inline code literal exactly and return only the translated markdown.",
+          }
+        );
+      }
     }
     if (checked.problems.length > 0) {
       throw new Error(
