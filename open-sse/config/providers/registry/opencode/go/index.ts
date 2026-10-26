@@ -13,6 +13,8 @@ export const opencode_goProvider: RegistryEntry = {
   authHeader: "Authorization",
   authPrefix: "Bearer",
   defaultContextLength: 200000,
+  // Upstream 400s "name must be at most 64 characters" on chat-completions tools.
+  toolNameMaxLength: 64,
   // glm-5.3-flash and other always-thinking models need a generous output
   // budget or reasoning consumes every token before content is emitted.
   requestDefaults: { maxTokens: 16_384 },
@@ -76,7 +78,13 @@ export const opencode_goProvider: RegistryEntry = {
       supportsVision: true,
     },
     { id: "minimax-m2.7", name: "MiniMax M2.7", targetFormat: "claude" },
-    { id: "minimax-m2.5", name: "MiniMax M2.5", targetFormat: "claude" },
+    {
+      id: "minimax-m2.5",
+      name: "MiniMax M2.5",
+      targetFormat: "claude",
+      contextLength: 204800,
+      maxOutputTokens: 131072,
+    },
     // Issue #2292: Qwen models on opencode-go reject oa-compat format
     // ("Model qwen3.x-* is not supported for format oa-compat") — same
     // upstream behavior already declared for opencode-zen. Route them
@@ -394,6 +402,17 @@ export const opencode_goProvider: RegistryEntry = {
       supportedThinkingEfforts: ["none", "low", "high", "max"],
       targetFormat: "openai-responses",
     },
+    // Experimental vision variant of DeepSeek V4 Flash. Declared explicitly so the
+    // combo vision filter and the Vision Bridge do not rely on the `-vision` id
+    // heuristic. Remove the row if the upstream retires the `-exp` id.
+    {
+      id: "deepseek-v4-flash-vision-exp",
+      name: "DeepSeek V4 Flash Vision (exp)",
+      supportsReasoning: true,
+      supportsVision: true,
+      supportedThinkingEfforts: ["none", "low", "high", "max"],
+      targetFormat: "openai-responses",
+    },
     // #12196: the Go upstream serves this model only on /responses —
     // /chat/completions 500s for it. github already declares the same model
     // id with targetFormat:"openai-responses" (see github/index.ts).
@@ -433,6 +452,14 @@ export const opencode_goProvider: RegistryEntry = {
     // Keep these provider-scoped so synced data and operator overrides retain precedence.
     {
       id: "deepseek-v4.1-flash",
+      name: "DeepSeek V4.1 Flash",
+      contextLength: 1000000,
+      maxOutputTokens: 384000,
+    },
+    // Go exposes deepseek-flash as an alias of the same 1M DeepSeek V4.1 Flash.
+    // This ID is imported from live catalogs and needs its own metadata row.
+    {
+      id: "deepseek-flash",
       name: "DeepSeek V4.1 Flash",
       contextLength: 1000000,
       maxOutputTokens: 384000,

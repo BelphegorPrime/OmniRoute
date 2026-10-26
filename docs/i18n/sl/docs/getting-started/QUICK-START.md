@@ -4,7 +4,7 @@
 
 ---
 
-> **Na kratko**: Namestite → Povežite ustreznega ponudnika → Usmerite IDE na OmniRoute. Končano.
+> **Na kratko**: Namestite → Povežite primernega ponudnika → Usmerite svoj IDE na OmniRoute. Končano.
 
 ---
 
@@ -49,9 +49,9 @@ OmniRoute se zažene na naslovu `http://localhost:20128`. Nadzorna plošča se o
 
 ## 3. korak: Povežite ustreznega ponudnika
 
-Izberite ponudnika, katerega pogoji in kvote ustrezajo vašim potrebam. V **Nadzorna plošča → Ponudniki** povežite svoj račun ali ključ API in nato preverite povezavo. Brezplačen dostop in razpoložljivost brez ključa nista zagotovljena.
+Izberite ponudnika, katerega pogoji in kvota ustrezajo vašim potrebam. V razdelku **Nadzorna plošča → Ponudniki** povežite svoj račun ali ključ API, nato pa preizkusite povezavo. Brezplačen dostop in razpoložljivost brez ključa nista zagotovljena.
 
-`auto` privzeto izključuje ponudnike z oznako `tos: avoid`, vključno s Kiro in OpenCode Free. Povezava računa te politike ne spremeni. Možnost vključitve v **Nadzorna plošča → Kombinacije** velja za vse samodejne kombinacije. Pred izbiro ponudnika preberite [Vodnik po brezplačnih paketih](./FREE-TIERS-GUIDE.md).
+`auto` privzeto izključuje ponudnike, označene z `tos: avoid`, vključno s Kirom. Povezava računa tega pravilnika ne spremeni. Privolitev v razdelku **Nadzorna plošča → Kombinacije** velja za vse samodejne kombinacije. Pred izbiro ponudnika preberite [Vodnik po brezplačnih paketih](./FREE-TIERS-GUIDE.md).
 
 ---
 
@@ -132,32 +132,32 @@ Podrobnosti zahteve si lahko ogledate tako, da v levi stranski vrstici kliknete 
 
 - **[Vodnik za Auto-Combo](./AUTO-COMBO-GUIDE.md)** — Naj OmniRoute izbere najboljšo umetno inteligenco za vas
 - **[Vodnik po ponudnikih](./PROVIDERS-GUIDE.md)** — Povežite več ponudnikov (brezplačnih in plačljivih)
-- **[Vodnik po brezplačnih paketih](./FREE-TIERS-GUIDE.md)** — Preverite pogoje ponudnikov in omejitve brezplačnih paketov
+- **[Vodnik po brezplačnih paketih](./FREE-TIERS-GUIDE.md)** — Preglejte pogoje ponudnikov in omejitve brezplačnih paketov
 - **[Odpravljanje težav](../guides/TROUBLESHOOTING.md)** — Odpravite pogoste težave
 
 ---
 
 ## Pogosta vprašanja
 
-### »Ali potrebujem ključ API?«
+### "Ali potrebujem ključ API?"
 
-Ključ API OmniRoute preverja pristnost vaših orodij. Poverilnice za zaledno storitev so odvisne od ponudnika: nekateri zahtevajo ključ API ali prijavo v račun. Brezplačen dostop ni zagotovljen.
+Ključ API za OmniRoute overi vaša orodja. Poverilnice za zaledne ponudnike so odvisne od ponudnika: nekateri zahtevajo ključ API ali prijavo v račun. Brezplačen dostop ni zagotovljen.
 
-### »Kaj je `auto`?«
+### "Kaj je `auto`?"
 
-`auto` naroči OmniRoute, naj za vsako zahtevo samodejno izbere najboljšega ponudnika. Pri tem upošteva hitrost, stroške, kakovost in razpoložljivost. Za podrobnosti glejte [Vodnik za Auto-Combo](./AUTO-COMBO-GUIDE.md).
+`auto` naroči OmniRoute, naj za vsako zahtevo samodejno izbere najboljšega ponudnika. Pri tem upošteva hitrost, stroške, kakovost in razpoložljivost. Za podrobnosti glejte [vodnik Auto-Combo](./AUTO-COMBO-GUIDE.md).
 
-### »Koliko stane?«
+### "Koliko stane?"
 
-OmniRoute je **brezplačen in odprtokoden**. Plačate samo ponudnike, ki jih uporabljate. Številni ponudniki imajo brezplačne pakete — glejte [Vodnik po brezplačnih paketih](./FREE-TIERS-GUIDE.md).
+OmniRoute je **brezplačen in odprtokoden**. Plačate samo ponudnike, ki jih uporabljate. Številni ponudniki ponujajo brezplačne pakete — glejte [vodnik po brezplačnih paketih](./FREE-TIERS-GUIDE.md).
 
-### »Ali ga lahko uporabljam s Claude Code/Cursor/Copilot?«
+### "Ali ga lahko uporabljam s Claude Code / Cursor / Copilot?"
 
-**Da!** OmniRoute deluje z vsakim orodjem, ki podpira obliko OpenAI. Osnovni URL preprosto nastavite na `http://localhost:20128/v1`. Za posebna navodila za nastavitev glejte [Vodnik po orodjih CLI](../reference/CLI-TOOLS.md).
+**Da!** OmniRoute deluje z vsemi orodji, ki podpirajo format OpenAI. Osnovni URL preprosto nastavite na `http://localhost:20128/v1`. Za podrobna navodila za nastavitev glejte [vodnik po orodjih CLI](../reference/CLI-TOOLS.md).
 
-### »Kaj se zgodi, če ponudnik preneha delovati?«
+### "Kaj se zgodi, če ponudnik preneha delovati?"
 
-OmniRoute samodejno preskoči nedelujoče ponudnike in poskusi naslednjega. Ni vam treba storiti ničesar. Za podrobnosti glejte [Vodnik za Auto-Combo](./AUTO-COMBO-GUIDE.md).
+OmniRoute samodejno preskoči ponudnike, pri katerih je prišlo do napake, in poskusi naslednjega. Storiti vam ni treba ničesar. Za podrobnosti glejte [vodnik Auto-Combo](./AUTO-COMBO-GUIDE.md).
 
 ---
 

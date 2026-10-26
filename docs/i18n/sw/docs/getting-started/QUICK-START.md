@@ -4,7 +4,7 @@
 
 ---
 
-> **Kwa ufupi**: Sakinisha → Unganisha mtoa huduma anayestahiki → Elekeza IDE yako kwa OmniRoute. Imekamilika.
+> **Kwa ufupi**: Sakinisha → Unganisha mtoa huduma anayestahiki → Elekeza IDE yako kwenye OmniRoute. Imekamilika.
 
 ---
 
@@ -49,9 +49,9 @@ OmniRoute huanza kwenye `http://localhost:20128`. Dashibodi hufunguka kiotomatik
 
 ## Hatua ya 3: Unganisha Mtoa Huduma Anayestahiki
 
-Chagua mtoa huduma ambaye masharti na mgao wake vinafaa mahitaji yako. Katika **Dashibodi → Watoa Huduma**, unganisha akaunti yako au ufunguo wako wa API, kisha ujaribu muunganisho. Ufikiaji wa bure na upatikanaji bila ufunguo havijahakikishwa.
+Chagua mtoa huduma ambaye masharti na kiwango chake cha matumizi yanakidhi mahitaji yako. Katika **Dashboard → Providers**, unganisha akaunti yako mwenyewe au ufunguo wa API, kisha ujaribu muunganisho. Ufikiaji wa bila malipo na upatikanaji usiohitaji ufunguo havijahakikishwa.
 
-Kwa chaguo-msingi, `auto` huwaondoa watoa huduma walio na alama `tos: avoid`, wakiwemo Kiro na OpenCode Free. Kuunganisha akaunti hakubadilishi sera hii. Chaguo la kuruhusu ujumuishaji katika **Dashibodi → Combo** linatumika kwa combo zote za kiotomatiki. Soma [Mwongozo wa Viwango vya Bure](./FREE-TIERS-GUIDE.md) kabla ya kuchagua mtoa huduma.
+Kwa chaguo-msingi, `auto` haiwajumuishi watoa huduma waliowekewa alama ya `tos: avoid`, ikiwa ni pamoja na Kiro. Kuunganisha akaunti hakubadilishi sera hiyo. Idhini ya kujumuishwa katika **Dashboard → Combos** inatumika kwa michanganyiko yote ya kiotomatiki. Pitia [Mwongozo wa Viwango vya Bila Malipo](./FREE-TIERS-GUIDE.md) kabla ya kuchagua mtoa huduma.
 
 ---
 
@@ -128,36 +128,36 @@ Unaweza kuona maelezo ya ombi kwa kubofya [Ufuatiliaji/Kumbukumbu](http://localh
 
 ---
 
-## Hatua Inayofuata ni Ipi?
+## Nini Kinafuata?
 
 - **[Mwongozo wa Auto-Combo](./AUTO-COMBO-GUIDE.md)** — Ruhusu OmniRoute ikuchagulie AI bora zaidi
-- **[Mwongozo wa Watoa Huduma](./PROVIDERS-GUIDE.md)** — Unganisha watoa huduma zaidi (wa bure na wa kulipia)
-- **[Mwongozo wa Viwango vya Bure](./FREE-TIERS-GUIDE.md)** — Kagua masharti ya watoa huduma na mipaka ya vifurushi vya bure
-- **[Utatuzi](../guides/TROUBLESHOOTING.md)** — Rekebisha matatizo ya kawaida
+- **[Mwongozo wa Watoa Huduma](./PROVIDERS-GUIDE.md)** — Unganisha watoa huduma zaidi (bila malipo na wa kulipia)
+- **[Mwongozo wa Viwango vya Bure](./FREE-TIERS-GUIDE.md)** — Kagua masharti ya watoa huduma na vikomo vya viwango vya bure
+- **[Utatuzi wa Matatizo](../guides/TROUBLESHOOTING.md)** — Tatua matatizo ya kawaida
 
 ---
 
-## Maswali ya Kawaida
+## Maswali Yanayoulizwa Mara kwa Mara
 
 ### "Je, ninahitaji ufunguo wa API?"
 
-Ufunguo wa API wa OmniRoute huthibitisha zana zako. Taarifa za kuingia katika huduma ya chanzo hutegemea mtoa huduma: baadhi huhitaji ufunguo wa API au kuingia katika akaunti. Ufikiaji wa bure haujahakikishwa.
+Ufunguo wa API wa OmniRoute huthibitisha zana zako. Vitambulisho vya huduma za nje hutegemea mtoa huduma: baadhi huhitaji ufunguo wa API au kuingia katika akaunti. Ufikiaji wa bila malipo haujahakikishwa.
 
 ### "`auto` ni nini?"
 
-`auto` huiambia OmniRoute ichague kiotomatiki mtoa huduma bora zaidi kwa kila ombi. Huzingatia kasi, gharama, ubora na upatikanaji. Tazama [Mwongozo wa Auto-Combo](./AUTO-COMBO-GUIDE.md) kwa maelezo.
+`auto` huiambia OmniRoute ichague kiotomatiki mtoa huduma bora kwa kila ombi. Huzingatia kasi, gharama, ubora na upatikanaji. Tazama [Mwongozo wa Auto-Combo](./AUTO-COMBO-GUIDE.md) kwa maelezo zaidi.
 
 ### "Inagharimu kiasi gani?"
 
-OmniRoute yenyewe ni **ya bure na ya chanzo huria**. Unalipia tu watoa huduma unaotumia. Watoa huduma wengi wana viwango vya bure—tazama [Mwongozo wa Viwango vya Bure](./FREE-TIERS-GUIDE.md).
+OmniRoute yenyewe ni **bila malipo na ya chanzo huria**. Unalipia tu watoa huduma unaotumia. Watoa huduma wengi wana viwango vya matumizi ya bila malipo — tazama [Mwongozo wa Viwango vya Bila Malipo](./FREE-TIERS-GUIDE.md).
 
 ### "Je, ninaweza kuitumia na Claude Code / Cursor / Copilot?"
 
-**Ndiyo!** OmniRoute hufanya kazi na zana yoyote inayotumia muundo wa OpenAI. Weka tu URL ya msingi kuwa `http://localhost:20128/v1`. Tazama [Mwongozo wa Zana za CLI](../reference/CLI-TOOLS.md) kwa maelekezo mahususi ya usanidi.
+**Ndiyo!** OmniRoute hufanya kazi na zana yoyote inayotumia umbizo la OpenAI. Weka tu URL ya msingi kuwa `http://localhost:20128/v1`. Tazama [Mwongozo wa Zana za CLI](../reference/CLI-TOOLS.md) kwa maelekezo mahususi ya usanidi.
 
-### "Itakuwaje ikiwa mtoa huduma hatapatikana?"
+### "Itakuwaje ikiwa mtoa huduma atapatwa na hitilafu?"
 
-OmniRoute huwaruka kiotomatiki watoa huduma walioshindwa na kujaribu anayefuata. Huhitaji kufanya chochote. Tazama [Mwongozo wa Auto-Combo](./AUTO-COMBO-GUIDE.md) kwa maelezo.
+OmniRoute huwaruka kiotomatiki watoa huduma walioshindwa na kujaribu anayefuata. Huhitaji kufanya chochote. Tazama [Mwongozo wa Auto-Combo](./AUTO-COMBO-GUIDE.md) kwa maelezo zaidi.
 
 ---
 

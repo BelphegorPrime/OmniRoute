@@ -583,7 +583,7 @@ test("Antigravity runs mocked browser OAuth exchanges and post-exchange enrichme
   // Pin the IDE version the User-Agent carries: it reads a module-level cache that other files
   // seed or clear under --test-isolation=none, and the fallback moved to 2.5.5 in #16512.
   seedAntigravityIdeVersionCache(ANTIGRAVITY_IDE_FALLBACK_VERSION);
-  const ideVersion = ANTIGRAVITY_IDE_FALLBACK_VERSION.replace(/\./g, "\\.");
+  const ideVersion = ANTIGRAVITY_IDE_FALLBACK_VERSION.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const ideNodeUa = new RegExp(
     `^antigravity/${ideVersion} [^ ]+/[^ ]+ google-api-nodejs-client/10\\.3\\.0$`
   );

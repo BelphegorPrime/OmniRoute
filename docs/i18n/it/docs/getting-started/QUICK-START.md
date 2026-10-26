@@ -4,7 +4,7 @@
 
 ---
 
-> **In breve**: Installa → Collega un provider idoneo → Indirizza il tuo IDE a OmniRoute. Fatto.
+> **In breve**: Installa → Connetti un provider idoneo → Configura il tuo IDE affinché utilizzi OmniRoute. Fatto.
 
 ---
 
@@ -47,11 +47,11 @@ OmniRoute si avvia all'indirizzo `http://localhost:20128`. La dashboard si apre 
 
 ---
 
-## Passaggio 3: Collega un provider idoneo
+## Passaggio 3: Connettere un provider idoneo
 
-Scegli un provider i cui termini e quote soddisfino le tue esigenze. In **Dashboard → Provider**, collega il tuo account o la tua chiave API, quindi verifica la connessione. L'accesso gratuito e la disponibilità senza chiave non sono garantiti.
+Scegli un provider i cui termini e la cui quota siano adatti alle tue esigenze. In **Dashboard → Providers**, connetti il tuo account o la tua chiave API, quindi testa la connessione. L'accesso gratuito e la disponibilità senza chiave non sono garantiti.
 
-`auto` esclude per impostazione predefinita i provider contrassegnati `tos: avoid`, inclusi Kiro e OpenCode Free. Collegare un account non modifica questa politica. L'opzione di inclusione in **Dashboard → Combo** si applica a tutti i combo automatici. Consulta [Guida ai piani gratuiti](./FREE-TIERS-GUIDE.md) prima di scegliere un provider.
+Per impostazione predefinita, `auto` esclude i provider contrassegnati con `tos: avoid`, incluso Kiro. La connessione di un account non modifica questa politica. Il consenso esplicito in **Dashboard → Combos** si applica a tutte le combinazioni automatiche. Consulta la [Guida ai livelli gratuiti](./FREE-TIERS-GUIDE.md) prima di scegliere un provider.
 
 ---
 
@@ -128,11 +128,11 @@ Puoi visualizzare i dettagli della richiesta facendo clic su [Monitoraggio/Log](
 
 ---
 
-## Passaggi successivi
+## Quali sono i prossimi passi?
 
-- **[Guida ad Auto-Combo](./AUTO-COMBO-GUIDE.md)** — Lascia che OmniRoute scelga l'IA migliore per te
-- **[Guida ai provider](./PROVIDERS-GUIDE.md)** — Connetti altri provider, gratuiti e a pagamento
-- **[Guida ai piani gratuiti](./FREE-TIERS-GUIDE.md)** — Consulta i termini dei provider e i limiti dei piani gratuiti
+- **[Guida ad Auto-Combo](./AUTO-COMBO-GUIDE.md)** — Lascia che OmniRoute scelga la migliore IA per te
+- **[Guida ai provider](./PROVIDERS-GUIDE.md)** — Collega altri provider (gratuiti e a pagamento)
+- **[Guida ai piani gratuiti](./FREE-TIERS-GUIDE.md)** — Consulta le condizioni dei provider e i limiti dei piani gratuiti
 - **[Risoluzione dei problemi](../guides/TROUBLESHOOTING.md)** — Risolvi i problemi comuni
 
 ---
@@ -141,7 +141,7 @@ Puoi visualizzare i dettagli della richiesta facendo clic su [Monitoraggio/Log](
 
 ### "Ho bisogno di una chiave API?"
 
-La chiave API di OmniRoute autentica i tuoi strumenti. Le credenziali del servizio upstream dipendono dal provider: alcuni richiedono una chiave API o l'accesso a un account. L'accesso gratuito non è garantito.
+La chiave API di OmniRoute autentica i tuoi strumenti. Le credenziali upstream dipendono dal provider: alcuni richiedono una chiave API o l'accesso a un account. L'accesso gratuito non è garantito.
 
 ### "Che cos'è `auto`?"
 
@@ -149,7 +149,7 @@ La chiave API di OmniRoute autentica i tuoi strumenti. Le credenziali del serviz
 
 ### "Quanto costa?"
 
-OmniRoute è **gratuito e open source**. Paghi solo per i provider che utilizzi. Molti provider dispongono di piani gratuiti: consulta la [Guida ai piani gratuiti](./FREE-TIERS-GUIDE.md).
+OmniRoute è **gratuito e open source**. Paghi solo per i provider che utilizzi. Molti provider offrono piani gratuiti: consulta la [Guida ai piani gratuiti](./FREE-TIERS-GUIDE.md).
 
 ### "Posso usarlo con Claude Code / Cursor / Copilot?"
 
@@ -157,7 +157,7 @@ OmniRoute è **gratuito e open source**. Paghi solo per i provider che utilizzi.
 
 ### "Cosa succede se un provider non è disponibile?"
 
-OmniRoute ignora automaticamente i provider che non funzionano e prova quello successivo. Non devi fare nulla. Per maggiori dettagli, consulta la [Guida ad Auto-Combo](./AUTO-COMBO-GUIDE.md).
+OmniRoute ignora automaticamente i provider che non rispondono e prova quello successivo. Non devi fare nulla. Per maggiori dettagli, consulta la [Guida ad Auto-Combo](./AUTO-COMBO-GUIDE.md).
 
 ---
 

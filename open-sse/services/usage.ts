@@ -62,12 +62,14 @@ import { getGitHubUsage, formatGitHubQuotaSnapshot, inferGitHubPlanName } from "
 import { getCrofUsage } from "./usage/crof.ts";
 import { getClinepassUsage } from "./usage/clinepass.ts";
 import { getNanoGptUsage } from "./usage/nanogpt.ts";
+import { getNanUsage } from "./usage/nan.ts";
 import { getApmixUsage } from "./usage/apmix.ts";
 import { getQoderUsage, parseQoderUserStatusUsage } from "./usage/qoder.ts";
 // Re-exported para o teste qoder-usage-quota (importa parseQoderUserStatusUsage de services/usage).
 export { parseQoderUserStatusUsage } from "./usage/qoder.ts";
 import { getOpencodeUsage } from "./usage/opencode.ts";
 import { getDeepseekUsage } from "./usage/deepseek.ts";
+import { getStepfunUsage } from "./usage/stepfun.ts";
 import { getMoonshotOpenPlatformUsage } from "./moonshotQuotaFetcher.ts";
 import {
   isKimiCodingConnection,
@@ -93,6 +95,7 @@ import { getSyntxUsage } from "./usage/syntx.ts";
 import { getAgentrouterUsage } from "./usage/agentrouter.ts";
 import { getKilocodeUsage } from "./usage/kilocode.ts";
 import { getChatPlaygroundUsage } from "./usage/chatplayground.ts";
+import { getCloudflareAiUsage } from "./usage/cloudflareAi.ts";
 
 type JsonRecord = Record<string, unknown>;
 type UsageProviderConnection = JsonRecord & {
@@ -196,7 +199,7 @@ export async function getUsageForProvider(
     case "opencode-go":
       return await getOpencodeUsage(id || "", apiKey || "");
     case "ollama-cloud":
-      return await getOllamaCloudUsage(providerSpecificData);
+      return await getOllamaCloudUsage(providerSpecificData, apiKey);
     case "minimax":
     case "minimax-cn":
       return await getMiniMaxUsage(apiKey || "", provider);
@@ -211,10 +214,17 @@ export async function getUsageForProvider(
       return await getQwenTokenPlanUsage(id || "", apiKey || "", providerSpecificData);
     case "nanogpt":
       return await getNanoGptUsage(apiKey || "");
+    case "nan":
+      return await getNanUsage(apiKey || "");
     case "apmix":
       return await getApmixUsage(apiKey || "");
     case "deepseek":
       return await getDeepseekUsage(id || "", apiKey || "");
+    case "stepfun":
+      // Account balance (GET /v1/accounts). The base-URL override in
+      // providerSpecificData selects the platform (api.stepfun.com China vs
+      // api.stepfun.ai international) — the same override the chat path uses.
+      return await getStepfunUsage(apiKey || "", providerSpecificData);
     case "moonshot":
     case "kimi":
       return await getMoonshotOpenPlatformUsage(connection);
@@ -224,7 +234,6 @@ export async function getUsageForProvider(
       return await getLlmgatewayUsage(id || "", apiKey || "");
     case "lyceum":
       return await getLyceumUsage(id || "", apiKey || "");
-    case "opencode":
     case "opencode-zen":
       return await getOpencodeUsage(id || "", apiKey || "");
     case "xiaomi-mimo":
@@ -289,6 +298,9 @@ export async function getUsageForProvider(
     case "chatplayground":
     case "cpl":
       return await getChatPlaygroundUsage(apiKey || accessToken, providerSpecificData, id || "");
+    case "cloudflare-ai":
+      // Daily neurons from GraphQL Analytics (needs Account Analytics: Read on the token).
+      return await getCloudflareAiUsage(apiKey || "", providerSpecificData);
     default:
       return { message: `Usage API not implemented for ${provider}` };
   }

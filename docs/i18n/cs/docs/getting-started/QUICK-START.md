@@ -4,7 +4,7 @@
 
 ---
 
-> **Ve zkratce**: Nainstalujte → Připojte způsobilého poskytovatele → Nasměrujte IDE na OmniRoute. Hotovo.
+> **Ve zkratce**: Nainstalujte → Připojte podporovaného poskytovatele → Nastavte své IDE na OmniRoute. Hotovo.
 
 ---
 
@@ -47,11 +47,11 @@ OmniRoute se spustí na adrese `http://localhost:20128`. Ovládací panel se ote
 
 ---
 
-## Krok 3: Připojte způsobilého poskytovatele
+## Krok 3: Připojení vhodného poskytovatele
 
-Vyberte poskytovatele, jehož podmínky a kvóty odpovídají vašim potřebám. V **Panel → Poskytovatelé** připojte vlastní účet nebo klíč API a potom spojení otestujte. Bezplatný přístup ani dostupnost bez klíče nejsou zaručeny.
+Vyberte poskytovatele, jehož podmínky a kvóta vyhovují vašim potřebám. V části **Dashboard → Providers** připojte svůj účet nebo API klíč a poté připojení otestujte. Bezplatný přístup ani dostupnost bez klíče nejsou zaručeny.
 
-`auto` ve výchozím nastavení vylučuje poskytovatele označené `tos: avoid`, včetně Kiro a OpenCode Free. Připojení účtu tuto zásadu nemění. Volba povolení v **Panel → Comba** platí pro všechna automatická comba. Před výběrem poskytovatele si přečtěte [Průvodce bezplatnými tarify](./FREE-TIERS-GUIDE.md).
+`auto` ve výchozím nastavení vylučuje poskytovatele označené jako `tos: avoid`, včetně Kiro. Připojení účtu tyto zásady nemění. Souhlas v části **Dashboard → Combos** se vztahuje na všechny automatické kombinace. Před výběrem poskytovatele si přečtěte [Průvodce bezplatnými tarify](./FREE-TIERS-GUIDE.md).
 
 ---
 
@@ -130,34 +130,34 @@ Podrobnosti požadavku zobrazíte kliknutím na [Monitorování/Protokoly](http:
 
 ## Co dál?
 
-- **[Průvodce Auto-Combo](./AUTO-COMBO-GUIDE.md)** — Nechte OmniRoute vybrat nejlepší AI za vás
+- **[Průvodce funkcí Auto-Combo](./AUTO-COMBO-GUIDE.md)** — Nechte OmniRoute, aby za vás vybral nejlepší AI
 - **[Průvodce poskytovateli](./PROVIDERS-GUIDE.md)** — Připojte další poskytovatele (bezplatné i placené)
 - **[Průvodce bezplatnými tarify](./FREE-TIERS-GUIDE.md)** — Projděte si podmínky poskytovatelů a limity bezplatných tarifů
-- **[Řešení problémů](../guides/TROUBLESHOOTING.md)** — Vyřešte běžné potíže
+- **[Řešení problémů](../guides/TROUBLESHOOTING.md)** — Vyřešte běžné problémy
 
 ---
 
-## Časté otázky
+## Časté dotazy
 
-### „Potřebuji klíč API?“
+### „Potřebuji API klíč?“
 
-Klíč API OmniRoute ověřuje vaše nástroje. Přihlašovací údaje k nadřazené službě závisí na poskytovateli: někteří vyžadují klíč API nebo přihlášení k účtu. Bezplatný přístup není zaručen.
+API klíč OmniRoute ověřuje vaše nástroje. Přihlašovací údaje pro navazující služby závisí na poskytovateli: někteří vyžadují API klíč nebo přihlášení k účtu. Bezplatný přístup není zaručen.
 
 ### „Co je `auto`?“
 
-`auto` říká OmniRoute, aby pro každý požadavek automaticky vybral nejlepšího poskytovatele. Bere v úvahu rychlost, cenu, kvalitu a dostupnost. Podrobnosti najdete v [Průvodci Auto-Combo](./AUTO-COMBO-GUIDE.md).
+`auto` říká OmniRoute, aby pro každý požadavek automaticky vybral nejlepšího poskytovatele. Zohledňuje rychlost, cenu, kvalitu a dostupnost. Podrobnosti naleznete v [průvodci Auto-Combo](./AUTO-COMBO-GUIDE.md).
 
 ### „Kolik to stojí?“
 
-Samotný OmniRoute je **zdarma a má otevřený zdrojový kód**. Platíte pouze za poskytovatele, které používáte. Mnoho poskytovatelů nabízí bezplatné tarify — viz [Průvodce bezplatnými tarify](./FREE-TIERS-GUIDE.md).
+Samotný OmniRoute je **bezplatný a open-source**. Platíte pouze za poskytovatele, které používáte. Mnoho poskytovatelů nabízí bezplatné tarify — viz [průvodce bezplatnými tarify](./FREE-TIERS-GUIDE.md).
 
 ### „Mohu jej používat s Claude Code / Cursor / Copilot?“
 
-**Ano!** OmniRoute funguje s libovolným nástrojem, který podporuje formát OpenAI. Stačí nastavit základní adresu URL na `http://localhost:20128/v1`. Konkrétní pokyny k nastavení najdete v [Průvodci nástroji CLI](../reference/CLI-TOOLS.md).
+**Ano!** OmniRoute funguje s jakýmkoli nástrojem, který podporuje formát OpenAI. Stačí nastavit základní adresu URL na `http://localhost:20128/v1`. Konkrétní pokyny k nastavení naleznete v [průvodci nástroji CLI](../reference/CLI-TOOLS.md).
 
 ### „Co když dojde k výpadku poskytovatele?“
 
-OmniRoute automaticky přeskočí nefunkční poskytovatele a zkusí dalšího. Nemusíte nic dělat. Podrobnosti najdete v [Průvodci Auto-Combo](./AUTO-COMBO-GUIDE.md).
+OmniRoute automaticky přeskočí nefunkční poskytovatele a vyzkouší dalšího. Nemusíte nic dělat. Podrobnosti naleznete v [průvodci Auto-Combo](./AUTO-COMBO-GUIDE.md).
 
 ---
 

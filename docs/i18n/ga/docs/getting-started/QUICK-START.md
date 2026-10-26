@@ -4,7 +4,7 @@
 
 ---
 
-> **Go hachomair**: Suiteáil → Ceangail soláthraí incháilithe → Dírigh d'IDE ar OmniRoute. Sin é.
+> **Go hachomair**: Suiteáil → Ceangail soláthraí incháilithe → Treoraigh do IDE chuig OmniRoute. Déanta.
 
 ---
 
@@ -49,9 +49,9 @@ Tosaíonn OmniRoute ag `http://localhost:20128`. Osclaítear an deais go huathoi
 
 ## Céim 3: Ceangail Soláthraí Incháilithe
 
-Roghnaigh soláthraí a bhfuil a théarmaí agus a chuótaí oiriúnach do do riachtanais. Faoi **Deais → Soláthraithe**, ceangail do chuntas féin nó d'eochair API féin, ansin tástáil an nasc. Ní ráthaítear rochtain saor in aisce ná infhaighteacht gan eochair.
+Roghnaigh soláthraí a bhfuil a théarmaí agus a chuóta oiriúnach do do riachtanais. In **Deais → Soláthraithe**, ceangail do chuntas féin nó d'eochair API, ansin tástáil an nasc. Ní ráthaítear rochtain saor in aisce ná infhaighteacht gan eochair.
 
-Eisiann `auto` soláthraithe marcáilte `tos: avoid` de réir réamhshocraithe, Kiro agus OpenCode Free san áireamh. Ní athraíonn ceangal cuntais an polasaí seo. Baineann an rogha liostála isteach faoi **Deais → Combónna** le gach combó uathoibríoch. Léigh [Treoir do Shraitheanna Saor in Aisce](./FREE-TIERS-GUIDE.md) sula roghnaíonn tú soláthraí.
+Fágann `auto` soláthraithe atá marcáilte `tos: avoid`, Kiro san áireamh, as an áireamh de réir réamhshocraithe. Ní athraíonn ceangal cuntais an beartas sin. Baineann an rogha liostála isteach in **Deais → Teaglamaí** le gach teaglaim uathoibríoch. Athbhreithnigh an [Treoir maidir le Sraitheanna Saor in Aisce](./FREE-TIERS-GUIDE.md) sula roghnaíonn tú soláthraí.
 
 ---
 
@@ -128,11 +128,11 @@ Is féidir leat sonraí an iarratais a fheiceáil trí [Monatóireacht/Logaí](h
 
 ---
 
-## Cad é an Chéad Chéim Eile?
+## Cad atá Romhainn?
 
 - **[Treoir Auto-Combo](./AUTO-COMBO-GUIDE.md)** — Lig do OmniRoute an IS is fearr a roghnú duit
-- **[Treoir do Sholáthraithe](./PROVIDERS-GUIDE.md)** — Ceangail tuilleadh soláthraithe (saor in aisce agus íoctha)
-- **[Treoir do Shraitheanna Saor in Aisce](./FREE-TIERS-GUIDE.md)** — Seiceáil téarmaí na soláthraithe agus teorainneacha na sraitheanna saor in aisce
+- **[Treoir Soláthraithe](./PROVIDERS-GUIDE.md)** — Ceangail tuilleadh soláthraithe (saor in aisce agus íoctha)
+- **[Treoir do Shraitheanna Saor in Aisce](./FREE-TIERS-GUIDE.md)** — Athbhreithnigh téarmaí soláthraithe agus teorainneacha na sraitheanna saor in aisce
 - **[Fabhtcheartú](../guides/TROUBLESHOOTING.md)** — Réitigh fadhbanna coitianta
 
 ---
@@ -141,23 +141,23 @@ Is féidir leat sonraí an iarratais a fheiceáil trí [Monatóireacht/Logaí](h
 
 ### "An bhfuil eochair API de dhíth orm?"
 
-Fíordheimhníonn eochair API OmniRoute d'uirlisí. Braitheann dintiúir na seirbhíse réamhtheachtaí ar an soláthraí: éilíonn cuid acu eochair API nó logáil isteach i gcuntas. Ní ráthaítear rochtain saor in aisce.
+Fíordheimhníonn eochair API OmniRoute d'uirlisí. Braitheann na dintiúir réamhtheachtacha ar an soláthraí: teastaíonn eochair API nó logáil isteach i gcuntas ó chuid acu. Ní ráthaítear rochtain saor in aisce.
 
-### "Cad é `auto`?"
+### "Cad is `auto` ann?"
 
-Insíonn `auto` do OmniRoute an soláthraí is fearr a roghnú go huathoibríoch do gach iarratas. Cuireann sé luas, costas, cáilíocht agus infhaighteacht san áireamh. Féach an [Treoir Auto-Combo](./AUTO-COMBO-GUIDE.md) le haghaidh sonraí.
+Treoraíonn `auto` do OmniRoute an soláthraí is fearr a roghnú go huathoibríoch do gach iarratas. Cuireann sé luas, costas, cáilíocht agus infhaighteacht san áireamh. Féach ar an [Treoir Auto-Combo](./AUTO-COMBO-GUIDE.md) le haghaidh sonraí.
 
 ### "Cé mhéad a chosnaíonn sé?"
 
-Tá OmniRoute féin **saor in aisce agus foinse oscailte**. Ní íocann tú ach as na soláthraithe a úsáideann tú. Tá sraitheanna saor in aisce ag go leor soláthraithe — féach an [Treoir do Shraitheanna Saor in Aisce](./FREE-TIERS-GUIDE.md).
+Tá OmniRoute féin **saor in aisce agus foinse oscailte**. Ní íocann tú ach as na soláthraithe a úsáideann tú. Tá sraitheanna saor in aisce ag go leor soláthraithe — féach ar an [Treoir maidir le Sraitheanna Saor in Aisce](./FREE-TIERS-GUIDE.md).
 
 ### "An féidir liom é a úsáid le Claude Code / Cursor / Copilot?"
 
-**Is féidir!** Oibríonn OmniRoute le haon uirlis a thacaíonn le formáid OpenAI. Níl le déanamh agat ach an bun-URL a shocrú mar `http://localhost:20128/v1`. Féach an [Treoir d’Uirlisí CLI](../reference/CLI-TOOLS.md) le haghaidh treoracha sonracha cumraithe.
+**Is féidir!** Oibríonn OmniRoute le haon uirlis a thacaíonn le formáid OpenAI. Níl le déanamh ach an bun-URL a shocrú mar `http://localhost:20128/v1`. Féach ar an [Treoir Uirlisí CLI](../reference/CLI-TOOLS.md) le haghaidh treoracha sonracha cumraíochta.
 
-### "Cad a tharlaíonn má theipeann ar sholáthraí?"
+### "Cad a tharlaíonn má chliseann ar sholáthraí?"
 
-Scipeálann OmniRoute soláthraithe ar theip orthu go huathoibríoch agus baineann sé triail as an gcéad cheann eile. Ní gá duit aon rud a dhéanamh. Féach an [Treoir Auto-Combo](./AUTO-COMBO-GUIDE.md) le haghaidh sonraí.
+Scipeálann OmniRoute soláthraithe ar theip orthu go huathoibríoch agus baineann sé triail as an gcéad cheann eile. Ní gá duit aon rud a dhéanamh. Féach ar an [Treoir Auto-Combo](./AUTO-COMBO-GUIDE.md) le haghaidh sonraí.
 
 ---
 

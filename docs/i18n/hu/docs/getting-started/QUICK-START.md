@@ -4,7 +4,7 @@
 
 ---
 
-> **Röviden**: Telepítés → Jogosult szolgáltató csatlakoztatása → Az IDE átirányítása az OmniRoute-ra. Kész.
+> **Röviden**: Telepítés → Csatlakoztass egy jogosult szolgáltatót → Irányítsd az IDE-det az OmniRoute-ra. Kész.
 
 ---
 
@@ -49,9 +49,9 @@ Az OmniRoute a `http://localhost:20128` címen indul el. Az irányítópult auto
 
 ## 3. lépés: Jogosult szolgáltató csatlakoztatása
 
-Válasszon olyan szolgáltatót, amelynek feltételei és kvótái megfelelnek az igényeinek. A **Vezérlőpult → Szolgáltatók** alatt csatlakoztassa saját fiókját vagy API-kulcsát, majd tesztelje a kapcsolatot. Az ingyenes hozzáférés és a kulcs nélküli elérhetőség nem garantált.
+Válasszon olyan szolgáltatót, amelynek feltételei és kvótája megfelel az igényeinek. A **Vezérlőpult → Szolgáltatók** menüpontban csatlakoztassa saját fiókját vagy API-kulcsát, majd tesztelje a kapcsolatot. Az ingyenes hozzáférés és a kulcs nélküli használat nem garantált.
 
-Az `auto` alapértelmezés szerint kizárja a `tos: avoid` jelölésű szolgáltatókat, köztük a Kiro és az OpenCode Free szolgáltatást. Egy fiók csatlakoztatása nem változtat ezen a szabályon. A **Vezérlőpult → Kombók** alatti engedélyezés minden automatikus kombóra érvényes. Szolgáltató választása előtt olvassa el ezt: [Ingyenes csomagok útmutatója](./FREE-TIERS-GUIDE.md).
+Az `auto` alapértelmezés szerint kizárja a `tos: avoid` jelölésű szolgáltatókat, köztük a Kirót. Egy fiók csatlakoztatása nem módosítja ezt a szabályzatot. A **Vezérlőpult → Kombinációk** menüpontban megadott beleegyezés minden automatikus kombinációra érvényes. Szolgáltató kiválasztása előtt tekintse át az [Ingyenes csomagok útmutatóját](./FREE-TIERS-GUIDE.md).
 
 ---
 
@@ -128,11 +128,11 @@ A kérés részleteit a bal oldali oldalsáv [Monitoring/Logs](http://localhost:
 
 ---
 
-## Mi legyen a következő lépés?
+## Mi a következő lépés?
 
-- **[Auto-Combo útmutató](./AUTO-COMBO-GUIDE.md)** — Hagyd, hogy az OmniRoute válassza ki számodra a legjobb MI-t
-- **[Szolgáltatói útmutató](./PROVIDERS-GUIDE.md)** — További szolgáltatók csatlakoztatása (ingyenes és fizetős)
-- **[Ingyenes csomagok útmutatója](./FREE-TIERS-GUIDE.md)** — Tekintse át a szolgáltatók feltételeit és az ingyenes csomagok korlátait
+- **[Automatikus kombináció útmutató](./AUTO-COMBO-GUIDE.md)** — Hagyd, hogy az OmniRoute kiválassza számodra a legjobb MI-t
+- **[Szolgáltatói útmutató](./PROVIDERS-GUIDE.md)** — Csatlakoztass további szolgáltatókat (ingyeneseket és fizetőseket)
+- **[Ingyenes csomagok útmutató](./FREE-TIERS-GUIDE.md)** — Tekintsd át a szolgáltatói feltételeket és az ingyenes csomagok korlátait
 - **[Hibaelhárítás](../guides/TROUBLESHOOTING.md)** — Gyakori problémák megoldása
 
 ---
@@ -141,23 +141,23 @@ A kérés részleteit a bal oldali oldalsáv [Monitoring/Logs](http://localhost:
 
 ### „Szükségem van API-kulcsra?”
 
-Az OmniRoute API-kulcsa az eszközeit hitelesíti. A háttérszolgáltatás hitelesítő adatai a szolgáltatótól függenek: egyesek API-kulcsot vagy fiókbejelentkezést kérnek. Az ingyenes hozzáférés nem garantált.
+Az OmniRoute API-kulcs hitelesíti az eszközeit. A külső szolgáltatások hitelesítő adatai a szolgáltatótól függnek: egyesek API-kulcsot vagy fiókba való bejelentkezést igényelnek. Az ingyenes hozzáférés nem garantált.
 
 ### „Mi az az `auto`?”
 
-Az `auto` arra utasítja az OmniRoute-ot, hogy minden kéréshez automatikusan válassza ki a legjobb szolgáltatót. Figyelembe veszi a sebességet, a költséget, a minőséget és a rendelkezésre állást. A részletekért lásd az [Auto-Combo útmutatót](./AUTO-COMBO-GUIDE.md).
+Az `auto` arra utasítja az OmniRoute-ot, hogy minden kéréshez automatikusan válassza ki a legjobb szolgáltatót. Figyelembe veszi a sebességet, a költséget, a minőséget és az elérhetőséget. Részletekért tekintse meg az [Automatikus kombináció útmutatóját](./AUTO-COMBO-GUIDE.md).
 
 ### „Mennyibe kerül?”
 
-Maga az OmniRoute **ingyenes és nyílt forráskódú**. Csak az általad használt szolgáltatókért kell fizetned. Számos szolgáltató kínál ingyenes csomagot — lásd az [Ingyenes csomagok útmutatóját](./FREE-TIERS-GUIDE.md).
+Maga az OmniRoute **ingyenes és nyílt forráskódú**. Csak az Ön által használt szolgáltatókért kell fizetnie. Számos szolgáltató kínál ingyenes csomagot — tekintse meg az [Ingyenes csomagok útmutatóját](./FREE-TIERS-GUIDE.md).
 
-### „Használhatom a Claude Code / Cursor / Copilot eszközökkel?”
+### „Használhatom a Claude Code-dal / Cursorral / Copilottal?”
 
-**Igen!** Az OmniRoute minden olyan eszközzel működik, amely támogatja az OpenAI-formátumot. Egyszerűen állítsd be alap URL-ként a `http://localhost:20128/v1` címet. A konkrét beállítási utasításokért lásd a [CLI-eszközök útmutatóját](../reference/CLI-TOOLS.md).
+**Igen!** Az OmniRoute minden olyan eszközzel működik, amely támogatja az OpenAI formátumát. Csak állítsa be az alap URL-t a következőre: `http://localhost:20128/v1`. A konkrét beállítási utasításokat a [CLI-eszközök útmutatójában](../reference/CLI-TOOLS.md) találja.
 
 ### „Mi történik, ha egy szolgáltató leáll?”
 
-Az OmniRoute automatikusan kihagyja a hibás szolgáltatókat, és megpróbálja a következőt. Neked semmit sem kell tenned. A részletekért lásd az [Auto-Combo útmutatót](./AUTO-COMBO-GUIDE.md).
+Az OmniRoute automatikusan kihagyja a hibás szolgáltatókat, és megpróbálkozik a következővel. Önnek semmit sem kell tennie. Részletekért tekintse meg az [Automatikus kombináció útmutatóját](./AUTO-COMBO-GUIDE.md).
 
 ---
 

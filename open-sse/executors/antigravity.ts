@@ -1,4 +1,5 @@
 import crypto, { randomUUID } from "crypto";
+import { isAntigravityPreResponseTimeout } from "../services/antigravityTimeout.ts";
 import {
   BaseExecutor,
   mergeUpstreamExtraHeaders,
@@ -40,6 +41,7 @@ import {
   stripCloudCodeThinkingConfig,
 } from "../services/cloudCodeThinking.ts";
 import { buildGeminiTools } from "../translator/helpers/geminiToolsSanitizer.ts";
+import { sanitizeGeminiPartFunctionResponse } from "../translator/request/openai-to-gemini/helpers.ts";
 import { logger } from "../utils/logger.ts";
 import {
   type AntigravityCollectedStream,
@@ -602,8 +604,7 @@ export class AntigravityExecutor extends BaseExecutor {
       (status === HTTP_STATUS.RATE_LIMITED ||
         status === HTTP_STATUS.NOT_FOUND ||
         status === HTTP_STATUS.BAD_GATEWAY ||
-        status === HTTP_STATUS.SERVICE_UNAVAILABLE ||
-        status === HTTP_STATUS.GATEWAY_TIMEOUT) &&
+        status === HTTP_STATUS.SERVICE_UNAVAILABLE) &&
       urlIndex + 1 < this.getFallbackCount()
     );
   }
@@ -799,19 +800,21 @@ export class AntigravityExecutor extends BaseExecutor {
         const hasFunctionCall = c.parts?.some((p) => p.functionCall) || false;
 
         const parts =
-          c.parts?.filter((p) => {
-            if (typeof p.text === "string" && p.text === "") return false;
-            if (p.functionCall && !p.functionCall.name) return false;
+          c.parts
+            ?.filter((p) => {
+              if (typeof p.text === "string" && p.text === "") return false;
+              if (p.functionCall && !p.functionCall.name) return false;
 
-            // Only strip if it's NOT our bypass sentinel.
-            // Antigravity models (like Gemini) need this sentinel to bypass 400 errors.
-            return (
-              !p.thought &&
-              (hasFunctionCall ||
-                !p.thoughtSignature ||
-                p.thoughtSignature === "skip_thought_signature_validator")
-            );
-          }) || [];
+              // Only strip if it's NOT our bypass sentinel.
+              // Antigravity models (like Gemini) need this sentinel to bypass 400 errors.
+              return (
+                !p.thought &&
+                (hasFunctionCall ||
+                  !p.thoughtSignature ||
+                  p.thoughtSignature === "skip_thought_signature_validator")
+              );
+            })
+            .map(sanitizeGeminiPartFunctionResponse) || [];
         return { ...c, role, parts };
       }) || [];
 
@@ -1250,6 +1253,7 @@ export class AntigravityExecutor extends BaseExecutor {
       try {
         result = await this.executeOnce(input, candidate, physicalSendCounter);
       } catch (error) {
+        if (isAntigravityPreResponseTimeout(error)) throw error;
         const outcome = handleAntigravityFallbackChainError(
           input,
           error,
@@ -1391,6 +1395,9 @@ export class AntigravityExecutor extends BaseExecutor {
         if (signal?.aborted || isAbortError(error)) {
           throw signal?.reason ?? error;
         }
+        // This deadline has already consumed its full header budget. Never
+        // spend it again on another host within the SAME provider account.
+        if (isAntigravityPreResponseTimeout(error)) throw error;
         lastError = error;
         // A fetch failure on a URL that still has a fallback is a retry, not a
         // failed request: the loop continues and the client gets the next

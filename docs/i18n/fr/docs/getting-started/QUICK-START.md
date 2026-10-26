@@ -4,7 +4,7 @@
 
 ---
 
-> **En bref** Installez → Connectez un fournisseur admissible → Orientez votre IDE vers OmniRoute. Terminé.
+> **En bref** : Installez → Connectez un fournisseur éligible → Faites pointer votre IDE vers OmniRoute. Terminé.
 
 ---
 
@@ -47,11 +47,11 @@ OmniRoute démarre à l’adresse `http://localhost:20128`. Le tableau de bord s
 
 ---
 
-## Étape 3 : Connecter un fournisseur admissible
+## Étape 3 : connecter un fournisseur éligible
 
-Choisissez un fournisseur dont les conditions et les quotas répondent à vos besoins. Dans **Tableau de bord → Fournisseurs**, connectez votre propre compte ou clé API, puis testez la connexion. L'accès gratuit et la disponibilité sans clé ne sont pas garantis.
+Choisissez un fournisseur dont les conditions d’utilisation et le quota correspondent à vos besoins. Dans **Tableau de bord → Fournisseurs**, connectez votre propre compte ou votre clé API, puis testez la connexion. L’accès gratuit et la disponibilité sans clé ne sont pas garantis.
 
-`auto` exclut par défaut les fournisseurs marqués `tos: avoid`, dont Kiro et OpenCode Free. Connecter un compte ne modifie pas cette politique. L'option d'inclusion dans **Tableau de bord → Combos** s'applique à tous les combos automatiques. Consultez [Guide des offres gratuites](./FREE-TIERS-GUIDE.md) avant de choisir un fournisseur.
+`auto` exclut par défaut les fournisseurs marqués `tos: avoid`, notamment Kiro. La connexion d’un compte ne modifie pas cette politique. L’activation dans **Tableau de bord → Combos** s’applique à toutes les combinaisons automatiques. Consultez le [Guide des offres gratuites](./FREE-TIERS-GUIDE.md) avant de choisir un fournisseur.
 
 ---
 
@@ -139,25 +139,25 @@ Vous pouvez consulter les détails de la requête en cliquant sur [Surveillance/
 
 ## Questions fréquentes
 
-### « Ai-je besoin d’une clé API ? »
+### « Ai-je besoin d'une clé API ? »
 
-La clé API OmniRoute authentifie vos outils. Les identifiants du service en amont dépendent du fournisseur : certains exigent une clé API ou la connexion à un compte. L'accès gratuit n'est pas garanti.
+La clé API OmniRoute authentifie vos outils. Les identifiants en amont dépendent du fournisseur : certains nécessitent une clé API ou une connexion à un compte. L'accès gratuit n'est pas garanti.
 
-### « Qu’est-ce que `auto` ? »
+### « Qu'est-ce que `auto` ? »
 
-`auto` demande à OmniRoute de sélectionner automatiquement le meilleur fournisseur pour chaque requête. Il prend en compte la vitesse, le coût, la qualité et la disponibilité. Consultez le [Guide Auto-Combo](./AUTO-COMBO-GUIDE.md) pour plus de détails.
+`auto` indique à OmniRoute de sélectionner automatiquement le meilleur fournisseur pour chaque requête. Il prend en compte la vitesse, le coût, la qualité et la disponibilité. Consultez le [guide Auto-Combo](./AUTO-COMBO-GUIDE.md) pour plus de détails.
 
 ### « Combien cela coûte-t-il ? »
 
-OmniRoute est **gratuit et open source**. Vous ne payez que les fournisseurs que vous utilisez. De nombreux fournisseurs proposent des offres gratuites — consultez le [Guide des offres gratuites](./FREE-TIERS-GUIDE.md).
+OmniRoute est **gratuit et open source**. Vous ne payez que les fournisseurs que vous utilisez. De nombreux fournisseurs proposent des offres gratuites — consultez le [guide des offres gratuites](./FREE-TIERS-GUIDE.md).
 
-### « Puis-je l’utiliser avec Claude Code / Cursor / Copilot ? »
+### « Puis-je l'utiliser avec Claude Code / Cursor / Copilot ? »
 
-**Oui !** OmniRoute fonctionne avec tous les outils qui prennent en charge le format OpenAI. Il suffit de définir l’URL de base sur `http://localhost:20128/v1`. Consultez le [Guide des outils CLI](../reference/CLI-TOOLS.md) pour obtenir des instructions de configuration spécifiques.
+**Oui !** OmniRoute fonctionne avec tout outil prenant en charge le format OpenAI. Définissez simplement l'URL de base sur `http://localhost:20128/v1`. Consultez le [guide des outils CLI](../reference/CLI-TOOLS.md) pour obtenir des instructions de configuration spécifiques.
 
 ### « Que se passe-t-il si un fournisseur devient indisponible ? »
 
-OmniRoute ignore automatiquement les fournisseurs défaillants et essaie le suivant. Vous n’avez rien à faire. Consultez le [Guide Auto-Combo](./AUTO-COMBO-GUIDE.md) pour plus de détails.
+OmniRoute ignore automatiquement les fournisseurs défaillants et essaie le suivant. Vous n'avez rien à faire. Consultez le [guide Auto-Combo](./AUTO-COMBO-GUIDE.md) pour plus de détails.
 
 ---
 

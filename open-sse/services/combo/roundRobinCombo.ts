@@ -15,7 +15,11 @@ import {
   logRetryHintUnreadable,
   readProseRetryAfter,
 } from "../../utils/error.ts";
-import { buildRecoveryHint } from "./pinRecovery.ts";
+import {
+  buildRecoveryHint,
+  buildAllTargetsCoolingDownResponse,
+  type PreDispatchExclusion,
+} from "./pinRecovery.ts";
 import { buildContextBudgetResponse } from "./budgetExhaustion.ts";
 import { formatExhaustedConnectionKey } from "./comboDiagFormat.ts";
 import { collectQuotaWindowExclusions, formatQuotaSkipMessage } from "./quotaSkipDiagnostics.ts";
@@ -104,6 +108,12 @@ import {
   resolvePersistedConnectionCooldownSkipReason,
 } from "./comboPredicates.ts";
 import { handlePreContentStreamRetry } from "./executeTargetClassify.ts";
+import {
+  handleEmptyContentRetry,
+  isEmptyContentResponse,
+  isEarlyEofResponse,
+} from "./emptyContentRetry.ts";
+import { isEmptyStreamSiblingRecoveryEnabled } from "../streamRecovery.ts";
 import { getCachedProviderConnectionById } from "../../../src/lib/db/readCache.ts";
 import { applyComboTargetExhaustion } from "./targetExhaustion.ts";
 import { isRetryAfterEligibleStatus } from "./unavailableRetryGate.ts";
@@ -216,6 +226,7 @@ export async function handleRoundRobinCombo({
   // resolveComboTargetPipeline, so it wires the same stage here. Rotation
   // granularity becomes model x connection: rrStartIndex takes mod over the
   // expanded list, so each account occupies its own rotation slot.
+  const expansionExclusions: PreDispatchExclusion[] = [];
   orderedTargets = await expandTargetsForAllStrategies({
     strategy: "round-robin",
     targets: orderedTargets,
@@ -224,7 +235,14 @@ export async function handleRoundRobinCombo({
     settings: settings as Record<string, unknown> | null | undefined,
     log,
     apiKeyAllowedConnectionIds: apiKeyAllowedConnections,
+    exclusions: expansionExclusions,
   });
+  // Classify at the expansion boundary: later filters may empty a surviving
+  // pool for unrelated reasons and must retain their own error contracts.
+  if (orderedTargets.length === 0) {
+    const coolingDown = buildAllTargetsCoolingDownResponse(expansionExclusions);
+    if (coolingDown) return coolingDown;
+  }
   const tagFilteredTargets = await applyRequestTagRouting(orderedTargets, body, log);
   const evalRankedTargets = orderTargetsByEvalScores(tagFilteredTargets, config.evalRouting, log);
   // Align with the main/auto paths: combo config OR top-level settings (#8488 / #8494).
@@ -237,7 +255,13 @@ export async function handleRoundRobinCombo({
     body,
     log,
     "Context-aware round-robin fallback",
-    { failOpen: rrCompatFailOpen }
+    {
+      failOpen: rrCompatFailOpen,
+      outputLimitAdvisory:
+        (config as { outputLimitAdvisory?: unknown }).outputLimitAdvisory === true ||
+        (settings as { outputLimitAdvisory?: unknown } | null | undefined)?.outputLimitAdvisory ===
+          true,
+    }
   );
   // #6238: keep the targets the compat pre-filter rejected so they can serve as a
   // last-resort fallback tier. The pre-filter drops request-incompatible targets
@@ -434,13 +458,63 @@ export async function handleRoundRobinCombo({
   // abandoning it *is* the first fallback.
   let fallbackCount = 0;
   let recordedAttempts = 0;
-  // #11134: operator-configurable shared attempt budget (clamped to the hard
-  // cap). Defaults to MAX_GLOBAL_ATTEMPTS when unset.
-  const maxGlobalAttempts = clampGlobalAttempts(config.maxGlobalAttempts);
   // #10314: per-target outcome accumulator for the round-robin twin so the
   // terminal message lists each distinct reason separately (see the quality path
   // and the "Done with this model" path below), mirroring handleComboChat.
   const rrOutcomes: Array<ComboErrorEntry> = [];
+  // #11134: operator-configurable shared attempt budget (clamped to the hard
+  // cap). Defaults to MAX_GLOBAL_ATTEMPTS when unset.
+  const maxGlobalAttempts = clampGlobalAttempts(config.maxGlobalAttempts);
+  // #16438 opt-in (EMPTY_STREAM_SIBLING_RECOVERY_ENABLED): empty_content sibling retry,
+  // abort-aware retry delay and the early-EOF provider-cooldown skip. Off = release path.
+  const emptyStreamSiblingRecovery = isEmptyStreamSiblingRecoveryEnabled();
+  const clientGone = () => emptyStreamSiblingRecovery && signal?.aborted === true;
+
+  const retryEmptyContent = ({
+    response,
+    errorText,
+    modelStr,
+    retry,
+    target,
+  }: {
+    response: Response;
+    errorText: string;
+    modelStr: string;
+    retry: number;
+    target: (typeof filteredTargets)[number];
+  }) => {
+    const state = {
+      comboErrors: rrOutcomes,
+      fallbackCount,
+      lastError,
+      lastStatus,
+      observeFailure: (_quotaExhausted: boolean, _executionKey?: string) => {},
+      recordedAttempts,
+    };
+    const outcome = handleEmptyContentRetry({
+      response,
+      errorText,
+      modelStr,
+      retry,
+      protectedPriorityTarget: false,
+      target,
+      state,
+      deps: {
+        maxRetries,
+        signal,
+        combo,
+        strategy: "round-robin",
+        startTime,
+        sticky: _rrSessionSticky,
+        releaseStickyPinOnFailure,
+      },
+    });
+    fallbackCount = state.fallbackCount;
+    lastError = state.lastError;
+    lastStatus = state.lastStatus;
+    recordedAttempts = state.recordedAttempts;
+    return outcome;
+  };
 
   // G4 (silent-stop fix): round-robin has NO global timeout — a hung model
   // (per-model timeout disabled via targetTimeoutMs: 0) would freeze the request
@@ -482,6 +556,7 @@ export async function handleRoundRobinCombo({
   // Try each model starting from the round-robin target
   try {
     for (let offset = 0; offset < modelCount; offset++) {
+      if (clientGone()) return errorResponse(499, "Client disconnected");
       // G4: stop launching new work once the safety timer fired.
       if (rrExpired) break;
       const modelIndex = (rrStartIndex + offset) % modelCount;
@@ -624,8 +699,11 @@ export async function handleRoundRobinCombo({
         throw err;
       }
 
+      // Retry loop within this model
+      let emptyTurnConnectionId: string | null = null;
       try {
         for (let retry = 0; retry <= maxRetries; retry++) {
+          if (clientGone()) return errorResponse(499, "Client disconnected");
           globalAttempts++;
           if (globalAttempts > maxGlobalAttempts) {
             log.warn(
@@ -652,7 +730,21 @@ export async function handleRoundRobinCombo({
               "COMBO-RR",
               `Retrying ${modelStr} in ${retryDelayMs}ms (attempt ${retry + 1}/${maxRetries + 1})`
             );
-            await new Promise((r) => setTimeout(r, retryDelayMs));
+            if (emptyStreamSiblingRecovery) {
+              await new Promise<void>((resolve) => {
+                const finish = () => {
+                  clearTimeout(timer);
+                  signal?.removeEventListener("abort", finish);
+                  resolve();
+                };
+                const timer = setTimeout(finish, retryDelayMs);
+                signal?.addEventListener("abort", finish, { once: true });
+                if (signal?.aborted) finish();
+              });
+            } else {
+              await new Promise((r) => setTimeout(r, retryDelayMs));
+            }
+            if (clientGone()) return errorResponse(499, "Client disconnected");
           }
 
           log.info(
@@ -704,6 +796,7 @@ export async function handleRoundRobinCombo({
           const result = await Promise.race([
             handleSingleModel(attemptBody, modelStr, {
               ...targetForAttempt,
+              emptyTurnConnectionId,
               effectiveComboStrategy: "round-robin",
               failoverBeforeRetry: config.failoverBeforeRetry,
             }),
@@ -767,6 +860,24 @@ export async function handleRoundRobinCombo({
                 );
               }
               rrEvents.failed(`Quality: ${quality.reason}`, Date.now() - startTime);
+              if (emptyStreamSiblingRecovery && quality.upstreamFailure?.emptyContent) {
+                const emptyContentRetry = retryEmptyContent({
+                  response: new Response(null, {
+                    status: quality.upstreamFailure.status,
+                    headers: result.headers,
+                  }),
+                  errorText:
+                    quality.upstreamFailure.message ||
+                    quality.reason ||
+                    "Provider returned empty content",
+                  modelStr,
+                  retry,
+                  target,
+                });
+                emptyTurnConnectionId = emptyContentRetry.connectionId;
+                if (emptyContentRetry.shouldRetry) continue;
+                break;
+              }
               recordComboRequest(combo.name, modelStr, {
                 success: false,
                 latencyMs: Date.now() - startTime,
@@ -830,9 +941,12 @@ export async function handleRoundRobinCombo({
             }
 
             if (provider && provider !== "unknown") {
-              recordProviderSuccess(provider, effectiveConnectionId || undefined, {
-                providerProbeSettled: isProviderProbeResponse(result),
-              });
+              recordProviderSuccess(
+                provider,
+                effectiveConnectionId || undefined,
+                { providerProbeSettled: isProviderProbeResponse(result) },
+                log
+              );
             }
 
             if (stickyRoundRobinEnabled) {
@@ -949,9 +1063,23 @@ export async function handleRoundRobinCombo({
             fallbackCount++;
             break;
           }
+
+          if (emptyStreamSiblingRecovery && isEmptyContentResponse(result, errorBody)) {
+            const emptyContentRetry = retryEmptyContent({
+              response: result,
+              errorText,
+              modelStr,
+              retry,
+              target,
+            });
+            emptyTurnConnectionId = emptyContentRetry.connectionId;
+            if (emptyContentRetry.shouldRetry) continue;
+            break;
+          }
           const isStreamReadinessFailure =
             (result.status === 502 || result.status === 504) &&
             isStreamReadinessFailureErrorBody(errorBody);
+          const isStreamEarlyEof = isEarlyEofResponse(result, errorBody);
 
           const isTokenLimitBreach =
             result.status === 429 && isLocalKeyPolicyBreachErrorBody(errorBody);
@@ -1134,6 +1262,7 @@ export async function handleRoundRobinCombo({
             provider !== "unknown" &&
             !scopedFailure &&
             !isModelScopedClaudeQuota &&
+            !(emptyStreamSiblingRecovery && isStreamEarlyEof) &&
             !(
               (result.status === 500 || result.status === 429) &&
               hasPerModelQuota(provider, rawModel)

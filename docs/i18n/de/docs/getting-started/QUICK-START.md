@@ -4,7 +4,7 @@
 
 ---
 
-> **Kurzfassung**: Installieren → Geeigneten Anbieter verbinden → IDE auf OmniRoute ausrichten. Fertig.
+> **Kurz gesagt**: Installieren → Einen berechtigten Anbieter verbinden → Ihre IDE auf OmniRoute verweisen. Fertig.
 
 ---
 
@@ -49,9 +49,9 @@ OmniRoute startet unter `http://localhost:20128`. Das Dashboard wird automatisch
 
 ## Schritt 3: Einen geeigneten Anbieter verbinden
 
-Wählen Sie einen Anbieter, dessen Bedingungen und Kontingente zu Ihrem Bedarf passen. Verbinden Sie unter **Dashboard → Anbieter** Ihr eigenes Konto oder Ihren API-Schlüssel und testen Sie die Verbindung. Kostenloser Zugriff und Verfügbarkeit ohne Schlüssel sind nicht garantiert.
+Wählen Sie einen Anbieter, dessen Bedingungen und Kontingent Ihren Anforderungen entsprechen. Verbinden Sie unter **Dashboard → Providers** Ihr eigenes Konto oder Ihren API-Schlüssel und testen Sie anschließend die Verbindung. Kostenloser Zugriff und eine Verfügbarkeit ohne Schlüssel sind nicht garantiert.
 
-`auto` schließt Anbieter mit der Kennzeichnung `tos: avoid`, darunter Kiro und OpenCode Free, standardmäßig aus. Das Verbinden eines Kontos ändert diese Richtlinie nicht. Die Freigabe unter **Dashboard → Combos** gilt für alle automatischen Combos. Lesen Sie [Leitfaden zu kostenlosen Tarifen](./FREE-TIERS-GUIDE.md), bevor Sie einen Anbieter auswählen.
+`auto` schließt Anbieter, die mit `tos: avoid` gekennzeichnet sind, darunter Kiro, standardmäßig aus. Das Verbinden eines Kontos ändert diese Richtlinie nicht. Die Einwilligung unter **Dashboard → Combos** gilt für alle automatischen Kombinationen. Lesen Sie den [Leitfaden zu kostenlosen Kontingenten](./FREE-TIERS-GUIDE.md), bevor Sie einen Anbieter auswählen.
 
 ---
 
@@ -131,9 +131,9 @@ Sie können die Details der Anfrage einsehen, indem Sie in der linken Seitenleis
 ## Wie geht es weiter?
 
 - **[Auto-Combo-Leitfaden](./AUTO-COMBO-GUIDE.md)** — Lassen Sie OmniRoute die beste KI für Sie auswählen
-- **[Anbieterleitfaden](./PROVIDERS-GUIDE.md)** — Weitere Anbieter verbinden (kostenlos und kostenpflichtig)
-- **[Leitfaden zu kostenlosen Tarifen](./FREE-TIERS-GUIDE.md)** — Bedingungen der Anbieter und Grenzen kostenloser Tarife prüfen
-- **[Fehlerbehebung](../guides/TROUBLESHOOTING.md)** — Häufige Probleme beheben
+- **[Anbieterleitfaden](./PROVIDERS-GUIDE.md)** — Verbinden Sie weitere Anbieter (kostenlos und kostenpflichtig)
+- **[Leitfaden zu kostenlosen Tarifen](./FREE-TIERS-GUIDE.md)** — Prüfen Sie die Bedingungen der Anbieter und die Limits der kostenlosen Tarife
+- **[Fehlerbehebung](../guides/TROUBLESHOOTING.md)** — Beheben Sie häufige Probleme
 
 ---
 
@@ -141,23 +141,23 @@ Sie können die Details der Anfrage einsehen, indem Sie in der linken Seitenleis
 
 ### „Benötige ich einen API-Schlüssel?“
 
-Der OmniRoute-API-Schlüssel authentifiziert Ihre Werkzeuge. Die Zugangsdaten des vorgelagerten Dienstes hängen vom Anbieter ab: Manche verlangen einen API-Schlüssel oder eine Kontoanmeldung. Kostenloser Zugriff ist nicht garantiert.
+Der OmniRoute-API-Schlüssel authentifiziert Ihre Tools. Die Anmeldedaten für vorgelagerte Dienste hängen vom jeweiligen Anbieter ab: Einige erfordern einen API-Schlüssel oder eine Kontoanmeldung. Ein kostenloser Zugriff ist nicht garantiert.
 
 ### „Was ist `auto`?“
 
-`auto` weist OmniRoute an, automatisch den besten Anbieter für jede Anfrage auszuwählen. Dabei werden Geschwindigkeit, Kosten, Qualität und Verfügbarkeit berücksichtigt. Weitere Informationen finden Sie im [Auto-Combo-Leitfaden](./AUTO-COMBO-GUIDE.md).
+`auto` weist OmniRoute an, für jede Anfrage automatisch den besten Anbieter auszuwählen. Dabei werden Geschwindigkeit, Kosten, Qualität und Verfügbarkeit berücksichtigt. Weitere Informationen finden Sie im [Auto-Combo-Leitfaden](./AUTO-COMBO-GUIDE.md).
 
 ### „Wie viel kostet es?“
 
-OmniRoute selbst ist **kostenlos und quelloffen**. Sie zahlen lediglich für die von Ihnen verwendeten Anbieter. Viele Anbieter bieten kostenlose Tarife an — siehe den [Leitfaden zu kostenlosen Tarifen](./FREE-TIERS-GUIDE.md).
+OmniRoute selbst ist **kostenlos und quelloffen**. Sie zahlen nur für die Anbieter, die Sie nutzen. Viele Anbieter bieten kostenlose Tarife an – siehe den [Leitfaden zu kostenlosen Tarifen](./FREE-TIERS-GUIDE.md).
 
 ### „Kann ich es mit Claude Code / Cursor / Copilot verwenden?“
 
-**Ja!** OmniRoute funktioniert mit jedem Tool, das das OpenAI-Format unterstützt. Legen Sie die Basis-URL einfach auf `http://localhost:20128/v1` fest. Spezifische Einrichtungsanweisungen finden Sie im [Leitfaden zu CLI-Tools](../reference/CLI-TOOLS.md).
+**Ja!** OmniRoute funktioniert mit jedem Tool, das das OpenAI-Format unterstützt. Setzen Sie einfach die Basis-URL auf `http://localhost:20128/v1`. Konkrete Einrichtungsanweisungen finden Sie im [Leitfaden für CLI-Tools](../reference/CLI-TOOLS.md).
 
 ### „Was passiert, wenn ein Anbieter ausfällt?“
 
-OmniRoute überspringt fehlgeschlagene Anbieter automatisch und versucht es mit dem nächsten. Sie müssen nichts unternehmen. Weitere Informationen finden Sie im [Auto-Combo-Leitfaden](./AUTO-COMBO-GUIDE.md).
+OmniRoute überspringt fehlgeschlagene Anbieter automatisch und versucht es mit dem nächsten. Sie müssen nichts tun. Weitere Informationen finden Sie im [Auto-Combo-Leitfaden](./AUTO-COMBO-GUIDE.md).
 
 ---
 

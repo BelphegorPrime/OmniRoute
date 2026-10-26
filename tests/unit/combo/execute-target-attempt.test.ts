@@ -822,6 +822,39 @@ test("quality fail without provider does not hop", async () => {
   assert.equal(result, null);
 });
 
+test("quality family recovery does not silently cross a model version", async () => {
+  const { executeTargetAttempt } =
+    await import("../../../open-sse/services/combo/executeTargetAttempt.ts");
+  const seen: string[] = [];
+  const target = modelTarget({
+    modelStr: "anthropic/claude-opus-5-5",
+    provider: "anthropic",
+    connectionId: "c-version",
+  });
+  const deps = baseDeps({
+    maxRetries: 1,
+    clientRequestedStream: false,
+    handleSingleModelWithTimeout: async (_body, model) => {
+      seen.push(String(model));
+      return emptyContent200("c-version");
+    },
+  });
+  const state = emptyState({
+    orderedTargets: [target],
+    abortControllers: new Map([[0, new AbortController()]]),
+  });
+  await executeTargetAttempt({
+    index: 0,
+    state,
+    deps,
+    targetForAttempt: target,
+    profile: {},
+    protectedPriorityTarget: false,
+  });
+  assert.ok(seen.length > 0);
+  assert.ok(seen.every((model) => model === "anthropic/claude-opus-5-5"));
+});
+
 /**
  * Fallback counting. `state.fallbackCount` is the per-set-try number of ordered
  * targets abandoned before the one that serves the request: it is snapshotted

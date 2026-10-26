@@ -14,6 +14,22 @@ import { hasPerModelQuota } from "../accountFallback.ts";
 const MODEL_NOT_FOUND_404_REGEX =
   /model_not_found|model[^\n]{0,120}(?:does not exist|not found|is not available|do not have access)/i;
 
+// Bounded quantifiers keep this ReDoS-safe.
+const MODEL_UNSUPPORTED_401_REGEX = /\bmodel\b[^\n]{0,120}\bis not supported\b/i;
+
+/**
+ * #16380: a 401 whose body attributes the failure to the MODEL (e.g. opencode /
+ * OpenAI-compatible upstreams answer `Model <id> is not supported` after a
+ * model was delisted) is model-scoped, mirroring the #15633 404 model_not_found
+ * treatment: the key is healthy, so lock that model on that connection and keep
+ * serving sibling models — never push the connection toward a terminal state.
+ */
+export function isModelUnsupported401(status: number | undefined, errorText: unknown): boolean {
+  if (status !== 401) return false;
+  const text = typeof errorText === "string" ? errorText : JSON.stringify(errorText ?? "");
+  return MODEL_UNSUPPORTED_401_REGEX.test(text);
+}
+
 /**
  * #15633: a 404 whose body names a missing MODEL (e.g. Groq `model_not_found`) is
  * model-scoped for every provider — lock that model only, never the connection.
@@ -105,6 +121,7 @@ export function hasPerModelFailureScope(
   if (
     isModelNotFound404(status, errorText) ||
     isAnthropicModelNotFound(provider, model, status, errorText) ||
+    isModelUnsupported401(status, errorText) ||
     isExplicitModelCapacityFailure(status, errorText, model)
   )
     return true;

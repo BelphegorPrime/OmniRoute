@@ -47,7 +47,7 @@ const CROSS_PROXY_MODEL_ALIASES: Record<string, string> = {
   "deepseek-v3-2": "deepseek-v3.2",
   "qwen3-coder:480b": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
   "claude-opus-4.5": "claude-opus-4-5-20251101",
-  "anthropic/claude-opus-4.5": "claude-opus-4-5-20251101",
+  "anthropic/claude-opus-4.5": "anthropic/claude-opus-4-5",
 };
 
 const CROSS_PROXY_MODEL_ALIASES_LOWER = Object.fromEntries(
@@ -62,12 +62,16 @@ const MODEL_TO_PROVIDERS = new Map<string, string[]>();
 for (const [aliasOrId, models] of Object.entries(PROVIDER_MODELS)) {
   const providerId = ALIAS_TO_PROVIDER_ID[aliasOrId] || aliasOrId;
   for (const modelEntry of models || []) {
-    const modelId = modelEntry?.id;
-    if (!modelId) continue;
-    const providers = MODEL_TO_PROVIDERS.get(modelId) || [];
-    if (!providers.includes(providerId)) {
-      providers.push(providerId);
-      MODEL_TO_PROVIDERS.set(modelId, providers);
+    // Registry aliases are routable ids too: a client pinned to a legacy id must
+    // still infer the provider that declares it, even when the catalog dropped
+    // the standalone row (e.g. opencode-zen's deepseek-v4-flash-free alias).
+    for (const modelId of [modelEntry?.id, ...(modelEntry?.aliases || [])]) {
+      if (!modelId) continue;
+      const providers = MODEL_TO_PROVIDERS.get(modelId) || [];
+      if (!providers.includes(providerId)) {
+        providers.push(providerId);
+        MODEL_TO_PROVIDERS.set(modelId, providers);
+      }
     }
   }
 }
@@ -261,6 +265,12 @@ export function hasKnownProviderModel(
 
 function resolveInferredProviderModel(provider: string, modelId: string) {
   return resolveProviderModelAlias(provider, modelId);
+}
+
+function normalizeProviderScopedModelId(provider: string | null, modelId: string | null) {
+  // Compatibility dialects must not rewrite an ID this provider already serves.
+  if (hasKnownProviderModel(provider, modelId)) return modelId;
+  return normalizeCrossProxyModelId(modelId).modelId;
 }
 
 function getInferredProvidersForModel(modelId: string, dynamicProviders: string[] = []) {
@@ -565,7 +575,7 @@ function resolveModelAliasTarget(
 
     return {
       provider: resolveProviderAlias(resolved.provider),
-      model: normalizeCrossProxyModelId(resolved.model).modelId || resolved.model,
+      model: normalizeProviderScopedModelId(resolved.provider, resolved.model) || resolved.model,
     };
   }
 
@@ -623,21 +633,13 @@ async function resolveModelByProviderInference(modelId: string, extendedContext:
     }
   }
 
-  // Opencode free-tier models always route to opencode when active — prevents
-  // prefix inference from misrouting -free names to other providers when the
-  // live catalog is temporarily unreachable.
-  //
-  // A literal `activeProviders?.has("opencode")` check is unreachable in
-  // practice: `getActiveProviderSet()` canonicalizes every connection's
-  // provider id through `resolveProviderAlias()`, and the manual override
-  // above (`ALIAS_TO_PROVIDER_ID["opencode"] = "opencode-zen"`) rewrites any
-  // "opencode" id to "opencode-zen" before it ever reaches the active set —
-  // so an active no-auth opencode connection never appears as "opencode".
-  // Check both opencode-family canonical ids that catalog this model id.
+  // OpenCode Zen catalog ids (`big-pickle`, `*-free`) route to opencode-zen
+  // when it is active — prevents prefix inference from misrouting -free names
+  // to other providers when the live catalog is temporarily unreachable.
   if (modelId === "big-pickle" || modelId.endsWith("-free")) {
     const candidates = MODEL_TO_PROVIDERS.get(modelId) || [];
     const activeOpencodeCandidate = candidates.find(
-      (p) => (p === "opencode" || p === "opencode-zen") && activeProviders?.has(p)
+      (p) => p === "opencode-zen" && activeProviders?.has(p)
     );
     if (activeOpencodeCandidate) {
       return { provider: activeOpencodeCandidate, model: modelId, extendedContext };
@@ -834,7 +836,7 @@ export async function getModelInfoCore(
   const { extendedContext } = parsed;
 
   if (!parsed.isAlias) {
-    const normalizedModel = normalizeCrossProxyModelId(parsed.model).modelId;
+    const normalizedModel = normalizeProviderScopedModelId(parsed.provider, parsed.model);
     const canonicalModel = resolveProviderModelAlias(parsed.provider, normalizedModel);
     return {
       provider: parsed.provider,

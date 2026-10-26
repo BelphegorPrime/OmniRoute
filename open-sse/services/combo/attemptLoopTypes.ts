@@ -84,6 +84,7 @@ export type AttemptLoopDeps = {
   traceInvocationId: string;
   clientRequestedStream: boolean;
   handleSingleModelWithTimeout: HandleSingleModel;
+  requestHeaders?: Headers | Record<string, unknown> | null;
   isModelAvailable?: IsModelAvailable;
   perTargetAdmission?: PerTargetAdmissionHook | null;
   /** Optional only to permit deterministic management-health gate tests. */

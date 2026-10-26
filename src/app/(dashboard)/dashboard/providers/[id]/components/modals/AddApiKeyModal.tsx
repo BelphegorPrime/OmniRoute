@@ -1,7 +1,20 @@
 "use client";
+
+import Icon from "@/shared/components/Icon";
 import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
-import { Button, Badge, Input, Modal, Toggle, TALL_MODAL_PROPS } from "@/shared/components";
+import {
+  Button,
+  Badge,
+  Checkbox,
+  Input,
+  Modal,
+  SegmentedControl,
+  Select,
+  Textarea,
+  Toggle,
+  TALL_MODAL_PROPS,
+} from "@/shared/components";
 import { CHATGPT_WEB_CODEX_CONNECTOR_NAME } from "@/shared/constants/chatgptWebCodex";
 import {
   providerAllowsOptionalApiKey,
@@ -26,6 +39,7 @@ import {
   combineModalCredential,
   providerText,
   validationBadgeProps,
+  validationErrorMessage,
   type CommandCodeAuthFlowState,
 } from "../../providerPageHelpers";
 import { getWebSessionCredentialRequirement } from "../../webSessionCredentials";
@@ -135,6 +149,16 @@ export default function AddApiKeyModal({
   const [saveError, setSaveError] = useState<string | null>(null);
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [copiedCommandCodeField, setCopiedCommandCodeField] = useState<string | null>(null);
+  const [mode, setMode] = useState<"single" | "bulk">("single");
+  const [bulkText, setBulkText] = useState("");
+  const [bulkValidateKeys, setBulkValidateKeys] = useState(false);
+  const [bulkResult, setBulkResult] = useState<{
+    success: number;
+    failed: number;
+    total: number;
+    errors: Array<{ index: number; name: string; message: string }>;
+  } | null>(null);
+  const [bulkWarnings, setBulkWarnings] = useState<string[]>([]);
   const resetOpenRouterPreset = openRouterPreset.setValue;
   const wasOpenRef = useRef(false);
   useEffect(() => {
@@ -177,16 +201,6 @@ export default function AddApiKeyModal({
     showsRegion,
   ]);
   const bulkSupported = supportsBulkApiKey(provider);
-  const [mode, setMode] = useState<"single" | "bulk">("single");
-  const [bulkText, setBulkText] = useState("");
-  const [bulkValidateKeys, setBulkValidateKeys] = useState(false);
-  const [bulkResult, setBulkResult] = useState<{
-    success: number;
-    failed: number;
-    total: number;
-    errors: Array<{ index: number; name: string; message: string }>;
-  } | null>(null);
-  const [bulkWarnings, setBulkWarnings] = useState<string[]>([]);
   const apiCredentialLabel = isModal
     ? providerText(t, "modalTokenIdLabel", "Token ID")
     : isAwsPolly
@@ -284,8 +298,9 @@ export default function AddApiKeyModal({
         ok && data.capabilities && typeof data.capabilities === "object" ? data.capabilities : null
       );
       // #5088: surface backend reason (e.g. TLS/EACCES) instead of bare "invalid".
-      if (!ok && !unsupported && typeof data.error === "string" && data.error) {
-        setSaveError(data.error);
+      const reason = validationErrorMessage(data.error);
+      if (!ok && !unsupported && reason) {
+        setSaveError(reason);
       }
     } catch {
       setValidationResult("failed");
@@ -347,8 +362,9 @@ export default function AddApiKeyModal({
           const data = await res.json();
           isValid = !!data.valid;
           isUnsupported = !!data.unsupported;
-          if (!isValid && data.error) {
-            validationError = data.error;
+          const submitReason = validationErrorMessage(data.error);
+          if (!isValid && submitReason) {
+            validationError = submitReason;
           }
           if (
             isValid &&
@@ -521,46 +537,31 @@ export default function AddApiKeyModal({
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-1.5 rounded-lg border border-primary/30 bg-primary/10 px-3 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
           >
-            <span className="material-symbols-outlined text-[18px]" aria-hidden="true">
-              open_in_new
-            </span>
+            <Icon name="open_in_new" size={18} />
             {providerText(t, "openWebProviderSite", "Open {host}", {
               host: webProviderHostLink.host,
             })}
           </a>
         )}
         {bulkSupported && (
-          <div className="flex gap-1 border-b border-border">
-            <button
-              type="button"
-              onClick={() => {
+          <SegmentedControl
+            size="sm"
+            value={mode}
+            onChange={(next) => {
+              if (next === "single") {
                 setMode("single");
                 setBulkResult(null);
                 setBulkWarnings([]);
-              }}
-              className={`px-3 py-1.5 text-sm font-medium transition-colors ${
-                mode === "single"
-                  ? "border-b-2 border-primary text-text-main"
-                  : "text-text-muted hover:text-text-main"
-              }`}
-            >
-              {t("bulkTabSingle")}
-            </button>
-            <button
-              type="button"
-              onClick={() => {
+              } else {
                 setMode("bulk");
                 setSaveError(null);
-              }}
-              className={`px-3 py-1.5 text-sm font-medium transition-colors ${
-                mode === "bulk"
-                  ? "border-b-2 border-primary text-text-main"
-                  : "text-text-muted hover:text-text-main"
-              }`}
-            >
-              {t("bulkTabBulkAdd")}
-            </button>
-          </div>
+              }
+            }}
+            options={[
+              { value: "single", label: t("bulkTabSingle") },
+              { value: "bulk", label: t("bulkTabBulkAdd") },
+            ]}
+          />
         )}
 
         {bulkSupported && mode === "bulk" && (
@@ -570,8 +571,8 @@ export default function AddApiKeyModal({
             </p>
             {openRouterPreset.input}
             {freeModelsToggle}
-            <textarea
-              className="w-full rounded border border-border bg-background p-2 text-sm font-mono resize-y min-h-[140px] focus:outline-none focus:ring-1 focus:ring-primary"
+            <Textarea
+              className="min-h-[140px] resize-y font-mono text-sm"
               placeholder={
                 isCloudflare
                   ? "name1|account-id-1|cf-token-1\nname2|account-id-2|cf-token-2"
@@ -580,35 +581,30 @@ export default function AddApiKeyModal({
               value={bulkText}
               onChange={(e) => setBulkText(e.target.value)}
             />
-            <div className="flex items-center gap-4 flex-wrap">
-              <div className="flex items-center gap-2">
-                <label className="text-sm text-text-muted">{t("priorityLabel")}</label>
-                <input
-                  type="number"
-                  min={1}
-                  max={100}
-                  value={formData.priority}
-                  onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      priority: Number.parseInt(e.target.value) || 1,
-                    })
-                  }
-                  className="w-20 px-2 py-1 text-sm border border-border rounded bg-background"
-                />
-              </div>
-              <label className="flex items-center gap-2 text-sm text-text-muted cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={bulkValidateKeys}
-                  onChange={(e) => setBulkValidateKeys(e.target.checked)}
-                  className="rounded border-border"
-                />
-                {t("bulkValidateKeys")}
-              </label>
+            <div className="flex items-end gap-4 flex-wrap">
+              <Input
+                type="number"
+                label={t("priorityLabel")}
+                min={1}
+                max={100}
+                value={formData.priority}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    priority: Number.parseInt(e.target.value) || 1,
+                  })
+                }
+                className="w-auto min-w-0"
+                inputClassName="w-20"
+              />
+              <Checkbox
+                label={t("bulkValidateKeys")}
+                checked={bulkValidateKeys}
+                onChange={(e) => setBulkValidateKeys(e.target.checked)}
+              />
             </div>
             {bulkWarnings.length > 0 && (
-              <div className="rounded border border-amber-500/25 bg-amber-500/10 p-2 text-xs text-amber-200 space-y-1">
+              <div className="rounded border border-warning/25 bg-warning/10 p-2 text-xs text-warning space-y-1">
                 {bulkWarnings.map((w, i) => (
                   <div key={i}>{w}</div>
                 ))}
@@ -617,7 +613,7 @@ export default function AddApiKeyModal({
             {bulkResult && (
               <div
                 className={`text-sm font-medium ${
-                  bulkResult.failed > 0 ? "text-amber-300" : "text-emerald-400"
+                  bulkResult.failed > 0 ? "text-warning" : "text-success"
                 }`}
               >
                 {t("bulkAddedCount", { count: bulkResult.success })}
@@ -638,7 +634,7 @@ export default function AddApiKeyModal({
                 )}
               </div>
             )}
-            {saveError && <div className="text-sm text-rose-400">{saveError}</div>}
+            {saveError && <div className="text-sm text-error">{saveError}</div>}
             <div className="flex gap-2">
               <Button onClick={handleBulkSubmit} fullWidth disabled={saving || !bulkText.trim()}>
                 {saving ? t("adding") : t("bulkAddAllKeys")}
@@ -653,21 +649,17 @@ export default function AddApiKeyModal({
         {(!bulkSupported || mode === "single") && (
           <>
             {isCcCompatible && (
-              <div className="rounded-lg border border-amber-500/25 bg-amber-500/10 px-3 py-2 text-sm text-text-muted">
+              <div className="rounded-lg border border-warning/25 bg-warning/10 px-3 py-2 text-sm text-text-muted">
                 <div className="flex items-start gap-2">
-                  <span className="material-symbols-outlined mt-0.5 text-[18px] text-amber-500">
-                    warning
-                  </span>
+                  <Icon name="warning" size={18} className="mt-0.5 text-warning" />
                   <p>{t("ccCompatibleValidationHint")}</p>
                 </div>
               </div>
             )}
             {isCommandCode && onStartCommandCodeAuth && (
-              <div className="rounded-lg border border-sky-500/20 bg-sky-500/10 px-3 py-3 text-sm">
+              <div className="rounded-lg border border-info/20 bg-info/10 px-3 py-3 text-sm">
                 <div className="flex items-start gap-3">
-                  <span className="material-symbols-outlined mt-0.5 text-[18px] text-sky-500">
-                    open_in_new
-                  </span>
+                  <Icon name="open_in_new" size={18} className="mt-0.5 text-info" />
                   <div className="min-w-0 flex-1">
                     <p className="font-medium text-text-main">
                       {t("providerDetailBrowserManualConnect")}
@@ -820,7 +812,7 @@ export default function AddApiKeyModal({
                 );
               })()}
             {isChatGptWebCodex && (
-              <div className="space-y-3 rounded-lg border border-border bg-surface/40 p-3">
+              <div className="space-y-3 rounded-lg border border-border bg-bg-subtle p-3">
                 <div>
                   <p className="text-sm font-medium text-text-main">Codex-Toolverbindung</p>
                   <p className="mt-1 text-xs text-text-muted">
@@ -973,12 +965,12 @@ export default function AddApiKeyModal({
               </Badge>
             )}
             {saveError && (
-              <div className="text-sm text-red-500 bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2">
+              <div className="text-sm text-error bg-error/10 border border-error/20 rounded-lg px-3 py-2">
                 {saveError}
               </div>
             )}
             {(isCcCompatible || openRouterPreset.input) && (
-              <div className="flex flex-col gap-4 rounded-lg border border-border/50 bg-surface/20 p-4">
+              <div className="flex flex-col gap-4 rounded-lg border border-border bg-bg-subtle p-4">
                 {isCcCompatible && (
                   <CcCompatibleRequestDefaultsFields
                     values={formData}
@@ -1016,21 +1008,21 @@ export default function AddApiKeyModal({
                     })}
               </p>
             )}
-            <button
-              type="button"
-              className="text-sm text-text-muted hover:text-text-primary flex items-center gap-1"
+            <Button
+              variant="ghost"
+              size="sm"
+              className="self-start"
               onClick={() => setShowAdvanced(!showAdvanced)}
               aria-expanded={showAdvanced}
               aria-controls="add-api-key-advanced-settings"
             >
-              <span
+              <Icon
+                name="chevron_right"
+                size={14}
                 className={`transition-transform ${showAdvanced ? "rotate-90" : ""}`}
-                aria-hidden="true"
-              >
-                ▶
-              </span>
+              />
               {t("advancedSettings")}
-            </button>
+            </Button>
             {showAdvanced && (
               <div
                 id="add-api-key-advanced-settings"
@@ -1134,20 +1126,16 @@ export default function AddApiKeyModal({
             )}
             {isGlm && (
               <div className="flex flex-col gap-3">
-                <div>
-                  <label className="text-sm font-medium text-text-main mb-1 block">
-                    {t("apiRegionLabel")}
-                  </label>
-                  <select
-                    value={formData.apiRegion}
-                    onChange={(e) => setFormData({ ...formData, apiRegion: e.target.value })}
-                    className="w-full px-3 py-2 text-sm border border-border rounded-lg bg-background focus:outline-none focus:border-primary"
-                  >
-                    <option value="international">{t("apiRegionInternational")}</option>
-                    <option value="china">{t("apiRegionChina")}</option>
-                  </select>
-                  <p className="text-xs text-text-muted mt-1">{t("apiRegionHint")}</p>
-                </div>
+                <Select
+                  label={t("apiRegionLabel")}
+                  hint={t("apiRegionHint")}
+                  value={formData.apiRegion}
+                  onChange={(e) => setFormData({ ...formData, apiRegion: e.target.value })}
+                  options={[
+                    { value: "international", label: t("apiRegionInternational") },
+                    { value: "china", label: t("apiRegionChina") },
+                  ]}
+                />
                 <GlmTeamQuotaFields
                   values={formData}
                   onChange={(patch) => setFormData({ ...formData, ...patch })}

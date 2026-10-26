@@ -141,28 +141,6 @@ export function formatResetTime(date) {
 }
 
 /**
- * Get Tailwind color class based on percentage
- * @param {number} percentage - Remaining percentage (0-100)
- * @returns {string} Color name: "green" | "yellow" | "red"
- */
-export function getStatusColor(percentage) {
-  if (percentage > 70) return "green";
-  if (percentage >= 30) return "yellow";
-  return "red"; // 0-29% including 0% (out of quota) - show red
-}
-
-/**
- * Get status emoji based on percentage
- * @param {number} percentage - Remaining percentage (0-100)
- * @returns {string} Emoji: "🟢" | "🟡" | "🔴"
- */
-export function getStatusEmoji(percentage) {
-  if (percentage > 70) return "🟢";
-  if (percentage >= 30) return "🟡";
-  return "🔴"; // 0-29% including 0% (out of quota) - show red
-}
-
-/**
  * Calculate remaining percentage
  * @param {number} used - Used amount
  * @param {number} total - Total amount
@@ -362,6 +340,7 @@ export const RESET_CREDIT_PROVIDERS = [
   // grok-cli redeems through the same codex-reset-credit endpoint (tip of
   // release/v3.8.51); kept here so the generalized gate below covers it.
   "grok-cli",
+  "claude",
   "glm",
   "glm-cn",
   "glmt",
@@ -370,7 +349,9 @@ export const RESET_CREDIT_PROVIDERS = [
 
 /** The redemption API backing a provider's reset credits, if supported. */
 export function getResetCreditEndpoint(provider: string): string | null {
-  if (provider === "codex" || provider === "grok-cli") return "/api/usage/codex-reset-credit";
+  if (provider === "codex" || provider === "grok-cli" || provider === "claude") {
+    return "/api/usage/codex-reset-credit";
+  }
   if (["glm", "glm-cn", "glmt", "zai"].includes(provider)) {
     return "/api/usage/glm-reset-card";
   }
@@ -381,11 +362,39 @@ export function canProviderRedeemResetCredit(provider: string): boolean {
   return (RESET_CREDIT_PROVIDERS as readonly string[]).includes(provider);
 }
 
-export function computeCanRedeemResetCredit(provider: string, quotas: any[]): boolean {
-  return (
-    canProviderRedeemResetCredit(provider) &&
-    quotas.some((q: any) => q?.isResetCredits && Number(q.creditCount ?? q.remaining ?? 0) > 0)
-  );
+export interface ResetCreditGateContext {
+  /** The raw usage payload behind the card (carries `bankedResetCredits` when known). */
+  raw?: unknown;
+  authType?: string;
+}
+
+/**
+ * The regular Claude usage poll cannot see banked reset credits; only the reset-credit list
+ * (opened by the user) or the opt-in auto-reset learns the count. Until then the count is
+ * unknown and a Claude OAuth card keeps its entry point — only an authoritative 0 hides it.
+ */
+function isClaudeResetCreditCountUnknown(
+  provider: string,
+  context?: ResetCreditGateContext
+): boolean {
+  if (provider !== "claude" || context?.authType !== "oauth") return false;
+  const raw =
+    context.raw && typeof context.raw === "object"
+      ? (context.raw as Record<string, unknown>)
+      : null;
+  return typeof raw?.bankedResetCredits !== "number";
+}
+
+export function computeCanRedeemResetCredit(
+  provider: string,
+  quotas: any[],
+  context?: ResetCreditGateContext
+): boolean {
+  if (!canProviderRedeemResetCredit(provider)) return false;
+  if (quotas.some((q: any) => q?.isResetCredits && Number(q.creditCount ?? q.remaining ?? 0) > 0)) {
+    return true;
+  }
+  return isClaudeResetCreditCountUnknown(provider, context);
 }
 
 export function hasQuotaCutoffOverrides(connection: any): boolean {
@@ -402,18 +411,26 @@ export const STATUS_EMOJI = {
 
 export type CardStatus = keyof typeof STATUS_EMOJI;
 
-const QUOTA_BAR_GREEN_THRESHOLD = 50;
-const QUOTA_BAR_YELLOW_THRESHOLD = 20;
+/** Remaining % strictly above this is healthy (green). */
+export const QUOTA_STATUS_HEALTHY_ABOVE = 50;
+/** Remaining % at or below this is critical (red); in between is an alert (yellow). */
+export const QUOTA_STATUS_CRITICAL_AT_OR_BELOW = 20;
+
+export type QuotaStatusLevel = "critical" | "alert" | "ok";
+
+/** Single source of the quota colour policy — every bar, tone and card status maps from it. */
+export function quotaStatusLevel(remainingPercentage: number): QuotaStatusLevel {
+  if (remainingPercentage <= QUOTA_STATUS_CRITICAL_AT_OR_BELOW) return "critical";
+  if (remainingPercentage <= QUOTA_STATUS_HEALTHY_ABOVE) return "alert";
+  return "ok";
+}
 
 function quotaRemainingPercent(q: any): number {
   return getQuotaRemainingPercentage(q);
 }
 
-function quotaStatus(q: any): "critical" | "alert" | "ok" {
-  const pct = quotaRemainingPercent(q);
-  if (pct <= QUOTA_BAR_YELLOW_THRESHOLD) return "critical";
-  if (pct <= QUOTA_BAR_GREEN_THRESHOLD) return "alert";
-  return "ok";
+function quotaStatus(q: any): QuotaStatusLevel {
+  return quotaStatusLevel(quotaRemainingPercent(q));
 }
 
 export function worstStatus(quotas: any[] | undefined): CardStatus {
@@ -483,13 +500,29 @@ export function getBarColor(remainingPercentage: number): {
   text: string;
   bg: string;
 } {
-  if (remainingPercentage > QUOTA_BAR_GREEN_THRESHOLD) {
-    return { bar: "#22c55e", text: "#22c55e", bg: "rgba(34,197,94,0.12)" };
+  // A non-numeric value has always rendered red here (the old `>` checks both failed).
+  const level = Number.isNaN(remainingPercentage)
+    ? "critical"
+    : quotaStatusLevel(remainingPercentage);
+  if (level === "ok") {
+    return {
+      bar: "var(--color-success)",
+      text: "var(--color-success)",
+      bg: "color-mix(in srgb, var(--color-success) 12%, transparent)",
+    };
   }
-  if (remainingPercentage > QUOTA_BAR_YELLOW_THRESHOLD) {
-    return { bar: "#eab308", text: "#eab308", bg: "rgba(234,179,8,0.12)" };
+  if (level === "alert") {
+    return {
+      bar: "var(--color-warning)",
+      text: "var(--color-warning)",
+      bg: "color-mix(in srgb, var(--color-warning) 12%, transparent)",
+    };
   }
-  return { bar: "#ef4444", text: "#ef4444", bg: "rgba(239,68,68,0.12)" };
+  return {
+    bar: "var(--color-error)",
+    text: "var(--color-error)",
+    bg: "color-mix(in srgb, var(--color-error) 12%, transparent)",
+  };
 }
 
 export function formatCountdown(resetAt: string | null | undefined): string | null {

@@ -4,7 +4,7 @@
 
 ---
 
-> **Fil-qosor**: Installa → Qabbad fornitur eliġibbli → Ipponta l-IDE lejn OmniRoute. Lest.
+> **Fil-qosor**: Installa → Qabbad fornitur eliġibbli → Orjenta l-IDE tiegħek lejn OmniRoute. Lest.
 
 ---
 
@@ -49,9 +49,9 @@ OmniRoute jibda fuq `http://localhost:20128`. Id-dashboard jinfetaħ awtomatikam
 
 ## Pass 3: Qabbad Fornitur Eliġibbli
 
-Agħżel fornitur li t-termini u l-kwoti tiegħu jaqblu mal-ħtiġijiet tiegħek. F'**Dashboard → Fornituri**, qabbad il-kont jew iċ-ċavetta API tiegħek stess, imbagħad ittestja l-konnessjoni. Aċċess b'xejn u disponibbiltà mingħajr ċavetta mhumiex garantiti.
+Agħżel fornitur li t-termini u l-kwota tiegħu jissodisfaw il-ħtiġijiet tiegħek. F’**Dashboard → Providers**, qabbad il-kont jew il-kjavi tal-API tiegħek, imbagħad ittestja l-konnessjoni. L-aċċess bla ħlas u d-disponibbiltà mingħajr kjavi mhumiex garantiti.
 
-B'mod awtomatiku, `auto` jeskludi fornituri mmarkati `tos: avoid`, inklużi Kiro u OpenCode Free. Il-konnessjoni ta' kont ma tbiddilx din il-politika. L-għażla ta' inklużjoni f'**Dashboard → Combos** tapplika għall-combos awtomatiċi kollha. Aqra [Gwida għall-Livelli Bla Ħlas](./FREE-TIERS-GUIDE.md) qabel tagħżel fornitur.
+B’mod awtomatiku, `auto` jeskludi l-fornituri mmarkati `tos: avoid`, inkluż Kiro. Il-konnessjoni ta’ kont ma tibdilx din il-politika. L-għażla espliċita f’**Dashboard → Combos** tapplika għall-kombinazzjonijiet awtomatiċi kollha. Ara l-[Gwida dwar il-Livelli Bla Ħlas](./FREE-TIERS-GUIDE.md) qabel tagħżel fornitur.
 
 ---
 
@@ -128,36 +128,36 @@ Tista' tara d-dettalji tat-talba billi tikklikkja [Monitoraġġ/Logs](http://loc
 
 ---
 
-## X'Imiss?
+## X'Jmiss?
 
-- **[Gwida għal Auto-Combo](./AUTO-COMBO-GUIDE.md)** — Ħalli lil OmniRoute jagħżel l-aħjar AI għalik
-- **[Gwida għall-Fornituri](./PROVIDERS-GUIDE.md)** — Qabbad aktar fornituri (bla ħlas u bi ħlas)
-- **[Gwida għall-Livelli Bla Ħlas](./FREE-TIERS-GUIDE.md)** — Iċċekkja t-termini tal-fornituri u l-limiti tal-livelli b'xejn
+- **[Gwida għall-Kombinazzjoni Awtomatika](./AUTO-COMBO-GUIDE.md)** — Ħalli lil OmniRoute jagħżel l-aħjar IA għalik
+- **[Gwida għall-Fornituri](./PROVIDERS-GUIDE.md)** — Qabbad aktar fornituri (b'xejn u bi ħlas)
+- **[Gwida għal-Livelli Bla Ħlas](./FREE-TIERS-GUIDE.md)** — Irrevedi t-termini tal-fornituri u l-limiti tal-livelli bla ħlas
 - **[Soluzzjoni tal-Problemi](../guides/TROUBLESHOOTING.md)** — Irranġa problemi komuni
 
 ---
 
 ## Mistoqsijiet Komuni
 
-### "Għandi bżonn ċavetta tal-API?"
+### "Għandi bżonn API key?"
 
-Iċ-ċavetta API ta' OmniRoute tawtentika l-għodod tiegħek. Il-kredenzjali tas-servizz upstream jiddependu fuq il-fornitur: xi wħud jeħtieġu ċavetta API jew dħul f'kont. Aċċess b'xejn mhuwiex garantit.
+L-API key ta’ OmniRoute tawtentika l-għodod tiegħek. Il-kredenzjali tas-servizzi upstream jiddependu mill-fornitur: xi wħud jeħtieġu API key jew li tidħol f’kont. L-aċċess bla ħlas mhuwiex garantit.
 
-### "X'inhu `auto`?"
+### "X’inhu `auto`?"
 
-`auto` jgħid lil OmniRoute biex jagħżel awtomatikament l-aħjar fornitur għal kull talba. Dan iqis il-veloċità, l-ispiża, il-kwalità u d-disponibbiltà. Ara l-[Gwida għal Auto-Combo](./AUTO-COMBO-GUIDE.md) għad-dettalji.
+`auto` jgħid lil OmniRoute biex jagħżel awtomatikament l-aħjar fornitur għal kull talba. Huwa jqis il-veloċità, l-ispiża, il-kwalità, u d-disponibbiltà. Ara l-[Gwida Auto-Combo](./AUTO-COMBO-GUIDE.md) għad-dettalji.
 
 ### "Kemm jiswa?"
 
-OmniRoute innifsu huwa **bla ħlas u open-source**. Tħallas biss għall-fornituri li tuża. Ħafna fornituri għandhom livelli bla ħlas — ara l-[Gwida għall-Livelli Bla Ħlas](./FREE-TIERS-GUIDE.md).
+OmniRoute innifsu huwa **bla ħlas u open-source**. Tħallas biss għall-fornituri li tuża. Ħafna fornituri għandhom livelli bla ħlas — ara l-[Gwida għal-Livelli Bla Ħlas](./FREE-TIERS-GUIDE.md).
 
-### "Nista' nużah ma' Claude Code / Cursor / Copilot?"
+### "Nista’ nużah ma’ Claude Code / Cursor / Copilot?"
 
-**Iva!** OmniRoute jaħdem ma' kwalunkwe għodda li tappoġġja l-format OpenAI. Sempliċement issettja l-URL bażi għal `http://localhost:20128/v1`. Ara l-[Gwida għall-Għodod tas-CLI](../reference/CLI-TOOLS.md) għal istruzzjonijiet speċifiċi dwar il-konfigurazzjoni.
+**Iva!** OmniRoute jaħdem ma’ kwalunkwe għodda li tappoġġja l-format ta’ OpenAI. Sempliċement issettja l-URL bażi għal `http://localhost:20128/v1`. Ara l-[Gwida għall-Għodod CLI](../reference/CLI-TOOLS.md) għal struzzjonijiet speċifiċi dwar il-konfigurazzjoni.
 
-### "X'jiġri jekk fornitur ma jibqax disponibbli?"
+### "X’jiġri jekk fornitur ma jibqax disponibbli?"
 
-OmniRoute awtomatikament jaqbeż lill-fornituri li fallew u jipprova lil dak li jmiss. M'għandek bżonn tagħmel xejn. Ara l-[Gwida għal Auto-Combo](./AUTO-COMBO-GUIDE.md) għad-dettalji.
+OmniRoute awtomatikament jaqbeż lill-fornituri li ma jaħdmux u jipprova lil dak li jkun imiss. M’għandek bżonn tagħmel xejn. Ara l-[Gwida Auto-Combo](./AUTO-COMBO-GUIDE.md) għad-dettalji.
 
 ---
 
