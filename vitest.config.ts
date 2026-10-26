@@ -9,8 +9,9 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./tests/_setup/vitestUiPolyfills.ts"],
     pool: "threads",
-    // Hosted Linux runners have four CPUs; keep jsdom workers within that capacity.
-    maxWorkers: Math.min(4, availableParallelism()),
+    // Leave CPU capacity for Vite transformation and jsdom/Radix interaction work.
+    // Four file workers contend with that work on the four-CPU hosted runners.
+    maxWorkers: Math.min(2, availableParallelism()),
     fileParallelism: true,
     maxConcurrency: 20,
     include: [

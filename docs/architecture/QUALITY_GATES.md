@@ -58,7 +58,7 @@ receipt. File integrity is not proof of execution authenticity or artifact promo
 ### UI execution capacity
 
 CI runs the full UI inventory as four `test-vitest` matrix shards, each with at most
-four workers and the existing 15-minute job deadline. The first shard also runs the
+two workers per shard and the existing 15-minute job deadline. The first shard also runs the
 MCP/autoCombo Vitest suite. The required job result covers every matrix leg; failure
 or cancellation of one shard cannot establish candidate admission.
 
