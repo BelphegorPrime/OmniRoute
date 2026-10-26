@@ -901,3 +901,106 @@ intentionally excluded from CI because they require live credentials and VPS acc
 | `open-sse/services/autoCombo/providerRegistryAccessor.ts` | Test hook for mocking provider registry                                                                   |
 | `src/shared/constants/routingStrategies.ts`               | `ROUTING_STRATEGY_VALUES` (20 strategies)                                                                 |
 | `src/sse/handlers/chat.ts`                                | Integration: auto-prefix short-circuit                                                                    |
+
+## Decision-model routers
+
+Auto-Combo supports two provider-neutral Decision API schemas. Both ask a configured decision-model backend to choose one model ID from the eligible candidate pool; neither requires a particular API provider.
+
+| Strategy ID          | UI label                   | POST endpoint   | Prompt field                                      | Question / answer container                         |
+| -------------------- | -------------------------- | --------------- | ------------------------------------------------- | --------------------------------------------------- |
+| `decision-openai`    | OpenAI-format Decision API | `/v1/decisions` | `input` message with an `input_text` content part | Arrays with a question / answer named `route_model` |
+| `decision-systemone` | System One Decision API    | `/v1/systemone` | `state` string                                    | Objects keyed by `route_model`                      |
+
+### Configuration
+
+Configure an absolute HTTP(S) base URL and decision-model alias explicitly, either in the combo's auto configuration or via environment variables. No URL or model is assumed. A base path is preserved: `https://decision.example/proxy` targets `https://decision.example/proxy/v1/decisions` or `https://decision.example/proxy/v1/systemone`. Credentials in the URL, query strings, and fragments are rejected.
+
+```json
+{
+  "routerStrategy": "decision-openai",
+  "decisionModel": {
+    "baseUrl": "https://decision.example/proxy",
+    "model": "my-decision-model",
+    "apiKey": "<optional decision API key>",
+    "timeoutMs": 2000
+  }
+}
+```
+
+For System One, change only `routerStrategy` to `decision-systemone`. The strategy selects the endpoint and schema; there is no separate format option. `OMNIROUTE_DECISION_BASE_URL` and `OMNIROUTE_DECISION_MODEL` can supply the required values. `OMNIROUTE_DECISION_API_KEY` is optional and, when configured, is sent as Bearer authentication. Nonblank combo values take precedence over environment values.
+
+### OpenAI-format Decision API schema
+
+`POST /v1/decisions` sends the decision backend alias in `model`, the last user text in a single user message, and exactly one `choice` question. Each choice's `value` is an eligible target model ID. The question instructions ask for the cheapest model tier that can reliably complete the request, using a more capable tier only when necessary.
+
+```json
+{
+  "model": "my-decision-model",
+  "input": [
+    {
+      "type": "message",
+      "role": "user",
+      "content": [{ "type": "input_text", "text": "Explain this function" }]
+    }
+  ],
+  "questions": [
+    {
+      "type": "choice",
+      "name": "route_model",
+      "instructions": "Choose the cheapest model tier in this pool that can reliably complete the user's request. Use a more capable tier only when the task requires it.",
+      "choices": [
+        { "value": "provider/small", "description": "Model tier provider/small" },
+        { "value": "provider/large", "description": "Model tier provider/large" }
+      ]
+    }
+  ]
+}
+```
+
+The response must contain an `answers` array with an entry named `route_model`, of type `choice`, and a string `choice` matching a submitted model ID:
+
+```json
+{
+  "model": "my-decision-model",
+  "answers": [{ "name": "route_model", "type": "choice", "choice": "provider/small" }]
+}
+```
+
+### System One Decision API schema
+
+`POST /v1/systemone` sends the same backend alias in `model` and the last user text as `state`. It sends exactly one question under `questions.route_model`. That question has `type: "choice"`, the same instructions as above, and a `criteria` object mapping each eligible target model ID to its description.
+
+```json
+{
+  "model": "my-decision-model",
+  "state": "Explain this function",
+  "questions": {
+    "route_model": {
+      "type": "choice",
+      "instructions": "Choose the cheapest model tier in this pool that can reliably complete the user's request. Use a more capable tier only when the task requires it.",
+      "criteria": {
+        "provider/small": "Model tier provider/small",
+        "provider/large": "Model tier provider/large"
+      }
+    }
+  }
+}
+```
+
+The response must contain `answers.route_model` with type `choice` and a string `choice` matching a submitted model ID:
+
+```json
+{
+  "model": "my-decision-model",
+  "answers": { "route_model": { "type": "choice", "choice": "provider/small" } }
+}
+```
+
+### Routing, limits, and fail-open behavior
+
+- Routing uses only the `route_model` answer, never the response's top-level `model` (which identifies the decision backend). A valid choice narrows the eligible pool to that model; the existing rules strategy then selects the serving connection. The decision API does not choose an account or connection.
+- Only the last user message's text is sent, capped at 16,000 characters. String content and `text` / `input_text` parts are supported; earlier messages and nontext parts are not sent.
+- Up to 50 distinct eligible model IDs are submitted. Candidates with an open circuit breaker are excluded when other candidates remain; if all are open, the original pool is retained for the existing fallback behavior.
+- Fewer than two distinct models, missing or invalid configuration, no last-user text, and synchronous callers all use rules without calling the decision API.
+- The default timeout is 2,000 ms and the maximum is 30,000 ms. Network failures, non-success HTTP responses, JSON parse failures, and timeouts fall back to rules and start a 30-second cooldown for that base URL within that strategy instance. Calls during cooldown also use rules.
+- A parseable response with a missing, invalid, or out-of-menu choice falls back to rules **without** starting a cooldown. Empty candidate pools retain the normal no-candidates error.
