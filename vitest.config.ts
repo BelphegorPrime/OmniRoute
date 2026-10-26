@@ -1,6 +1,7 @@
 import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import { availableParallelism } from "node:os";
 
 export default defineConfig({
   test: {
@@ -8,7 +9,8 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./tests/_setup/vitestUiPolyfills.ts"],
     pool: "threads",
-    maxWorkers: 20,
+    // Hosted Linux runners have four CPUs; keep jsdom workers within that capacity.
+    maxWorkers: Math.min(4, availableParallelism()),
     fileParallelism: true,
     maxConcurrency: 20,
     include: [
