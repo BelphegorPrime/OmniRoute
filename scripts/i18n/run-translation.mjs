@@ -736,8 +736,16 @@ export function planSectionReuse({ previousHashes, sections, mirrorSections }) {
     // frontmatter (24 newer locales, 2026-09-16) — always rebuild it.
     const leakedFrontmatter = i === 0 && /^---\s*\n/.test(mirrorSections[i]);
     const untranslated = looksUntranslated(mirrorSections[i], sections[i]);
-    if (h === previousHashes[i] && !untranslated && !leakedFrontmatter)
-      reuse.set(i, mirrorSections[i]);
+    // A matching source hash only describes what was requested. Older adopted
+    // mirrors may still omit rows or code literals; validate reused bytes too.
+    const checked = validateTranslatedChunk(sections[i], mirrorSections[i]);
+    if (
+      h === previousHashes[i] &&
+      !untranslated &&
+      !leakedFrontmatter &&
+      checked.problems.length === 0
+    )
+      reuse.set(i, checked.text);
     else translate.push(i);
   });
   return { reuse, translate };
@@ -777,7 +785,12 @@ export function mirrorNeedsRebuild(mirrorText, sourceText) {
   const body = extractMirrorBody(mirrorText);
   if (/^---\s*\n[\s\S]{0,600}?\n---\s*\n/.test(body)) return true; // leaked frontmatter
   const sourceBody = stripTopHeading(sourceText.replace(/^---\n[\s\S]*?\n---\n+/, ""));
-  return looksUntranslated(body, sourceBody); // still English
+  const checked = validateTranslatedChunk(sourceBody, body);
+  return (
+    looksUntranslated(body, sourceBody) ||
+    checked.problems.length > 0 ||
+    checked.text !== body.trim()
+  );
 }
 
 export function extractMirrorBody(mirrorText) {
@@ -883,7 +896,7 @@ async function resolveSectionPlan({ task, state, opts, sections }) {
   return planSectionReuse({ previousHashes, sections, mirrorSections });
 }
 
-async function translateBody(body, localeEntry, backend) {
+export async function translateBody(body, localeEntry, backend) {
   const englishName = localeEntry.english ?? localeEntry.name;
   const native = localeEntry.native ?? localeEntry.name;
   const system = SYSTEM_PROMPT(englishName, native);
@@ -901,6 +914,18 @@ async function translateBody(body, localeEntry, backend) {
       logWarn(
         `  chunk ${i + 1}/${chunks.length} rejected (attempt ${attempt}/${CHUNK_ATTEMPTS}): ${checked.problems.join("; ")}`
       );
+      if (attempt < CHUNK_ATTEMPTS) {
+        messages.push(
+          { role: "assistant", content: checked.text },
+          {
+            role: "user",
+            content:
+              `The previous translation failed validation: ${checked.problems.join("; ")}. ` +
+              "Return a complete corrected translation of the original source. " +
+              "Preserve every inline code literal exactly and return only the translated markdown.",
+          }
+        );
+      }
     }
     if (checked.problems.length > 0) {
       throw new Error(
@@ -1159,6 +1184,13 @@ async function main() {
           } else {
             translatedBody = await translateBody(body, localeEntry, backend);
           }
+          // Check the assembled document before writing content or advancing
+          // provenance, including sections that came from the reuse cache.
+          const checked = validateTranslatedChunk(body, translatedBody);
+          if (checked.problems.length) {
+            throw new Error(`assembled document failed validation: ${checked.problems.join("; ")}`);
+          }
+          translatedBody = checked.text;
         } catch (err) {
           stats.failed++;
           failures.push({ rel: task.rel, locale: task.locale, error: err.message });

@@ -1840,23 +1840,23 @@ These settings were introduced after the previous environment-contract snapshot.
 | `NEXT_MANUAL_SIG_HANDLE` | _(internal)_ | `scripts/dev/standalone-server-ws.mjs` | Internal standalone-server signal-handler override; normally set and cleared by the launcher rather than configured by operators. |
 ### ChatGPT Web (Codex)
 
-Globale Defaults für den headless Browser und den ausgehenden Tool-Tunnel. Im Dashboard gesetzte Connection-Werte haben Vorrang.
+Global defaults for the headless browser and outgoing tool tunnel. Connection values configured in the dashboard take precedence.
 
 | Variable                             | Default                          | Source File                                      | Description                                                                 |
 | ------------------------------------ | -------------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------- |
-| `CHATGPT_WEB_CODEX_CHROME_PATH`      | _(auto-detect)_                  | `open-sse/executors/chatgpt-web-codex.ts`        | Expliziter Chrome-/Chromium-Pfad für npm-, systemd- und PM2-Betrieb.       |
-| `CHROME_PATH`                        | _(auto-detect)_                  | `open-sse/executors/chatgpt-web-codex.ts`        | Gemeinsamer Fallback für einen expliziten Chrome-/Chromium-Pfad.            |
-| `CHATGPT_WEB_CODEX_CDP_URL`          | _(unset)_                        | `open-sse/executors/chatgpt-web-codex.ts`        | Interner CDP-Endpunkt; Docker verwendet den Sidecar auf Port `9223`.        |
+| `CHATGPT_WEB_CODEX_CHROME_PATH`      | _(auto-detect)_                  | `open-sse/executors/chatgpt-web-codex.ts`        | Explicit Chrome/Chromium path for npm, systemd and PM2 installations.       |
+| `CHROME_PATH`                        | _(auto-detect)_                  | `open-sse/executors/chatgpt-web-codex.ts`        | Shared fallback for an explicit Chrome/Chromium path.            |
+| `CHATGPT_WEB_CODEX_CDP_URL`          | _(unset)_                        | `open-sse/executors/chatgpt-web-codex.ts`        | Internal CDP endpoint; Docker uses the sidecar on port `9223`.        |
 | `CHATGPT_WEB_CODEX_USE_CDP_PROFILE` | _(unset — off)_ | `open-sse/vendor/codex-chatgpt-web/persistent-cdp-context.ts` | Set to `1` (with a CDP endpoint configured) to reuse the externally managed, signed-in browser profile's existing ChatGPT page instead of an isolated context per turn; also caps concurrent ChatGPT tabs at 1. Off by default. See [persistent CDP profile](../guides/CHATGPT-WEB-PERSISTENT-CDP.md). |
-| `CDP_PROXY_TOKEN`                    | _(unset)_                        | `docker/chatgpt-web-codex-browser/cdp-proxy.mjs` | Wenn gesetzt, muss jede Anfrage an den CDP-Proxy-Sidecar diesen Wert im Header `X-Omni-Cdp-Token` mitschicken (#13679). Ohne Wert leitet der Proxy unauthentifiziert weiter — dann schützt nur die Netzisolierung des Compose-Netzes `chatgpt-web-codex-net`. Erzeugen mit `openssl rand -hex 32`. |
-| `CHATGPT_WEB_CODEX_TUNNEL_ID`        | _(unset)_                        | `open-sse/executors/chatgpt-web-codex.ts`        | Globale OpenAI-Tunnel-ID für lokale Codex-Tool-Runden.                      |
-| `CHATGPT_WEB_CODEX_RUNTIME_KEY`      | _(unset)_                        | `open-sse/executors/chatgpt-web-codex.ts`        | Globaler Tunnel Runtime-Key; niemals in Logs ausgeben.                      |
-| `CHATGPT_WEB_CODEX_CONNECTOR_NAME`   | `OmniRoute Codex v2`             | `open-sse/executors/chatgpt-web-codex.ts`        | Exakter Name des neu erstellten ChatGPT-Custom-Connectors für die MCP-Brücke. |
-| `CODEX_CHATGPT_WEB_HOME`             | `<DATA_DIR>/chatgpt-web-codex`   | `open-sse/vendor/codex-chatgpt-web/config.ts`    | Dediziertes Verzeichnis für Browser-, Broker- und Tunnelzustand.            |
-| `CODEX_CHATGPT_WEB_BROWSER_DIAGNOSTICS` | `0`                           | `open-sse/vendor/codex-chatgpt-web/adapters/chatgpt-web/browser-worker.ts` | Bei `1` werden Browser-Diagnosebilder an jedem Checkpoint erfasst. |
-| `CODEX_CHATGPT_WEB_LAUNCHER`         | _(unset)_                        | `open-sse/vendor/codex-chatgpt-web/config.ts`    | Optionaler absoluter Pfad zu einem dauerhaften Launcher-Binary.             |
-| `CODEX_CHATGPT_WEB_BUN`              | _(auto-detect)_                  | `open-sse/vendor/codex-chatgpt-web/config.ts`    | Optionaler absoluter Pfad zum Bun-Runtime-Binary.                           |
-| `CODEX_WEB_GPT_BUN`                  | _(unset)_                        | `open-sse/vendor/codex-chatgpt-web/config.ts`    | Legacy-Fallback für `CODEX_CHATGPT_WEB_BUN`; neue Setups verwenden den kanonischen Namen. |
+| `CDP_PROXY_TOKEN`                    | _(unset)_                        | `docker/chatgpt-web-codex-browser/cdp-proxy.mjs` | When set, every request to the CDP proxy sidecar must include this value in the `X-Omni-Cdp-Token` header (#13679). Without a token, the proxy forwards requests without authentication and relies on isolation of the Compose network `chatgpt-web-codex-net`. Generate with `openssl rand -hex 32`. |
+| `CHATGPT_WEB_CODEX_TUNNEL_ID`        | _(unset)_                        | `open-sse/executors/chatgpt-web-codex.ts`        | Global OpenAI tunnel ID for local Codex tool turns.                      |
+| `CHATGPT_WEB_CODEX_RUNTIME_KEY`      | _(unset)_                        | `open-sse/executors/chatgpt-web-codex.ts`        | Global tunnel runtime key; never include it in logs.                      |
+| `CHATGPT_WEB_CODEX_CONNECTOR_NAME`   | `OmniRoute Codex v2`             | `open-sse/executors/chatgpt-web-codex.ts`        | Exact name of the newly created ChatGPT custom connector for the MCP bridge. |
+| `CODEX_CHATGPT_WEB_HOME`             | `<DATA_DIR>/chatgpt-web-codex`   | `open-sse/vendor/codex-chatgpt-web/config.ts`    | Dedicated directory for browser, broker and tunnel state.            |
+| `CODEX_CHATGPT_WEB_BROWSER_DIAGNOSTICS` | `0`                           | `open-sse/vendor/codex-chatgpt-web/adapters/chatgpt-web/browser-diagnostics.ts` | When set to `1`, captures browser diagnostic images at every checkpoint. |
+| `CODEX_CHATGPT_WEB_LAUNCHER`         | _(unset)_                        | `open-sse/vendor/codex-chatgpt-web/config.ts`    | Optional absolute path to a persistent launcher binary.             |
+| `CODEX_CHATGPT_WEB_BUN`              | _(auto-detect)_                  | `open-sse/vendor/codex-chatgpt-web/config.ts`    | Optional absolute path to the Bun runtime binary.                           |
+| `CODEX_WEB_GPT_BUN`                  | _(unset)_                        | `open-sse/vendor/codex-chatgpt-web/config.ts`    | Legacy fallback for `CODEX_CHATGPT_WEB_BUN`; new installations use the canonical name. |
 ---
 
 ## OmniConductor Bridge
