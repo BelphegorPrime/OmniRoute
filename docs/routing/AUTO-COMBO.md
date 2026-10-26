@@ -898,3 +898,25 @@ intentionally excluded from CI because they require live credentials and VPS acc
 | `open-sse/services/autoCombo/providerRegistryAccessor.ts` | Test hook for mocking provider registry                                                                   |
 | `src/shared/constants/routingStrategies.ts`               | `ROUTING_STRATEGY_VALUES` (20 strategies)                                                                 |
 | `src/sse/handlers/chat.ts`                                | Integration: auto-prefix short-circuit                                                                    |
+
+## LiteLLM decision-model routers
+
+Auto-Combo can ask a configured LiteLLM decision model to choose one model ID from the eligible candidate pool. `litellm-decisions` uses the documented OpenAI request/response format at `/v1/decisions`; `litellm-systemone` uses `/v1/systemone`. Both send one `choice` question, with the model IDs as choices and instructions to choose the cheapest capable tier. The response's `model` is the decision backend, not the selected target; routing uses the `route_model` answer and accepts only a model in the submitted pool. The existing rules strategy selects a serving connection for that model.
+
+Configure an absolute base URL and decision-model alias explicitly (or via the matching environment variables). No provider URL or decision model is assumed. A base path is preserved, so `https://litellm.example/proxy` targets `https://litellm.example/proxy/v1/decisions` or `/v1/systemone`.
+
+```json
+{
+  "routerStrategy": "litellm-decisions",
+  "litellm": {
+    "baseUrl": "https://litellm.example/proxy",
+    "model": "jev",
+    "apiKey": "<optional LiteLLM key>",
+    "timeoutMs": 2000
+  }
+}
+```
+
+For System One, change only `routerStrategy` to `litellm-systemone`; its path and wire format are selected by the strategy ID, not a redundant format option. `OMNIROUTE_LITELLM_BASE_URL` and `OMNIROUTE_LITELLM_MODEL` can supply the required values; `OMNIROUTE_LITELLM_API_KEY` is optional. Only the last user text (capped at 16,000 characters) and up to 50 distinct eligible model IDs are sent. Requests time out; request/parse failures fall back to rules with a cooldown, while invalid or out-of-menu choices fall back without one. If fewer than two distinct eligible model IDs remain, routing skips the decision request and uses rules directly.
+
+Wire references: [LiteLLM `/v1/decisions`](https://docs.litellm.ai/docs/decisions/openai_format) and [LiteLLM `/v1/systemone`](https://docs.litellm.ai/docs/decisions/systemone_format).

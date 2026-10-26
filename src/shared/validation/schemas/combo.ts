@@ -237,8 +237,18 @@ export const comboRuntimeConfigSchema = z
     // `nadir` auto-router strategy (open-sse/services/autoCombo/nadirStrategy.ts).
     nadir: z
       .object({
-        apiKey: z.string().trim().max(200).optional(),
+        apiKey: z.string().trim().max(500).optional(),
         baseUrl: z.string().trim().max(500).optional(),
+        timeoutMs: z.coerce.number().int().min(100).max(30_000).optional(),
+      })
+      .strict()
+      .optional(),
+    // `litellm` decision models (open-sse/services/autoCombo/litellmDecisionStrategy.ts).
+    litellm: z
+      .object({
+        apiKey: z.string().trim().max(500).optional(),
+        baseUrl: z.string().trim().max(500).optional(),
+        model: z.string().trim().min(1).max(200).optional(),
         timeoutMs: z.coerce.number().int().min(100).max(30_000).optional(),
       })
       .strict()

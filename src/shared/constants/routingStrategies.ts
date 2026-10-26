@@ -47,6 +47,8 @@ export const AUTO_ROUTING_STRATEGY_VALUES = [
   "sla",
   "lkgp",
   "nadir",
+  "litellm-decisions",
+  "litellm-systemone",
 ] as const;
 
 export type AutoRoutingStrategyValue = (typeof AUTO_ROUTING_STRATEGY_VALUES)[number];

@@ -19,6 +19,10 @@ import { clamp01 } from "../../utils/number.ts";
 import { rankBySpeed } from "./speedRanking.ts";
 import type { SpeedCandidate } from "./speedRanking.ts";
 import { NadirStrategyImpl, type NadirRoutingConfig } from "./nadirStrategy.ts";
+import {
+  LiteLLMDecisionStrategyImpl,
+  type LiteLLMDecisionRoutingConfig,
+} from "./litellmDecisionStrategy.ts";
 
 export interface SlaRoutingPolicy {
   targetP95Ms?: number;
@@ -37,10 +41,12 @@ export interface RoutingContext {
   sla?: SlaRoutingPolicy;
   weights?: ScoringWeights;
   explorationRate?: number;
-  /** Raw request `messages`, for request-aware strategies (`nadir`). Untouched by the others. */
+  /** Raw request `messages`, for request-aware strategies (`nadir`, `litellm-*`). Untouched by the others. */
   messages?: unknown;
   /** The combo's `config.nadir` block; see nadirStrategy.ts. */
   nadir?: NadirRoutingConfig;
+  /** The combo's `config.litellm` block; see litellmDecisionStrategy.ts. */
+  litellm?: LiteLLMDecisionRoutingConfig;
 }
 
 export interface RoutingDecision {
@@ -400,6 +406,14 @@ strategyRegistry.set("sla-aware", slaStrategy);
 strategyRegistry.set("sla", slaStrategy); // alias
 strategyRegistry.set("lkgp", lkgpStrategy);
 strategyRegistry.set("nadir", new NadirStrategyImpl({ fallback: rulesStrategy }));
+strategyRegistry.set(
+  "litellm-decisions",
+  new LiteLLMDecisionStrategyImpl({ fallback: rulesStrategy }, "openai")
+);
+strategyRegistry.set(
+  "litellm-systemone",
+  new LiteLLMDecisionStrategyImpl({ fallback: rulesStrategy }, "systemone")
+);
 
 export function getStrategy(name: string): RouterStrategy {
   const strategy = strategyRegistry.get(name);

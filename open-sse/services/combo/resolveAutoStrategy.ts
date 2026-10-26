@@ -292,6 +292,7 @@ export async function resolveAutoStrategyOrder(
     resetWindowConfig,
     slaPolicy,
     nadirConfig,
+    litellmConfig,
   } = parseAutoConfig(combo, eligibleTargets);
 
   // Per-request overrides (#6023 / #6024 / #6025 / #3470): X-OmniRoute-Budget,
@@ -420,6 +421,7 @@ export async function resolveAutoStrategyOrder(
             explorationRate,
             messages: body.messages,
             nadir: nadirConfig,
+            litellm: litellmConfig,
           },
           routingStrategy
         );
