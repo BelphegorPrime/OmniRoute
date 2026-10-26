@@ -42,6 +42,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { load as parseYaml } from "js-yaml";
 import { runGateProcess } from "./gate-process.mjs";
+import { eslintMeasurementCounts } from "./eslint-measurement.mjs";
 import { loadFullCiProfile, staticGateOutcome } from "./release-green-static-profile.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -193,7 +194,10 @@ export function evaluateEslintRun({ code, out }, warningBaseline) {
     ];
   }
   const parsed = parseEslintJson(out);
-  if (!parsed) {
+  let counts;
+  try {
+    counts = eslintMeasurementCounts(parsed);
+  } catch {
     return [
       {
         id: "lint",
@@ -208,7 +212,7 @@ export function evaluateEslintRun({ code, out }, warningBaseline) {
     ];
   }
 
-  const { errors, warnings } = eslintCounts(parsed);
+  const { errors, warnings } = counts;
   const warningDrift = isDrift(warnings, warningBaseline);
   return [
     {
@@ -511,9 +515,13 @@ export function mergeUnitShardResults(shardResults) {
  * shards, its integration shards, then vitest (MCP + UI). The workflow's `suites` matrix writes
  * one `<name>.json` per job; a name with no file is a job that never reported.
  */
-export function hostedSuiteNames(unitShards, integrationShards) {
+export function hostedSuiteNames(unitShards, integrationShards, vitestShards = 1) {
   const range = (n, prefix) => Array.from({ length: n }, (_, i) => `${prefix}-${i + 1}`);
-  return [...range(unitShards, "unit"), ...range(integrationShards, "integration"), "vitest"];
+  return [
+    ...range(unitShards, "unit"),
+    ...range(integrationShards, "integration"),
+    ...(vitestShards === 1 ? ["vitest"] : range(vitestShards, "vitest")),
+  ];
 }
 
 /** Exact execution identity shared by hosted writers and their consuming observer. */
@@ -566,7 +574,10 @@ export function parseHostedSuiteResult(text, expected) {
  * release-green.json keep the same ids. A lane passes only when every expected job reported
  * exit 0; a job that never reported (cancelled, timed out, upload lost) fails it.
  */
-export function foldHostedSuiteResults(results, { unitShards, integrationShards }) {
+export function foldHostedSuiteResults(
+  results,
+  { unitShards, integrationShards, vitestShards = 1 }
+) {
   const byName = new Map(results.filter(Boolean).map((r) => [r.name, r]));
   const lane = (id, label, names) => {
     const parts = [];
@@ -589,7 +600,7 @@ export function foldHostedSuiteResults(results, { unitShards, integrationShards 
       detail: parts.length === 0 ? "pass" : `${parts.join(", ")}${line ? ` — ${line}` : ""}`,
     };
   };
-  const names = hostedSuiteNames(unitShards, integrationShards);
+  const names = hostedSuiteNames(unitShards, integrationShards, vitestShards);
   return [
     ...(results.some((r) => !r || !names.includes(r.name)) || byName.size !== results.length
       ? [
@@ -612,7 +623,11 @@ export function foldHostedSuiteResults(results, { unitShards, integrationShards 
       `Integration tests (ci.yml's ${integrationShards} shards on hosted runners)`,
       names.filter((n) => n.startsWith("integration-"))
     ),
-    lane("vitest", "Vitest (MCP + UI, hosted runner)", ["vitest"]),
+    lane(
+      "vitest",
+      "Vitest (MCP + all UI shards, hosted runners)",
+      names.filter((n) => n.startsWith("vitest"))
+    ),
   ];
 }
 
@@ -789,9 +804,8 @@ async function main() {
     });
   };
 
-  // A ratchet command (check:complexity, check:dead-code, …) exits 1 ONLY on a
-  // measured regression and self-skips (exit 0) when its tooling is absent — so a
-  // non-zero exit here is drift to rebaseline at release, never a contributor block.
+  // Curated ratchets retain their diagnostic bucket here. The full profile overrides
+  // it with the applicable policy, and incomplete command receipts remain blocking.
   // ALL checks run regardless of earlier failures (the report is collected, not
   // fail-fast) so one pass surfaces every red instead of revealing them in layers.
   const driftCmd = async (id, label, cmd, cmdArgs, okDetail = "within baseline", opts) => {
@@ -808,6 +822,7 @@ async function main() {
   };
 
   process.stderr.write("🔎 Release-green validation (current working tree)\n\n");
+  let freshLintReport = null;
 
   await hardCmd("typecheck", "Typecheck (core)", npmCmd, ["run", "typecheck:core"]);
 
@@ -846,6 +861,23 @@ async function main() {
     saveGateLog("lint", out);
     for (const result of evaluateEslintRun(lintRun, baselineValue("eslintWarnings"))) {
       record(result);
+    }
+    if ([0, 1].includes(lintRun.code) && ["PASS", "FAIL"].includes(lintRun.receipt.outcome)) {
+      try {
+        const parsed = parseEslintJson(out);
+        eslintMeasurementCounts(parsed);
+        const path = join(LOG_DIR, "commands", `${randomUUID()}.eslint.json`);
+        writeFileSync(path, `${JSON.stringify(parsed)}\n`, { flag: "wx", mode: 0o600 });
+        freshLintReport = path;
+      } catch {
+        record({
+          id: "lint-measurement",
+          label: "Retain the current ESLint measurement",
+          kind: "hard",
+          ok: false,
+          detail: "no complete lint report retained for this execution",
+        });
+      }
     }
   }
 
@@ -978,18 +1010,23 @@ async function main() {
       // starvation such as the catalog's 8 s build bound). The suites now run on hosted
       // runners exactly like a PR's CI; this slot keeps the static gates and the build.
       let integrationShards = null;
+      let vitestShards = null;
       try {
         integrationShards = shardCountFromCi(
           readFileSync(join(ROOT, ".github/workflows/ci.yml"), "utf8"),
           "test-integration"
         );
+        vitestShards = shardCountFromCi(
+          readFileSync(join(ROOT, ".github/workflows/ci.yml"), "utf8"),
+          "test-vitest"
+        );
       } catch {
         integrationShards = null;
       }
-      if (!unitShards || !integrationShards) {
+      if (!unitShards || !integrationShards || !vitestShards) {
         record({
           id: "hosted-suites",
-          label: "Hosted suites: read ci.yml's unit and integration matrices",
+          label: "Hosted suites: read ci.yml's unit, integration and UI matrices",
           kind: "hard",
           ok: false,
           detail: "could not read the shard counts from .github/workflows/ci.yml",
@@ -1002,7 +1039,7 @@ async function main() {
           files = [];
         }
         const expected = hostedSuiteIdentity(ROOT, SUITES_WORKFLOW_SHA);
-        const names = hostedSuiteNames(unitShards, integrationShards);
+        const names = hostedSuiteNames(unitShards, integrationShards, vitestShards);
         const results = files.map((f) => {
           try {
             const name = f.slice(0, -5);
@@ -1010,16 +1047,16 @@ async function main() {
             const log = readFileSync(join(SUITES_FROM, `${name}.log`));
             if (log.length === 0) return null;
             const isUnit = name.startsWith("unit-");
+            const isVitest = name.startsWith("vitest-");
             const script =
-              name === "vitest"
+              name === "vitest-1"
                 ? "test:vitest+test:vitest:ui"
-                : isUnit
-                  ? "test:unit:ci:shard"
-                  : "test:integration:ci";
-            const shard =
-              name === "vitest"
-                ? ""
-                : `${name.split("-")[1]}/${isUnit ? unitShards : integrationShards}`;
+                : isVitest
+                  ? "test:vitest:ui"
+                  : isUnit
+                    ? "test:unit:ci:shard"
+                    : "test:integration:ci";
+            const shard = `${name.split("-")[1]}/${isVitest ? vitestShards : isUnit ? unitShards : integrationShards}`;
             return parseHostedSuiteResult(
               readFileSync(join(SUITES_FROM, f), "utf8"),
               expected && {
@@ -1034,7 +1071,11 @@ async function main() {
             return null;
           }
         });
-        for (const r of foldHostedSuiteResults(results, { unitShards, integrationShards })) {
+        for (const r of foldHostedSuiteResults(results, {
+          unitShards,
+          integrationShards,
+          vitestShards,
+        })) {
           announce(r.label);
           record(r);
         }
@@ -1166,18 +1207,35 @@ async function main() {
       });
     }
     const already = new Set(results.map((r) => r.id));
+    let metricsCollected = false;
     process.stderr.write(`\n──── full-ci explicit static gates (${gates.length}) ────\n`);
     for (const g of gates) {
       const prior = results.find((result) => result.id === curatedEquivalentId(g.id));
       if (prior) prior.kind = g.kind;
       // Skip a gate the curated pass already ran with the same id (avoid double-running lint).
       if (already.has(g.id)) continue;
+      const collectsMetrics = g.args[1] === "quality:collect";
+      const checksMetrics = g.args[1] === "quality:ratchet";
+      if ((collectsMetrics && !freshLintReport) || (checksMetrics && !metricsCollected)) {
+        record({
+          id: g.id,
+          label: `${g.job} → npm ${g.args.join(" ")}`,
+          kind: "hard",
+          ok: false,
+          evidenceState: "INCOMPLETE",
+          detail: collectsMetrics
+            ? "current ESLint measurement unavailable; metrics were not collected"
+            : "current metrics collection incomplete; ratchet was not evaluated",
+        });
+        continue;
+      }
       const { code, out, receipt } = await run(npmCmd, g.args, {
-        env: g.env,
+        env: { ...g.env, ...(collectsMetrics ? { ESLINT_RESULTS_JSON: freshLintReport } : {}) },
         timeout: fullCiTimeoutFor(g.id),
       });
       saveGateLog(`fullci-${g.id.replace(/[^a-z0-9]+/gi, "-")}`, out);
       const outcome = staticGateOutcome(code, out, receipt.outcome);
+      if (collectsMetrics) metricsCollected = outcome.ok;
       record({
         id: g.id,
         label: `${g.job} → npm ${g.args.join(" ")}`,
@@ -1210,13 +1268,15 @@ async function main() {
   const { releaseGreen, hardFailures, drift } = computeVerdict(results);
 
   process.stderr.write("\n──────── verdict ────────\n");
-  process.stderr.write(`HARD failures (block — real defects): ${hardFailures.length}\n`);
+  process.stderr.write(
+    `HARD failures (blocking requirements or incomplete evidence): ${hardFailures.length}\n`
+  );
   hardFailures.forEach((r) => process.stderr.write(`  ❌ ${r.label}: ${r.detail}\n`));
-  process.stderr.write(`Ratchet drift (non-blocking — rebaseline at release): ${drift.length}\n`);
+  process.stderr.write(`Advisory drift in this profile: ${drift.length}\n`);
   drift.forEach((r) => process.stderr.write(`  🟡 ${r.label}: ${r.detail}\n`));
   process.stderr.write(
     releaseGreen
-      ? "\n✅ RELEASE-GREEN (no hard failures). Any drift above is rebaselined at release, not a contributor concern.\n"
+      ? "\n✅ RELEASE-GREEN for this observer profile. Advisory debt remains visible; candidate admission requires every applicable check.\n"
       : "\n❌ NOT release-green — inspect execution evidence and compare the exact base before attributing a failure to a contributor.\n"
   );
 
