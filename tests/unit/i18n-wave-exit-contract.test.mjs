@@ -78,7 +78,7 @@ const scenario = process.env.WAVE_SCENARIO;
 if (args[0] === "scripts/i18n/run-translation.mjs") {
   if (scenario === "missing") fs.rmSync("docs/i18n/pt-BR/docs/example.md");
   if (scenario === "large") fs.writeSync(1, "progress ".repeat(40000) + "\\n");
-  fs.writeSync(1, "[doc] summary: translated=1 skipped=0 failed=" + (scenario === "translation" ? 1 : 0) + "\\n");
+  fs.writeSync(1, "[i18n-run] summary: translated=1, skipped=0, failed=" + (scenario === "translation" ? 1 : 0) + ", total considered=1, elapsed=0.1s\\n");
   process.exit(scenario === "exit" ? 1 : 0);
 }
 if (args[0] === "scripts/i18n/check-translation-drift.mjs") {

@@ -147,7 +147,7 @@ run_doc() {  # $1 doc — 0 quando failed=0; 1 após 3 tentativas reais ou cota/
     wip "docs(i18n): sync $f mirrors with the base" "$f" || {
       log "ABORT: could not commit and push $f"; return 2;
     }
-    if [ "$rc" -eq 0 ] && grep -Eq 'summary:.*failed=0([[:space:]]|$)' <<< "$out" &&
+    if [ "$rc" -eq 0 ] && grep -Eq 'summary:.*failed=0([,[:space:]]|$)' <<< "$out" &&
        ! grep -Eq 'summary:.*failed=[1-9]' <<< "$out"; then return 0; fi
     log "translation did not complete: command_exit=$rc"
     force=""   # a repetição só refaz os locales que falharam
