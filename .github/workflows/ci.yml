@@ -357,17 +357,12 @@ jobs:
           path: .artifacts/quality-ratchet.md
           if-no-files-found: warn
 
-  # Phase 7/8 extended quality gates — MIXED (Etapa 2, v3.8.26). The job no longer
-  # carries a job-level continue-on-error: the three ratchet-blocking steps below
-  # (Secret scan / Workflow lint / Bundle size, all passing --ratchet) FAIL the job
-  # on a measured regression vs config/quality/quality-baseline.json. The remaining
-  # steps stay ADVISORY via step-level continue-on-error (scanner install,
-  # vuln/osv ratchet, OpenAPI/oasdiff breaking-change, circular-deps/dpdm): they
-  # depend on external binaries/state that may legitimately self-skip, so they must
-  # never block. The blocking gates themselves SKIP (exit 0) when their binary/plugin
-  # is absent — only a measured regression on the SAME metric the baseline froze
-  # blocks. The CodeQL ratchet was PROMOTED to the quality-gate job (v3.8.26).
-  # SonarQube needs SONAR_TOKEN/SONAR_HOST_URL secrets.
+  # Phase 7/8 extended quality gates — MIXED (Etapa 2, v3.8.26). There is no
+  # job-level continue-on-error. Bundle, secret, vulnerability, workflow
+  # and OpenAPI ratchets are blocking. Circular-dependency diagnostics and scanner
+  # installation are advisory steps; required measurements still fail closed if
+  # tooling, reports or baselines are unavailable.
+  # The CodeQL ratchet belongs to quality-gate. SonarQube needs its configured secrets.
   quality-extended:
     name: Quality Gates (Extended)
     runs-on: ubuntu-latest
@@ -461,17 +456,11 @@ jobs:
           "$HOME/.local/bin/osv-scanner" --version || true
           "$HOME/.local/bin/oasdiff" --version || true
           zizmor --version || true
-      # BLOCKING ratchet (Etapa 2): secretFindings must not regress vs the baseline.
-      # --ratchet exits 1 on a measured regression; it SKIPs (exit 0) when gitleaks
-      # is absent (a missing binary never blocks).
+      # Blocking: measured regression exits 1; unavailable/invalid evidence exits 2.
       - name: Secret scan (gitleaks, ratchet, blocking)
         run: npm run check:secrets -- --ratchet
-      # BLOCKING ratchet (v3.8.27 cycle-end): vulnCount must not regress vs the
-      # baseline. --ratchet exits 1 on a measured regression (measured > baseline);
-      # it SKIPs (exit 0) when osv-scanner is absent or osv.dev is unreachable (a
-      # missing/failed measurement never blocks). See the CVE-variance note in
-      # docs/security/SUPPLY_CHAIN.md — a newly-disclosed CVE on an unchanged dep can
-      # red this gate; the fix is to bump the dep or re-baseline metrics.vulnCount.
+      # Blocking: a measured regression or incomplete scan fails. Newly disclosed
+      # vulnerabilities require a dependency fix; missing evidence is never zero.
       - name: Vulnerability ratchet (osv-scanner, ratchet, blocking)
         run: npm run check:vuln-ratchet -- --ratchet
       # BLOCKING ratchet (Etapa 2): zizmorFindings must not regress vs the baseline.
