@@ -39,6 +39,7 @@ import { formatAutoRefreshCountdown } from "./formatters";
 import { translateUsageOrFallback, type UsageTranslationValues } from "./i18nFallback";
 import { compareTr } from "@/shared/utils/turkishText";
 import { fetchWithTimeout } from "@/shared/utils/fetchTimeout";
+import { ConnectionsAuthError, fetchDashboardConnections } from "./fetchConnections";
 
 // Bound the two first-paint requests so a stalled connection cannot wedge
 // `initialLoading` on `true` and freeze the quota page on its skeleton forever
@@ -237,6 +238,7 @@ export default function ProviderLimits({
   const [lastRefreshedAt, setLastRefreshedAt] = useState<Record<string, string>>({});
   const [refreshingAll, setRefreshingAll] = useState(false);
   const [initialLoading, setInitialLoading] = useState(true);
+  const [authRequired, setAuthRequired] = useState(false);
   const [tierFilter, setTierFilter] = useState("all");
   const { quotaVisibility, handleHideQuota, handleShowQuota } = useQuotaVisibility(tr, notify);
   const resetCreditRedemption = useCodexResetCreditRedemption(
@@ -321,15 +323,12 @@ export default function ProviderLimits({
 
   const fetchConnections = useCallback(async () => {
     try {
-      const response = await fetchWithTimeout("/api/providers/client", {
-        timeoutMs: PROVIDER_LIMITS_FETCH_TIMEOUT_MS,
-      });
-      if (!response.ok) throw new Error("Failed");
-      const data = await response.json();
-      const list = data.connections || [];
+      const list = await fetchDashboardConnections(PROVIDER_LIMITS_FETCH_TIMEOUT_MS);
+      setAuthRequired(false);
       setConnections(list);
       return list;
-    } catch {
+    } catch (error) {
+      setAuthRequired(error instanceof ConnectionsAuthError);
       setConnections([]);
       return [];
     }
@@ -854,9 +853,11 @@ export default function ProviderLimits({
       <Card padding="lg">
         <div className="text-center py-12">
           <Icon name="cloud_off" size={64} className="opacity-15" />
-          <h3 className="mt-4 text-lg font-semibold text-text-main">{t("noProviders")}</h3>
+          <h3 className="mt-4 text-lg font-semibold text-text-main">
+            {authRequired ? t("quotaAuthRequired") : t("noProviders")}
+          </h3>
           <p className="mt-2 text-sm text-text-muted max-w-[400px] mx-auto">
-            {t("connectProvidersForQuota")}
+            {authRequired ? t("quotaAuthRequiredHint") : t("connectProvidersForQuota")}
           </p>
         </div>
       </Card>
