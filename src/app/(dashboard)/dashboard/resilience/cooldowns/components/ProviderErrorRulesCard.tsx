@@ -255,6 +255,7 @@ export default function ProviderErrorRulesCard() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- async settings fetch on mount; state is set after the await
     void load();
   }, [load]);
 
