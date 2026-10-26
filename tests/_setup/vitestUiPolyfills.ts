@@ -22,6 +22,17 @@ if (typeof window !== "undefined" && typeof window.matchMedia !== "function") {
   };
 }
 
+// jsdom has no layout engine or ResizeObserver. The shared UI-kit table subscribes
+// to resize notifications on mount; browser-independent tests must still be able
+// to mount it. Geometry/resize tests can install their own observable implementation.
+if (typeof window !== "undefined" && typeof globalThis.ResizeObserver !== "function") {
+  globalThis.ResizeObserver = class ResizeObserver {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+}
+
 // #7935 wired `useTranslations`/`useLocale` (next-intl) into ~180 dashboard/shared
 // components (Button, Modal, Select, EmptyState, ProviderIcon, ...). Any UI test that
 // mounts a component depending on one of those — directly or transitively — without its
