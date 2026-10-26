@@ -118,14 +118,18 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { name: unit-1, script: "test:unit:ci:shard", shard: "1/8" }
-          - { name: unit-2, script: "test:unit:ci:shard", shard: "2/8" }
-          - { name: unit-3, script: "test:unit:ci:shard", shard: "3/8" }
-          - { name: unit-4, script: "test:unit:ci:shard", shard: "4/8" }
-          - { name: unit-5, script: "test:unit:ci:shard", shard: "5/8" }
-          - { name: unit-6, script: "test:unit:ci:shard", shard: "6/8" }
-          - { name: unit-7, script: "test:unit:ci:shard", shard: "7/8" }
-          - { name: unit-8, script: "test:unit:ci:shard", shard: "8/8" }
+          - { name: unit-1, script: "test:unit:ci:shard", shard: "1/12" }
+          - { name: unit-2, script: "test:unit:ci:shard", shard: "2/12" }
+          - { name: unit-3, script: "test:unit:ci:shard", shard: "3/12" }
+          - { name: unit-4, script: "test:unit:ci:shard", shard: "4/12" }
+          - { name: unit-5, script: "test:unit:ci:shard", shard: "5/12" }
+          - { name: unit-6, script: "test:unit:ci:shard", shard: "6/12" }
+          - { name: unit-7, script: "test:unit:ci:shard", shard: "7/12" }
+          - { name: unit-8, script: "test:unit:ci:shard", shard: "8/12" }
+          - { name: unit-9, script: "test:unit:ci:shard", shard: "9/12" }
+          - { name: unit-10, script: "test:unit:ci:shard", shard: "10/12" }
+          - { name: unit-11, script: "test:unit:ci:shard", shard: "11/12" }
+          - { name: unit-12, script: "test:unit:ci:shard", shard: "12/12" }
           - { name: integration-1, script: "test:integration:ci", shard: "1/2" }
           - { name: integration-2, script: "test:integration:ci", shard: "2/2" }
           - { name: vitest-1, script: "test:vitest:ui", shard: "1/4" }
