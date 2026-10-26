@@ -150,42 +150,41 @@ function stepProvider(step: unknown): string | null {
   return provider || null;
 }
 
+function stepWarning(
+  comboName: unknown,
+  step: unknown,
+  allNames: Set<string>,
+  knownProviders: Set<string>
+): string | null {
+  if (isRecord(step) && step.kind === "combo-ref") {
+    const ref = typeof step.comboName === "string" ? step.comboName : "";
+    return ref && !allNames.has(ref)
+      ? `combo "${comboName}": references unknown combo "${ref}"`
+      : null;
+  }
+  const provider = stepProvider(step);
+  if (!provider) return null;
+  const resolved = resolveProviderAlias(provider) || provider;
+  if (knownProviders.has(provider) || knownProviders.has(resolved)) return null;
+  if (isNoAuthProviderKey(provider, resolved)) return null;
+  return `combo "${comboName}": no connection configured for provider "${provider}"`;
+}
+
 function collectWarnings(
   combo: JsonRecord,
   allNames: Set<string>,
   knownProviders: Set<string>
 ): string[] {
-  const warnings: string[] = [];
   const models = Array.isArray(combo.models) ? combo.models : [];
-  for (const step of models) {
-    if (isRecord(step) && step.kind === "combo-ref") {
-      const ref = typeof step.comboName === "string" ? step.comboName : "";
-      if (ref && !allNames.has(ref)) {
-        warnings.push(`combo "${combo.name}": references unknown combo "${ref}"`);
-      }
-      continue;
-    }
-    const provider = stepProvider(step);
-    if (!provider) continue;
-    const resolved = resolveProviderAlias(provider) || provider;
-    if (knownProviders.has(provider) || knownProviders.has(resolved)) continue;
-    if (isNoAuthProviderKey(provider, resolved)) continue;
-    warnings.push(`combo "${combo.name}": no connection configured for provider "${provider}"`);
-  }
-  return warnings;
+  return models
+    .map((step) => stepWarning(combo.name, step, allNames, knownProviders))
+    .filter((warning): warning is string => warning !== null);
 }
 
-/**
- * Validate a parsed import file against the current combos without writing.
- * Every entry goes through the same pipeline as POST /api/combos (Zod schema,
- * step normalization, dead-key strip, composite-tier and DAG validation).
- * `merge` keeps every existing combo and skips name conflicts; `replace` keeps
- * only hidden system-managed combos (quota pools), which are never replaced.
- */
-export function prepareComboImport(
-  rawEntries: unknown[],
-  context: { existing: JsonRecord[]; mode: ComboImportMode; knownProviders: Set<string> }
-): ComboImportPreparation {
+type ComboImportFailure = Extract<ComboImportPreparation, { ok: false }>;
+
+/** Zod-parse every entry (same schema as POST /api/combos) and reject duplicate names. */
+function parseImportEntries(rawEntries: unknown[]): JsonRecord[] | ComboImportFailure {
   const parsed: JsonRecord[] = [];
   const seen = new Set<string>();
   for (const [index, raw] of rawEntries.entries()) {
@@ -207,17 +206,14 @@ export function prepareComboImport(
     seen.add(name);
     parsed.push(combo);
   }
+  return parsed;
+}
 
-  const retained = context.existing.filter(
-    (combo) => context.mode === "merge" || combo.isHidden === true
-  );
-  const retainedNames = new Set(retained.map((combo) => String(combo.name)));
-  const skipped = parsed
-    .filter((c) => retainedNames.has(String(c.name)))
-    .map((c) => String(c.name));
-  const candidates = parsed.filter((c) => !retainedNames.has(String(c.name)));
-  const allNames = new Set([...retainedNames, ...candidates.map((c) => String(c.name))]);
-
+/** Normalize steps, strip dead config keys and validate composite tiers for each new combo. */
+function buildCombosToCreate(
+  candidates: JsonRecord[],
+  allNames: Set<string>
+): JsonRecord[] | ComboImportFailure {
   const toCreate: JsonRecord[] = [];
   for (const candidate of candidates) {
     const name = String(candidate.name);
@@ -237,7 +233,14 @@ export function prepareComboImport(
     }
     toCreate.push(combo);
   }
+  return toCreate;
+}
 
+/** DAG-check every new combo against the final set (retained + new). */
+function findImportDagFailure(
+  retained: JsonRecord[],
+  toCreate: JsonRecord[]
+): ComboImportFailure | null {
   const finalSet = [...retained, ...toCreate] as Array<{ name: string; models: unknown[] }>;
   for (const combo of toCreate) {
     const config = isRecord(combo.config) ? combo.config : {};
@@ -257,6 +260,37 @@ export function prepareComboImport(
       };
     }
   }
+  return null;
+}
+
+/**
+ * Validate a parsed import file against the current combos without writing.
+ * Every entry goes through the same pipeline as POST /api/combos (Zod schema,
+ * step normalization, dead-key strip, composite-tier and DAG validation).
+ * `merge` keeps every existing combo and skips name conflicts; `replace` keeps
+ * only hidden system-managed combos (quota pools), which are never replaced.
+ */
+export function prepareComboImport(
+  rawEntries: unknown[],
+  context: { existing: JsonRecord[]; mode: ComboImportMode; knownProviders: Set<string> }
+): ComboImportPreparation {
+  const parsed = parseImportEntries(rawEntries);
+  if (!Array.isArray(parsed)) return parsed;
+
+  const retained = context.existing.filter(
+    (combo) => context.mode === "merge" || combo.isHidden === true
+  );
+  const retainedNames = new Set(retained.map((combo) => String(combo.name)));
+  const skipped = parsed
+    .filter((c) => retainedNames.has(String(c.name)))
+    .map((c) => String(c.name));
+  const candidates = parsed.filter((c) => !retainedNames.has(String(c.name)));
+  const allNames = new Set([...retainedNames, ...candidates.map((c) => String(c.name))]);
+
+  const toCreate = buildCombosToCreate(candidates, allNames);
+  if (!Array.isArray(toCreate)) return toCreate;
+  const dagFailure = findImportDagFailure(retained, toCreate);
+  if (dagFailure) return dagFailure;
 
   const warnings = Array.from(
     new Set(toCreate.flatMap((combo) => collectWarnings(combo, allNames, context.knownProviders)))

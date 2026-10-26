@@ -29,38 +29,44 @@ function comboName(entry: unknown): string {
     : "";
 }
 
-/**
- * Combos page header actions: Export / Import of the combos-only file
- * (`/api/combos/export`, `/api/combos/import`) next to "Create combo".
- * Import always shows a confirmation with counts; merge is the default and
- * "Replace all" is an explicit, separately labelled choice.
- */
-export default function ComboHeaderActions({ onCreate, onImported }: ComboHeaderActionsProps) {
+async function downloadCombosExport(): Promise<void> {
+  const res = await fetch("/api/combos/export");
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const blob = await res.blob();
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `omniroute-combos-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+/** Counts shown in the confirmation: entries in the file vs the visible combos already saved. */
+async function summarizeImport(parsed: { _meta?: unknown; combos: unknown[] }) {
+  const res = await fetch("/api/combos");
+  const data = res.ok ? await res.json() : { combos: [] };
+  const visible = (Array.isArray(data.combos) ? data.combos : []).filter(
+    (combo: { isHidden?: boolean }) => combo.isHidden !== true
+  );
+  const existingNames = new Set(visible.map(comboName));
+  const names = parsed.combos.map(comboName);
+  const conflicting = names.filter((name: string) => existingNames.has(name)).length;
+  return {
+    file: { _meta: parsed._meta, combos: parsed.combos },
+    total: names.length,
+    fresh: names.length - conflicting,
+    conflicting,
+    current: visible.length,
+  };
+}
+
+function useComboImport(onImported: () => void | Promise<void>) {
   const t = useTranslations("combos");
-  const tc = useTranslations("common");
   const notify = useNotificationStore();
-  const fileInputRef = useRef<HTMLInputElement>(null);
   const [pending, setPending] = useState<PendingImport | null>(null);
   const [importing, setImporting] = useState(false);
-
-  const handleExport = async () => {
-    try {
-      const res = await fetch("/api/combos/export");
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = `omniroute-combos-${new Date().toISOString().slice(0, 10)}.json`;
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.log("Error exporting combos:", error);
-      notify.error(t("exportCombosFailed"));
-    }
-  };
 
   const handleFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -72,21 +78,7 @@ export default function ComboHeaderActions({ onCreate, onImported }: ComboHeader
         notify.error(t("importCombosInvalidFile"));
         return;
       }
-      const res = await fetch("/api/combos");
-      const data = res.ok ? await res.json() : { combos: [] };
-      const visible = (Array.isArray(data.combos) ? data.combos : []).filter(
-        (combo: { isHidden?: boolean }) => combo.isHidden !== true
-      );
-      const existingNames = new Set(visible.map(comboName));
-      const names = parsed.combos.map(comboName);
-      const conflicting = names.filter((name: string) => existingNames.has(name)).length;
-      setPending({
-        file: { _meta: parsed._meta, combos: parsed.combos },
-        total: names.length,
-        fresh: names.length - conflicting,
-        conflicting,
-        current: visible.length,
-      });
+      setPending(await summarizeImport(parsed));
     } catch (error) {
       console.log("Error reading combos import file:", error);
       notify.error(t("importCombosInvalidFile"));
@@ -126,6 +118,80 @@ export default function ComboHeaderActions({ onCreate, onImported }: ComboHeader
     }
   };
 
+  return { pending, setPending, importing, handleFile, runImport };
+}
+
+function ImportConfirmModal({
+  pending,
+  importing,
+  onCancel,
+  onImport,
+}: {
+  pending: PendingImport | null;
+  importing: boolean;
+  onCancel: () => void;
+  onImport: (mode: ImportMode) => void;
+}) {
+  const t = useTranslations("combos");
+  const tc = useTranslations("common");
+  return (
+    <Modal
+      isOpen={pending !== null}
+      onClose={() => !importing && onCancel()}
+      title={t("importCombosTitle")}
+      size="md"
+      footer={
+        <div className="flex flex-wrap justify-end gap-2">
+          <Button variant="ghost" disabled={importing} onClick={onCancel}>
+            {tc("cancel")}
+          </Button>
+          <Button variant="danger" disabled={importing} onClick={() => onImport("replace")}>
+            {t("importCombosReplace")}
+          </Button>
+          <Button loading={importing} onClick={() => onImport("merge")}>
+            {t("importCombosMerge")}
+          </Button>
+        </div>
+      }
+    >
+      {pending && (
+        <div className="flex flex-col gap-3 text-sm">
+          <p className="text-text-main">
+            {t("importCombosSummary", {
+              total: pending.total,
+              fresh: pending.fresh,
+              conflicting: pending.conflicting,
+            })}
+          </p>
+          <p className="text-text-muted">{t("importCombosMergeHint")}</p>
+          <p className="text-error">{t("importCombosReplaceHint", { current: pending.current })}</p>
+        </div>
+      )}
+    </Modal>
+  );
+}
+
+/**
+ * Combos page header actions: Export / Import of the combos-only file
+ * (`/api/combos/export`, `/api/combos/import`) next to "Create combo".
+ * Import always shows a confirmation with counts; merge is the default and
+ * "Replace all" is an explicit, separately labelled choice.
+ */
+export default function ComboHeaderActions({ onCreate, onImported }: ComboHeaderActionsProps) {
+  const t = useTranslations("combos");
+  const notify = useNotificationStore();
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const { pending, setPending, importing, handleFile, runImport } = useComboImport(onImported);
+
+  const handleExport = async () => {
+    try {
+      await downloadCombosExport();
+    } catch (error) {
+      console.log("Error exporting combos:", error);
+      notify.error(t("exportCombosFailed"));
+    }
+  };
+
   return (
     <>
       <Button size="sm" variant="secondary" icon="download" onClick={handleExport}>
@@ -151,42 +217,12 @@ export default function ComboHeaderActions({ onCreate, onImported }: ComboHeader
       <Button icon="add" onClick={onCreate}>
         {t("createCombo")}
       </Button>
-
-      <Modal
-        isOpen={pending !== null}
-        onClose={() => !importing && setPending(null)}
-        title={t("importCombosTitle")}
-        size="md"
-        footer={
-          <div className="flex flex-wrap justify-end gap-2">
-            <Button variant="ghost" disabled={importing} onClick={() => setPending(null)}>
-              {tc("cancel")}
-            </Button>
-            <Button variant="danger" disabled={importing} onClick={() => runImport("replace")}>
-              {t("importCombosReplace")}
-            </Button>
-            <Button loading={importing} onClick={() => runImport("merge")}>
-              {t("importCombosMerge")}
-            </Button>
-          </div>
-        }
-      >
-        {pending && (
-          <div className="flex flex-col gap-3 text-sm">
-            <p className="text-text-main">
-              {t("importCombosSummary", {
-                total: pending.total,
-                fresh: pending.fresh,
-                conflicting: pending.conflicting,
-              })}
-            </p>
-            <p className="text-text-muted">{t("importCombosMergeHint")}</p>
-            <p className="text-red-600 dark:text-red-400">
-              {t("importCombosReplaceHint", { current: pending.current })}
-            </p>
-          </div>
-        )}
-      </Modal>
+      <ImportConfirmModal
+        pending={pending}
+        importing={importing}
+        onCancel={() => setPending(null)}
+        onImport={(mode) => void runImport(mode)}
+      />
     </>
   );
 }
