@@ -59,6 +59,8 @@ export interface FilterToOpenAIFormatOptions {
   preserveVideoUrl?: boolean;
   /** Keep `reasoning_content` on tool-call assistant turns (reasoning-replay providers). */
   preserveReasoningContent?: boolean;
+  /** Keep the `developer` role (targets that accept it); otherwise it is lowered to `system`. */
+  preserveDeveloperRole?: boolean;
 }
 
 function hasToolCalls(msg: { tool_calls?: unknown }): boolean {
@@ -80,16 +82,47 @@ export function filterToOpenAIFormat(body, opts: FilterToOpenAIFormatOptions = {
   // REQUIRE the client's reasoning_content to be passed back, so keep it for them
   // (the caller sets this when the routed model needs reasoning replay).
   const preserveReasoningContent = opts?.preserveReasoningContent === true;
+  const preserveDeveloperRole = opts?.preserveDeveloperRole === true;
   if (!body.messages || !Array.isArray(body.messages)) return body;
 
   body.messages = body.messages.map((msg) => {
     // Normalize OpenAI Responses-style `developer` role to `system` — many
     // OpenAI-compatible providers reject `developer` (ported from
-    // decolua/9router#1011).
-    if (msg.role === "developer") msg = { ...msg, role: "system" };
+    // decolua/9router#1011). Skipped when the role normalizer decided the
+    // target accepts `developer` (provider allowlist / per-model compat toggle).
+    if (msg.role === "developer" && !preserveDeveloperRole) msg = { ...msg, role: "system" };
 
-    // Keep tool messages as-is (OpenAI format)
-    if (msg.role === "tool") return msg;
+    // Keep tool messages as-is (OpenAI format) — except for `cache_control`
+    // markers sitting on their content blocks. A `role:"tool"` message becomes a
+    // Claude `tool_result` block whose `content[]` is the message's content, so a
+    // marker left on a content block lands at `tool_result.content[i].cache_control`,
+    // which Anthropic hard-rejects: "cache_control may not be specified within
+    // `tool_result.content`. Instead, place it directly on `tool_result`". The
+    // prepareClaudeRequest hoist cannot save this path: it only runs for
+    // targetFormat === "claude", while an openai-compatible upstream that itself
+    // re-translates to Anthropic (gateway-in-front-of-Anthropic) never reaches it.
+    // Hoist the marker onto the tool MESSAGE instead, so the downstream
+    // openai→claude conversion emits it on the `tool_result` block itself.
+    if (msg.role === "tool") {
+      if (!Array.isArray(msg.content)) return msg;
+      let hoisted: unknown;
+      let found = false;
+      const content = msg.content.map((block) => {
+        if (!block || typeof block !== "object" || block.cache_control === undefined) return block;
+        found = true;
+        const { cache_control, ...rest } = block;
+        if (hoisted === undefined) hoisted = cache_control;
+        return rest;
+      });
+      if (!found) return msg;
+      const next = { ...msg, content };
+      // Only carry the marker up for providers that honor explicit OpenAI-format
+      // breakpoints; otherwise drop it, matching how non-tool blocks are stripped.
+      if (preserveCacheControl && next.cache_control === undefined) {
+        next.cache_control = hoisted;
+      }
+      return next;
+    }
 
     // An empty `tool_calls: []` carries no tool calls: drop the key (several providers
     // 400 on an empty array) and let the turn go through the normal content

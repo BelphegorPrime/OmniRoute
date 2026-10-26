@@ -14,6 +14,7 @@ export const API_KEY_COLUMN_FALLBACKS = [
   { name: "allowed_combos", definition: "allowed_combos TEXT" },
   { name: "no_log", definition: "no_log INTEGER NOT NULL DEFAULT 0" },
   { name: "allowed_connections", definition: "allowed_connections TEXT" },
+  { name: "preferred_connections", definition: "preferred_connections TEXT" },
   { name: "auto_resolve", definition: "auto_resolve INTEGER NOT NULL DEFAULT 0" },
   { name: "is_active", definition: "is_active INTEGER NOT NULL DEFAULT 1" },
   { name: "access_schedule", definition: "access_schedule TEXT" },
@@ -72,6 +73,8 @@ export const API_KEY_COLUMN_FALLBACKS = [
     definition:
       "catalog_scope TEXT NOT NULL DEFAULT 'all' CHECK (catalog_scope IN ('all', 'combos', 'models'))",
   },
+  // Per-key enforced routing target (NULL = not pinned). See resolveApiKeyForcedModel.
+  { name: "forced_model", definition: "forced_model TEXT" },
 ] as const;
 
 interface ApiKeySchemaDb {
