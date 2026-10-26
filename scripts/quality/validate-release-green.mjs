@@ -1172,12 +1172,12 @@ async function main() {
       if (prior) prior.kind = g.kind;
       // Skip a gate the curated pass already ran with the same id (avoid double-running lint).
       if (already.has(g.id)) continue;
-      const { code, out } = await run(npmCmd, g.args, {
+      const { code, out, receipt } = await run(npmCmd, g.args, {
         env: g.env,
         timeout: fullCiTimeoutFor(g.id),
       });
       saveGateLog(`fullci-${g.id.replace(/[^a-z0-9]+/gi, "-")}`, out);
-      const outcome = staticGateOutcome(code, out);
+      const outcome = staticGateOutcome(code, out, receipt.outcome);
       record({
         id: g.id,
         label: `${g.job} → npm ${g.args.join(" ")}`,
