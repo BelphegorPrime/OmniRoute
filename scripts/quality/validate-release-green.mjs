@@ -42,6 +42,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { load as parseYaml } from "js-yaml";
 import { runGateProcess } from "./gate-process.mjs";
+import { eslintMeasurementCounts } from "./eslint-measurement.mjs";
 import { loadFullCiProfile, staticGateOutcome } from "./release-green-static-profile.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -193,7 +194,10 @@ export function evaluateEslintRun({ code, out }, warningBaseline) {
     ];
   }
   const parsed = parseEslintJson(out);
-  if (!parsed) {
+  let counts;
+  try {
+    counts = eslintMeasurementCounts(parsed);
+  } catch {
     return [
       {
         id: "lint",
@@ -208,7 +212,7 @@ export function evaluateEslintRun({ code, out }, warningBaseline) {
     ];
   }
 
-  const { errors, warnings } = eslintCounts(parsed);
+  const { errors, warnings } = counts;
   const warningDrift = isDrift(warnings, warningBaseline);
   return [
     {
@@ -789,9 +793,8 @@ async function main() {
     });
   };
 
-  // A ratchet command (check:complexity, check:dead-code, …) exits 1 ONLY on a
-  // measured regression and self-skips (exit 0) when its tooling is absent — so a
-  // non-zero exit here is drift to rebaseline at release, never a contributor block.
+  // Curated ratchets retain their diagnostic bucket here. The full profile overrides
+  // it with the applicable policy, and incomplete command receipts remain blocking.
   // ALL checks run regardless of earlier failures (the report is collected, not
   // fail-fast) so one pass surfaces every red instead of revealing them in layers.
   const driftCmd = async (id, label, cmd, cmdArgs, okDetail = "within baseline", opts) => {
@@ -808,6 +811,7 @@ async function main() {
   };
 
   process.stderr.write("🔎 Release-green validation (current working tree)\n\n");
+  let freshLintReport = null;
 
   await hardCmd("typecheck", "Typecheck (core)", npmCmd, ["run", "typecheck:core"]);
 
@@ -846,6 +850,23 @@ async function main() {
     saveGateLog("lint", out);
     for (const result of evaluateEslintRun(lintRun, baselineValue("eslintWarnings"))) {
       record(result);
+    }
+    if ([0, 1].includes(lintRun.code) && ["PASS", "FAIL"].includes(lintRun.receipt.outcome)) {
+      try {
+        const parsed = parseEslintJson(out);
+        eslintMeasurementCounts(parsed);
+        const path = join(LOG_DIR, "commands", `${randomUUID()}.eslint.json`);
+        writeFileSync(path, `${JSON.stringify(parsed)}\n`, { flag: "wx", mode: 0o600 });
+        freshLintReport = path;
+      } catch {
+        record({
+          id: "lint-measurement",
+          label: "Retain the current ESLint measurement",
+          kind: "hard",
+          ok: false,
+          detail: "no complete lint report retained for this execution",
+        });
+      }
     }
   }
 
@@ -1166,18 +1187,35 @@ async function main() {
       });
     }
     const already = new Set(results.map((r) => r.id));
+    let metricsCollected = false;
     process.stderr.write(`\n──── full-ci explicit static gates (${gates.length}) ────\n`);
     for (const g of gates) {
       const prior = results.find((result) => result.id === curatedEquivalentId(g.id));
       if (prior) prior.kind = g.kind;
       // Skip a gate the curated pass already ran with the same id (avoid double-running lint).
       if (already.has(g.id)) continue;
+      const collectsMetrics = g.args[1] === "quality:collect";
+      const checksMetrics = g.args[1] === "quality:ratchet";
+      if ((collectsMetrics && !freshLintReport) || (checksMetrics && !metricsCollected)) {
+        record({
+          id: g.id,
+          label: `${g.job} → npm ${g.args.join(" ")}`,
+          kind: "hard",
+          ok: false,
+          evidenceState: "INCOMPLETE",
+          detail: collectsMetrics
+            ? "current ESLint measurement unavailable; metrics were not collected"
+            : "current metrics collection incomplete; ratchet was not evaluated",
+        });
+        continue;
+      }
       const { code, out, receipt } = await run(npmCmd, g.args, {
-        env: g.env,
+        env: { ...g.env, ...(collectsMetrics ? { ESLINT_RESULTS_JSON: freshLintReport } : {}) },
         timeout: fullCiTimeoutFor(g.id),
       });
       saveGateLog(`fullci-${g.id.replace(/[^a-z0-9]+/gi, "-")}`, out);
       const outcome = staticGateOutcome(code, out, receipt.outcome);
+      if (collectsMetrics) metricsCollected = outcome.ok;
       record({
         id: g.id,
         label: `${g.job} → npm ${g.args.join(" ")}`,
@@ -1210,13 +1248,15 @@ async function main() {
   const { releaseGreen, hardFailures, drift } = computeVerdict(results);
 
   process.stderr.write("\n──────── verdict ────────\n");
-  process.stderr.write(`HARD failures (block — real defects): ${hardFailures.length}\n`);
+  process.stderr.write(
+    `HARD failures (blocking requirements or incomplete evidence): ${hardFailures.length}\n`
+  );
   hardFailures.forEach((r) => process.stderr.write(`  ❌ ${r.label}: ${r.detail}\n`));
-  process.stderr.write(`Ratchet drift (non-blocking — rebaseline at release): ${drift.length}\n`);
+  process.stderr.write(`Advisory drift in this profile: ${drift.length}\n`);
   drift.forEach((r) => process.stderr.write(`  🟡 ${r.label}: ${r.detail}\n`));
   process.stderr.write(
     releaseGreen
-      ? "\n✅ RELEASE-GREEN (no hard failures). Any drift above is rebaselined at release, not a contributor concern.\n"
+      ? "\n✅ RELEASE-GREEN for this observer profile. Advisory debt remains visible; candidate admission requires every applicable check.\n"
       : "\n❌ NOT release-green — inspect execution evidence and compare the exact base before attributing a failure to a contributor.\n"
   );
 

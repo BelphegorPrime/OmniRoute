@@ -42,6 +42,7 @@ function observe(mutate = () => {}, { extra = false, workflow = workflowSha } = 
     for (const file of [
       "validate-release-green.mjs",
       "gate-process.mjs",
+      "eslint-measurement.mjs",
       "release-green-static-profile.mjs",
     ])
       copyFileSync(join(root, "scripts/quality", file), join(dir, "scripts/quality", file));
@@ -67,7 +68,10 @@ function observe(mutate = () => {}, { extra = false, workflow = workflowSha } = 
     const executable = (name, body) =>
       writeFileSync(join(dir, "bin", name), `#!${process.execPath}\n${body}`, { mode: 0o755 });
     executable("git", `console.log("${sha}");`);
-    executable("npx", 'console.log("[]");');
+    executable(
+      "npx",
+      'console.log(JSON.stringify([{filePath:"fixture.ts",errorCount:0,warningCount:0}]));'
+    );
     executable(
       "npm",
       `
