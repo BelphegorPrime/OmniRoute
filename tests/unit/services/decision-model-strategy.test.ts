@@ -133,7 +133,15 @@ test("menu cap never truncates eligible connections or fallback candidates", asy
 
 test("OpenAI decisions request uses one documented choice and forwards all config", async () => {
   let captured:
-    | { url: string; init: { headers: Record<string, string>; timeoutMs: number; body: string } }
+    | {
+        url: string;
+        init: {
+          headers: Record<string, string>;
+          timeoutMs: number;
+          body: string;
+          signal: AbortSignal;
+        };
+      }
     | undefined;
   const strategy = new DecisionModelStrategyImpl(
     {
@@ -148,11 +156,14 @@ test("OpenAI decisions request uses one documented choice and forwards all confi
     },
     "openai"
   );
-  const result = await strategy.selectAsync(pool, context);
+  const result = await strategy.selectAsync(pool, {
+    ...context,
+    decisionModel: { ...context.decisionModel, apiKey: "test-decision-key" },
+  });
   assert.equal(result.model, "capable");
   assert.equal(captured?.url, "https://decision.invalid/proxy/v1/decisions");
   assert.equal(captured?.init.timeoutMs, 900);
-  assert.equal(captured?.init.headers.Authorization, "Bearer secret");
+  assert.equal(captured?.init.headers.Authorization, "Bearer test-decision-key");
   const body = JSON.parse(captured!.init.body);
   assert.equal(body.model, "decision-model");
   assert.deepEqual(body.input[0], {
@@ -165,6 +176,76 @@ test("OpenAI decisions request uses one documented choice and forwards all confi
     ["cheap", "capable"]
   );
   assert.match(body.questions[0].instructions, /cheapest model tier/i);
+});
+
+test("timeout defaults to 2 seconds, reads environment override, and caps at 30 seconds", async () => {
+  const original = process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
+  const captured: number[] = [];
+  const strategy = new DecisionModelStrategyImpl(
+    {
+      fallback,
+      transport: async (_url, init) => {
+        captured.push(init.timeoutMs);
+        return Response.json({
+          model: "backend-model",
+          answers: [{ type: "choice", name: "route_model", choice: "cheap" }],
+        });
+      },
+    },
+    "openai"
+  );
+  try {
+    delete process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
+    await strategy.selectAsync(pool, {
+      ...context,
+      decisionModel: { baseUrl: "https://decision.invalid/first", model: "decision-model" },
+    });
+    process.env.OMNIROUTE_DECISION_TIMEOUT_MS = "7500";
+    await strategy.selectAsync(pool, {
+      ...context,
+      decisionModel: { baseUrl: "https://decision.invalid/second", model: "decision-model" },
+    });
+    process.env.OMNIROUTE_DECISION_TIMEOUT_MS = "60000";
+    await strategy.selectAsync(pool, {
+      ...context,
+      decisionModel: { baseUrl: "https://decision.invalid/third", model: "decision-model" },
+    });
+    process.env.OMNIROUTE_DECISION_TIMEOUT_MS = "invalid";
+    await strategy.selectAsync(pool, {
+      ...context,
+      decisionModel: { baseUrl: "https://decision.invalid/fourth", model: "decision-model" },
+    });
+  } finally {
+    if (original === undefined) delete process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
+    else process.env.OMNIROUTE_DECISION_TIMEOUT_MS = original;
+  }
+  assert.deepEqual(captured, [2_000, 7_500, 30_000, 2_000]);
+});
+
+test("combo timeout takes precedence over environment override", async () => {
+  const original = process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
+  let captured = 0;
+  process.env.OMNIROUTE_DECISION_TIMEOUT_MS = "7500";
+  try {
+    const strategy = new DecisionModelStrategyImpl(
+      {
+        fallback,
+        transport: async (_url, init) => {
+          captured = init.timeoutMs;
+          return Response.json({
+            model: "backend-model",
+            answers: [{ type: "choice", name: "route_model", choice: "cheap" }],
+          });
+        },
+      },
+      "openai"
+    );
+    await strategy.selectAsync(pool, context);
+  } finally {
+    if (original === undefined) delete process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
+    else process.env.OMNIROUTE_DECISION_TIMEOUT_MS = original;
+  }
+  assert.equal(captured, 900);
 });
 
 test("System One request and keyed choice response follow documented format", async () => {
@@ -260,26 +341,31 @@ test("malformed and out-of-menu answers fail open; errors are redacted and coole
   assert.equal(calls, 3);
 });
 
-test("timeout bounds response JSON parsing as well as transport", async () => {
-  const strategy = new DecisionModelStrategyImpl(
-    {
-      fallback,
-      transport: async () =>
-        ({
-          ok: true,
-          status: 200,
-          json: () => new Promise<never>(() => undefined),
-        }) as Response,
-    },
-    "openai"
-  );
-  const startedAt = Date.now();
-  const result = await strategy.selectAsync(pool, {
-    ...context,
-    decisionModel: { baseUrl: "https://decision.invalid", model: "decision", timeoutMs: 100 },
-  });
-  assert.equal(result.strategy, "rules");
-  assert.ok(Date.now() - startedAt < 1000);
+test("timeout aborts pending transport and response-body parsing", async () => {
+  for (const stage of ["transport", "body"] as const) {
+    let signal: AbortSignal | undefined;
+    const strategy = new DecisionModelStrategyImpl(
+      {
+        fallback,
+        transport: async (_url, init) => {
+          signal = init.signal;
+          if (stage === "transport") return new Promise<Response>(() => undefined);
+          return {
+            ok: true,
+            status: 200,
+            json: () => new Promise<never>(() => undefined),
+          } as Response;
+        },
+      },
+      "openai"
+    );
+    const result = await strategy.selectAsync(pool, {
+      ...context,
+      decisionModel: { baseUrl: "https://decision.invalid", model: "decision", timeoutMs: 100 },
+    });
+    assert.equal(result.strategy, "rules");
+    assert.equal(signal?.aborted, true, `${stage} should receive cancellation`);
+  }
 });
 
 test("registry exposes both DecisionModel strategies and Nadir remains registered", async () => {
