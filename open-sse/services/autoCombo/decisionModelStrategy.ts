@@ -6,7 +6,7 @@ export interface DecisionModelRoutingConfig {
   apiKey?: string;
   /** Absolute http(s) URL; path prefixes are preserved before the documented endpoint. */
   baseUrl?: string;
-  /** Required decision-model alias (or OMNIROUTE_DECISION_MODEL). */
+  /** Required decision-model alias (or the format-specific decision model env var). */
   model?: string;
   timeoutMs?: number;
 }
@@ -153,14 +153,8 @@ export class DecisionModelStrategyImpl implements RouterStrategy {
     const config = context.decisionModel;
     const prefix =
       this.format === "openai" ? "OMNIROUTE_OPENAI_DECISION" : "OMNIROUTE_SYSTEM_ONE_DECISION";
-    const rawBase =
-      readString(config?.baseUrl) ??
-      readString(process.env[`${prefix}_BASE_URL`]) ??
-      readString(process.env.OMNIROUTE_DECISION_BASE_URL);
-    const model =
-      readString(config?.model) ??
-      readString(process.env[`${prefix}_MODEL`]) ??
-      readString(process.env.OMNIROUTE_DECISION_MODEL);
+    const rawBase = readString(config?.baseUrl) ?? readString(process.env[`${prefix}_BASE_URL`]);
+    const model = readString(config?.model) ?? readString(process.env[`${prefix}_MODEL`]);
     if (!rawBase || !model)
       return this.fallbackDecision(
         candidates,
@@ -174,12 +168,10 @@ export class DecisionModelStrategyImpl implements RouterStrategy {
       return this.fallbackDecision(candidates, context, "decision service cooling down");
     try {
       const headers: Record<string, string> = { "Content-Type": "application/json" };
-      const key =
-        readString(config?.apiKey) ??
-        readString(process.env[`${prefix}_API_KEY`]) ??
-        readString(process.env.OMNIROUTE_DECISION_API_KEY);
+      const key = readString(config?.apiKey) ?? readString(process.env[`${prefix}_API_KEY`]);
       if (key) headers.Authorization = "Bearer " + key;
-      const configuredTimeout = Number(process.env.OMNIROUTE_DECISION_TIMEOUT_MS);
+      const rawEnvTimeout = readString(process.env[`${prefix}_TIMEOUT_MS`]);
+      const configuredTimeout = rawEnvTimeout === undefined ? Number.NaN : Number(rawEnvTimeout);
       const envTimeout =
         Number.isFinite(configuredTimeout) && configuredTimeout > 0 ? configuredTimeout : undefined;
       const boundedTimeout = timeout(config?.timeoutMs ?? envTimeout);
