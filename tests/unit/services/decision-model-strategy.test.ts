@@ -1,6 +1,9 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { DecisionModelStrategyImpl } from "../../../open-sse/services/autoCombo/decisionModelStrategy.ts";
+import {
+  DecisionModelStrategyImpl,
+  resolveDecisionModelRoutingConfig,
+} from "../../../open-sse/services/autoCombo/decisionModelStrategy.ts";
 import { NadirStrategyImpl } from "../../../open-sse/services/autoCombo/nadirStrategy.ts";
 import {
   getStrategy,
@@ -131,49 +134,6 @@ test("menu cap never truncates eligible connections or fallback candidates", asy
   assert.equal(result.candidatesConsidered, largePool.length);
 });
 
-test("legacy shared credentials and model do not configure either decision format", async () => {
-  const names = [
-    "OMNIROUTE_DECISION_API_KEY",
-    "OMNIROUTE_DECISION_BASE_URL",
-    "OMNIROUTE_DECISION_MODEL",
-    "OMNIROUTE_OPENAI_DECISION_API_KEY",
-    "OMNIROUTE_OPENAI_DECISION_BASE_URL",
-    "OMNIROUTE_OPENAI_DECISION_MODEL",
-    "OMNIROUTE_SYSTEM_ONE_DECISION_API_KEY",
-    "OMNIROUTE_SYSTEM_ONE_DECISION_BASE_URL",
-    "OMNIROUTE_SYSTEM_ONE_DECISION_MODEL",
-  ] as const;
-  const saved = Object.fromEntries(names.map((name) => [name, process.env[name]]));
-  try {
-    process.env.OMNIROUTE_DECISION_API_KEY = "legacy";
-    process.env.OMNIROUTE_DECISION_BASE_URL = "https://legacy.invalid";
-    process.env.OMNIROUTE_DECISION_MODEL = "legacy-model";
-    for (const name of names.filter((name) => !name.startsWith("OMNIROUTE_DECISION_")))
-      delete process.env[name];
-    for (const format of ["openai", "systemone"] as const) {
-      let calls = 0;
-      const strategy = new DecisionModelStrategyImpl(
-        {
-          fallback,
-          transport: async () => {
-            calls++;
-            return Response.json({});
-          },
-        },
-        format
-      );
-      const result = await strategy.selectAsync(pool, { ...context, decisionModel: undefined });
-      assert.match(result.reason, /not configured/);
-      assert.equal(calls, 0);
-    }
-  } finally {
-    for (const name of names) {
-      if (saved[name] === undefined) delete process.env[name];
-      else process.env[name] = saved[name];
-    }
-  }
-});
-
 test("OpenAI decisions request uses one documented choice and forwards all config", async () => {
   let captured:
     | {
@@ -224,7 +184,6 @@ test("OpenAI decisions request uses one documented choice and forwards all confi
 test("format-specific timeout defaults, overrides, invalid values, and cap are independent", async () => {
   const original = process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS;
   const systemOriginal = process.env.OMNIROUTE_SYSTEM_ONE_DECISION_TIMEOUT_MS;
-  const legacy = process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
   const captured: number[] = [];
   const systemOneCaptured: number[] = [];
   const strategy = new DecisionModelStrategyImpl(
@@ -243,7 +202,6 @@ test("format-specific timeout defaults, overrides, invalid values, and cap are i
   try {
     delete process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS;
     process.env.OMNIROUTE_SYSTEM_ONE_DECISION_TIMEOUT_MS = "1800";
-    process.env.OMNIROUTE_DECISION_TIMEOUT_MS = "26000";
     await strategy.selectAsync(pool, {
       ...context,
       decisionModel: { baseUrl: "https://decision.invalid/first", model: "decision-model" },
@@ -285,19 +243,15 @@ test("format-specific timeout defaults, overrides, invalid values, and cap are i
     else process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS = original;
     if (systemOriginal === undefined) delete process.env.OMNIROUTE_SYSTEM_ONE_DECISION_TIMEOUT_MS;
     else process.env.OMNIROUTE_SYSTEM_ONE_DECISION_TIMEOUT_MS = systemOriginal;
-    if (legacy === undefined) delete process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
-    else process.env.OMNIROUTE_DECISION_TIMEOUT_MS = legacy;
   }
   assert.deepEqual(captured, [2_000, 7_500, 30_000, 2_000]);
   assert.deepEqual(systemOneCaptured, [1_800]);
 });
 
-test("combo timeout takes precedence over format-specific environment and legacy fallback", async () => {
+test("combo timeout takes precedence over format-specific environment", async () => {
   const original = process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS;
-  const legacy = process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
   let captured = 0;
   process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS = "7500";
-  process.env.OMNIROUTE_DECISION_TIMEOUT_MS = "12000";
   try {
     const strategy = new DecisionModelStrategyImpl(
       {
@@ -316,8 +270,6 @@ test("combo timeout takes precedence over format-specific environment and legacy
   } finally {
     if (original === undefined) delete process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS;
     else process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS = original;
-    if (legacy === undefined) delete process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
-    else process.env.OMNIROUTE_DECISION_TIMEOUT_MS = legacy;
   }
   assert.equal(captured, 900);
 });
@@ -462,4 +414,30 @@ test("registry exposes both DecisionModel strategies and Nadir remains registere
   });
   assert.equal(nadirResult.strategy, "nadir");
   assert.equal(nadirResult.model, "capable");
+});
+
+test("resolveDecisionModelRoutingConfig normalizes raw combo config", () => {
+  for (const raw of [undefined, null, "x", 5, ["https://decision.invalid"]])
+    assert.equal(resolveDecisionModelRoutingConfig(raw), undefined);
+  assert.deepEqual(
+    resolveDecisionModelRoutingConfig({
+      baseUrl: "  https://decision.invalid/proxy  ",
+      model: " decision-model ",
+      apiKey: "   ",
+      timeoutMs: "1500",
+      extra: "ignored",
+    }),
+    {
+      apiKey: undefined,
+      baseUrl: "https://decision.invalid/proxy",
+      model: "decision-model",
+      timeoutMs: 1500,
+    }
+  );
+  assert.deepEqual(resolveDecisionModelRoutingConfig({ model: 42, timeoutMs: -1 }), {
+    apiKey: undefined,
+    baseUrl: undefined,
+    model: undefined,
+    timeoutMs: undefined,
+  });
 });

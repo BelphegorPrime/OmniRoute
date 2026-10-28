@@ -237,7 +237,7 @@ export const comboRuntimeConfigSchema = z
     // `nadir` auto-router strategy (open-sse/services/autoCombo/nadirStrategy.ts).
     nadir: z
       .object({
-        apiKey: z.string().trim().max(500).optional(),
+        apiKey: z.string().trim().max(200).optional(),
         baseUrl: z.string().trim().max(500).optional(),
         timeoutMs: z.coerce.number().int().min(100).max(30_000).optional(),
       })
