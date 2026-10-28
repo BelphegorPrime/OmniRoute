@@ -58,6 +58,20 @@ function timeout(value: number | undefined): number {
     ? Math.min(MAX_TIMEOUT_MS, value)
     : DEFAULT_TIMEOUT_MS;
 }
+/** Normalize a combo's raw `config.decisionModel` block; non-objects yield `undefined`. */
+export function resolveDecisionModelRoutingConfig(
+  raw: unknown
+): DecisionModelRoutingConfig | undefined {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return undefined;
+  const record = raw as Record<string, unknown>;
+  const timeoutMs = Number(record.timeoutMs);
+  return {
+    apiKey: readString(record.apiKey),
+    baseUrl: readString(record.baseUrl),
+    model: readString(record.model),
+    timeoutMs: Number.isFinite(timeoutMs) && timeoutMs > 0 ? timeoutMs : undefined,
+  };
+}
 export function extractDecisionModelLastUserText(messages: unknown): string | null {
   if (!Array.isArray(messages)) return null;
   for (let i = messages.length - 1; i >= 0; i -= 1) {
