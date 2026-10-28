@@ -131,6 +131,49 @@ test("menu cap never truncates eligible connections or fallback candidates", asy
   assert.equal(result.candidatesConsidered, largePool.length);
 });
 
+test("legacy shared credentials and model do not configure either decision format", async () => {
+  const names = [
+    "OMNIROUTE_DECISION_API_KEY",
+    "OMNIROUTE_DECISION_BASE_URL",
+    "OMNIROUTE_DECISION_MODEL",
+    "OMNIROUTE_OPENAI_DECISION_API_KEY",
+    "OMNIROUTE_OPENAI_DECISION_BASE_URL",
+    "OMNIROUTE_OPENAI_DECISION_MODEL",
+    "OMNIROUTE_SYSTEM_ONE_DECISION_API_KEY",
+    "OMNIROUTE_SYSTEM_ONE_DECISION_BASE_URL",
+    "OMNIROUTE_SYSTEM_ONE_DECISION_MODEL",
+  ] as const;
+  const saved = Object.fromEntries(names.map((name) => [name, process.env[name]]));
+  try {
+    process.env.OMNIROUTE_DECISION_API_KEY = "legacy";
+    process.env.OMNIROUTE_DECISION_BASE_URL = "https://legacy.invalid";
+    process.env.OMNIROUTE_DECISION_MODEL = "legacy-model";
+    for (const name of names.filter((name) => !name.startsWith("OMNIROUTE_DECISION_")))
+      delete process.env[name];
+    for (const format of ["openai", "systemone"] as const) {
+      let calls = 0;
+      const strategy = new DecisionModelStrategyImpl(
+        {
+          fallback,
+          transport: async () => {
+            calls++;
+            return Response.json({});
+          },
+        },
+        format
+      );
+      const result = await strategy.selectAsync(pool, { ...context, decisionModel: undefined });
+      assert.match(result.reason, /not configured/);
+      assert.equal(calls, 0);
+    }
+  } finally {
+    for (const name of names) {
+      if (saved[name] === undefined) delete process.env[name];
+      else process.env[name] = saved[name];
+    }
+  }
+});
+
 test("OpenAI decisions request uses one documented choice and forwards all config", async () => {
   let captured:
     | {
@@ -178,9 +221,12 @@ test("OpenAI decisions request uses one documented choice and forwards all confi
   assert.match(body.questions[0].instructions, /cheapest model tier/i);
 });
 
-test("timeout defaults to 2 seconds, reads environment override, and caps at 30 seconds", async () => {
-  const original = process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
+test("format-specific timeout defaults, overrides, invalid values, and cap are independent", async () => {
+  const original = process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS;
+  const systemOriginal = process.env.OMNIROUTE_SYSTEM_ONE_DECISION_TIMEOUT_MS;
+  const legacy = process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
   const captured: number[] = [];
+  const systemOneCaptured: number[] = [];
   const strategy = new DecisionModelStrategyImpl(
     {
       fallback,
@@ -195,37 +241,63 @@ test("timeout defaults to 2 seconds, reads environment override, and caps at 30 
     "openai"
   );
   try {
-    delete process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
+    delete process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS;
+    process.env.OMNIROUTE_SYSTEM_ONE_DECISION_TIMEOUT_MS = "1800";
+    process.env.OMNIROUTE_DECISION_TIMEOUT_MS = "26000";
     await strategy.selectAsync(pool, {
       ...context,
       decisionModel: { baseUrl: "https://decision.invalid/first", model: "decision-model" },
     });
-    process.env.OMNIROUTE_DECISION_TIMEOUT_MS = "7500";
+    const systemOneStrategy = new DecisionModelStrategyImpl(
+      {
+        fallback,
+        transport: async (_url, init) => {
+          systemOneCaptured.push(init.timeoutMs);
+          return Response.json({
+            model: "backend-model",
+            answers: [{ type: "choice", name: "route_model", choice: "cheap" }],
+          });
+        },
+      },
+      "systemone"
+    );
+    await systemOneStrategy.selectAsync(pool, {
+      ...context,
+      decisionModel: { baseUrl: "https://decision.invalid/systemone", model: "decision-model" },
+    });
+    process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS = "7500";
     await strategy.selectAsync(pool, {
       ...context,
       decisionModel: { baseUrl: "https://decision.invalid/second", model: "decision-model" },
     });
-    process.env.OMNIROUTE_DECISION_TIMEOUT_MS = "60000";
+    process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS = "60000";
     await strategy.selectAsync(pool, {
       ...context,
       decisionModel: { baseUrl: "https://decision.invalid/third", model: "decision-model" },
     });
-    process.env.OMNIROUTE_DECISION_TIMEOUT_MS = "invalid";
+    process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS = "invalid";
     await strategy.selectAsync(pool, {
       ...context,
       decisionModel: { baseUrl: "https://decision.invalid/fourth", model: "decision-model" },
     });
   } finally {
-    if (original === undefined) delete process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
-    else process.env.OMNIROUTE_DECISION_TIMEOUT_MS = original;
+    if (original === undefined) delete process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS;
+    else process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS = original;
+    if (systemOriginal === undefined) delete process.env.OMNIROUTE_SYSTEM_ONE_DECISION_TIMEOUT_MS;
+    else process.env.OMNIROUTE_SYSTEM_ONE_DECISION_TIMEOUT_MS = systemOriginal;
+    if (legacy === undefined) delete process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
+    else process.env.OMNIROUTE_DECISION_TIMEOUT_MS = legacy;
   }
   assert.deepEqual(captured, [2_000, 7_500, 30_000, 2_000]);
+  assert.deepEqual(systemOneCaptured, [1_800]);
 });
 
-test("combo timeout takes precedence over environment override", async () => {
-  const original = process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
+test("combo timeout takes precedence over format-specific environment and legacy fallback", async () => {
+  const original = process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS;
+  const legacy = process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
   let captured = 0;
-  process.env.OMNIROUTE_DECISION_TIMEOUT_MS = "7500";
+  process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS = "7500";
+  process.env.OMNIROUTE_DECISION_TIMEOUT_MS = "12000";
   try {
     const strategy = new DecisionModelStrategyImpl(
       {
@@ -242,8 +314,10 @@ test("combo timeout takes precedence over environment override", async () => {
     );
     await strategy.selectAsync(pool, context);
   } finally {
-    if (original === undefined) delete process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
-    else process.env.OMNIROUTE_DECISION_TIMEOUT_MS = original;
+    if (original === undefined) delete process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS;
+    else process.env.OMNIROUTE_OPENAI_DECISION_TIMEOUT_MS = original;
+    if (legacy === undefined) delete process.env.OMNIROUTE_DECISION_TIMEOUT_MS;
+    else process.env.OMNIROUTE_DECISION_TIMEOUT_MS = legacy;
   }
   assert.equal(captured, 900);
 });
