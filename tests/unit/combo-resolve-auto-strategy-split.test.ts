@@ -86,6 +86,7 @@ test("resolveAutoStrategyOrder forwards DecisionModel config into explicit route
     model: "decision-alias",
     apiKey: "secret-key",
     timeoutMs: 750,
+    descriptions: { "gpt-4o": "General-purpose model" },
   };
   const deps = baseDeps((async () => [
     {

@@ -432,6 +432,7 @@ test("resolveDecisionModelRoutingConfig normalizes raw combo config", () => {
       baseUrl: "https://decision.invalid/proxy",
       model: "decision-model",
       timeoutMs: 1500,
+      descriptions: undefined,
     }
   );
   assert.deepEqual(resolveDecisionModelRoutingConfig({ model: 42, timeoutMs: -1 }), {
@@ -439,5 +440,249 @@ test("resolveDecisionModelRoutingConfig normalizes raw combo config", () => {
     baseUrl: undefined,
     model: undefined,
     timeoutMs: undefined,
+    descriptions: undefined,
   });
+  assert.deepEqual(
+    resolveDecisionModelRoutingConfig({
+      descriptions: { " cheap ": " Fast and cheap ", capable: "   ", "": "x", other: 3 },
+    })?.descriptions,
+    { cheap: "Fast and cheap" }
+  );
+  assert.equal(
+    resolveDecisionModelRoutingConfig({ descriptions: ["cheap"] })?.descriptions,
+    undefined
+  );
+});
+
+const answerFor = (format: "openai" | "systemone", choice: string) =>
+  format === "openai"
+    ? Response.json({ answers: [{ type: "choice", name: "route_model", choice }] })
+    : Response.json({ answers: { route_model: { type: "choice", choice } } });
+
+const sentDescriptions = (format: "openai" | "systemone", body: string) => {
+  const parsed = JSON.parse(body);
+  return format === "openai"
+    ? Object.fromEntries(
+        parsed.questions[0].choices.map((choice: { value: string; description: string }) => [
+          choice.value,
+          choice.description,
+        ])
+      )
+    : parsed.questions.route_model.criteria;
+};
+
+test("generated descriptions rank distinct pool costs and stay plain when costs tie", async () => {
+  const pricedPool = [
+    ...pool,
+    { provider: "r", model: "capable", circuitBreakerState: "CLOSED", costPer1MTokens: 2.5 },
+    { provider: "s", model: "premium", circuitBreakerState: "CLOSED", costPer1MTokens: 15 },
+  ] as ProviderCandidate[];
+  for (const format of ["openai", "systemone"] as const) {
+    const bodies: string[] = [];
+    const strategy = new DecisionModelStrategyImpl(
+      {
+        fallback,
+        transport: async (_url, init) => {
+          bodies.push(init.body);
+          return answerFor(format, "cheap");
+        },
+      },
+      format
+    );
+    await strategy.selectAsync(pricedPool, context);
+    assert.deepEqual(sentDescriptions(format, bodies[0]), {
+      cheap: "Model cheap; estimated cost $1 per 1M tokens (cost rank 1 of 3, 1 = cheapest)",
+      capable: "Model capable; estimated cost $2.5 per 1M tokens (cost rank 2 of 3, 1 = cheapest)",
+      premium: "Model premium; estimated cost $15 per 1M tokens (cost rank 3 of 3, 1 = cheapest)",
+    });
+    const tiedPool = pool.map((item) => ({ ...item, costPer1MTokens: 1 }));
+    await strategy.selectAsync(tiedPool, context);
+    assert.deepEqual(sentDescriptions(format, bodies[1]), {
+      cheap: "Model cheap",
+      capable: "Model capable",
+    });
+  }
+});
+
+test("operator descriptions by model ID or provider/model replace generated text", async () => {
+  for (const format of ["openai", "systemone"] as const) {
+    let body = "";
+    const strategy = new DecisionModelStrategyImpl(
+      {
+        fallback,
+        transport: async (_url, init) => {
+          body = init.body;
+          return answerFor(format, "capable");
+        },
+      },
+      format
+    );
+    await strategy.selectAsync(pool, {
+      ...context,
+      decisionModel: {
+        ...context.decisionModel,
+        descriptions: { cheap: "Small, fast model", "q/capable": "Strong reasoning and math" },
+      },
+    });
+    assert.deepEqual(sentDescriptions(format, body), {
+      cheap: "Small, fast model",
+      capable: "Strong reasoning and math",
+    });
+  }
+});
+
+test("reasons name the choice, menu size and failure cause without leaking secrets", async () => {
+  const selected = await new DecisionModelStrategyImpl(
+    { fallback, transport: async () => answerFor("openai", "capable") },
+    "openai"
+  ).selectAsync(pool, context);
+  assert.match(selected.reason, /^decision-openai: selected capable from 2 options \(rules\)$/);
+
+  const outOfPool = await new DecisionModelStrategyImpl(
+    { fallback, transport: async () => answerFor("systemone", "x".repeat(500)) },
+    "systemone"
+  ).selectAsync(pool, context);
+  assert.match(outOfPool.reason, /fallback \(out-of-pool choice "x{100}" from 2 options\)/);
+
+  const noChoice = await new DecisionModelStrategyImpl(
+    { fallback, transport: async () => Response.json({ answers: [] }) },
+    "openai"
+  ).selectAsync(pool, context);
+  assert.match(noChoice.reason, /fallback \(response carries no valid route_model choice\)/);
+
+  const failures: Array<[string, () => Promise<Response>, RegExp]> = [
+    ["http", async () => new Response("secret upstream body", { status: 503 }), /HTTP 503/],
+    ["json", async () => new Response("not json", { status: 200 }), /invalid JSON response/],
+    [
+      "network",
+      async () => {
+        throw new Error("secret https://decision.invalid prompt");
+      },
+      /network error/,
+    ],
+    ["timeout", () => new Promise<Response>(() => undefined), /timeout after 900ms/],
+  ];
+  for (const [label, transport, cause] of failures) {
+    let now = 1_000;
+    const strategy = new DecisionModelStrategyImpl(
+      { fallback, transport, now: () => now },
+      "openai"
+    );
+    const failed = await strategy.selectAsync(pool, context);
+    assert.match(failed.reason, cause, label);
+    assert.match(failed.reason, /cooling down for 30s/, label);
+    assert.doesNotMatch(failed.reason, /secret|prompt|https:|Explain this code/i, label);
+    now += 12_500;
+    const cooled = await strategy.selectAsync(pool, context);
+    assert.match(cooled.reason, /cooling down for 18s; not called/, label);
+  }
+});
+
+test("combo schema accepts descriptions and caps them at 50 entries", async () => {
+  const { comboRuntimeConfigSchema } =
+    await import("../../../src/shared/validation/schemas/combo.ts");
+  const ok = comboRuntimeConfigSchema.safeParse({
+    decisionModel: { descriptions: { "p/cheap": "Fast", capable: "Strong" } },
+  });
+  assert.equal(ok.success, true);
+  const tooMany = Object.fromEntries(
+    Array.from({ length: 51 }, (_, index) => [`model-${index}`, "text"])
+  );
+  assert.equal(
+    comboRuntimeConfigSchema.safeParse({ decisionModel: { descriptions: tooMany } }).success,
+    false
+  );
+  assert.equal(
+    comboRuntimeConfigSchema.safeParse({ decisionModel: { descriptions: { cheap: "" } } }).success,
+    false
+  );
+});
+
+test("documented response details (confidence, choice probability, backend model) reach the reason", async () => {
+  const openai = await new DecisionModelStrategyImpl(
+    {
+      fallback,
+      transport: async () =>
+        Response.json({
+          model: "gpt-6-luna",
+          answers: [
+            {
+              type: "choice",
+              name: "route_model",
+              choice: "capable",
+              probabilities: [
+                { value: "cheap", probability: 0.01 },
+                { value: "capable", probability: 0.99 },
+              ],
+              confidence: 0.98,
+            },
+          ],
+          usage: { input_tokens: 401, output_tokens: 0, total_tokens: 401 },
+        }),
+    },
+    "openai"
+  ).selectAsync(pool, context);
+  assert.equal(openai.model, "capable");
+  assert.equal(
+    openai.reason,
+    'decision-openai: selected capable from 2 options; confidence 0.98, p=0.99, decision model "gpt-6-luna" (rules)'
+  );
+
+  const systemOne = await new DecisionModelStrategyImpl(
+    {
+      fallback,
+      transport: async () =>
+        Response.json({
+          model: "jev-1.13.0",
+          answers: {
+            route_model: {
+              type: "choice",
+              choice: "cheap",
+              confidence: 0.86,
+              probabilities: { cheap: 0.91234, capable: 0.08766 },
+            },
+          },
+          usage: { input_tokens: 391, output_tokens: 67 },
+        }),
+    },
+    "systemone"
+  ).selectAsync(pool, context);
+  assert.equal(systemOne.model, "cheap");
+  assert.match(
+    systemOne.reason,
+    /selected cheap from 2 options; confidence 0\.86, p=0\.9123, decision model "jev-1\.13\.0"/
+  );
+
+  const refused = await new DecisionModelStrategyImpl(
+    {
+      fallback,
+      transport: async () =>
+        Response.json({
+          model: "gpt-6-luna",
+          answers: [{ type: "refusal", name: "route_model" }],
+        }),
+    },
+    "openai"
+  ).selectAsync(pool, context);
+  assert.equal(refused.strategy, "rules");
+  assert.match(
+    refused.reason,
+    /fallback \(decision model refused route_model; decision model "gpt-6-luna"\)/
+  );
+
+  const outOfPool = await new DecisionModelStrategyImpl(
+    {
+      fallback,
+      transport: async () =>
+        Response.json({
+          model: "jev-1.13.0",
+          answers: { route_model: { type: "choice", choice: "elsewhere", confidence: 0.5 } },
+        }),
+    },
+    "systemone"
+  ).selectAsync(pool, context);
+  assert.match(
+    outOfPool.reason,
+    /out-of-pool choice "elsewhere" from 2 options; confidence 0\.5, decision model "jev-1\.13\.0"/
+  );
 });

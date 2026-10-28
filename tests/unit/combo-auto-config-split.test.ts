@@ -126,6 +126,7 @@ test("decisionModel config is normalized, and absent or non-object blocks are dr
     baseUrl: "https://decision.invalid",
     model: undefined,
     timeoutMs: 900,
+    descriptions: undefined,
   });
   assert.equal(
     parseAutoConfig({ name: "c", config: {} } as never, []).decisionModelConfig,
