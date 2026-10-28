@@ -250,6 +250,13 @@ export const comboRuntimeConfigSchema = z
         baseUrl: z.string().trim().max(500).optional(),
         model: z.string().trim().min(1).max(200).optional(),
         timeoutMs: z.coerce.number().int().min(100).max(30_000).optional(),
+        // Keyed by model ID or provider/model; capped like the 50-entry decision menu.
+        descriptions: z
+          .record(z.string().trim().min(1).max(300), z.string().trim().min(1).max(1_000))
+          .refine((value) => Object.keys(value).length <= 50, {
+            message: "At most 50 model descriptions",
+          })
+          .optional(),
       })
       .strict()
       .optional(),
