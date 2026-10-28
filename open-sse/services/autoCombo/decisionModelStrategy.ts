@@ -15,6 +15,7 @@ export interface DecisionModelTransportInit {
   headers: Record<string, string>;
   body: string;
   timeoutMs: number;
+  signal: AbortSignal;
 }
 export type DecisionModelTransport = (
   url: string,
@@ -150,9 +151,16 @@ export class DecisionModelStrategyImpl implements RouterStrategy {
       return this.fallbackDecision(candidates, context, "only one unique model is eligible");
     const prompt = extractDecisionModelLastUserText(context.messages);
     const config = context.decisionModel;
+    const prefix =
+      this.format === "openai" ? "OMNIROUTE_OPENAI_DECISION" : "OMNIROUTE_SYSTEM_ONE_DECISION";
     const rawBase =
-      readString(config?.baseUrl) ?? readString(process.env.OMNIROUTE_DECISION_BASE_URL);
-    const model = readString(config?.model) ?? readString(process.env.OMNIROUTE_DECISION_MODEL);
+      readString(config?.baseUrl) ??
+      readString(process.env[`${prefix}_BASE_URL`]) ??
+      readString(process.env.OMNIROUTE_DECISION_BASE_URL);
+    const model =
+      readString(config?.model) ??
+      readString(process.env[`${prefix}_MODEL`]) ??
+      readString(process.env.OMNIROUTE_DECISION_MODEL);
     if (!rawBase || !model)
       return this.fallbackDecision(
         candidates,
@@ -162,18 +170,26 @@ export class DecisionModelStrategyImpl implements RouterStrategy {
     const base = normalizeBaseUrl(rawBase);
     if (!base) return this.fallbackDecision(candidates, context, "invalid decision API base URL");
     if (!prompt) return this.fallbackDecision(candidates, context, "request carries no user text");
-    if ((this.cooldownUntil.get(base) ?? 0) > this.now())
+    if ((this.cooldownUntil.get(`${base}${this.endpoint}`) ?? 0) > this.now())
       return this.fallbackDecision(candidates, context, "decision service cooling down");
     try {
       const headers: Record<string, string> = { "Content-Type": "application/json" };
-      const key = readString(config?.apiKey) ?? readString(process.env.OMNIROUTE_DECISION_API_KEY);
-      if (key) headers.Authorization = `Bearer ${key}`;
-      const boundedTimeout = timeout(config?.timeoutMs);
+      const key =
+        readString(config?.apiKey) ??
+        readString(process.env[`${prefix}_API_KEY`]) ??
+        readString(process.env.OMNIROUTE_DECISION_API_KEY);
+      if (key) headers.Authorization = "Bearer " + key;
+      const configuredTimeout = Number(process.env.OMNIROUTE_DECISION_TIMEOUT_MS);
+      const envTimeout =
+        Number.isFinite(configuredTimeout) && configuredTimeout > 0 ? configuredTimeout : undefined;
+      const boundedTimeout = timeout(config?.timeoutMs ?? envTimeout);
+      const controller = new AbortController();
       const operation = async () => {
         const response = await this.transport(`${base}${this.endpoint}`, {
           method: "POST",
           headers,
           timeoutMs: boundedTimeout,
+          signal: controller.signal,
           body: JSON.stringify(buildBody(this.format, prompt, menu, model)),
         });
         if (!response.ok) throw new Error("http_failure");
@@ -183,7 +199,10 @@ export class DecisionModelStrategyImpl implements RouterStrategy {
       const data: unknown = await Promise.race([
         operation(),
         new Promise<never>((_, reject) => {
-          timer = setTimeout(() => reject(new Error("timeout")), boundedTimeout);
+          timer = setTimeout(() => {
+            controller.abort();
+            reject(new Error("timeout"));
+          }, boundedTimeout);
         }),
       ]).finally(() => {
         if (timer) clearTimeout(timer);
@@ -200,7 +219,7 @@ export class DecisionModelStrategyImpl implements RouterStrategy {
         reason: `${this.name}: selected an allowed model (${decision.reason})`,
       };
     } catch {
-      this.cooldownUntil.set(base, this.now() + FAILURE_COOLDOWN_MS);
+      this.cooldownUntil.set(`${base}${this.endpoint}`, this.now() + FAILURE_COOLDOWN_MS);
       return this.fallbackDecision(candidates, context, "decision request failed; cooling down");
     }
   }
