@@ -686,3 +686,124 @@ test("documented response details (confidence, choice probability, backend model
     /out-of-pool choice "elsewhere" from 2 options; confidence 0\.5, decision model "jev-1\.13\.0"/
   );
 });
+
+test("parseDecisionAnswer normalizes both formats' probabilities and scores", async () => {
+  const { parseDecisionAnswer } =
+    await import("../../../open-sse/services/autoCombo/decisionModelStrategy.ts");
+  assert.deepEqual(
+    parseDecisionAnswer("openai", {
+      model: "backend",
+      answers: [
+        {
+          type: "choice",
+          name: "route_model",
+          choice: "cheap",
+          confidence: 0.9,
+          probabilities: [
+            { value: "cheap", probability: 0.8 },
+            { value: "capable", probability: 0.2 },
+            { value: "bad", probability: "x" },
+            null,
+          ],
+        },
+      ],
+    }),
+    {
+      choice: "cheap",
+      refused: false,
+      confidence: 0.9,
+      probabilities: { cheap: 0.8, capable: 0.2 },
+      backendModel: "backend",
+    }
+  );
+  assert.deepEqual(
+    parseDecisionAnswer("systemone", {
+      answers: { route_model: { type: "refusal", probabilities: { cheap: 0.4, capable: 0.6 } } },
+    }),
+    {
+      choice: undefined,
+      refused: true,
+      confidence: undefined,
+      probabilities: { cheap: 0.4, capable: 0.6 },
+      backendModel: undefined,
+    }
+  );
+  for (const data of [null, [], "x"])
+    assert.deepEqual(parseDecisionAnswer("openai", data), { refused: false, probabilities: {} });
+  const malformed = parseDecisionAnswer("openai", { answers: "x" });
+  assert.equal(malformed.choice, undefined);
+  assert.deepEqual(malformed.probabilities, {});
+});
+
+test("resolveDecisionEndpoint prefers combo config over format env and reports gaps", async () => {
+  const { resolveDecisionEndpoint } =
+    await import("../../../open-sse/services/autoCombo/decisionModelStrategy.ts");
+  const keys = [
+    "OMNIROUTE_SYSTEM_ONE_DECISION_BASE_URL",
+    "OMNIROUTE_SYSTEM_ONE_DECISION_MODEL",
+    "OMNIROUTE_SYSTEM_ONE_DECISION_API_KEY",
+    "OMNIROUTE_SYSTEM_ONE_DECISION_TIMEOUT_MS",
+  ];
+  const saved = keys.map((key) => process.env[key]);
+  try {
+    for (const key of keys) delete process.env[key];
+    assert.deepEqual(resolveDecisionEndpoint("systemone", undefined), {
+      error: "decision API base URL or decision model is not configured",
+    });
+    assert.deepEqual(
+      resolveDecisionEndpoint("systemone", { baseUrl: "ftp://x.invalid", model: "m" }),
+      { error: "invalid decision API base URL" }
+    );
+    process.env.OMNIROUTE_SYSTEM_ONE_DECISION_BASE_URL = "https://env.invalid/";
+    process.env.OMNIROUTE_SYSTEM_ONE_DECISION_MODEL = "env-model";
+    process.env.OMNIROUTE_SYSTEM_ONE_DECISION_API_KEY = "env-key";
+    process.env.OMNIROUTE_SYSTEM_ONE_DECISION_TIMEOUT_MS = "1200";
+    assert.deepEqual(resolveDecisionEndpoint("systemone", undefined), {
+      url: "https://env.invalid/v1/systemone",
+      model: "env-model",
+      apiKey: "env-key",
+      timeoutMs: 1200,
+    });
+    assert.deepEqual(
+      resolveDecisionEndpoint("systemone", {
+        baseUrl: "https://combo.invalid/p",
+        model: "combo-model",
+        apiKey: "combo-key",
+        timeoutMs: 700,
+      }),
+      {
+        url: "https://combo.invalid/p/v1/systemone",
+        model: "combo-model",
+        apiKey: "combo-key",
+        timeoutMs: 700,
+      }
+    );
+  } finally {
+    keys.forEach((key, index) => {
+      if (saved[index] === undefined) delete process.env[key];
+      else process.env[key] = saved[index];
+    });
+  }
+});
+
+test("decision preview schema accepts builder payloads and rejects unknown strategies", async () => {
+  const { decisionPreviewSchema } = await import("../../../src/shared/validation/schemas/combo.ts");
+  assert.equal(
+    decisionPreviewSchema.safeParse({
+      strategy: "decision-openai",
+      models: ["p/cheap", "q/capable"],
+      decisionModel: { model: "m", descriptions: { cheap: "Fast" } },
+      prompt: "Hi",
+    }).success,
+    true
+  );
+  assert.equal(decisionPreviewSchema.safeParse({ strategy: "rules", models: [] }).success, false);
+  assert.equal(
+    decisionPreviewSchema.safeParse({
+      strategy: "decision-systemone",
+      models: [],
+      decisionModel: { unknown: true },
+    }).success,
+    false
+  );
+});
