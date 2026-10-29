@@ -49,8 +49,6 @@ export interface RoutingContext {
   nadir?: NadirRoutingConfig;
   /** The combo's `config.decisionModel` block; see decisionModelStrategy.ts. */
   decisionModel?: DecisionModelRoutingConfig;
-  /** The combo's `config.decisionModel` block; see decisionModelStrategy.ts. */
-  decisionModel?: DecisionModelRoutingConfig;
 }
 
 export interface RoutingDecision {
