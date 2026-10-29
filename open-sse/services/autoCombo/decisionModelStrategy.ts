@@ -36,7 +36,13 @@ const MAX_MENU_ITEMS = 50;
 const MAX_PROMPT_CHARS = 16_000;
 const MAX_LOGGED_CHOICE_CHARS = 100;
 const MAX_LOGGED_MODEL_CHARS = 100;
-type Format = "openai" | "systemone";
+export type DecisionModelFormat = "openai" | "systemone";
+type Format = DecisionModelFormat;
+/** Router strategy IDs served by this module, with their wire format. */
+export const DECISION_STRATEGY_FORMATS: Readonly<Record<string, DecisionModelFormat>> = {
+  "decision-openai": "openai",
+  "decision-systemone": "systemone",
+};
 type FailureKind = "timeout" | "http" | "invalid_json" | "network";
 
 /** Failure cause safe to log: never carries the URL, key, prompt or upstream body. */
@@ -102,9 +108,9 @@ function resolveDescriptions(raw: unknown): Record<string, string> | undefined {
  * `provider/model`) wins; otherwise the text carries the pool's cost ranking, but only
  * when costs differ — unpriced models take the pool median, so the figure is an estimate.
  */
-function describeMenu(
+export function describeDecisionMenu(
   menu: string[],
-  candidates: ProviderCandidate[],
+  candidates: Pick<ProviderCandidate, "provider" | "model" | "costPer1MTokens">[],
   descriptions: Record<string, string> | undefined
 ): Record<string, string> {
   const costs = new Map<string, number>();
@@ -136,31 +142,85 @@ function describeMenu(
     })
   );
 }
-interface DecisionAnswer {
+/** Parsed `route_model` answer; scores are only present when the service returned them. */
+export interface DecisionAnswer {
   choice?: string;
   refused: boolean;
-  /** Log-safe summary: confidence, probability of the choice, answering backend model. */
-  details: string;
+  confidence?: number;
+  /** Per-choice probability, keyed by menu value (both formats normalize to this). */
+  probabilities: Record<string, number>;
+  /** Backend model that answered, truncated for logging. */
+  backendModel?: string;
 }
-function formatScore(value: unknown): string | undefined {
-  return typeof value === "number" && Number.isFinite(value)
-    ? String(Number(value.toFixed(4)))
-    : undefined;
+function finiteNumber(value: unknown): number | undefined {
+  return typeof value === "number" && Number.isFinite(value) ? value : undefined;
 }
-/** Probability of `choice`: an array of `{value, probability}` (decisions) or a label map (System One). */
-function choiceProbability(probabilities: unknown, choice: string | undefined): unknown {
-  if (choice === undefined) return undefined;
-  if (Array.isArray(probabilities))
-    return (
-      probabilities.find(
-        (item) => item && typeof item === "object" && (item as { value?: unknown }).value === choice
-      ) as { probability?: unknown } | undefined
-    )?.probability;
-  if (probabilities && typeof probabilities === "object")
-    return (probabilities as Record<string, unknown>)[choice];
-  return undefined;
+function formatScore(value: number | undefined): string | undefined {
+  return value === undefined ? undefined : String(Number(value.toFixed(4)));
 }
-function describeFailure(error: unknown, timeoutMs: number): string {
+/** Probabilities arrive as `[{value, probability}]` (decisions) or a label map (System One). */
+function readProbabilities(raw: unknown): Record<string, number> {
+  const pairs: Array<[unknown, unknown]> = Array.isArray(raw)
+    ? raw.map((item) =>
+        item && typeof item === "object"
+          ? [(item as { value?: unknown }).value, (item as { probability?: unknown }).probability]
+          : [undefined, undefined]
+      )
+    : raw && typeof raw === "object"
+      ? Object.entries(raw as Record<string, unknown>)
+      : [];
+  const result: Record<string, number> = {};
+  for (const [label, probability] of pairs) {
+    const value = finiteNumber(probability);
+    if (typeof label === "string" && value !== undefined && !(label in result))
+      result[label] = value;
+  }
+  return result;
+}
+/** Read the `route_model` answer from a decision response of either format. */
+export function parseDecisionAnswer(format: DecisionModelFormat, data: unknown): DecisionAnswer {
+  if (!data || typeof data !== "object" || Array.isArray(data))
+    return { refused: false, probabilities: {} };
+  const record = data as { answers?: unknown; model?: unknown };
+  let answer: Record<string, unknown> | undefined;
+  if (format === "openai") {
+    answer = Array.isArray(record.answers)
+      ? (record.answers.find(
+          (item) =>
+            item && typeof item === "object" && (item as { name?: unknown }).name === "route_model"
+        ) as Record<string, unknown> | undefined)
+      : undefined;
+  } else if (
+    record.answers &&
+    typeof record.answers === "object" &&
+    !Array.isArray(record.answers)
+  ) {
+    const keyed = (record.answers as Record<string, unknown>).route_model;
+    answer = keyed && typeof keyed === "object" ? (keyed as Record<string, unknown>) : undefined;
+  }
+  return {
+    choice: answer?.type === "choice" ? readString(answer.choice) : undefined,
+    refused: answer?.type === "refusal",
+    confidence: finiteNumber(answer?.confidence),
+    probabilities: readProbabilities(answer?.probabilities),
+    backendModel: readString(record.model)?.slice(0, MAX_LOGGED_MODEL_CHARS),
+  };
+}
+/** Log-safe summary: confidence, probability of the choice, answering backend model. */
+function describeAnswer(answer: DecisionAnswer): string {
+  const confidence = formatScore(answer.confidence);
+  const probability = formatScore(
+    answer.choice === undefined ? undefined : answer.probabilities[answer.choice]
+  );
+  const parts = [
+    confidence && `confidence ${confidence}`,
+    probability && `p=${probability}`,
+    answer.backendModel && `decision model ${JSON.stringify(answer.backendModel)}`,
+  ].filter(Boolean);
+  return parts.length ? `; ${parts.join(", ")}` : "";
+}
+/** Log-safe failure cause for an error thrown by `requestDecision`. */
+export function describeDecisionFailure(error: unknown, timeoutMs: number): string {
   if (!(error instanceof DecisionRequestError)) return "network error";
   if (error.kind === "timeout") return `timeout after ${timeoutMs}ms`;
   if (error.kind === "http") return `HTTP ${error.status}`;
@@ -188,6 +248,10 @@ export function extractDecisionModelLastUserText(messages: unknown): string | nu
     return text || null;
   }
   return null;
+}
+/** Unique pool models in pool order, capped at the menu size the decision APIs accept. */
+export function buildDecisionMenu(candidates: Pick<ProviderCandidate, "model">[]): string[] {
+  return [...new Set(candidates.map((item) => item.model))].slice(0, MAX_MENU_ITEMS);
 }
 function buildBody(
   format: Format,
@@ -231,6 +295,86 @@ const defaultTransport: DecisionModelTransport = async (url, init) => {
   return safeOutboundFetch(url, { ...init, retry: false, guard: getProviderOutboundGuard() });
 };
 
+/** Where and how to call the decision service, after combo config and env fallbacks. */
+export interface DecisionEndpoint {
+  url: string;
+  model: string;
+  apiKey?: string;
+  timeoutMs: number;
+}
+/**
+ * Combo config wins over the format-specific `OMNIROUTE_*_DECISION_*` env vars.
+ * Returns a log-safe reason instead when the endpoint is missing or invalid.
+ */
+export function resolveDecisionEndpoint(
+  format: DecisionModelFormat,
+  config: DecisionModelRoutingConfig | undefined
+): DecisionEndpoint | { error: string } {
+  const prefix =
+    format === "openai" ? "OMNIROUTE_OPENAI_DECISION" : "OMNIROUTE_SYSTEM_ONE_DECISION";
+  const rawBase = readString(config?.baseUrl) ?? readString(process.env[`${prefix}_BASE_URL`]);
+  const model = readString(config?.model) ?? readString(process.env[`${prefix}_MODEL`]);
+  if (!rawBase || !model)
+    return { error: "decision API base URL or decision model is not configured" };
+  const base = normalizeBaseUrl(rawBase);
+  if (!base) return { error: "invalid decision API base URL" };
+  const rawEnvTimeout = readString(process.env[`${prefix}_TIMEOUT_MS`]);
+  const configuredTimeout = rawEnvTimeout === undefined ? Number.NaN : Number(rawEnvTimeout);
+  const envTimeout =
+    Number.isFinite(configuredTimeout) && configuredTimeout > 0 ? configuredTimeout : undefined;
+  return {
+    url: `${base}${format === "openai" ? "/v1/decisions" : "/v1/systemone"}`,
+    model,
+    apiKey: readString(config?.apiKey) ?? readString(process.env[`${prefix}_API_KEY`]),
+    timeoutMs: timeout(config?.timeoutMs ?? envTimeout),
+  };
+}
+/**
+ * One decision round trip, bounded by `endpoint.timeoutMs` (body parsing included).
+ * Throws a `DecisionRequestError`; render it with `describeDecisionFailure`.
+ */
+export async function requestDecision(
+  format: DecisionModelFormat,
+  endpoint: DecisionEndpoint,
+  prompt: string,
+  menu: string[],
+  described: Record<string, string>,
+  transport: DecisionModelTransport = defaultTransport
+): Promise<DecisionAnswer> {
+  const headers: Record<string, string> = { "Content-Type": "application/json" };
+  if (endpoint.apiKey) headers.Authorization = "Bearer " + endpoint.apiKey;
+  const controller = new AbortController();
+  const operation = async () => {
+    const response = await transport(endpoint.url, {
+      method: "POST",
+      headers,
+      timeoutMs: endpoint.timeoutMs,
+      signal: controller.signal,
+      body: JSON.stringify(buildBody(format, prompt, menu, described, endpoint.model)),
+    });
+    if (!response.ok) throw new DecisionRequestError("http", response.status);
+    try {
+      return await response.json();
+    } catch {
+      if (controller.signal.aborted) throw new DecisionRequestError("timeout");
+      throw new DecisionRequestError("invalid_json");
+    }
+  };
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const data: unknown = await Promise.race([
+    operation(),
+    new Promise<never>((_, reject) => {
+      timer = setTimeout(() => {
+        controller.abort();
+        reject(new DecisionRequestError("timeout"));
+      }, endpoint.timeoutMs);
+    }),
+  ]).finally(() => {
+    if (timer) clearTimeout(timer);
+  });
+  return parseDecisionAnswer(format, data);
+}
+
 export class DecisionModelStrategyImpl implements RouterStrategy {
   readonly name: string;
   readonly description: string;
@@ -256,72 +400,32 @@ export class DecisionModelStrategyImpl implements RouterStrategy {
     const healthy = pool.filter((item) => item.circuitBreakerState !== "OPEN");
     const candidates = healthy.length ? healthy : pool;
     if (!candidates.length) throw new Error(`[${this.name}] No candidates available`);
-    const menu = [...new Set(candidates.map((item) => item.model))].slice(0, MAX_MENU_ITEMS);
+    const menu = buildDecisionMenu(candidates);
     if (menu.length < 2)
       return this.fallbackDecision(candidates, context, "only one unique model is eligible");
     const prompt = extractDecisionModelLastUserText(context.messages);
     const config = context.decisionModel;
-    const prefix =
-      this.format === "openai" ? "OMNIROUTE_OPENAI_DECISION" : "OMNIROUTE_SYSTEM_ONE_DECISION";
-    const rawBase = readString(config?.baseUrl) ?? readString(process.env[`${prefix}_BASE_URL`]);
-    const model = readString(config?.model) ?? readString(process.env[`${prefix}_MODEL`]);
-    if (!rawBase || !model)
-      return this.fallbackDecision(
-        candidates,
-        context,
-        "decision API base URL or decision model is not configured"
-      );
-    const base = normalizeBaseUrl(rawBase);
-    if (!base) return this.fallbackDecision(candidates, context, "invalid decision API base URL");
+    const endpoint = resolveDecisionEndpoint(this.format, config);
+    if ("error" in endpoint) return this.fallbackDecision(candidates, context, endpoint.error);
     if (!prompt) return this.fallbackDecision(candidates, context, "request carries no user text");
-    const cooldownUntil = this.cooldownUntil.get(`${base}${this.endpoint}`) ?? 0;
+    const cooldownUntil = this.cooldownUntil.get(endpoint.url) ?? 0;
     if (cooldownUntil > this.now())
       return this.fallbackDecision(
         candidates,
         context,
         `decision service cooling down for ${Math.ceil((cooldownUntil - this.now()) / 1000)}s; not called`
       );
-    let boundedTimeout = DEFAULT_TIMEOUT_MS;
     try {
-      const headers: Record<string, string> = { "Content-Type": "application/json" };
-      const key = readString(config?.apiKey) ?? readString(process.env[`${prefix}_API_KEY`]);
-      if (key) headers.Authorization = "Bearer " + key;
-      const rawEnvTimeout = readString(process.env[`${prefix}_TIMEOUT_MS`]);
-      const configuredTimeout = rawEnvTimeout === undefined ? Number.NaN : Number(rawEnvTimeout);
-      const envTimeout =
-        Number.isFinite(configuredTimeout) && configuredTimeout > 0 ? configuredTimeout : undefined;
-      boundedTimeout = timeout(config?.timeoutMs ?? envTimeout);
-      const described = describeMenu(menu, candidates, config?.descriptions);
-      const controller = new AbortController();
-      const operation = async () => {
-        const response = await this.transport(`${base}${this.endpoint}`, {
-          method: "POST",
-          headers,
-          timeoutMs: boundedTimeout,
-          signal: controller.signal,
-          body: JSON.stringify(buildBody(this.format, prompt, menu, described, model)),
-        });
-        if (!response.ok) throw new DecisionRequestError("http", response.status);
-        try {
-          return await response.json();
-        } catch {
-          if (controller.signal.aborted) throw new DecisionRequestError("timeout");
-          throw new DecisionRequestError("invalid_json");
-        }
-      };
-      let timer: ReturnType<typeof setTimeout> | undefined;
-      const data: unknown = await Promise.race([
-        operation(),
-        new Promise<never>((_, reject) => {
-          timer = setTimeout(() => {
-            controller.abort();
-            reject(new DecisionRequestError("timeout"));
-          }, boundedTimeout);
-        }),
-      ]).finally(() => {
-        if (timer) clearTimeout(timer);
-      });
-      const answer = this.readAnswer(data);
+      const described = describeDecisionMenu(menu, candidates, config?.descriptions);
+      const answer = await requestDecision(
+        this.format,
+        endpoint,
+        prompt,
+        menu,
+        described,
+        this.transport
+      );
+      const details = describeAnswer(answer);
       const selected = answer.choice;
       if (!selected || !menu.includes(selected))
         return this.fallbackDecision(
@@ -331,7 +435,7 @@ export class DecisionModelStrategyImpl implements RouterStrategy {
             ? "decision model refused route_model"
             : selected
               ? `out-of-pool choice ${JSON.stringify(selected.slice(0, MAX_LOGGED_CHOICE_CHARS))} from ${menu.length} options`
-              : "response carries no valid route_model choice") + answer.details
+              : "response carries no valid route_model choice") + details
         );
       const matching = candidates.filter((item) => item.model === selected);
       const decision = this.fallback.select(matching, context);
@@ -339,55 +443,18 @@ export class DecisionModelStrategyImpl implements RouterStrategy {
         ...decision,
         strategy: this.name,
         candidatesConsidered: candidates.length,
-        reason: `${this.name}: selected ${selected} from ${menu.length} options${answer.details} (${decision.reason})`,
+        reason: `${this.name}: selected ${selected} from ${menu.length} options${details} (${decision.reason})`,
       };
     } catch (error) {
-      this.cooldownUntil.set(`${base}${this.endpoint}`, this.now() + FAILURE_COOLDOWN_MS);
+      this.cooldownUntil.set(endpoint.url, this.now() + FAILURE_COOLDOWN_MS);
       return this.fallbackDecision(
         candidates,
         context,
-        `decision request failed (${describeFailure(error, boundedTimeout)}); cooling down for ${
+        `decision request failed (${describeDecisionFailure(error, endpoint.timeoutMs)}); cooling down for ${
           FAILURE_COOLDOWN_MS / 1000
         }s`
       );
     }
-  }
-  private readAnswer(data: unknown): DecisionAnswer {
-    if (!data || typeof data !== "object" || Array.isArray(data))
-      return { refused: false, details: "" };
-    const record = data as { answers?: unknown; model?: unknown };
-    let answer: Record<string, unknown> | undefined;
-    if (this.format === "openai") {
-      answer = Array.isArray(record.answers)
-        ? (record.answers.find(
-            (item) =>
-              item &&
-              typeof item === "object" &&
-              (item as { name?: unknown }).name === "route_model"
-          ) as Record<string, unknown> | undefined)
-        : undefined;
-    } else if (
-      record.answers &&
-      typeof record.answers === "object" &&
-      !Array.isArray(record.answers)
-    ) {
-      const keyed = (record.answers as Record<string, unknown>).route_model;
-      answer = keyed && typeof keyed === "object" ? (keyed as Record<string, unknown>) : undefined;
-    }
-    const choice = answer?.type === "choice" ? readString(answer.choice) : undefined;
-    const backend = readString(record.model)?.slice(0, MAX_LOGGED_MODEL_CHARS);
-    const confidence = formatScore(answer?.confidence);
-    const probability = formatScore(choiceProbability(answer?.probabilities, choice));
-    const parts = [
-      confidence && `confidence ${confidence}`,
-      probability && `p=${probability}`,
-      backend && `decision model ${JSON.stringify(backend)}`,
-    ].filter(Boolean);
-    return {
-      choice,
-      refused: answer?.type === "refusal",
-      details: parts.length ? `; ${parts.join(", ")}` : "",
-    };
   }
   private fallbackDecision(
     pool: ProviderCandidate[],
