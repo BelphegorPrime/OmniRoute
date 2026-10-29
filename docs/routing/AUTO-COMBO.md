@@ -944,6 +944,16 @@ Every model in the menu carries a description, which is all the decision model k
 
 Without operator text the decision model only sees IDs and that cost ranking, so describe what each model is good at when the choice should depend on the task.
 
+### Dashboard
+
+In the combo builder's intelligent-routing step, choosing `decision-openai` or `decision-systemone` as router strategy shows a **Decision model** section:
+
+- **Endpoint fields** for base URL, decision model, API key, and timeout. Empty fields fall back to the selected format's environment variables. Like `nadir.apiKey`, the API key is stored in the combo configuration.
+- **Model descriptions:** one row per distinct model ID of the combo's model steps (combo references and provider wildcards are skipped). The generated text is shown as the placeholder and is never stored; only typed text is saved to `decisionModel.descriptions`, and clearing a row removes its entry. Further keys (for example a `provider/model` key, or a model that only joins the pool at request time) can be added below the table.
+- **Test decision:** sends an example prompt with the current, unsaved settings to the decision service once and shows the choice, confidence, latency, and per-model probabilities, or why no call was made. This is a real request to the decision service.
+
+The section uses `POST /api/combos/decision-preview` (management auth). Without `prompt` it returns the menu and generated descriptions for the posted `models` and makes no outbound call; with `prompt` it also runs one decision and returns its answer under `test`.
+
 ### OpenAI-format Decision API schema
 
 `POST /v1/decisions` sends the decision backend alias in `model`, the last user text in a single user message, and exactly one `choice` question. Each choice's `value` is an eligible target model ID. The question instructions ask for the cheapest model tier that can reliably complete the request, using a more capable tier only when necessary.
